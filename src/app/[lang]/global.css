@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Exact Ordering.co Light Theme Tokens */
+  --od-bg: #ffffff;
+  --od-surface: #ffffff;
+  --od-surface-subtle: #f6f7f7;
+  --od-surface-dark-band: #17181a;
+  --od-text: #0b0c0d;
+  --od-text-muted: #3f4145;
+  --od-border: #dee0e3;
+  --od-border-strong: #989aa0;
+  --od-action: #266df0;
+  --od-action-content: #1f5fd1;
+  --od-action-hover: #1f5fd1;
+  --od-action-soft: #edf3ff;
+
+  /* Tailwind RGB utility tokens synced to Ordering.co */
+  --color-c-primary: 38 109 240; /* #266df0 */
+  --color-c-primary-hover: 31 95 209; /* #1f5fd1 */
+  --color-c-primary-soft: 237 243 255; /* #edf3ff */
+  --color-c-accent: 31 95 209; /* #1f5fd1 */
+  --color-c-success: 0 209 126; /* #00d17e */
+  --color-c-warning: 245 163 0; /* #f5a300 */
+  --color-c-error: 235 59 59; /* #eb3b3b */
+
+  --color-c-dark: 11 12 13; /* #0b0c0d */
+  --color-c-dark-elevated: 23 24 26; /* #17181a */
+  --color-c-surface: 246 247 247; /* #f6f7f7 */
+  --color-c-border: 222 224 227; /* #dee0e3 */
+
+  --color-c-base: 11 12 13; /* #0b0c0d */
+  --color-c-description: 63 65 69; /* #3f4145 */
+  --color-c-muted: 122 125 132;
+
+  --box-shadow-base: 0 1px 2px rgba(11, 12, 13, 0.05);
+  --box-shadow-card: 0 4px 20px -4px rgba(11, 12, 13, 0.06);
+  --box-shadow-elevated: 0 20px 50px -15px rgba(11, 12, 13, 0.14);
+  --box-shadow-glow: 0 10px 30px -10px rgba(38, 109, 240, 0.35);
+
+  --font-body: var(--font-poppins);
+}
+
+:root[data-theme="dark"] {
+  --od-bg: #0b0c0d;
+  --od-surface: #17181a;
+  --od-surface-subtle: #1e2023;
+  --od-surface-dark-band: #141517;
+  --od-text: #ffffff;
+  --od-text-muted: #c4c6ca;
+  --od-border: #34363a;
+  --od-border-strong: #5b5e64;
+  --od-action: #266df0;
+  --od-action-content: #92b5ff;
+  --od-action-hover: #1f5fd1;
+  --od-action-soft: #17284a;
+
+  --color-c-primary-soft: 23 40 74;
+  --color-c-dark: 255 255 255;
+  --color-c-surface: 33 34 36;
+  --color-c-border: 52 54 58;
+  --color-c-base: 245 246 248;
+  --color-c-description: 196 198 202;
+  --color-c-muted: 152 154 160;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--od-text);
+  background-color: var(--od-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ordering.co shell: 1280px max width with generous horizontal gutter */
+.od-shell {
+  width: min(1280px, 100% - 32px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .od-shell {
+    width: min(1280px, 100% - 64px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .od-shell {
+    width: min(1280px, 100% - 96px);
+  }
+}
+
+/* Hero top-right faded preparation photo mask */
+.od-hero-mask-y {
+  -webkit-mask-image: linear-gradient(to bottom, #000 18%, transparent 98%);
+  mask-image: linear-gradient(to bottom, #000 18%, transparent 98%);
+}
+
+.od-hero-mask-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 58%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 58%);
+}
