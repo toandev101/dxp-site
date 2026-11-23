@@ -99,7 +99,13 @@ export function DemoModal() {
             <DialogHeader>
               <div className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-c-primary-soft px-2.5 py-1 text-xs font-semibold text-c-primary">
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>{isVi ? "0% Hoa hồng · White-label" : "0% Commission · White-label"}</span>
+                <span>
+                  {demoModalSource && demoModalSource !== "general" && !demoModalSource.includes("_")
+                    ? demoModalSource
+                    : isVi
+                      ? "0% Hoa hồng · White-label"
+                      : "Guided demo · 30 min"}
+                </span>
               </div>
               <DialogTitle>{t.demo_modal_title}</DialogTitle>
               <DialogDescription>{t.demo_modal_subtitle}</DialogDescription>
