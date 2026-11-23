@@ -74,7 +74,7 @@ export function AiAgentsSection() {
             {/* White Button */}
             <div className="mt-10">
               <Link
-                href="/products#build"
+                href="/platform/ai-ordering-agents"
                 className="inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-[4px] bg-white px-[22px] py-[13px] text-[14.4px] font-semibold text-[#1f5fd1] transition-colors hover:bg-[#edf3ff]"
               >
                 <span>{isVi ? "Khám phá AI ordering" : "Explore AI ordering"}</span>

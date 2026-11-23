@@ -26,11 +26,11 @@ export function Footer() {
 
   const columns = {
     platform: [
-      { label: "Ordering Web", href: "/products#build" },
-      { label: "Ordering Apps", href: "/products#build" },
-      { label: "Ordering Kiosk", href: "/products#build" },
-      { label: "Ordering Call Center", href: "/products#build" },
-      { label: "AI Ordering Agents", href: "/#ai", badge: "New" },
+      { label: "Ordering Web", href: "/platform/ordering-web" },
+      { label: "Ordering Apps", href: "/platform/ordering-apps" },
+      { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
+      { label: "Ordering Call Center", href: "/platform/ordering-call-center" },
+      { label: "AI Ordering Agents", href: "/platform/ai-ordering-agents", badge: "New" },
       { label: "Ordering Merchant", href: "/products#operate" },
       { label: "Ordering Delivery", href: "/products#operate" },
       { label: "Integrations", href: "/integrations" },
@@ -146,8 +146,8 @@ export function Footer() {
           {[
             { label: "Merchant App", href: "/products#operate" },
             { label: "Driver App", href: "/products#operate" },
-            { label: "Kiosk", href: "/products#build" },
-            { label: "Call Center", href: "/products#build" },
+            { label: "Kiosk", href: "/platform/ordering-kiosk" },
+            { label: "Call Center", href: "/platform/ordering-call-center" },
           ].map((app) => (
             <Link
               key={app.label}

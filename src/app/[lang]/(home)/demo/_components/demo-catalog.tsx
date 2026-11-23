@@ -90,7 +90,7 @@ export function DemoCatalog() {
                     </a>
                   </div>
                   <Link
-                    href="/products#build"
+                    href="/platform/ordering-web"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Ordering Web" : "Explore Ordering Web"}</span>
@@ -140,7 +140,7 @@ export function DemoCatalog() {
                     </a>
                   </div>
                   <Link
-                    href="/products#build"
+                    href="/platform/ordering-apps"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Ordering Apps" : "Explore Ordering Apps"}</span>
@@ -217,7 +217,7 @@ export function DemoCatalog() {
                     </a>
                   </div>
                   <Link
-                    href="/products#build"
+                    href="/platform/ordering-web"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Ordering Web" : "Explore Ordering Web"}</span>
@@ -267,7 +267,7 @@ export function DemoCatalog() {
                     </a>
                   </div>
                   <Link
-                    href="/products#build"
+                    href="/platform/ordering-apps"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Ordering Apps" : "Explore Ordering Apps"}</span>
@@ -470,7 +470,7 @@ export function DemoCatalog() {
                 </div>
 
                 <Link
-                  href="/#ai"
+                  href="/platform/ai-ordering-agents"
                   className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                 >
                   <span>{isVi ? "Khám phá AI Ordering Agents" : "Explore AI Ordering Agents"}</span>
