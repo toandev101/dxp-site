@@ -6,7 +6,13 @@ export type PlatformSlug =
   | "ordering-kiosk"
   | "ordering-call-center"
   | "multi-store-ordering"
-  | "ai-ordering-agents";
+  | "ai-ordering-agents"
+  | "ordering-merchant"
+  | "dashboard"
+  | "multi-location-operations"
+  | "ordering-delivery"
+  | "driver-app"
+  | "third-party-delivery";
 
 export interface PlatformBreadcrumb {
   label: string;
@@ -24,6 +30,33 @@ export interface PlatformStepItem {
   num: string;
   title: string;
   body: string;
+  tag?: string;
+}
+
+export interface PlatformStepsSplit {
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead: string;
+  sideCards?: { title: string; body: string }[];
+  steps: PlatformStepItem[];
+}
+
+export interface PlatformCapabilitiesList {
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  items: { title: string; body?: string }[];
+}
+
+export interface PlatformCardGridSection {
+  id: string;
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  actionLink?: { label: string; href: string };
+  items: PlatformCardItem[];
 }
 
 export interface PlatformJourneyStep {
@@ -43,6 +76,7 @@ export interface PlatformCapabilityBand {
   title: string;
   body: string;
   where?: string;
+  subtle?: boolean;
   columns: { title: string; items: { title?: string; body: string }[] }[];
   link?: { label: string; href: string };
 }
@@ -108,13 +142,9 @@ export interface PlatformPageSpec {
     body: string;
     caption: string;
   };
-  stepsSplit?: {
-    id: string;
-    eyebrow: string;
-    title: string;
-    lead: string;
-    steps: PlatformStepItem[];
-  };
+  stepsSplit?: PlatformStepsSplit;
+  secondaryStepsSplit?: PlatformStepsSplit;
+  preWalkthroughCapabilitiesList?: PlatformCapabilitiesList;
   screensWalkthrough?: {
     id: string;
     eyebrow: string;
@@ -123,6 +153,7 @@ export interface PlatformPageSpec {
     caption: string;
     items: { title: string; body: string }[];
   };
+  preBandsCapabilitiesLists?: PlatformCapabilitiesList[];
   appExampleShowcase?: {
     eyebrow: string;
     title: string;
@@ -131,12 +162,10 @@ export interface PlatformPageSpec {
     whiteLabelPoints: { title: string; body: string }[];
   };
   capabilityBands?: PlatformCapabilityBand[];
-  capabilitiesList?: {
-    id: string;
-    eyebrow: string;
-    title: string;
-    items: { title: string; body: string }[];
-  };
+  postBandsCapabilitiesList?: PlatformCapabilitiesList;
+  capabilitiesList?: PlatformCapabilitiesList;
+  midScopeNotes?: PlatformScopeNote[];
+  extraCardGrid?: PlatformCardGridSection;
   scopeNotes?: PlatformScopeNote[];
   connected?: {
     eyebrow: string;

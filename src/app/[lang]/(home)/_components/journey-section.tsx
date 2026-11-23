@@ -57,7 +57,7 @@ export function JourneySection() {
                 : "Customers order through your website, app, marketplace, or AI agent."}
             </p>
             <Link
-              href="/products#build"
+              href="/platform/ordering-web"
               className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>{isVi ? "Khám phá kênh đặt hàng" : "Explore customer ordering"}</span>
@@ -86,7 +86,7 @@ export function JourneySection() {
                 : "Orders reach the right location. Your team accepts and prepares them in the Merchant App."}
             </p>
             <Link
-              href="/products#operate"
+              href="/platform/ordering-merchant"
               className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>{isVi ? "Khám phá Merchant" : "Explore Merchant"}</span>
@@ -115,7 +115,7 @@ export function JourneySection() {
                 : "Fulfill with your own drivers or connected third-party delivery providers."}
             </p>
             <Link
-              href="/products#operate"
+              href="/platform/ordering-delivery"
               className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>{isVi ? "Khám phá giao vận" : "Explore delivery"}</span>
@@ -161,7 +161,7 @@ export function JourneySection() {
                 : "Manage stores, menus, catalogs, availability, service zones, and fee rules from the Dashboard. Keep your systems connected."}
             </p>
             <Link
-              href="/products#operate"
+              href="/platform/dashboard"
               className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>{isVi ? "Khám phá Dashboard" : "Explore the Dashboard"}</span>

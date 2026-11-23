@@ -31,8 +31,8 @@ export function Footer() {
       { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
       { label: "Ordering Call Center", href: "/platform/ordering-call-center" },
       { label: "AI Ordering Agents", href: "/platform/ai-ordering-agents", badge: "New" },
-      { label: "Ordering Merchant", href: "/products#operate" },
-      { label: "Ordering Delivery", href: "/products#operate" },
+      { label: "Ordering Merchant", href: "/platform/ordering-merchant" },
+      { label: "Ordering Delivery", href: "/platform/ordering-delivery" },
       { label: "Integrations", href: "/integrations" },
     ],
     solutions: [
@@ -144,8 +144,8 @@ export function Footer() {
         <Container className="py-6 flex flex-wrap items-center gap-3">
           <span className="text-[13.5px] font-semibold text-[var(--od-text)] mr-2">Apps</span>
           {[
-            { label: "Merchant App", href: "/products#operate" },
-            { label: "Driver App", href: "/products#operate" },
+            { label: "Merchant App", href: "/platform/ordering-merchant" },
+            { label: "Driver App", href: "/platform/driver-app" },
             { label: "Kiosk", href: "/platform/ordering-kiosk" },
             { label: "Call Center", href: "/platform/ordering-call-center" },
           ].map((app) => (

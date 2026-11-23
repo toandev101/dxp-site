@@ -347,7 +347,7 @@ export function DemoCatalog() {
                   </p>
 
                   <Link
-                    href="/products#operate"
+                    href="/platform/ordering-merchant"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Ordering Merchant" : "Explore Ordering Merchant"}</span>
@@ -411,7 +411,7 @@ export function DemoCatalog() {
                   </p>
 
                   <Link
-                    href="/products#operate"
+                    href="/platform/driver-app"
                     className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
                   >
                     <span>{isVi ? "Khám phá Driver App" : "Explore Driver App"}</span>

@@ -14,7 +14,100 @@ import {
   MarketplaceWebPreview,
   RestaurantWebPreview,
 } from "../../demo/_components/demo-previews";
-import type { PlatformPageSpec } from "../_data/platform-types";
+import type {
+  PlatformCapabilitiesList,
+  PlatformPageSpec,
+  PlatformStepsSplit,
+} from "../_data/platform-types";
+
+function StepsSplitSection({ section }: { section: PlatformStepsSplit }) {
+  return (
+    <section id={section.id} className="scroll-mt-28 py-12 sm:py-16">
+      <Container>
+        <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-7 sm:p-12 lg:p-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-[12px] font-medium text-[var(--od-text-muted)]">
+              {section.eyebrow}
+            </p>
+            <h2 className="mt-3 text-[32px] sm:text-[42px] font-bold tracking-[-0.035em] leading-[1.06] text-[var(--od-text)]">
+              {section.title}
+            </h2>
+            <p className="mt-4 text-[15.5px] leading-[1.6] text-[var(--od-text-muted)]">
+              {section.lead}
+            </p>
+            {section.sideCards && section.sideCards.length > 0 && (
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                {section.sideCards.map((sc) => (
+                  <div
+                    key={sc.title}
+                    className="rounded-[8px] border border-[var(--od-border)] bg-[var(--od-bg)] p-4"
+                  >
+                    <h3 className="text-[14.5px] font-bold text-[var(--od-text)]">{sc.title}</h3>
+                    <p className="mt-1 text-[13.5px] leading-[1.55] text-[var(--od-text-muted)]">{sc.body}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <ol className="lg:col-span-7 divide-y divide-[var(--od-border)] border-y border-[var(--od-border)]">
+            {section.steps.map((st) => (
+              <li key={st.num} className="grid grid-cols-[36px_1fr] gap-4 py-5">
+                <span className="font-mono text-[12px] text-[var(--od-text-muted)] pt-1">{st.num}</span>
+                <div>
+                  <h3 className="text-[17px] font-bold text-[var(--od-text)]">{st.title}</h3>
+                  <p className="mt-1.5 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{st.body}</p>
+                  {st.tag && (
+                    <p className="mt-2 font-mono text-[11.5px] font-medium text-[var(--od-action-content)]">
+                      {st.tag}
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function CapabilitiesListSection({ list }: { list: PlatformCapabilitiesList }) {
+  return (
+    <section id={list.id} className="scroll-mt-28 py-14">
+      <Container>
+        <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.08em] text-[var(--od-action-content)]">
+          {list.eyebrow}
+        </p>
+        <h2 className="mt-2.5 max-w-3xl text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.1] text-[var(--od-text)]">
+          {list.title}
+        </h2>
+        {list.lead && (
+          <p className="mt-3 max-w-2xl text-[15.5px] leading-[1.6] text-[var(--od-text-muted)]">{list.lead}</p>
+        )}
+
+        <div
+          className={cn(
+            "mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2",
+            list.items.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"
+          )}
+        >
+          {list.items.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
+            >
+              <h3 className="text-[16.5px] font-bold text-[var(--od-text)]">{item.title}</h3>
+              {item.body && (
+                <p className="mt-2 text-[14px] leading-[1.6] text-[var(--od-text-muted)]">{item.body}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
 
 export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
   const { openDemoModal, setChatOpen } = useUiStore();
@@ -225,15 +318,33 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
             </div>
 
             <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {spec.features.items.map((card) => (
-                <div
-                  key={card.title}
-                  className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
-                >
-                  <h3 className="text-[18px] font-bold text-[var(--od-text)]">{card.title}</h3>
-                  <p className="mt-2.5 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{card.body}</p>
-                </div>
-              ))}
+              {spec.features.items.map((card) =>
+                card.href ? (
+                  <Link
+                    key={card.title}
+                    href={card.href}
+                    className="group rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6 transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="text-[18px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)] transition-colors">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2.5 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{card.body}</p>
+                    </div>
+                    <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[var(--od-action-content)]">
+                      Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                ) : (
+                  <div
+                    key={card.title}
+                    className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
+                  >
+                    <h3 className="text-[18px] font-bold text-[var(--od-text)]">{card.title}</h3>
+                    <p className="mt-2.5 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{card.body}</p>
+                  </div>
+                )
+              )}
             </div>
           </Container>
         </section>
@@ -468,40 +579,16 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
         </section>
       )}
 
-      {/* 4D. LIGHT-GRAY ROUNDED SPLIT NUMBERED STEPS (#how, #kitchen, #flow, #finder) */}
-      {spec.stepsSplit && (
-        <section id={spec.stepsSplit.id} className="scroll-mt-28 py-12 sm:py-16">
-          <Container>
-            <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-7 sm:p-12 lg:p-14 grid grid-cols-1 gap-10 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="font-mono text-[12px] font-medium text-[var(--od-text-muted)]">
-                  {spec.stepsSplit.eyebrow}
-                </p>
-                <h2 className="mt-3 text-[32px] sm:text-[42px] font-bold tracking-[-0.035em] leading-[1.06] text-[var(--od-text)]">
-                  {spec.stepsSplit.title}
-                </h2>
-                <p className="mt-4 text-[15.5px] leading-[1.6] text-[var(--od-text-muted)]">
-                  {spec.stepsSplit.lead}
-                </p>
-              </div>
+      {/* 4D. LIGHT-GRAY ROUNDED SPLIT NUMBERED STEPS (#order-management, #permissions, #dispatch-rules, #flow, etc.) */}
+      {spec.stepsSplit && <StepsSplitSection section={spec.stepsSplit} />}
+      {spec.secondaryStepsSplit && <StepsSplitSection section={spec.secondaryStepsSplit} />}
 
-              <ol className="lg:col-span-7 divide-y divide-[var(--od-border)] border-y border-[var(--od-border)]">
-                {spec.stepsSplit.steps.map((st) => (
-                  <li key={st.num} className="grid grid-cols-[36px_1fr] gap-4 py-5">
-                    <span className="font-mono text-[12px] text-[var(--od-text-muted)] pt-1">{st.num}</span>
-                    <div>
-                      <h3 className="text-[17px] font-bold text-[var(--od-text)]">{st.title}</h3>
-                      <p className="mt-1.5 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{st.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </Container>
-        </section>
+      {/* 4D2. OPTIONAL PRE-WALKTHROUGH CAPABILITIES LIST (#connected-channel-scope on ordering-merchant) */}
+      {spec.preWalkthroughCapabilitiesList && (
+        <CapabilitiesListSection list={spec.preWalkthroughCapabilitiesList} />
       )}
 
-      {/* 4E. SCREENS WALKTHROUGH (#screens on kiosk, #console on call center) */}
+      {/* 4E. SCREENS WALKTHROUGH (#screens, #console, #tour, #dashboards) */}
       {spec.screensWalkthrough && (
         <section id={spec.screensWalkthrough.id} className="scroll-mt-28 py-12 sm:py-16">
           <Container>
@@ -534,11 +621,19 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
         </section>
       )}
 
+      {/* 4E2. OPTIONAL PRE-BANDS CAPABILITIES LISTS (#capabilities, #questions) */}
+      {spec.preBandsCapabilitiesLists &&
+        spec.preBandsCapabilitiesLists.map((list) => <CapabilitiesListSection key={list.id} list={list} />)}
+
       {/* 4F. FEATURE CAPABILITY DEEP-DIVE BANDS (.feature-capability) */}
       {spec.capabilityBands && spec.capabilityBands.length > 0 && (
         <div className="divide-y divide-[var(--od-border)] border-y border-[var(--od-border)] my-8">
           {spec.capabilityBands.map((band) => (
-            <section key={band.id} id={band.id} className="scroll-mt-28 py-14">
+            <section
+              key={band.id}
+              id={band.id}
+              className={cn("scroll-mt-28 py-14", band.subtle && "bg-[var(--od-surface-subtle)]")}
+            >
               <Container>
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
                   <div className="lg:col-span-5">
@@ -571,7 +666,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                     {band.columns.map((col) => (
                       <div
                         key={col.title}
-                        className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)]/60 p-6"
+                        className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
                       >
                         <h3 className="text-[15.5px] font-bold text-[var(--od-text)]">{col.title}</h3>
                         <ul className="mt-3 space-y-3 text-[14px] leading-[1.55] text-[var(--od-text-muted)]">
@@ -592,27 +687,119 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
         </div>
       )}
 
-      {/* 4G. CAPABILITIES LIST (#capabilities: In the dining room / Across the shift / Stay in touch) */}
-      {spec.capabilitiesList && (
-        <section id={spec.capabilitiesList.id} className="scroll-mt-28 py-14">
-          <Container>
-            <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.08em] text-[var(--od-action-content)]">
-              {spec.capabilitiesList.eyebrow}
-            </p>
-            <h2 className="mt-2.5 max-w-3xl text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.1] text-[var(--od-text)]">
-              {spec.capabilitiesList.title}
-            </h2>
+      {/* 4F2. OPTIONAL POST-BANDS CAPABILITIES LIST (#printers on ordering-merchant) */}
+      {spec.postBandsCapabilitiesList && <CapabilitiesListSection list={spec.postBandsCapabilitiesList} />}
 
-            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {spec.capabilitiesList.items.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
-                >
-                  <h3 className="text-[16.5px] font-bold text-[var(--od-text)]">{item.title}</h3>
-                  <p className="mt-2 text-[14px] leading-[1.6] text-[var(--od-text-muted)]">{item.body}</p>
+      {/* 4G. CAPABILITIES LIST (#capabilities: In the dining room / Across the shift / Day to day) */}
+      {spec.capabilitiesList && <CapabilitiesListSection list={spec.capabilitiesList} />}
+
+      {/* 4H. OPTIONAL MID-PAGE SCOPE NOTES (#quote-scope on third-party-delivery) */}
+      {spec.midScopeNotes && spec.midScopeNotes.length > 0 && (
+        <div className="py-8">
+          <Container className="space-y-10">
+            {spec.midScopeNotes.map((note) => (
+              <section
+                key={note.id}
+                id={note.id}
+                className="scroll-mt-28 rounded-[10px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-7 sm:p-10 max-w-4xl"
+              >
+                <h2 className="text-[24px] sm:text-[32px] font-bold tracking-[-0.03em] leading-[1.12] text-[var(--od-text)]">
+                  {note.title}
+                </h2>
+                <p className="mt-3 text-[15.5px] font-medium leading-[1.6] text-[var(--od-text)]">{note.lead}</p>
+                <div className="mt-3 space-y-3 text-[14.5px] leading-[1.65] text-[var(--od-text-muted)]">
+                  {note.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
                 </div>
-              ))}
+                {note.links && (
+                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+                    {note.links.map((lk) => (
+                      <Link
+                        key={lk.label}
+                        href={lk.href}
+                        className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
+                      >
+                        <span>{lk.label}</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </section>
+            ))}
+          </Container>
+        </div>
+      )}
+
+      {/* 4I. OPTIONAL EXTRA CARD GRID (#store-controls, #models, #resources) */}
+      {spec.extraCardGrid && (
+        <section id={spec.extraCardGrid.id} className="scroll-mt-28 py-14">
+          <Container>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                {spec.extraCardGrid.eyebrow && (
+                  <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.08em] text-[var(--od-action-content)]">
+                    {spec.extraCardGrid.eyebrow}
+                  </p>
+                )}
+                <h2 className="mt-2 max-w-3xl text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.1] text-[var(--od-text)]">
+                  {spec.extraCardGrid.title}
+                </h2>
+                {spec.extraCardGrid.lead && (
+                  <p className="mt-3 max-w-2xl text-[15.5px] leading-[1.6] text-[var(--od-text-muted)]">
+                    {spec.extraCardGrid.lead}
+                  </p>
+                )}
+              </div>
+              {spec.extraCardGrid.actionLink && (
+                <Link
+                  href={spec.extraCardGrid.actionLink.href}
+                  className="inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-[var(--od-action-content)] hover:underline"
+                >
+                  <span>{spec.extraCardGrid.actionLink.label}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
+            </div>
+
+            <div
+              className={cn(
+                "mt-8 grid grid-cols-1 gap-5",
+                spec.extraCardGrid.items.length === 1
+                  ? "max-w-xl"
+                  : spec.extraCardGrid.items.length === 2
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-2 lg:grid-cols-3"
+              )}
+            >
+              {spec.extraCardGrid.items.map((card) =>
+                card.href ? (
+                  <Link
+                    key={card.title}
+                    href={card.href}
+                    className="group rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6 transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="text-[18px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)] transition-colors">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{card.body}</p>
+                    </div>
+                    <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[var(--od-action-content)]">
+                      Read guide <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                ) : (
+                  <div
+                    key={card.title}
+                    className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6"
+                  >
+                    <h3 className="text-[18px] font-bold text-[var(--od-text)]">{card.title}</h3>
+                    <p className="mt-2 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{card.body}</p>
+                  </div>
+                )
+              )}
             </div>
           </Container>
         </section>
@@ -764,7 +951,16 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
           <h2 className="text-[28px] sm:text-[36px] font-bold tracking-[-0.03em] leading-[1.12] text-[var(--od-text)]">
             {spec.related.title}
           </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className={cn(
+              "mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2",
+              spec.related.items.length === 2
+                ? "lg:grid-cols-2"
+                : spec.related.items.length === 6
+                  ? "lg:grid-cols-3"
+                  : "lg:grid-cols-4"
+            )}
+          >
             {spec.related.items.map((item) => (
               <Link
                 key={item.title}

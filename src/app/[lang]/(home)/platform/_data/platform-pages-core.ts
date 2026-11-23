@@ -180,7 +180,7 @@ export const ORDERING_WEB_SPEC: PlatformPageSpec = {
           ],
         },
       ],
-      link: { label: "See order and product reports", href: "/products#operate" },
+      link: { label: "See order and product reports", href: "/platform/dashboard" },
     },
     {
       id: "cart-and-checkout",
@@ -202,7 +202,7 @@ export const ORDERING_WEB_SPEC: PlatformPageSpec = {
           ],
         },
       ],
-      link: { label: "Explore payment integrations", href: "/integrations" },
+      link: { label: "Explore payment integrations", href: "/integrations/payments" },
     },
     {
       id: "seo",
@@ -607,7 +607,7 @@ export const ORDERING_KIOSK_SPEC: PlatformPageSpec = {
       { label: "Build", title: "Ordering Web", body: "The white-labeled storefront on your own domain.", href: "/platform/ordering-web" },
       { label: "Build", title: "Ordering Apps", body: "Native iOS and Android under your brand.", href: "/platform/ordering-apps" },
       { label: "Build", title: "Ordering Call Center", body: "Your agents take phone orders into the same system.", href: "/platform/ordering-call-center" },
-      { label: "Integrations", title: "POS integrations", body: "Send kiosk orders to the POS the store already runs.", href: "/integrations" },
+      { label: "Integrations", title: "POS integrations", body: "Send kiosk orders to the POS the store already runs.", href: "/integrations/pos" },
     ],
   },
   closingCta: {
@@ -869,7 +869,7 @@ export const MULTI_STORE_ORDERING_SPEC: PlatformPageSpec = {
       { label: "Build", title: "Ordering Apps", body: "Native iOS and Android under your brand.", href: "/platform/ordering-apps" },
       { label: "Build", title: "Ordering Kiosk", body: "Self-order in store, on the same catalog.", href: "/platform/ordering-kiosk" },
       { label: "Build", title: "AI Ordering Agents", body: "Explore a conversational ordering surface for the channels your business chooses to support.", href: "/platform/ai-ordering-agents" },
-      { label: "Operate", title: "Multi-location operations", body: "The back office behind the storefront: network views, catalog ownership, local changes, and roles by location.", href: "/solutions#franchises" },
+      { label: "Operate", title: "Multi-location operations", body: "The back office behind the storefront: network views, catalog ownership, local changes, and roles by location.", href: "/platform/multi-location-operations" },
       { label: "Solutions", title: "Franchises", body: "How franchise networks keep one brand standard while each franchisee runs its own store.", href: "/solutions#franchises" },
     ],
   },
@@ -980,7 +980,7 @@ export const AI_ORDERING_AGENTS_SPEC: PlatformPageSpec = {
       { label: "Build", title: "Ordering Call Center", body: "Your agents take phone orders into the same system.", href: "/platform/ordering-call-center" },
       { label: "Build", title: "Ordering Web", body: "The white-labeled storefront on your own domain.", href: "/platform/ordering-web" },
       { label: "Build", title: "Ordering Apps", body: "Native iOS and Android under your brand.", href: "/platform/ordering-apps" },
-      { label: "Operate", title: "Ordering Merchant", body: "Receive, accept, and prepare confirmed orders in store.", href: "/products#operate" },
+      { label: "Operate", title: "Ordering Merchant", body: "Receive, accept, and prepare confirmed orders in store.", href: "/platform/ordering-merchant" },
     ],
   },
   closingCta: {
