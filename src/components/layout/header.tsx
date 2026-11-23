@@ -221,7 +221,7 @@ const MEGA_MENUS: Record<
         links: [
           { label: "System status", href: "/api/health" },
           { label: "Knowledge base", href: "/developers#knowledge-base" },
-          { label: "Talk to an engineer", href: "/demo" },
+          { label: "Talk to an engineer", href: "/contact" },
         ],
       },
     ],
@@ -255,7 +255,7 @@ const MEGA_MENUS: Record<
         summary: "Evaluate before deciding.",
         links: [
           { label: "Compare platforms", href: "/#migration" },
-          { label: "Profit calculator", href: "/pricing#calculator" },
+          { label: "Profit calculator", href: "/resources/profit-calculator" },
           { label: "Transparent pricing", href: "/pricing" },
         ],
       },
@@ -263,9 +263,10 @@ const MEGA_MENUS: Record<
         eyebrow: "Company",
         summary: "About & contact.",
         links: [
+          { label: `About ${siteConfig.name}`, href: "/company/about" },
           { label: "Customers", href: "/#customers" },
           { label: "Integrations", href: "/integrations" },
-          { label: "Contact", href: "/demo" },
+          { label: "Contact", href: "/contact" },
         ],
       },
     ],
@@ -274,12 +275,12 @@ const MEGA_MENUS: Record<
       title: "52 scalable ordering business models",
       description: "What you can launch on Ordering.co, from a single kitchen to a city-wide marketplace.",
       cta: "Explore the guide",
-      href: "/solutions#marketplaces",
+      href: "/solutions/marketplaces",
     },
     bottomStrip: [
       { title: "Live demos", desc: "Try restaurant and marketplace storefronts.", href: "/demo" },
       { title: "Pricing plans", desc: "0% order commission across plans.", href: "/pricing" },
-      { title: "Talk to our team", desc: "Get a tailored architecture walkthrough.", href: "/demo" },
+      { title: "Talk to our team", desc: "Get a tailored architecture walkthrough.", href: "/contact" },
     ],
   },
 };
@@ -385,7 +386,7 @@ export function Header() {
           </button>
 
           <Link
-            href="/demo"
+            href="/contact"
             className="inline-flex h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] whitespace-nowrap"
           >
             {isVi ? `Liên hệ ${siteConfig.name}` : `Talk to ${siteConfig.name}`}

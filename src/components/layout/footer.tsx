@@ -73,12 +73,12 @@ export function Footer() {
       { label: "52 business models", href: "/solutions#marketplaces" },
     ],
     company: [
-      { label: `About ${siteConfig.name}`, href: "/#proof" },
+      { label: `About ${siteConfig.name}`, href: "/company/about" },
       { label: "Customers", href: "/#customers" },
-      { label: "Partners", href: "/integrations" },
-      { label: "Support", href: "/demo" },
-      { label: "Contact", href: "/demo" },
-      { label: "Book a demo", href: "/demo" },
+      { label: "Partners", href: "/solutions/agencies-resellers" },
+      { label: "Support", href: "/contact#support" },
+      { label: "Contact", href: "/contact" },
+      { label: "Book a demo", href: "/contact?meeting=demo#book" },
     ],
   };
 

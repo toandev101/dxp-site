@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
 import useDictionaries from "@/hooks/useDictionaries";
 
-function EnterpriseBrandMark({ brand }: { brand: string }) {
+export function EnterpriseBrandMark({ brand }: { brand: string }) {
   switch (brand) {
     case "Domino's":
       return (
