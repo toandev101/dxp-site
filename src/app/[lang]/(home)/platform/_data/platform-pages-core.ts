@@ -870,7 +870,7 @@ export const MULTI_STORE_ORDERING_SPEC: PlatformPageSpec = {
       { label: "Build", title: "Ordering Kiosk", body: "Self-order in store, on the same catalog.", href: "/platform/ordering-kiosk" },
       { label: "Build", title: "AI Ordering Agents", body: "Explore a conversational ordering surface for the channels your business chooses to support.", href: "/platform/ai-ordering-agents" },
       { label: "Operate", title: "Multi-location operations", body: "The back office behind the storefront: network views, catalog ownership, local changes, and roles by location.", href: "/platform/multi-location-operations" },
-      { label: "Solutions", title: "Franchises", body: "How franchise networks keep one brand standard while each franchisee runs its own store.", href: "/solutions#franchises" },
+      { label: "Solutions", title: "Franchises", body: "How franchise networks keep one brand standard while each franchisee runs its own store.", href: "/solutions/franchises" },
     ],
   },
   closingCta: {

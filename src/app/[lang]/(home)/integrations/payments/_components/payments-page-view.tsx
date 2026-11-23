@@ -52,7 +52,7 @@ export function PaymentsPageView() {
     {
       title: "Marketplace projects",
       body: "Plan the operating model for a multi-store marketplace.",
-      href: "/solutions#marketplaces",
+      href: "/solutions/marketplaces",
     },
     {
       title: "Gift cards",

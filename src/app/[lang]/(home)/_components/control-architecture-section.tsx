@@ -30,7 +30,7 @@ export function ControlArchitectureSection() {
       descVi: `Thương hiệu, tên miền, dữ liệu và tệp khách hàng thuộc toàn quyền bạn. ${siteConfig.name} vận hành hạ tầng trên các gói quản lý.`,
       ctaEn: "Explore white label",
       ctaVi: "Khám phá white label",
-      href: "/products#extend",
+      href: "/developers/white-label",
     },
     {
       titleEn: "APIs, webhooks, and MCP",
@@ -39,7 +39,7 @@ export function ControlArchitectureSection() {
       descVi: "Truy cập toàn bộ đơn hàng, cửa hàng, thực đơn và sự kiện giao vận. Kết nối công cụ AI qua MCP.",
       ctaEn: "Explore API and MCP",
       ctaVi: "Khám phá API và MCP",
-      href: "/products#extend",
+      href: "/developers",
     },
     {
       titleEn: "Source code options",
@@ -50,7 +50,7 @@ export function ControlArchitectureSection() {
         "Mã nguồn Frontend đi kèm với mọi sản phẩm. Cấp phép mã nguồn Backend áp dụng theo thỏa thuận riêng cho khách hàng Enterprise.",
       ctaEn: "Read the license",
       ctaVi: "Xem chính sách mã nguồn",
-      href: "/products#extend",
+      href: "/developers/source-code-license",
     },
     {
       titleEn: "Managed or enterprise deployment",
@@ -61,7 +61,7 @@ export function ControlArchitectureSection() {
         "Bao gồm hạ tầng cloud quản lý sẵn. Với gói Enterprise, triển khai trực tiếp trên tài khoản AWS, Google Cloud, Azure hoặc Railway của bạn.",
       ctaEn: "Bring your own cloud",
       ctaVi: "Triển khai trên Cloud riêng",
-      href: "/pricing",
+      href: "/developers/bring-your-own-cloud",
     },
   ];
 
@@ -92,7 +92,7 @@ export function ControlArchitectureSection() {
           </p>
           <div className="mt-5">
             <Link
-              href="/products#extend"
+              href="/developers"
               className="inline-flex items-center gap-2 text-[14.4px] font-semibold text-[#92b5ff] hover:underline"
             >
               <span>{isVi ? "Khám phá các tùy chọn" : "Explore your options"}</span>

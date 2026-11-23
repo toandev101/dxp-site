@@ -50,7 +50,7 @@ export function DemoCatalog() {
               </p>
             </div>
             <Link
-              href="/solutions#marketplaces"
+              href="/solutions/marketplaces"
               className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>{isVi ? "Khám phá giải pháp Marketplace" : "Explore marketplace solutions"}</span>
@@ -169,14 +169,14 @@ export function DemoCatalog() {
             </div>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
               <Link
-                href="/solutions#restaurants"
+                href="/solutions/restaurants"
                 className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
               >
                 <span>{isVi ? "Khám phá nhà hàng" : "Explore restaurants"}</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/solutions#franchises"
+                href="/solutions/franchises"
                 className="inline-flex min-h-[44px] items-center gap-1.5 text-[15px] font-semibold text-[var(--od-action-content)] hover:underline"
               >
                 <span>{isVi ? "Khám phá nhượng quyền" : "Explore franchises"}</span>

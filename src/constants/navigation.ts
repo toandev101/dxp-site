@@ -39,7 +39,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
       {
         labelKey: "APIs, Webhooks & MCP",
         descriptionKey: "Open REST API, SDKs, MCP server & frontend source code.",
-        href: "/products#extend",
+        href: "/developers",
         icon: "code",
       },
     ],
@@ -101,10 +101,10 @@ export const FOOTER_COLUMNS = {
     { labelEn: "Cloud & Ghost Kitchens", labelVi: "Bếp trung tâm (Cloud Kitchen)", href: "/solutions#cloud-kitchens" },
   ],
   developers: [
-    { labelEn: "REST API & Webhooks", labelVi: "REST API & Webhooks", href: "/products#extend" },
-    { labelEn: "MCP Server for AI Agents", labelVi: "MCP Server cho AI Agent", href: "/products#extend" },
+    { labelEn: "REST API & Webhooks", labelVi: "REST API & Webhooks", href: "/developers" },
+    { labelEn: "MCP Server for AI Agents", labelVi: "MCP Server cho AI Agent", href: "/developers#api" },
     { labelEn: "POS & 3PL Integrations", labelVi: "Tích hợp POS & 3PL", href: "/integrations" },
-    { labelEn: "Open Frontend Source Code", labelVi: "Mã nguồn Frontend mở", href: "/products#extend" },
+    { labelEn: "Open Frontend Source Code", labelVi: "Mã nguồn Frontend mở", href: "/developers/source-code-license" },
     { labelEn: "System Status (99.99%)", labelVi: "Trạng thái hệ thống (99.99%)", href: "/api/health" },
   ],
   company: [
