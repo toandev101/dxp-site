@@ -16,8 +16,8 @@ const INTEGRATION_ROWS = [
       { name: "PayPal", style: "font-extrabold italic text-[#003087] text-[19px]" },
       { name: "adyen", style: "font-black text-[#0abf53] tracking-tight text-[20px]" },
       { name: "mercado pago", style: "font-bold text-[#009ee3] text-[16px]" },
-      { name: "Apple Pay", style: "font-semibold text-[#0b0c0d] text-[17px]" },
-      { name: "G Pay", style: "font-semibold text-[#3f4145] text-[17px]" },
+      { name: "Apple Pay", style: "font-semibold text-[#151417] text-[17px]" },
+      { name: "G Pay", style: "font-semibold text-[#3A393F] text-[17px]" },
     ],
   },
   {
@@ -25,7 +25,7 @@ const INTEGRATION_ROWS = [
     titleVi: "Giao vận",
     href: "/integrations",
     logos: [
-      { name: "Uber Direct", style: "font-bold text-[#0b0c0d] tracking-tight text-[18px]" },
+      { name: "Uber Direct", style: "font-bold text-[#151417] tracking-tight text-[18px]" },
       { name: "DOORDASH", style: "font-extrabold text-[#ff3008] tracking-wide text-[15px]" },
       { name: "LALAMOVE", style: "font-black italic text-[#f26722] text-[16px]" },
       { name: "Stuart", style: "font-extrabold text-[#2b58de] text-[19px]" },
@@ -39,11 +39,11 @@ const INTEGRATION_ROWS = [
     href: "/integrations",
     logos: [
       { name: "toast", style: "font-extrabold text-[#ff4c00] text-[20px]" },
-      { name: "Square", style: "font-bold text-[#0b0c0d] text-[18px]" },
+      { name: "Square", style: "font-bold text-[#151417] text-[18px]" },
       { name: "clover", style: "font-extrabold text-[#228800] text-[20px]" },
       { name: "shopify", style: "font-extrabold italic text-[#5e8e3e] text-[19px]" },
       { name: "ORACLE", style: "font-black text-[#c74634] tracking-wider text-[16px]" },
-      { name: "LimeTray", style: "font-bold text-[#16a34a] text-[17px]" },
+      { name: "LimeTray", style: "font-bold text-[#3F7A1C] text-[17px]" },
     ],
   },
   {
@@ -52,7 +52,7 @@ const INTEGRATION_ROWS = [
     href: "/integrations",
     logos: [
       { name: "HubSpot", style: "font-extrabold text-[#ff7a59] text-[18px]" },
-      { name: "mailchimp", style: "font-bold text-[#0b0c0d] text-[17px]" },
+      { name: "mailchimp", style: "font-bold text-[#151417] text-[17px]" },
       { name: "Spoonity", style: "font-bold text-[#2563eb] text-[17px]" },
       { name: "GA4", style: "font-extrabold text-[#e37400] text-[17px]" },
       { name: "Tag Manager", style: "font-semibold text-[#246fdb] text-[15px]" },
@@ -115,7 +115,7 @@ export function IntegrationsStripSection() {
                   <Link
                     key={logo.name}
                     href={row.href}
-                    className="inline-flex h-[48px] items-center justify-center rounded-[6px] border border-[#dee0e3]/80 bg-white px-5 transition-all hover:border-[#266df0]/40 hover:shadow-xs"
+                    className="inline-flex h-[48px] items-center justify-center rounded-full border border-[#D9D9DD]/80 bg-white px-5 transition-all hover:border-[#D91842]/40 hover:shadow-xs"
                   >
                     <span className={logo.style}>{logo.name}</span>
                   </Link>

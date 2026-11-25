@@ -73,7 +73,7 @@ export function FaqSection() {
   const isVi = lang === "vi";
   const { openDemoModal } = useUiStore();
 
-  // Exact match to live Ordering.co: Q5 ("Is the source code available?") expanded by default
+  // Exact match to live OPERO: Q5 ("Is the source code available?") expanded by default
   const [openIds, setOpenIds] = useState<Record<string, boolean>>({ q5: true });
 
   const toggle = (id: string) => {

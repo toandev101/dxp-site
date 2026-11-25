@@ -177,7 +177,7 @@ export function PosPageView() {
             <button
               type="button"
               onClick={() => openDemoModal("Request free direct POS connection")}
-              className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
+              className="inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
             >
               Request a free direct connection
             </button>
@@ -195,7 +195,7 @@ export function PosPageView() {
                 }}
                 placeholder="Search your POS"
                 aria-label="Search your POS"
-                className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-10 pr-3.5 text-[14px] text-[var(--od-text)] placeholder:text-[var(--od-text-muted)] focus:border-[#266df0] focus:outline-none"
+                className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-10 pr-3.5 text-[14px] text-[var(--od-text)] placeholder:text-[var(--od-text-muted)] focus:border-[#D91842] focus:outline-none"
               />
             </div>
             <span className="font-mono text-[12px] text-[var(--od-text-muted)]">
@@ -209,7 +209,7 @@ export function PosPageView() {
                 key={pos.id}
                 type="button"
                 onClick={() => openDemoModal(`${pos.name} POS via ${pos.via}`)}
-                className="group rounded-[8px] border border-[var(--od-border)] bg-[var(--od-bg)] p-4 text-left transition-colors hover:border-[#266df0] cursor-pointer"
+                className="group rounded-[8px] border border-[var(--od-border)] bg-[var(--od-bg)] p-4 text-left transition-colors hover:border-[#D91842] cursor-pointer"
               >
                 <p className="text-[14.5px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                   {pos.name}
@@ -307,14 +307,14 @@ export function PosPageView() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/products#extend"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
               >
                 Explore developer docs
               </Link>
               <button
                 type="button"
                 onClick={() => openDemoModal("Custom POS integration inquiry")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
               >
                 Talk to {BRAND}
               </button>

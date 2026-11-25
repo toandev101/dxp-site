@@ -240,7 +240,7 @@ export function PlatformOverviewView() {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO (Grid + bottom-right blue glow, no right aside) */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -251,7 +251,7 @@ export function PlatformOverviewView() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-36 h-[560px] w-[680px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -261,7 +261,7 @@ export function PlatformOverviewView() {
               Plan the parts of ordering that need to work together.
             </h1>
 
-            <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+            <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
               Explore customer ordering surfaces, the work behind an order and the systems your team needs to evaluate.
               The right configuration depends on the channels, locations and partners selected for your project.
             </p>
@@ -269,19 +269,19 @@ export function PlatformOverviewView() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Book a demo
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Talk to {BRAND}
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#c4c6ca]">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#A9A8AF]">
               <span>Customer surfaces</span>
               <span>Operational workflows</span>
               <span>Integration planning</span>
@@ -374,7 +374,7 @@ export function PlatformOverviewView() {
                     {row.checks.map((checked, idx) => (
                       <td key={MATRIX_HEADERS[idx]} className="px-3.5 py-4 text-center">
                         {checked ? (
-                          <span className="inline-flex items-center justify-center text-[#266df0]" title="Discuss this topic">
+                          <span className="inline-flex items-center justify-center text-[#D91842]" title="Discuss this topic">
                             <Check className="h-4 w-4" strokeWidth={2.25} aria-hidden="true" />
                             <span className="sr-only">Discuss this topic</span>
                           </span>
@@ -425,7 +425,7 @@ export function PlatformOverviewView() {
                     className={cn(
                       "rounded-[8px] border px-3 py-3 text-center text-[13px] font-semibold",
                       idx === 0
-                        ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
+                        ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
                         : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)]"
                     )}
                   >
@@ -463,12 +463,12 @@ export function PlatformOverviewView() {
       {/* 8. CLOSING DARK CTA BAND */}
       <section className="py-12 lg:py-16">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -476,7 +476,7 @@ export function PlatformOverviewView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Map the platform around your operation.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Use a demo to identify the customer surfaces, operating workflows and connections that should be
                 validated for your project.
               </p>
@@ -485,13 +485,13 @@ export function PlatformOverviewView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Book a demo
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Talk to {BRAND}
               </Link>

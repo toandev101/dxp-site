@@ -47,12 +47,12 @@ export function BlogCoverArt({
 }) {
   if (variant === "ai" && large) {
     return (
-      <div className="relative flex h-full min-h-[260px] w-full flex-col justify-between overflow-hidden rounded-[10px] border border-[#23252a] bg-[#0b0c0d] p-6 sm:p-8 text-white">
+      <div className="relative flex h-full min-h-[260px] w-full flex-col justify-between overflow-hidden rounded-[10px] border border-[#23252a] bg-[#111013] p-6 sm:p-8 text-white">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-16 -bottom-20 h-[340px] w-[380px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.36), transparent)",
+            background: "none",
           }}
         />
         <div
@@ -66,11 +66,11 @@ export function BlogCoverArt({
         />
 
         <div className="relative z-10 flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#266df0]/45 bg-[#266df0]/15 px-3 py-1 font-mono text-[11px] font-semibold text-[#92b5ff]">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D91842]/45 bg-[#D91842]/15 px-3 py-1 font-mono text-[11px] font-semibold text-[#F9D0D8]">
             <Sparkles className="h-3 w-3" />
             {badge || "Research Report"}
           </span>
-          <span className="font-mono text-[11px] text-[#989aa0]">ChatGPT · Gemini · Perplexity</span>
+          <span className="font-mono text-[11px] text-[#9A99A1]">ChatGPT · Gemini · Perplexity</span>
         </div>
 
         {/* Visual AI Engine & Search Pill Graphic */}
@@ -82,7 +82,7 @@ export function BlogCoverArt({
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[12px] font-semibold",
                   i === 0
-                    ? "border-[#266df0] bg-[#266df0] text-white"
+                    ? "border-[#D91842] bg-[#D91842] text-white"
                     : "border-white/15 bg-white/8 text-[#e4e6ea]"
                 )}
               >
@@ -92,9 +92,9 @@ export function BlogCoverArt({
             ))}
           </div>
 
-          <div className="flex items-center justify-between rounded-full border border-white/15 bg-white/8 px-4 py-2.5 text-[12.5px] text-[#c4c6ca] backdrop-blur-xs">
+          <div className="flex items-center justify-between rounded-full border border-white/15 bg-white/8 px-4 py-2.5 text-[12.5px] text-[#A9A8AF] backdrop-blur-xs">
             <span className="truncate font-mono">Best multi-location ordering brand near me...</span>
-            <span className="ml-3 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-white">
+            <span className="ml-3 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-white">
               <Search className="h-3.5 w-3.5" />
             </span>
           </div>
@@ -104,15 +104,15 @@ export function BlogCoverArt({
         <div className="relative z-10 grid grid-cols-3 gap-2.5 border-t border-white/10 pt-4 text-left">
           <div>
             <p className="text-[20px] font-bold text-white">80%</p>
-            <p className="font-mono text-[10.5px] text-[#989aa0]">Cited at least once</p>
+            <p className="font-mono text-[10.5px] text-[#9A99A1]">Cited at least once</p>
           </div>
           <div>
-            <p className="text-[20px] font-bold text-[#639bff]">15%</p>
-            <p className="font-mono text-[10.5px] text-[#989aa0]">#1 owned domain</p>
+            <p className="text-[20px] font-bold text-[#F9D0D8]">15%</p>
+            <p className="font-mono text-[10.5px] text-[#9A99A1]">#1 owned domain</p>
           </div>
           <div>
             <p className="text-[20px] font-bold text-white">20%</p>
-            <p className="font-mono text-[10.5px] text-[#989aa0]">Not cited at all</p>
+            <p className="font-mono text-[10.5px] text-[#9A99A1]">Not cited at all</p>
           </div>
         </div>
       </div>
@@ -122,30 +122,30 @@ export function BlogCoverArt({
   const config = {
     ai: {
       icon: Sparkles,
-      bg: "bg-[#0b0c0d] text-white",
-      accent: "text-[#639bff]",
-      chipBg: "border-[#266df0]/40 bg-[#266df0]/15 text-[#92b5ff]",
+      bg: "bg-[#111013] text-white",
+      accent: "text-[#F9D0D8]",
+      chipBg: "border-[#D91842]/40 bg-[#D91842]/15 text-[#F9D0D8]",
       meta: "AI Search · Citations",
     },
     franchise: {
       icon: Store,
-      bg: "bg-[#0e1526] text-white",
-      accent: "text-[#92b5ff]",
-      chipBg: "border-[#266df0]/40 bg-[#266df0]/20 text-[#92b5ff]",
+      bg: "bg-[#241218] text-white",
+      accent: "text-[#F9D0D8]",
+      chipBg: "border-[#D91842]/40 bg-[#D91842]/20 text-[#F9D0D8]",
       meta: "Multi-location · Scale",
     },
     local: {
       icon: MapPin,
       bg: "bg-[#14161a] text-white",
-      accent: "text-[#639bff]",
+      accent: "text-[#F9D0D8]",
       chipBg: "border-white/15 bg-white/10 text-[#d6d8dc]",
       meta: "Local SEO · Listings",
     },
     analytics: {
       icon: BarChart3,
       bg: "bg-[#111521] text-white",
-      accent: "text-[#34d399]",
-      chipBg: "border-[#34d399]/35 bg-[#10b981]/15 text-[#6ee7b7]",
+      accent: "text-[#7BC143]",
+      chipBg: "border-[#34d399]/35 bg-[#5E9B2E]/15 text-[#6ee7b7]",
       meta: "Benchmarks · Attribution",
     },
     reputation: {
@@ -158,7 +158,7 @@ export function BlogCoverArt({
     operations: {
       icon: Globe,
       bg: "bg-[#0f131a] text-white",
-      accent: "text-[#639bff]",
+      accent: "text-[#F9D0D8]",
       chipBg: "border-white/15 bg-white/10 text-[#d6d8dc]",
       meta: "Operations · Accuracy",
     },
@@ -177,7 +177,7 @@ export function BlogCoverArt({
         aria-hidden="true"
         className="pointer-events-none absolute -right-10 -bottom-12 h-40 w-44"
         style={{
-          background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+          background: "none",
         }}
       />
       <div className="relative z-10 flex items-center justify-between gap-2">
@@ -188,11 +188,11 @@ export function BlogCoverArt({
       </div>
 
       <div className="relative z-10 flex items-end justify-between gap-3">
-        <span className="font-mono text-[11px] text-[#989aa0]">{config.meta}</span>
+        <span className="font-mono text-[11px] text-[#9A99A1]">{config.meta}</span>
         <div className="flex items-end gap-1" aria-hidden="true">
           <span className="h-3 w-1.5 rounded-sm bg-white/20" />
           <span className="h-5 w-1.5 rounded-sm bg-white/35" />
-          <span className="h-7 w-1.5 rounded-sm bg-[#266df0]" />
+          <span className="h-7 w-1.5 rounded-sm bg-[#D91842]" />
           <span className="h-4 w-1.5 rounded-sm bg-white/25" />
         </div>
       </div>
@@ -286,7 +286,7 @@ export function BlogHubView() {
 
             <div className="lg:col-span-6 lg:pl-2">
               <div className="flex flex-wrap items-center gap-2.5 font-mono text-[12px]">
-                <span className="rounded-full border border-[#266df0]/30 bg-[var(--od-action-soft)] px-2.5 py-0.5 font-semibold text-[var(--od-action-content)]">
+                <span className="rounded-full border border-[#D91842]/30 bg-[var(--od-action-soft)] px-2.5 py-0.5 font-semibold text-[var(--od-action-content)]">
                   {LEAD_FEATURED_POST.category}
                 </span>
                 <span className="text-[var(--od-text-muted)]">{LEAD_FEATURED_POST.readTime}</span>
@@ -308,7 +308,7 @@ export function BlogHubView() {
               {/* Author & Share Row */}
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--od-border)] pt-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b0c0d] font-mono text-[12px] font-bold text-white">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111013] font-mono text-[12px] font-bold text-white">
                     AM
                   </span>
                   <div>
@@ -325,12 +325,12 @@ export function BlogHubView() {
                     aria-label="Copy article link"
                     className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-surface-subtle)] px-3 text-[12px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
                   >
-                    {copiedLead ? <Check className="h-3.5 w-3.5 text-[#16a34a]" /> : <Copy className="h-3.5 w-3.5" />}
+                    {copiedLead ? <Check className="h-3.5 w-3.5 text-[#3F7A1C]" /> : <Copy className="h-3.5 w-3.5" />}
                     <span>{copiedLead ? "Copied" : "Copy link"}</span>
                   </button>
                   <Link
                     href="/blog/state-of-ai-search"
-                    className="inline-flex h-8 items-center gap-1 rounded-full bg-[#266df0] px-3.5 text-[12px] font-semibold text-white hover:bg-[#1f5fd1]"
+                    className="inline-flex h-8 items-center gap-1 rounded-full bg-[#D91842] px-3.5 text-[12px] font-semibold text-white hover:bg-[#B8123A]"
                   >
                     <span>Read report</span>
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -343,7 +343,7 @@ export function BlogHubView() {
           {/* 2. INLINE NEWSLETTER BANNER */}
           <div className="mt-8 rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] px-6 py-7 sm:px-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-3.5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] border border-[var(--od-border)] bg-[var(--od-bg)] text-[#266df0]">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[8px] border border-[var(--od-border)] bg-[var(--od-bg)] text-[#D91842]">
                 <Mail className="h-5 w-5" />
               </span>
               <div>
@@ -357,7 +357,7 @@ export function BlogHubView() {
             </div>
 
             {newsletterDone ? (
-              <div className="inline-flex items-center gap-2 rounded-[8px] border border-[#16a34a]/30 bg-[#16a34a]/10 px-4 py-2.5 text-[14px] font-semibold text-[#15803d]">
+              <div className="inline-flex items-center gap-2 rounded-[8px] border border-[#16a34a]/30 bg-[#5E9B2E]/10 px-4 py-2.5 text-[14px] font-semibold text-[#15803d]">
                 <Check className="h-4 w-4" />
                 <span>Subscribed — check your inbox for our latest report.</span>
               </div>
@@ -370,11 +370,11 @@ export function BlogHubView() {
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="Enter your email"
                   aria-label="Enter your email"
-                  className="h-[44px] flex-1 rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3.5 text-[14px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                  className="h-[44px] flex-1 rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3.5 text-[14px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                 />
                 <button
                   type="submit"
-                  className="h-[44px] shrink-0 rounded-[6px] bg-[#0b0c0d] px-6 text-[13px] font-semibold uppercase tracking-[0.06em] text-white transition-colors hover:bg-[#266df0] cursor-pointer"
+                  className="h-[44px] shrink-0 rounded-full bg-[#111013] px-6 text-[13px] font-semibold uppercase tracking-[0.06em] text-white transition-colors hover:bg-[#D91842] cursor-pointer"
                 >
                   Subscribe
                 </button>
@@ -453,7 +453,7 @@ export function BlogHubView() {
                   }}
                   placeholder={`Search ${BRAND} Blog`}
                   aria-label="Search blog"
-                  className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                  className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                 />
               </div>
 
@@ -463,7 +463,7 @@ export function BlogHubView() {
                   type="button"
                   onClick={() => setCatDropdownOpen((v) => !v)}
                   aria-expanded={catDropdownOpen}
-                  className="flex h-[44px] w-full sm:w-[230px] items-center justify-between gap-2 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3.5 text-[14px] font-medium text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
+                  className="flex h-[44px] w-full sm:w-[230px] items-center justify-between gap-2 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-3.5 text-[14px] font-medium text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
                 >
                   <span className="truncate">{selectedCategory === "All" ? "Category" : selectedCategory}</span>
                   <ChevronDown
@@ -481,7 +481,7 @@ export function BlogHubView() {
                       value={catFilterText}
                       onChange={(e) => setCatFilterText(e.target.value)}
                       placeholder="Search categories..."
-                      className="h-[36px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] px-3 text-[13px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                      className="h-[36px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] px-3 text-[13px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                     />
                     <ul className="mt-2 max-h-[260px] overflow-y-auto divide-y divide-[var(--od-border)]/50 text-[13px]">
                       <li>
@@ -605,7 +605,7 @@ export function BlogHubView() {
                   className={cn(
                     "inline-flex h-10 w-10 items-center justify-center rounded-full border text-[14px] font-semibold transition-colors cursor-pointer",
                     safePage === num
-                      ? "border-[#0b0c0d] bg-[#0b0c0d] text-white"
+                      ? "border-[#151417] bg-[#111013] text-white"
                       : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                   )}
                 >
@@ -630,21 +630,21 @@ export function BlogHubView() {
       {/* 5. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
             <div className="relative z-10 max-w-xl">
-              <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#92b5ff]">Multi-location AI &amp; ordering</p>
+              <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#F9D0D8]">Multi-location AI &amp; ordering</p>
               <h2 className="mt-3 text-[32px] sm:text-[42px] font-bold tracking-[-0.035em] leading-[1.08] text-white">
                 Built for multi-location brands winning AI discovery.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 See how {BRAND} keeps menus, locations, ordering channels, and AI agents structured from one connected
                 platform.
               </p>
@@ -653,13 +653,13 @@ export function BlogHubView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Watch demo
               </Link>
               <Link
                 href="/blog/state-of-ai-search"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Read State of AI Search
               </Link>
@@ -682,7 +682,7 @@ export function BlogHubView() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
-              <span className="inline-block rounded-full border border-[#266df0]/30 bg-[var(--od-action-soft)] px-3 py-1 font-mono text-[11px] font-semibold text-[var(--od-action-content)]">
+              <span className="inline-block rounded-full border border-[#D91842]/30 bg-[var(--od-action-soft)] px-3 py-1 font-mono text-[11px] font-semibold text-[var(--od-action-content)]">
                 {previewPost.category}
               </span>
               <button
@@ -707,7 +707,7 @@ export function BlogHubView() {
               <Link
                 href="/blog/state-of-ai-search"
                 onClick={() => setPreviewPost(null)}
-                className="inline-flex min-h-[42px] items-center gap-1.5 rounded-[6px] bg-[#266df0] px-4 text-[14px] font-semibold text-white hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[42px] items-center gap-1.5 rounded-full bg-[#D91842] px-4 text-[14px] font-semibold text-white hover:bg-[#B8123A]"
               >
                 <span>Read full State of AI Search 2026 report</span>
                 <ArrowRight className="h-4 w-4" />

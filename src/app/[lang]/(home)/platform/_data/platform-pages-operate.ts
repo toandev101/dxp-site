@@ -469,7 +469,7 @@ export const DASHBOARD_SPEC: PlatformPageSpec = {
   template: "catalog",
   metaTitle: "Ordering and Delivery Management Dashboard",
   metaDescription:
-    "Configure stores, menus, orders, delivery, marketing, reports, and user roles from the Ordering.co Dashboard, in one workspace.",
+    "Configure stores, menus, orders, delivery, marketing, reports, and user roles from the OPERO Dashboard, in one workspace.",
   hero: {
     breadcrumbs: [
       { label: "Platform", href: "/products" },

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>OPERO App Icon</title>
+  <rect width="256" height="256" rx="59" fill="#D91842" />
+  <g transform="translate(32 32) scale(0.75)">
+    <path fill="#FFFFFF" d="M218.21 95.17A96 96 0 1 1 160.84 37.79L147.15 75.37A56 56 0 1 0 180.63 108.85Z" />
+    <circle cx="181.74" cy="74.26" r="14" fill="#111013" />
+  </g>
+</svg>

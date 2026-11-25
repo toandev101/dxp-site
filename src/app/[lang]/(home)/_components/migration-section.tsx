@@ -60,11 +60,11 @@ export function MigrationSection() {
                 href={row.href}
                 className="group grid grid-cols-[44px_1fr] items-start gap-4 border-t border-[var(--od-border)] py-7 transition-colors hover:bg-[var(--od-surface-subtle)]/60 sm:px-3 sm:-mx-3 rounded-lg"
               >
-                <Icon className="h-[28px] w-[28px] text-[#266df0] mt-0.5" strokeWidth={1.6} />
+                <Icon className="h-[28px] w-[28px] text-[#D91842] mt-0.5" strokeWidth={1.6} />
                 <div>
                   <h3 className="inline-flex items-center gap-2 text-[20px] sm:text-[22px] font-bold tracking-[-0.025em] text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                     <span>{isVi ? row.titleVi : row.titleEn}</span>
-                    <ArrowRight className="h-4 w-4 text-[#266df0] transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 text-[#D91842] transition-transform group-hover:translate-x-1" />
                   </h3>
                   <p className="mt-1.5 text-[15px] leading-[1.6] text-[var(--od-text-muted)]">
                     {isVi ? row.descVi : row.descEn}

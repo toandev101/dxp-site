@@ -66,7 +66,7 @@ export function ControlArchitectureSection() {
   ];
 
   return (
-    <section id="control" className="bg-[#17181a] text-white py-20 lg:py-24">
+    <section id="control" className="bg-[#1B1A1F] text-white py-20 lg:py-24">
       <Container>
         {/* Header Block */}
         <div className="max-w-2xl">
@@ -85,7 +85,7 @@ export function ControlArchitectureSection() {
               </>
             )}
           </h2>
-          <p className="mt-4 text-[16px] sm:text-[17.5px] leading-[1.6] text-[#c4c6ca]">
+          <p className="mt-4 text-[16px] sm:text-[17.5px] leading-[1.6] text-[#A9A8AF]">
             {isVi
               ? "Giữ toàn quyền kiểm soát thương hiệu, dữ liệu và quan hệ khách hàng. Chọn mô hình triển khai phù hợp nhất với vận hành của bạn."
               : "Keep control of your brand, data, and customer relationships. Choose the setup that fits your operation."}
@@ -93,7 +93,7 @@ export function ControlArchitectureSection() {
           <div className="mt-5">
             <Link
               href="/developers"
-              className="inline-flex items-center gap-2 text-[14.4px] font-semibold text-[#92b5ff] hover:underline"
+              className="inline-flex items-center gap-2 text-[14.4px] font-semibold text-[#F9D0D8] hover:underline"
             >
               <span>{isVi ? "Khám phá các tùy chọn" : "Explore your options"}</span>
               <ArrowRight className="h-4 w-4" />
@@ -105,7 +105,7 @@ export function ControlArchitectureSection() {
         <div className="mt-16 grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_32px_1.15fr_32px_1fr] lg:gap-4">
           {/* Left Node: Your experience */}
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center gap-5 text-[#92b5ff]">
+            <div className="flex items-center gap-5 text-[#F9D0D8]">
               <Globe className="h-6 w-6" strokeWidth={1.6} />
               <Smartphone className="h-6 w-6" strokeWidth={1.6} />
               <Store className="h-6 w-6" strokeWidth={1.6} />
@@ -114,31 +114,31 @@ export function ControlArchitectureSection() {
             <h3 className="mt-4 text-[18px] font-bold text-white">
               {isVi ? "Trải nghiệm của bạn" : "Your experience"}
             </h3>
-            <p className="mt-1.5 text-[13.5px] text-[#989aa0]">Website · App · Marketplace · AI</p>
+            <p className="mt-1.5 text-[13.5px] text-[#9A99A1]">Website · App · Marketplace · AI</p>
           </div>
 
           {/* Arrow 1 */}
           <div className="flex justify-center">
-            <ArrowRight className="h-5 w-5 text-[#92b5ff] rotate-90 lg:rotate-0" />
+            <ArrowRight className="h-5 w-5 text-[#F9D0D8] rotate-90 lg:rotate-0" />
           </div>
 
           {/* Center Bordered Box */}
-          <div className="rounded-[10px] border border-[#34363a] bg-[#1c1d20]/60 px-6 py-9 text-center flex flex-col items-center">
+          <div className="rounded-[10px] border border-[#2A2A2E] bg-[#1c1d20]/60 px-6 py-9 text-center flex flex-col items-center">
             <BrandLogo forceDark size="lg" />
-            <p className="mt-3 text-[14px] text-[#c4c6ca]">
+            <p className="mt-3 text-[14px] text-[#A9A8AF]">
               {isVi ? "Nền tảng kết nối của bạn" : "Your connected foundation"}
             </p>
-            <p className="mt-2 text-[13px] font-medium text-[#92b5ff]">APIs, webhooks, and MCP</p>
+            <p className="mt-2 text-[13px] font-medium text-[#F9D0D8]">APIs, webhooks, and MCP</p>
           </div>
 
           {/* Arrow 2 */}
           <div className="flex justify-center">
-            <ArrowRight className="h-5 w-5 text-[#92b5ff] rotate-90 lg:rotate-0" />
+            <ArrowRight className="h-5 w-5 text-[#F9D0D8] rotate-90 lg:rotate-0" />
           </div>
 
           {/* Right Node: Your connected systems */}
           <div className="flex flex-col items-center text-center">
-            <div className="flex items-center gap-5 text-[#92b5ff]">
+            <div className="flex items-center gap-5 text-[#F9D0D8]">
               <Monitor className="h-6 w-6" strokeWidth={1.6} />
               <CreditCard className="h-6 w-6" strokeWidth={1.6} />
               <Truck className="h-6 w-6" strokeWidth={1.6} />
@@ -147,12 +147,12 @@ export function ControlArchitectureSection() {
             <h3 className="mt-4 text-[18px] font-bold text-white">
               {isVi ? "Hệ thống kết nối của bạn" : "Your connected systems"}
             </h3>
-            <p className="mt-1.5 text-[13.5px] text-[#989aa0]">POS · Payments · Delivery · CRM</p>
+            <p className="mt-1.5 text-[13.5px] text-[#9A99A1]">POS · Payments · Delivery · CRM</p>
           </div>
         </div>
 
         {/* Horizontal Divider */}
-        <div className="my-14 border-t border-[#34363a]" />
+        <div className="my-14 border-t border-[#2A2A2E]" />
 
         {/* 2x2 Options Grid */}
         <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
@@ -161,12 +161,12 @@ export function ControlArchitectureSection() {
               <h3 className="text-[22px] font-bold tracking-[-0.025em] text-white">
                 {isVi ? opt.titleVi : opt.titleEn}
               </h3>
-              <p className="mt-2.5 text-[15px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-2.5 text-[15px] leading-[1.6] text-[#A9A8AF]">
                 {isVi ? opt.descVi : opt.descEn}
               </p>
               <Link
                 href={opt.href}
-                className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#92b5ff] hover:underline"
+                className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#F9D0D8] hover:underline"
               >
                 <span>{isVi ? opt.ctaVi : opt.ctaEn}</span>
                 <ArrowRight className="h-3.5 w-3.5" />

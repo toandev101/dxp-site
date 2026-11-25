@@ -5,7 +5,7 @@ import { CustomersDirectoryView } from "./_components/customers-directory-view";
 export const metadata: Metadata = buildPageMetadata({
   title: "Customer stories",
   description:
-    "How restaurant groups, restaurant brands, and delivery businesses run ordering, delivery, and loyalty operations on Ordering.co.",
+    "How restaurant groups, restaurant brands, and delivery businesses run ordering, delivery, and loyalty operations on OPERO.",
   path: "/customers",
 });
 

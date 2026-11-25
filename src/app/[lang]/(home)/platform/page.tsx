@@ -5,7 +5,7 @@ import { PlatformOverviewView } from "./_components/platform-overview-view";
 export const metadata: Metadata = buildPageMetadata({
   title: "Platform overview",
   description:
-    "Explore the customer ordering surfaces, operations and integration questions that can be planned together with Ordering.co.",
+    "Explore the customer ordering surfaces, operations and integration questions that can be planned together with OPERO.",
   path: "/platform",
 });
 

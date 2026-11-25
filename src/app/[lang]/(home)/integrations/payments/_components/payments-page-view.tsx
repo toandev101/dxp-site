@@ -167,13 +167,13 @@ export function PaymentsPageView() {
             <button
               type="button"
               onClick={() => openDemoModal("Payment setup consultation")}
-              className="inline-flex min-h-[46px] shrink-0 items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+              className="inline-flex min-h-[46px] shrink-0 items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
             >
               Discuss payment setup
             </button>
           </div>
 
-          <div className="rounded-[12px] border border-[#266df0]/30 bg-[var(--od-action-soft)]/50 p-7 sm:p-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="rounded-[12px] border border-[#D91842]/30 bg-[var(--od-action-soft)]/50 p-7 sm:p-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="font-mono text-[11.5px] font-medium uppercase tracking-[0.08em] text-[var(--od-action-content)]">
                 Payment method implementation guarantee
@@ -185,7 +185,7 @@ export function PaymentsPageView() {
             <button
               type="button"
               onClick={() => openDemoModal("Request local payment method implementation")}
-              className="inline-flex min-h-[46px] shrink-0 items-center justify-center rounded-[6px] border border-[#266df0] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:bg-[#266df0] hover:text-white transition-colors cursor-pointer"
+              className="inline-flex min-h-[46px] shrink-0 items-center justify-center rounded-full border border-[#D91842] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:bg-[#D91842] hover:text-white transition-colors cursor-pointer"
             >
               Talk to {BRAND}
             </button>

@@ -97,7 +97,7 @@ export function CustomerBrandBadge({
     case "el-porton-mexico":
       return <span className="text-[11px] font-bold tracking-tight text-[#8c2d19]">El Portón</span>;
     case "foodplanet":
-      return <span className="text-[11px] font-extrabold tracking-tight text-[#16a34a]">Food Planet</span>;
+      return <span className="text-[11px] font-extrabold tracking-tight text-[#3F7A1C]">Food Planet</span>;
     case "gomamam":
       return <span className="text-[11.5px] font-black tracking-tight text-[#ea580c]">GoMamam</span>;
     case "gotchew":

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown, Menu, Moon, Search, Sun, X } from "lucide-react";
 
+import { OperoLockup } from "@/components/brand/opero-logo";
 import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
 import { LanguageSwitcher } from "@/components/common/language-switcher";
@@ -12,41 +13,28 @@ import { useUiStore } from "@/stores/ui-store";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
-type MegaKey = "platform" | "solutions" | "developers" | "resources";
+export type MegaKey = "platform" | "solutions" | "developers" | "resources";
 
-/** Exact Ordering.co multi-color segmented circular ring + clean wordmark */
+/** Official OPERO D01 "Orbit" Logo Lockup (BRAND.md §2) */
 export function BrandLogo({ forceDark = false, size = "md" }: { forceDark?: boolean; size?: "md" | "lg" }) {
   return (
-    <Link href="/" className="inline-flex items-center gap-2.5 group shrink-0">
-      <svg
-        viewBox="0 0 32 32"
-        className={cn(
-          "transition-transform duration-300 group-hover:rotate-12",
-          size === "lg" ? "h-9 w-9" : "h-7 w-7"
-        )}
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M 7.5 9.2 A 11 11 0 0 1 17.5 5.1" stroke="#10B981" strokeWidth="3.1" strokeLinecap="round" />
-        <path d="M 20.5 6 A 11 11 0 0 1 26.8 14.5" stroke="#266DF0" strokeWidth="3.1" strokeLinecap="round" />
-        <path d="M 26.4 18.8 A 11 11 0 0 1 18.8 26.6" stroke="#DB2777" strokeWidth="3.1" strokeLinecap="round" />
-        <path d="M 14.6 26.9 A 11 11 0 0 1 6.2 20.8" stroke="#F59E0B" strokeWidth="3.1" strokeLinecap="round" />
-        <path d="M 5.2 16.8 A 11 11 0 0 1 5.9 12.2" stroke="#22C55E" strokeWidth="3.1" strokeLinecap="round" />
-      </svg>
-      <span
-        className={cn(
-          "font-semibold tracking-[-0.025em]",
-          size === "lg" ? "text-[26px]" : "text-[19px]",
-          forceDark ? "text-white" : "text-[var(--od-text)]"
-        )}
-      >
-        {siteConfig.name}
-      </span>
+    <Link
+      href="/"
+      aria-label={siteConfig.name}
+      className={cn(
+        "inline-flex items-center shrink-0 py-1.5 transition-opacity duration-150 hover:opacity-90",
+        forceDark ? "text-white" : "text-[var(--od-text)]"
+      )}
+    >
+      <OperoLockup
+        variant={forceDark ? "dark" : "auto"}
+        className={size === "lg" ? "h-8 sm:h-9 w-auto" : "h-[26px] sm:h-[28px] w-auto"}
+      />
     </Link>
   );
 }
 
-const MEGA_MENUS: Record<
+export const MEGA_MENUS: Record<
   MegaKey,
   {
     columns: {
@@ -114,7 +102,7 @@ const MEGA_MENUS: Record<
         eyebrow: "04 · Extend",
         summary: "Build on top of the platform.",
         links: [
-          { label: "Ordering API", href: "/developers#api" },
+          { label: "OPERO API", href: "/developers#api" },
           { label: "API & MCP", href: "/developers" },
           { label: "SDKs & webhooks", href: "/developers#sdks" },
           { label: "White label", href: "/developers/white-label" },
@@ -274,7 +262,7 @@ const MEGA_MENUS: Record<
     promo: {
       eyebrow: "Guide",
       title: "52 scalable ordering business models",
-      description: "What you can launch on Ordering.co, from a single kitchen to a city-wide marketplace.",
+      description: `What you can launch on ${siteConfig.name}, from a single kitchen to a city-wide marketplace.`,
       cta: "Explore the guide",
       href: "/solutions/marketplaces",
     },
@@ -312,16 +300,16 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-30 w-full bg-[var(--od-bg)] border-b border-[var(--od-border)] transition-shadow duration-200",
-        scrolled && "shadow-[0_2px_14px_rgba(11,12,13,0.06)]"
+        "sticky top-0 z-30 w-full bg-[var(--canvas)] border-b transition-colors duration-150",
+        scrolled ? "border-[var(--line)]" : "border-[var(--line-soft)]"
       )}
       onMouseLeave={() => setOpenMega(null)}
     >
-      <Container className="flex h-[73px] items-center justify-between gap-4">
-        <div className="flex items-center gap-7">
+      <Container className="flex h-[68px] items-center justify-between gap-3">
+        <div className="flex items-center gap-4 2xl:gap-7 min-w-0">
           <BrandLogo />
 
-          {/* Desktop Primary Nav — exact 6 items from live Ordering.co */}
+          {/* Desktop Primary Nav */}
           <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-0.5">
             {navDropdowns.map((item) => {
               const isOpen = openMega === item.key;
@@ -332,15 +320,15 @@ export function Header() {
                   onMouseEnter={() => setOpenMega(item.key)}
                   onClick={() => setOpenMega(isOpen ? null : item.key)}
                   className={cn(
-                    "inline-flex items-center gap-1 rounded-md px-3 py-2 text-[14px] font-medium transition-colors cursor-pointer",
+                    "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-[13.5px] font-medium transition-colors duration-150 cursor-pointer",
                     isOpen
-                      ? "bg-[var(--od-surface-subtle)] text-[var(--od-action-content)]"
-                      : "text-[var(--od-text)] hover:text-[var(--od-action-content)]"
+                      ? "bg-[var(--od-surface-subtle)] text-[var(--od-text)]"
+                      : "text-[var(--od-text-secondary)] hover:text-[var(--od-text)] hover:bg-[var(--od-surface-subtle)]"
                   )}
                 >
                   <span>{isVi ? item.labelVi : item.labelEn}</span>
                   <ChevronDown
-                    className={cn("h-3.5 w-3.5 opacity-70 transition-transform duration-150", isOpen && "rotate-180")}
+                    className={cn("h-3.5 w-3.5 shrink-0 opacity-60 transition-transform duration-150", isOpen && "rotate-180")}
                   />
                 </button>
               );
@@ -349,7 +337,7 @@ export function Header() {
             <Link
               href="/customers"
               onMouseEnter={() => setOpenMega(null)}
-              className="rounded-md px-3 py-2 text-[14px] font-medium text-[var(--od-text)] transition-colors hover:text-[var(--od-action-content)]"
+              className="shrink-0 whitespace-nowrap rounded-full px-2.5 py-2 text-[13.5px] font-medium text-[var(--od-text-secondary)] transition-colors duration-150 hover:text-[var(--od-text)] hover:bg-[var(--od-surface-subtle)]"
             >
               {isVi ? "Khách hàng" : "Customers"}
             </Link>
@@ -357,38 +345,38 @@ export function Header() {
             <Link
               href="/pricing"
               onMouseEnter={() => setOpenMega(null)}
-              className="rounded-md px-3 py-2 text-[14px] font-medium text-[var(--od-text)] transition-colors hover:text-[var(--od-action-content)]"
+              className="shrink-0 whitespace-nowrap rounded-full px-2.5 py-2 text-[13.5px] font-medium text-[var(--od-text-secondary)] transition-colors duration-150 hover:text-[var(--od-text)] hover:bg-[var(--od-surface-subtle)]"
             >
               {isVi ? "Bảng giá" : "Pricing"}
             </Link>
           </nav>
         </div>
 
-        {/* Desktop Right Controls — exact 5 controls from live Ordering.co */}
-        <div className="hidden lg:flex items-center gap-2">
-          <LanguageSwitcher className="h-[44px] min-w-[44px] justify-center rounded-[6px] border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] text-[14px] font-semibold px-3" />
+        {/* Desktop Right Controls (OPERO Pill System) */}
+        <div className="hidden xl:flex shrink-0 items-center gap-1.5">
+          <LanguageSwitcher className="h-[38px] min-w-[38px] justify-center rounded-full border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] text-[13px] font-semibold px-2.5 shrink-0 whitespace-nowrap" />
 
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] cursor-pointer"
+            className="inline-flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[var(--od-surface-subtle)] text-[var(--od-text)] transition-colors duration-150 hover:bg-[var(--od-border-soft)] cursor-pointer"
           >
-            {theme === "dark" ? <Sun className="h-[18px] w-[18px]" /> : <Moon className="h-[18px] w-[18px]" />}
+            {theme === "dark" ? <Sun className="h-[16px] w-[16px]" /> : <Moon className="h-[16px] w-[16px]" />}
           </button>
 
           <button
             type="button"
             onClick={() => setSearchModalOpen(true)}
             aria-label="Search"
-            className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] cursor-pointer"
+            className="inline-flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[var(--od-surface-subtle)] text-[var(--od-text)] transition-colors duration-150 hover:bg-[var(--od-border-soft)] cursor-pointer"
           >
-            <Search className="h-[18px] w-[18px]" />
+            <Search className="h-[16px] w-[16px]" />
           </button>
 
           <Link
             href="/contact"
-            className="inline-flex h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] whitespace-nowrap"
+            className="inline-flex h-[38px] shrink-0 items-center justify-center rounded-full bg-[var(--od-surface-subtle)] px-3.5 text-[13.5px] font-semibold text-[var(--od-text)] transition-colors duration-150 hover:bg-[var(--od-border-soft)] whitespace-nowrap"
           >
             {isVi ? `Liên hệ ${siteConfig.name}` : `Talk to ${siteConfig.name}`}
           </Link>
@@ -396,27 +384,28 @@ export function Header() {
           <button
             type="button"
             onClick={() => openDemoModal("header")}
-            className="inline-flex h-[44px] items-center justify-center rounded-[6px] bg-[#266df0] px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] whitespace-nowrap cursor-pointer"
+            className="inline-flex h-[38px] shrink-0 items-center justify-center rounded-full bg-[#D91842] px-4 text-[13.5px] font-semibold text-white transition-[background-color,transform] duration-150 hover:bg-[#B8123A] active:bg-[#94102F] active:scale-[0.98] whitespace-nowrap cursor-pointer"
           >
             {isVi ? "Đặt lịch demo" : "Book a demo"}
           </button>
         </div>
 
-        {/* Mobile Right Controls — exact [Search] + [≡ Menu] */}
-        <div className="flex lg:hidden items-center gap-2">
+        {/* Mobile & Tablet Right Controls — [Search] + [≡ / ✕ Menu] */}
+        <div className="flex xl:hidden items-center gap-2">
           <button
             type="button"
             onClick={() => setSearchModalOpen(true)}
             aria-label="Search"
-            className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)]"
+            className="inline-flex h-[42px] w-[42px] items-center justify-center rounded-full border border-[var(--line)] bg-[var(--canvas)] text-[var(--ink)] transition-colors duration-150 hover:bg-[var(--canvas-soft)] cursor-pointer"
           >
             <Search className="h-[18px] w-[18px]" />
           </button>
           <button
             type="button"
             aria-label="Toggle Menu"
+            aria-expanded={isMobileMenuOpen}
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="inline-flex h-[44px] items-center gap-2 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3.5 text-[14px] font-medium text-[var(--od-text)]"
+            className="inline-flex h-[42px] items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--canvas)] px-4 text-[14px] font-medium text-[var(--ink)] transition-colors duration-150 hover:bg-[var(--canvas-soft)] cursor-pointer"
           >
             {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             <span>Menu</span>
@@ -424,9 +413,9 @@ export function Header() {
         </div>
       </Container>
 
-      {/* Full-Width Desktop Mega-Menu Panel */}
+      {/* Full-Width Desktop Mega-Menu Panel (floating layer elevation per OPERO UI Kit) */}
       {openMega && activeMega && (
-        <div className="hidden xl:block absolute inset-x-0 top-[73px] z-40 border-b border-[var(--od-border)] bg-[var(--od-bg)] shadow-[0_24px_50px_-15px_rgba(11,12,13,0.16)]">
+        <div className="hidden xl:block absolute inset-x-0 top-[68px] z-40 border-b border-[var(--line)] bg-[var(--canvas)] shadow-[var(--shadow)]">
           <Container className="py-7">
             <div className="grid grid-cols-12 gap-7">
               {/* Link Columns */}
@@ -438,7 +427,7 @@ export function Header() {
               >
                 {activeMega.columns.map((col) => (
                   <div key={col.eyebrow}>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--od-action-content)]">
+                    <p className="text-[12px] font-semibold text-[var(--od-action-content)]">
                       {col.eyebrow}
                     </p>
                     <p className="mt-1 text-xs text-[var(--od-text-muted)]">{col.summary}</p>
@@ -448,11 +437,11 @@ export function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setOpenMega(null)}
-                            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-[var(--od-text)] hover:text-[var(--od-action-content)] transition-colors"
+                            className="inline-flex items-center gap-2 text-[13.5px] font-medium text-[var(--od-text)] hover:text-[var(--od-action-content)] transition-colors duration-150"
                           >
                             <span>{item.label}</span>
                             {item.badge && (
-                              <span className="rounded-full bg-[#edf3ff] px-2 py-0.5 text-[10px] font-bold text-[#1f5fd1]">
+                              <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
                                 {item.badge}
                               </span>
                             )}
@@ -465,9 +454,9 @@ export function Header() {
               </div>
 
               {/* Right Promo Card */}
-              <div className="col-span-3 rounded-[10px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-4 flex flex-col justify-between">
+              <div className="col-span-3 rounded-[20px] bg-[var(--od-surface-subtle)] p-5 flex flex-col justify-between">
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--od-text-muted)]">
+                  <p className="text-[12px] font-semibold text-[var(--od-text-muted)]">
                     {activeMega.promo.eyebrow}
                   </p>
                   <p className="mt-1.5 text-base font-bold text-[var(--od-text)]">{activeMega.promo.title}</p>
@@ -477,17 +466,17 @@ export function Header() {
 
                   {activeMega.promo.chat && (
                     <div className="mt-3 space-y-2 text-[11px]">
-                      <div className="ml-auto max-w-[90%] rounded-xl rounded-tr-sm bg-[#266df0] px-2.5 py-1.5 text-white">
+                      <div className="ml-auto max-w-[90%] rounded-2xl rounded-tr-sm bg-[#D91842] px-3 py-1.5 text-white">
                         {activeMega.promo.chat.q}
                       </div>
-                      <div className="max-w-[94%] rounded-xl rounded-tl-sm border border-[var(--od-border)] bg-[var(--od-bg)] px-2.5 py-1.5 text-[var(--od-text)]">
+                      <div className="max-w-[94%] rounded-2xl rounded-tl-sm border border-[var(--od-border-soft)] bg-[var(--od-bg)] px-3 py-1.5 text-[var(--od-text)]">
                         {activeMega.promo.chat.a}
                       </div>
                     </div>
                   )}
 
                   {activeMega.promo.code && (
-                    <pre className="mt-3 overflow-x-auto rounded-lg bg-[#17181a] p-3 text-[10.5px] leading-relaxed font-mono text-blue-200">
+                    <pre className="mt-3 overflow-x-auto rounded-[12px] bg-[#111013] p-3 text-[10.5px] leading-relaxed font-mono text-[#F9D0D8]">
                       <code>{activeMega.promo.code}</code>
                     </pre>
                   )}
@@ -507,7 +496,7 @@ export function Header() {
             {/* Bottom Strip */}
             <div
               className={cn(
-                "mt-6 grid gap-4 border-t border-[var(--od-border)] pt-5",
+                "mt-6 grid gap-4 border-t border-[var(--od-border-soft)] pt-5",
                 activeMega.bottomStrip.length === 4 ? "grid-cols-4" : "grid-cols-3"
               )}
             >
@@ -516,7 +505,7 @@ export function Header() {
                   key={item.title}
                   href={item.href}
                   onClick={() => setOpenMega(null)}
-                  className="group rounded-lg p-2 -mx-2 hover:bg-[var(--od-surface-subtle)] transition-colors"
+                  className="group rounded-[12px] p-2.5 -mx-2 hover:bg-[var(--od-surface-subtle)] transition-colors duration-150"
                 >
                   <p className="text-[13px] font-semibold text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                     {item.title}

@@ -26,11 +26,11 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       onClick={toggleLanguage}
       aria-label="Switch language"
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-lg border border-c-border bg-white px-2.5 py-1.5 text-xs font-semibold text-c-base transition-colors hover:border-c-primary hover:text-c-primary",
+        "inline-flex items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-3 py-1.5 text-xs font-semibold text-[var(--od-text)] transition-colors duration-150 hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer",
         className
       )}
     >
-      <Globe className="h-3.5 w-3.5 text-c-primary" />
+      <Globe className="h-3.5 w-3.5 text-[#D91842]" />
       <span>{lang === "en" ? "EN" : "VI"}</span>
     </button>
   );

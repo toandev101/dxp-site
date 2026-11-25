@@ -116,13 +116,13 @@ export function DemoWalkthroughAndCta() {
       {/* SECTION 4: Closing Dark CTA Band */}
       <section className="bg-[var(--od-bg)] py-20 lg:py-28">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             {/* Right-side subtle blue radial glow */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -130,7 +130,7 @@ export function DemoWalkthroughAndCta() {
               <h2 className="text-[36px] sm:text-[48px] font-bold tracking-[-0.035em] leading-[1.05] text-white">
                 {isVi ? "Sẵn sàng trải nghiệm nền tảng của riêng bạn?" : "Ready to try your own platform?"}
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 {isVi
                   ? "Đặt lịch demo có hướng dẫn để rà soát sản phẩm và mô hình triển khai phù hợp cho doanh nghiệp bạn."
                   : "Book a guided demo to review the products and setup your operation needs."}
@@ -141,7 +141,7 @@ export function DemoWalkthroughAndCta() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Guided demo · 30 min")}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 {isVi ? "Đặt lịch demo" : "Book a demo"}
               </button>
@@ -149,7 +149,7 @@ export function DemoWalkthroughAndCta() {
               <button
                 type="button"
                 onClick={() => setChatOpen(true)}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
               >
                 {isVi ? `Trao đổi với ${siteConfig.name}` : `Talk to ${siteConfig.name}`}
               </button>

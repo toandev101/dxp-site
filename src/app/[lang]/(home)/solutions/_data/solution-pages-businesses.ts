@@ -196,7 +196,7 @@ export const RESTAURANTS_SPEC: SolutionPageSpec = {
         },
         {
           label: "Solutions",
-          title: "Migrate to Ordering.co",
+          title: "Migrate to OPERO",
           body: "Plan a move from an existing ordering provider.",
           href: "/#migration",
         },
@@ -626,7 +626,7 @@ export const ENTERPRISE_SPEC: SolutionPageSpec = {
         },
         {
           label: "Solutions",
-          title: "Migrate to Ordering.co",
+          title: "Migrate to OPERO",
           body: "Plan the decisions involved in moving from an existing provider.",
           href: "/#migration",
         },

@@ -221,7 +221,7 @@ export function PricingFeaturesAndMidCta() {
               type="button"
               onClick={() => setShowHighlights(!showHighlights)}
               aria-expanded={showHighlights}
-              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+              className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
             >
               <span>
                 {showHighlights
@@ -238,7 +238,7 @@ export function PricingFeaturesAndMidCta() {
             {!showHighlights && (
               <Link
                 href="/products"
-                className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                className="inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
               >
                 <span>{isVi ? "Xem tất cả tính năng" : "See all features"}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -291,7 +291,7 @@ export function PricingFeaturesAndMidCta() {
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[540px] w-[620px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.16), transparent)",
+                background: "none",
               }}
             />
 
@@ -312,14 +312,14 @@ export function PricingFeaturesAndMidCta() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Pricing Review · Request pricing")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 {isVi ? "Yêu cầu báo giá" : "Request pricing"}
               </button>
               <button
                 type="button"
                 onClick={() => openDemoModal("Pricing · 30 min")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
               >
                 {isVi ? "Đặt lịch demo" : "Book a demo"}
               </button>

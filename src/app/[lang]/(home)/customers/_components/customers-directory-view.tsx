@@ -42,19 +42,19 @@ function WowHomePreviewMockup() {
     <div
       role="img"
       aria-label="WOW+ home page, where guests choose how to order and pick one of Alsea's restaurant brands"
-      className="overflow-hidden rounded-[12px] border border-[var(--od-border)] bg-white shadow-[0_18px_48px_-20px_rgba(11,12,13,0.18)] text-[#0b0c0d]"
+      className="overflow-hidden rounded-[12px] border border-[var(--od-border)] bg-white shadow-[0_18px_48px_-20px_rgba(11,12,13,0.18)] text-[#151417]"
     >
       {/* Top Browser Bar */}
       <div className="flex items-center justify-between border-b border-[#e5e7eb] bg-[#f8f9fa] px-4 py-2.5 text-[11.5px]">
         <div className="flex items-center gap-2">
           <span className="font-extrabold tracking-tight text-[#005f86]">WOW+</span>
-          <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-white border border-[#e5e7eb] px-2.5 py-0.5 text-[10.5px] text-[#5b5e64]">
-            <MapPin className="h-3 w-3 text-[#266df0]" />
+          <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-white border border-[#e5e7eb] px-2.5 py-0.5 text-[10.5px] text-[#6E6D75]">
+            <MapPin className="h-3 w-3 text-[#D91842]" />
             Mexico City, CDMX
           </span>
         </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10.5px] text-[#5b5e64]">
-          <span className="rounded-full bg-[#edf3ff] px-2 py-0.5 font-semibold text-[#266df0]">Delivery</span>
+        <div className="flex items-center gap-1.5 font-mono text-[10.5px] text-[#6E6D75]">
+          <span className="rounded-full bg-[#FDECEF] px-2 py-0.5 font-semibold text-[#D91842]">Delivery</span>
           <span className="rounded-full px-2 py-0.5">Pickup</span>
         </div>
       </div>
@@ -70,10 +70,10 @@ function WowHomePreviewMockup() {
             <p className="mt-0.5 text-[10.5px] text-white/80">Earn points &amp; cash wallet on every order</p>
           </div>
           <div className="rounded-[8px] border border-[#e5e7eb] bg-[#f9fafb] p-3 flex flex-col justify-between">
-            <span className="font-mono text-[9.5px] text-[#5b5e64]">WALLET</span>
+            <span className="font-mono text-[9.5px] text-[#6E6D75]">WALLET</span>
             <div>
-              <p className="text-[14px] font-bold text-[#0b0c0d]">$240.00</p>
-              <p className="text-[10px] text-[#16a34a] font-semibold">1,450 pts</p>
+              <p className="text-[14px] font-bold text-[#151417]">$240.00</p>
+              <p className="text-[10px] text-[#3F7A1C] font-semibold">1,450 pts</p>
             </div>
           </div>
         </div>
@@ -101,9 +101,9 @@ function WowHomePreviewMockup() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t border-[#f0f1f3] pt-2.5 text-[10.5px] text-[#5b5e64]">
+        <div className="flex items-center justify-between border-t border-[#F5F5F6] pt-2.5 text-[10.5px] text-[#6E6D75]">
           <span className="font-semibold text-[#111827]">Cerca de ti · 4,262 locations</span>
-          <span className="font-mono text-[#266df0]">10 storefronts →</span>
+          <span className="font-mono text-[#D91842]">10 storefronts →</span>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@ export function CustomersDirectoryView() {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO + 3x2 WHITE LOGO TILE GRID */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -152,7 +152,7 @@ export function CustomersDirectoryView() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -161,18 +161,18 @@ export function CustomersDirectoryView() {
             {/* Left Copy */}
             <div className="lg:col-span-6">
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 font-mono text-[12px]">
-                <Link href="/products" className="text-[#c4c6ca] underline underline-offset-4 hover:text-white">
+                <Link href="/products" className="text-[#A9A8AF] underline underline-offset-4 hover:text-white">
                   Resources
                 </Link>
-                <span className="text-[#5b5e64]">/</span>
-                <span className="text-[#92b5ff]">Customers</span>
+                <span className="text-[#6E6D75]">/</span>
+                <span className="text-[#F9D0D8]">Customers</span>
               </nav>
 
               <h1 className="mt-6 text-[40px] sm:text-[52px] lg:text-[58px] font-bold tracking-[-0.04em] leading-[1.03] text-white [text-wrap:balance]">
                 How restaurant brands run ordering and delivery on {BRAND}.
               </h1>
 
-              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 Stories from restaurant groups, restaurant brands, delivery businesses, and local marketplaces in Latin
                 America, North America, Europe, Africa, and Asia: what they needed, what they built, and what changed.
               </p>
@@ -180,13 +180,13 @@ export function CustomersDirectoryView() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#directory"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
                   Browse customer stories
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                 >
                   Talk to {BRAND}
                 </Link>
@@ -306,7 +306,7 @@ export function CustomersDirectoryView() {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search customers"
                   aria-label="Search customers"
-                  className="h-[42px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none transition-colors focus:border-[#266df0]"
+                  className="h-[42px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none transition-colors focus:border-[#D91842]"
                 />
               </div>
 
@@ -323,7 +323,7 @@ export function CustomersDirectoryView() {
                       className={cn(
                         "h-[42px] rounded-[6px] border px-3.5 text-[13.5px] font-medium transition-colors cursor-pointer",
                         active
-                          ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
+                          ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
                           : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                       )}
                     >
@@ -347,7 +347,7 @@ export function CustomersDirectoryView() {
                   id="customers-region"
                   value={region}
                   onChange={(e) => setRegion(e.target.value as CustomerRegion)}
-                  className="h-[42px] min-w-[160px] rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3 text-[13.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                  className="h-[42px] min-w-[160px] rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3 text-[13.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                 >
                   {CUSTOMER_REGIONS.map((r) => (
                     <option key={r.label} value={r.value}>
@@ -384,7 +384,7 @@ export function CustomersDirectoryView() {
                     <div>
                       <div className="flex items-start justify-between gap-3">
                         <p className="font-mono text-[11.5px] text-[var(--od-text-muted)] pt-1">{metaLine}</p>
-                        <span className="flex h-11 w-[76px] shrink-0 items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-white px-2">
+                        <span className="flex h-11 w-[76px] shrink-0 items-center justify-center rounded-full border border-[var(--od-border)] bg-white px-2">
                           <CustomerBrandBadge slug={customer.slug} name={customer.name} compact />
                         </span>
                       </div>
@@ -442,7 +442,7 @@ export function CustomersDirectoryView() {
                 </button>
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-[42px] items-center justify-center rounded-[6px] bg-[#266df0] px-4 text-[14px] font-semibold text-white hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#D91842] px-4 text-[14px] font-semibold text-white hover:bg-[#B8123A]"
                 >
                   Talk to {BRAND}
                 </Link>
@@ -455,12 +455,12 @@ export function CustomersDirectoryView() {
       {/* 4. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -468,7 +468,7 @@ export function CustomersDirectoryView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Tell us how your operation runs.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Share your brands, channels, and delivery model. We&apos;ll walk you through the setups closest to
                 yours.
               </p>
@@ -477,13 +477,13 @@ export function CustomersDirectoryView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Talk to {BRAND}
               </Link>
               <Link
                 href="/demo"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 See a live demo
               </Link>
@@ -547,7 +547,7 @@ export function CustomersDirectoryView() {
               <Link
                 href="/contact?meeting=demo#book"
                 onClick={() => setPreviewStory(null)}
-                className="inline-flex min-h-[42px] items-center justify-center rounded-[6px] bg-[#266df0] px-4 text-[14px] font-semibold text-white hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#D91842] px-4 text-[14px] font-semibold text-white hover:bg-[#B8123A]"
               >
                 Talk about a similar setup
               </Link>

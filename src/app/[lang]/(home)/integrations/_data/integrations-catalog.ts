@@ -432,7 +432,7 @@ export const PAYMENT_INTEGRATIONS: IntegrationItem[] = [
     countrySummary: "Markets (32)",
     countryNote: "Mollie operates across all 30 EEA countries and offers service in Switzerland and the UK.",
     ctaLabel: "View Mollie integration",
-    brandColor: "#0B0C0D",
+    brandColor: "#151417",
   },
   {
     id: "paypal",
@@ -749,7 +749,7 @@ export const DELIVERY_INTEGRATIONS: IntegrationItem[] = [
     countries: [],
     ctaLabel: "View Ordering Driver App",
     href: "/platform/driver-app",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -814,7 +814,7 @@ export const DELIVERY_INTEGRATIONS: IntegrationItem[] = [
     category: "Delivery",
     countries: [],
     ctaLabel: "View Uber Direct integration",
-    brandColor: "#0B0C0D",
+    brandColor: "#151417",
   },
   {
     id: "yango-delivery",
@@ -908,7 +908,7 @@ export const LOYALTY_INTEGRATIONS: IntegrationItem[] = [
     badge: `Built into ${BRAND}`,
     ctaLabel: "View Ordering Loyalty",
     href: "/platform/dashboard",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -933,7 +933,7 @@ export const ANALYTICS_INTEGRATIONS: IntegrationItem[] = [
     badge: "Developer access",
     ctaLabel: "Open API",
     href: "/products#extend",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -985,7 +985,7 @@ export const ANALYTICS_INTEGRATIONS: IntegrationItem[] = [
     badge: "AI tools",
     ctaLabel: "Open MCP",
     href: "/products#extend",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1007,7 +1007,7 @@ export const ANALYTICS_INTEGRATIONS: IntegrationItem[] = [
     badge: `Built into ${BRAND}`,
     ctaLabel: "View Ordering Analytics integration",
     href: "/platform/dashboard",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1031,7 +1031,7 @@ export const BUILT_IN_AUTOMATIONS: IntegrationItem[] = [
     countries: [],
     badge: `${BRAND} automation`,
     ctaLabel: "View Auto-accept orders",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1042,7 +1042,7 @@ export const BUILT_IN_AUTOMATIONS: IntegrationItem[] = [
     countries: [],
     badge: `${BRAND} automation`,
     ctaLabel: "View Custom orders",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1092,7 +1092,7 @@ export const AUTOMATION_INTEGRATIONS: IntegrationItem[] = [
     category: "Automation and more",
     countries: [],
     ctaLabel: "View Mapbox integration",
-    brandColor: "#0B0C0D",
+    brandColor: "#151417",
   },
   {
     id: "onesignal",
@@ -1111,7 +1111,7 @@ export const AUTOMATION_INTEGRATIONS: IntegrationItem[] = [
     countries: [],
     ctaLabel: "View Ordering API integration",
     href: "/products#extend",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1121,7 +1121,7 @@ export const AUTOMATION_INTEGRATIONS: IntegrationItem[] = [
     category: "Automation and more",
     countries: [],
     ctaLabel: "View Plugins integration",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1141,7 +1141,7 @@ export const AUTOMATION_INTEGRATIONS: IntegrationItem[] = [
     category: "Automation and more",
     countries: [],
     ctaLabel: "View Webhooks integration",
-    brandColor: "#266DF0",
+    brandColor: "#D91842",
     isOrderingBuiltIn: true,
   },
   {
@@ -1200,7 +1200,7 @@ export const LOGIN_SECURITY_INTEGRATIONS: IntegrationItem[] = [
     category: "Login & Security",
     countries: [],
     ctaLabel: "View Sign in with Apple integration",
-    brandColor: "#0B0C0D",
+    brandColor: "#151417",
   },
   {
     id: "twilio",

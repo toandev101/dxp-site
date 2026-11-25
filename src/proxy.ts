@@ -5,7 +5,7 @@ import { i18n } from "../i18n-config";
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Redirect explicit default locale prefix (/en/...) to clean URL (/...)
+  // Redirect explicit default locale prefix (/vi/...) to clean URL (/...)
   if (pathname.startsWith(`/${defaultLocale}/`) || pathname === `/${defaultLocale}`) {
     return NextResponse.redirect(
       new URL(pathname.replace(`/${defaultLocale}`, pathname === `/${defaultLocale}` ? "/" : ""), request.url)

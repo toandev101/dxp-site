@@ -16,7 +16,7 @@ export const viMessages: Dictionary = {
   nav_book_demo: "Đặt lịch demo",
   nav_start_free: "Đặt lịch demo",
 
-  // Hero (exact live Ordering.co structure)
+  // Hero (exact live OPERO structure)
   hero_eyebrow: "ĐẶT HÀNG & GIAO VẬN, DƯỚI THƯƠNG HIỆU CỦA BẠN",
   hero_title_line1: "Doanh nghiệp bạn.",
   hero_title_line2: "Mọi đơn hàng.",

@@ -99,7 +99,7 @@ export function AboutPageView() {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO (Full-width dark grid + bottom-right blue radial glow, no right aside) */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -110,7 +110,7 @@ export function AboutPageView() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-36 h-[560px] w-[680px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -120,7 +120,7 @@ export function AboutPageView() {
               Ordering infrastructure for the experience you run.
             </h1>
 
-            <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+            <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
               {BRAND} connects the customer-facing ordering experience with the tools used to operate orders and the
               interfaces used to extend the platform. Teams can bring together storefronts, operator workflows, and
               integrations without treating each one as a separate system.
@@ -129,19 +129,19 @@ export function AboutPageView() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/demo"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 See a live demo
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Talk to {BRAND}
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#c4c6ca]">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#A9A8AF]">
               <span>Build</span>
               <span>Operate</span>
               <span>Connect and extend</span>
@@ -225,21 +225,21 @@ export function AboutPageView() {
       {/* 4. #scale — DARK CONTROL BAND */}
       <section id="scale" className="scroll-mt-24 py-10">
         <Container>
-          <div className="relative overflow-hidden rounded-[12px] bg-[#0b0c0d] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
+          <div className="relative overflow-hidden rounded-[20px] bg-[#111013] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[540px] w-[540px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.22), transparent)",
+                background: "none",
               }}
             />
 
             <div className="relative z-10 lg:col-span-5">
-              <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#92b5ff]">How it fits together</p>
+              <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#F9D0D8]">How it fits together</p>
               <h2 className="mt-3 text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.08] text-white">
                 One ordering operation, four connected concerns.
               </h2>
-              <p className="mt-4 text-[15.5px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[15.5px] leading-[1.6] text-[#A9A8AF]">
                 A customer-facing experience is only useful when it connects to the people, systems, and changes needed
                 to run the order after it is placed.
               </p>
@@ -249,10 +249,10 @@ export function AboutPageView() {
               {SCALE_TILES.map((tile) => (
                 <div
                   key={tile.title}
-                  className="rounded-[10px] border border-[#34363a] bg-[#17181a] p-6"
+                  className="rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-6"
                 >
                   <h3 className="text-[16px] font-bold text-white">{tile.title}</h3>
-                  <p className="mt-2 text-[13.5px] leading-[1.6] text-[#c4c6ca]">{tile.body}</p>
+                  <p className="mt-2 text-[13.5px] leading-[1.6] text-[#A9A8AF]">{tile.body}</p>
                 </div>
               ))}
             </div>
@@ -295,12 +295,12 @@ export function AboutPageView() {
       {/* 6. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -308,7 +308,7 @@ export function AboutPageView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 See the infrastructure running.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Walk through the storefront, the merchant tools and the API with someone who knows your operation, or
                 ask us anything first.
               </p>
@@ -317,13 +317,13 @@ export function AboutPageView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Book a demo
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Talk to {BRAND}
               </Link>

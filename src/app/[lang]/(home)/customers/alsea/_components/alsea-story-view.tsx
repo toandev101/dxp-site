@@ -238,15 +238,15 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
       return (
         <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6">
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-[12px] border border-[var(--od-border)] bg-white p-4 text-[#0b0c0d] shadow-xs">
+            <div className="rounded-[12px] border border-[var(--od-border)] bg-white p-4 text-[#151417] shadow-xs">
               <div className="flex items-center justify-between text-[11px] font-bold text-[#005f86]">
                 <span>WOW+</span>
-                <Smartphone className="h-3.5 w-3.5 text-[#266df0]" />
+                <Smartphone className="h-3.5 w-3.5 text-[#D91842]" />
               </div>
               <div className="mt-3 rounded-[8px] bg-[#0c4a6e] p-3 text-white">
                 <p className="font-mono text-[9.5px] opacity-80">BALANCE</p>
                 <p className="text-[16px] font-bold">$185.00</p>
-                <p className="text-[10px] text-[#92b5ff]">940 WOW+ pts</p>
+                <p className="text-[10px] text-[#F9D0D8]">940 WOW+ pts</p>
               </div>
               <div className="mt-3 grid grid-cols-2 gap-1.5 text-[10px] font-semibold">
                 <span className="rounded bg-[#f3f4f6] px-2 py-1.5 text-center">Starbucks</span>
@@ -255,21 +255,21 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
                 <span className="rounded bg-[#f3f4f6] px-2 py-1.5 text-center">Vips</span>
               </div>
             </div>
-            <div className="rounded-[12px] border border-[var(--od-border)] bg-white p-4 text-[#0b0c0d] shadow-xs">
+            <div className="rounded-[12px] border border-[var(--od-border)] bg-white p-4 text-[#151417] shadow-xs">
               <p className="text-[11px] font-bold text-[#d62300]">Burger King · Corregidora</p>
-              <p className="text-[10px] text-[#5b5e64]">Open · 20–30 min delivery</p>
+              <p className="text-[10px] text-[#6E6D75]">Open · 20–30 min delivery</p>
               <div className="mt-3 space-y-2 text-[11px]">
                 <div className="flex items-center justify-between rounded border border-[#e5e7eb] px-2.5 py-1.5">
                   <span className="font-semibold">Whopper Combo</span>
-                  <span className="font-mono text-[#266df0]">$159</span>
+                  <span className="font-mono text-[#D91842]">$159</span>
                 </div>
                 <div className="flex items-center justify-between rounded border border-[#e5e7eb] px-2.5 py-1.5">
                   <span className="font-semibold">Crispy Chicken</span>
-                  <span className="font-mono text-[#266df0]">$139</span>
+                  <span className="font-mono text-[#D91842]">$139</span>
                 </div>
                 <div className="flex items-center justify-between rounded border border-[#e5e7eb] px-2.5 py-1.5">
                   <span className="font-semibold">King Nuggets x10</span>
-                  <span className="font-mono text-[#266df0]">$89</span>
+                  <span className="font-mono text-[#D91842]">$89</span>
                 </div>
               </div>
             </div>
@@ -279,13 +279,13 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
     case "delivery":
       return (
         <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6 space-y-4">
-          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#0b0c0d]">
+          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#151417]">
             <div className="flex items-center justify-between text-[12px] font-bold">
               <span className="inline-flex items-center gap-1.5">
-                <Truck className="h-4 w-4 text-[#266df0]" />
+                <Truck className="h-4 w-4 text-[#D91842]" />
                 Delivery dispatch · Central Mexico
               </span>
-              <span className="rounded-full bg-[#edf3ff] px-2.5 py-0.5 font-mono text-[10.5px] text-[#266df0]">
+              <span className="rounded-full bg-[#FDECEF] px-2.5 py-0.5 font-mono text-[10.5px] text-[#D91842]">
                 Auto-assign ON
               </span>
             </div>
@@ -300,10 +300,10 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
                   className="flex flex-wrap items-center justify-between gap-2 rounded-[6px] border border-[#eceef0] px-3 py-2"
                 >
                   <div>
-                    <span className="font-mono font-bold text-[#0b0c0d]">{row.id}</span>
-                    <span className="ml-2 text-[#5b5e64]">{row.brand}</span>
+                    <span className="font-mono font-bold text-[#151417]">{row.id}</span>
+                    <span className="ml-2 text-[#6E6D75]">{row.brand}</span>
                   </div>
-                  <span className="font-mono text-[11px] text-[#266df0]">{row.driver}</span>
+                  <span className="font-mono text-[11px] text-[#D91842]">{row.driver}</span>
                 </div>
               ))}
             </div>
@@ -313,20 +313,20 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
     case "callcenter":
       return (
         <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6">
-          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#0b0c0d]">
+          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#151417]">
             <div className="flex items-center justify-between border-b border-[#eceef0] pb-3 text-[12px] font-bold">
               <span className="inline-flex items-center gap-1.5">
-                <Headphones className="h-4 w-4 text-[#266df0]" />
+                <Headphones className="h-4 w-4 text-[#D91842]" />
                 Agent workspace · Inbound order
               </span>
-              <span className="font-mono text-[11px] text-[#16a34a]">Caller matched</span>
+              <span className="font-mono text-[11px] text-[#3F7A1C]">Caller matched</span>
             </div>
             <div className="mt-3 grid grid-cols-3 gap-2.5 text-[11.5px]">
               {["Burger King", "Starbucks", "Vips"].map((store) => (
                 <div key={store} className="rounded-[8px] border border-[#e5e7eb] p-3">
-                  <p className="font-bold text-[#0b0c0d]">{store}</p>
-                  <p className="mt-0.5 text-[10.5px] text-[#5b5e64]">1.4 km · ★ 4.8</p>
-                  <span className="mt-2 inline-block font-mono text-[10px] font-semibold text-[#266df0]">
+                  <p className="font-bold text-[#151417]">{store}</p>
+                  <p className="mt-0.5 text-[10.5px] text-[#6E6D75]">1.4 km · ★ 4.8</p>
+                  <span className="mt-2 inline-block font-mono text-[10px] font-semibold text-[#D91842]">
                     Open menu →
                   </span>
                 </div>
@@ -338,15 +338,15 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
     default:
       return (
         <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6">
-          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#0b0c0d]">
+          <div className="rounded-[10px] border border-[var(--od-border)] bg-white p-4 text-[#151417]">
             <div className="flex items-center justify-between border-b border-[#eceef0] pb-3 text-[12px] font-bold">
               <span className="inline-flex items-center gap-1.5">
-                <Store className="h-4 w-4 text-[#266df0]" />
+                <Store className="h-4 w-4 text-[#D91842]" />
                 Unified order list · All brands
               </span>
-              <span className="font-mono text-[11px] text-[#5b5e64]">POS synced</span>
+              <span className="font-mono text-[11px] text-[#6E6D75]">POS synced</span>
             </div>
-            <div className="mt-3 divide-y divide-[#f0f1f3] text-[12px]">
+            <div className="mt-3 divide-y divide-[#F5F5F6] text-[12px]">
               {[
                 { id: "#90418", store: "Starbucks Santa Fe", channel: "WOW+ App", status: "Preparing" },
                 { id: "#90419", store: "Burger King Roma", channel: "Web", status: "Injected to POS" },
@@ -355,11 +355,11 @@ function SurfaceMockup({ surfaceKey }: { surfaceKey: string }) {
                 <div key={o.id} className="flex items-center justify-between gap-2 py-2.5">
                   <div>
                     <span className="font-mono font-bold">{o.id}</span>
-                    <span className="ml-2 text-[#5b5e64]">{o.store}</span>
+                    <span className="ml-2 text-[#6E6D75]">{o.store}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="rounded bg-[#f3f4f6] px-2 py-0.5 font-mono text-[10.5px]">{o.channel}</span>
-                    <span className="font-semibold text-[#16a34a] text-[11px]">{o.status}</span>
+                    <span className="font-semibold text-[#3F7A1C] text-[11px]">{o.status}</span>
                   </div>
                 </div>
               ))}
@@ -383,7 +383,7 @@ export function AlseaStoryView() {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO + HERO PHOTO + 4-COL FACT STRIP */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -394,7 +394,7 @@ export function AlseaStoryView() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -403,28 +403,28 @@ export function AlseaStoryView() {
             {/* Left Copy */}
             <div className="lg:col-span-7">
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 font-mono text-[12px]">
-                <Link href="/products" className="text-[#c4c6ca] underline underline-offset-4 hover:text-white">
+                <Link href="/products" className="text-[#A9A8AF] underline underline-offset-4 hover:text-white">
                   Resources
                 </Link>
-                <span className="text-[#5b5e64]">/</span>
-                <Link href="/customers" className="text-[#c4c6ca] underline underline-offset-4 hover:text-white">
+                <span className="text-[#6E6D75]">/</span>
+                <Link href="/customers" className="text-[#A9A8AF] underline underline-offset-4 hover:text-white">
                   Customers
                 </Link>
-                <span className="text-[#5b5e64]">/</span>
-                <span className="text-[#92b5ff]">Alsea</span>
+                <span className="text-[#6E6D75]">/</span>
+                <span className="text-[#F9D0D8]">Alsea</span>
               </nav>
 
               <div className="mt-6 inline-flex h-[54px] items-center rounded-[8px] bg-white px-5 shadow-sm">
                 <AlseaLogoMark size="md" />
               </div>
 
-              <p className="mt-5 font-mono text-[12px] text-[#c4c6ca]">Customer story · Restaurant group</p>
+              <p className="mt-5 font-mono text-[12px] text-[#A9A8AF]">Customer story · Restaurant group</p>
 
               <h1 className="mt-3 text-[40px] sm:text-[54px] lg:text-[60px] font-bold tracking-[-0.04em] leading-[1.03] text-white [text-wrap:balance]">
                 Ten restaurant brands. One ordering operation.
               </h1>
 
-              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 Alsea operates Domino&apos;s, Starbucks, Burger King, Vips, and other restaurant chains. Its WOW+ app,
                 brand storefronts, call centers, and delivery operation in Mexico and Colombia run on {BRAND}.
               </p>
@@ -432,13 +432,13 @@ export function AlseaStoryView() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
                   Talk to {BRAND}
                 </Link>
                 <Link
                   href="/customers"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                 >
                   All customer stories
                 </Link>
@@ -447,7 +447,7 @@ export function AlseaStoryView() {
 
             {/* Right Visual Photo */}
             <figure className="lg:col-span-5">
-              <div className="relative overflow-hidden rounded-[14px] border border-white/10 bg-[#141517] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.75)]">
+              <div className="relative overflow-hidden rounded-[14px] border border-white/10 bg-[#1B1A1F] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.75)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/case-alsea.jpg"
@@ -457,9 +457,9 @@ export function AlseaStoryView() {
                 <div className="absolute inset-x-4 bottom-4 rounded-[10px] border border-white/15 bg-black/75 p-3.5 backdrop-blur-md">
                   <div className="flex items-center justify-between text-[12px]">
                     <span className="font-bold text-white">WOW+ Multi-Brand App</span>
-                    <span className="font-mono text-[11px] text-[#92b5ff]">10 chains · Live</span>
+                    <span className="font-mono text-[11px] text-[#F9D0D8]">10 chains · Live</span>
                   </div>
-                  <p className="mt-1 text-[11.5px] text-[#c4c6ca]">
+                  <p className="mt-1 text-[11.5px] text-[#A9A8AF]">
                     Starbucks · Domino&apos;s · Burger King · Vips · Chili&apos;s · P.F. Chang&apos;s
                   </p>
                 </div>
@@ -477,7 +477,7 @@ export function AlseaStoryView() {
                   key={fact.label}
                   className={cn("py-6", idx > 0 && "lg:pl-7", idx < HERO_FACTS.length - 1 && "lg:pr-7")}
                 >
-                  <dt className="text-[12px] text-[#989aa0]">{fact.label}</dt>
+                  <dt className="text-[12px] text-[#9A99A1]">{fact.label}</dt>
                   <dd className="mt-1.5 text-[22px] sm:text-[26px] font-bold tracking-[-0.025em] leading-snug text-white">
                     {fact.value}
                   </dd>
@@ -551,7 +551,7 @@ export function AlseaStoryView() {
                     </div>
                     <div className="flex items-center justify-between border-t border-[var(--od-border)] pt-2.5 text-[11.5px] text-[var(--od-text-muted)]">
                       <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3 w-3 text-[#266df0]" />
+                        <MapPin className="h-3 w-3 text-[#D91842]" />
                         Hours &amp; delivery zones
                       </span>
                       <span className="font-semibold text-[var(--od-action-content)]">Menu →</span>
@@ -589,7 +589,7 @@ export function AlseaStoryView() {
               <ul className="mt-5 space-y-3 text-[14.5px] leading-[1.55] text-[var(--od-text)]">
                 {WHAT_ALSEA_NEEDED.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#266df0]" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#D91842]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -626,7 +626,7 @@ export function AlseaStoryView() {
                         className="inline-flex items-center gap-1.5 hover:text-[var(--od-action-content)] transition-colors"
                       >
                         <span>{item.label}</span>
-                        <ArrowRight className="h-3.5 w-3.5 text-[#266df0]" />
+                        <ArrowRight className="h-3.5 w-3.5 text-[#D91842]" />
                       </Link>
                     ) : (
                       <span>{item.label}</span>
@@ -637,23 +637,23 @@ export function AlseaStoryView() {
             </div>
 
             {/* Arrow 1 */}
-            <div className="flex items-center justify-center text-[#266df0]" aria-hidden="true">
+            <div className="flex items-center justify-center text-[#D91842]" aria-hidden="true">
               <ArrowRight className="h-5 w-5 rotate-90 lg:rotate-0" />
             </div>
 
             {/* Center Dark Card with subtle bottom blue glow */}
-            <div className="relative rounded-[12px] bg-[#0b0c0d] p-6 sm:p-7 text-white shadow-[0_24px_48px_-14px_rgba(38,109,240,0.28)]">
-              <h3 className="font-mono text-[12px] text-[#989aa0]">{FLOW_COLUMNS.center.title}</h3>
+            <div className="relative rounded-[12px] bg-[#111013] p-6 sm:p-7 text-white">
+              <h3 className="font-mono text-[12px] text-[#9A99A1]">{FLOW_COLUMNS.center.title}</h3>
               <ul className="mt-5 divide-y divide-white/12">
                 {FLOW_COLUMNS.center.items.map((item) => (
                   <li key={item.label} className="py-3.5 text-[14.5px] font-semibold text-white">
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-1.5 hover:text-[#92b5ff] transition-colors"
+                        className="inline-flex items-center gap-1.5 hover:text-[#F9D0D8] transition-colors"
                       >
                         <span>{item.label}</span>
-                        <ArrowRight className="h-3.5 w-3.5 text-[#639bff]" />
+                        <ArrowRight className="h-3.5 w-3.5 text-[#F9D0D8]" />
                       </Link>
                     ) : (
                       <span>{item.label}</span>
@@ -664,7 +664,7 @@ export function AlseaStoryView() {
             </div>
 
             {/* Arrow 2 */}
-            <div className="flex items-center justify-center text-[#266df0]" aria-hidden="true">
+            <div className="flex items-center justify-center text-[#D91842]" aria-hidden="true">
               <ArrowRight className="h-5 w-5 rotate-90 lg:rotate-0" />
             </div>
 
@@ -680,7 +680,7 @@ export function AlseaStoryView() {
                         className="inline-flex items-center gap-1.5 hover:text-[var(--od-action-content)] transition-colors"
                       >
                         <span>{item.label}</span>
-                        <ArrowRight className="h-3.5 w-3.5 text-[#266df0]" />
+                        <ArrowRight className="h-3.5 w-3.5 text-[#D91842]" />
                       </Link>
                     ) : (
                       <span>{item.label}</span>
@@ -715,7 +715,7 @@ export function AlseaStoryView() {
                   <ul className="mt-5 space-y-2.5 text-[14.5px] text-[var(--od-text)]">
                     {surface.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2.5">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#266df0]" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#D91842]" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -810,7 +810,7 @@ export function AlseaStoryView() {
                       <p className="font-mono text-[11.5px] text-[var(--od-text-muted)] pt-1">
                         {brand.segment} · {brand.market}
                       </p>
-                      <span className="flex h-11 w-[76px] shrink-0 items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-white px-2">
+                      <span className="flex h-11 w-[76px] shrink-0 items-center justify-center rounded-full border border-[var(--od-border)] bg-white px-2">
                         <CustomerBrandBadge slug={brand.slug} name={brand.name} compact />
                       </span>
                     </div>
@@ -834,12 +834,12 @@ export function AlseaStoryView() {
       {/* 9. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -847,7 +847,7 @@ export function AlseaStoryView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Running several brands on one operation?
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Tell us about your brands, channels, and delivery model, and we&apos;ll show you how {BRAND} fits.
               </p>
             </div>
@@ -855,13 +855,13 @@ export function AlseaStoryView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Talk to {BRAND}
               </Link>
               <Link
                 href="/demo"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 See a live demo
               </Link>

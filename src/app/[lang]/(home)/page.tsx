@@ -43,21 +43,21 @@ export default function HomePage() {
       <ProofSection />
       {/* 5. End-to-End Order Journey: One order. A connected operation. */}
       <JourneySection />
-      {/* 6. AI Ordering Agents (Full-bleed #266df0 Blue Band) */}
+      {/* 6. AI Ordering Agents (Full-bleed #D91842 Blue Band) */}
       <AiAgentsSection />
       {/* 7. Platform Architecture & 4 Product Pillars + Expandable Details */}
       <PlatformPillarsSection />
-      {/* 8. Integrations Directory Strip (#f6f7f7 Band) */}
+      {/* 8. Integrations Directory Strip (#F5F5F6 Band) */}
       <IntegrationsStripSection />
       {/* 9. Customer Stories: Different businesses. Connected operations. */}
       <CustomerStoriesSection />
-      {/* 10. Ownership & Architecture (#17181a Dark Band) */}
+      {/* 10. Ownership & Architecture (#1B1A1F Dark Band) */}
       <ControlArchitectureSection />
       {/* 11. Migration & Evaluation Paths */}
       <MigrationSection />
       {/* 12. FAQ 2-Column Accordion */}
       <FaqSection />
-      {/* 13. Final Closing CTA: Make it yours. (#edf3ff Soft Blue Band) */}
+      {/* 13. Final Closing CTA: Make it yours. (#FDECEF Soft Blue Band) */}
       <FinalCtaSection />
     </>
   );

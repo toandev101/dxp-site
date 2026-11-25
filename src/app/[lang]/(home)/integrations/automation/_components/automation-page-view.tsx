@@ -134,13 +134,13 @@ export function AutomationPageView() {
             <div className="flex flex-wrap gap-3 shrink-0">
               <Link
                 href="/products#extend"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#B8123A]"
               >
                 Open API reference
               </Link>
               <Link
                 href="/#control"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
               >
                 Explore Developers
               </Link>

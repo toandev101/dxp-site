@@ -14,7 +14,7 @@ export const enMessages = {
   nav_book_demo: "Book a demo",
   nav_start_free: "Book a demo",
 
-  // Hero (exact live Ordering.co structure)
+  // Hero (exact live OPERO structure)
   hero_eyebrow: "ORDERING & DELIVERY, UNDER YOUR BRAND",
   hero_title_line1: "Your business.",
   hero_title_line2: "Every order.",

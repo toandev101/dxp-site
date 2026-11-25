@@ -5,7 +5,7 @@ import { AutomationPageView } from "./_components/automation-page-view";
 export const metadata: Metadata = buildPageMetadata({
   title: "Automation and more integrations",
   description:
-    "Automate your ordering business with Webhooks, Plugins, the Ordering.co API and MCP, Zapier, Twilio, WhatsApp Business, and Google Maps.",
+    "Automate your ordering business with Webhooks, Plugins, the OPERO API and MCP, Zapier, Twilio, WhatsApp Business, and Google Maps.",
   path: "/integrations/automation",
 });
 

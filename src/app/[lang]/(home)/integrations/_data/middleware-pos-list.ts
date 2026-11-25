@@ -322,5 +322,5 @@ export const MIDDLEWARE_POS_AS_ITEMS: IntegrationItem[] = MIDDLEWARE_POS_LIST.ma
   category: "POS",
   countries: [],
   ctaLabel: `View ${p.name} integration`,
-  brandColor: "#3F4145",
+  brandColor: "#3A393F",
 }));

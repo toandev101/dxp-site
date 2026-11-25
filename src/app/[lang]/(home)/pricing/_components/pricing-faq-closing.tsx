@@ -225,9 +225,9 @@ export function PricingFaqAndClosing() {
       {/* SECTION 9: Closing Dark CTA Band ("FIND THE RIGHT PATH") */}
       <section className="bg-[var(--od-bg)] py-20 lg:py-28">
         <Container>
-          <div className="rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:p-16 text-white grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,23rem)] lg:gap-20">
+          <div className="rounded-[10px] bg-[#111013] px-7 py-14 sm:p-16 text-white grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,23rem)] lg:gap-20">
             <div>
-              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#92b5ff]">
+              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#F9D0D8]">
                 FIND THE RIGHT PATH
               </p>
               <h2 className="mt-4 max-w-[20ch] text-[36px] sm:text-[48px] lg:text-[56px] font-bold tracking-[-0.025em] leading-[1.04] text-white">
@@ -235,7 +235,7 @@ export function PricingFaqAndClosing() {
                   ? "Trao đổi về các kênh, chi nhánh và kết nối doanh nghiệp bạn cần."
                   : "Discuss the channels, locations, and connections your operation needs."}
               </h2>
-              <p className="mt-4 max-w-xl text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 max-w-xl text-[16px] leading-[1.6] text-[#A9A8AF]">
                 {isVi
                   ? "Chúng tôi sẽ giúp chọn lộ trình khởi điểm khớp với mô hình vận hành và xác định rõ phạm vi triển khai."
                   : "We can match the starting path to your operating model and define the scope that needs to be documented."}
@@ -246,7 +246,7 @@ export function PricingFaqAndClosing() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Pricing Closing · Request pricing")}
-                className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 <span>{isVi ? "Yêu cầu báo giá" : "Request pricing"}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -254,7 +254,7 @@ export function PricingFaqAndClosing() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Pricing · 30 min")}
-                className="inline-flex min-h-[46px] w-full items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                className="inline-flex min-h-[46px] w-full items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
               >
                 {isVi ? "Đặt lịch demo" : "Book a demo"}
               </button>

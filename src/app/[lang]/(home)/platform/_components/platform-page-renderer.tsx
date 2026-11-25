@@ -115,9 +115,9 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
 
   return (
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
-      {/* 1. DARK HERO (.page-hero, #0b0c0d with subtle grid lines & blue bottom-right glow) */}
+      {/* 1. DARK HERO (.page-hero, #151417 with subtle grid lines & blue bottom-right glow) */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -129,7 +129,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -141,16 +141,16 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
                 {spec.hero.breadcrumbs.map((crumb, idx) => (
                   <span key={crumb.label} className="inline-flex items-center gap-1.5">
-                    {idx > 0 && <span className="text-[#5b5e64]">/</span>}
+                    {idx > 0 && <span className="text-[#6E6D75]">/</span>}
                     {crumb.href ? (
                       <Link
                         href={crumb.href}
-                        className="text-[#92b5ff] underline underline-offset-4 hover:text-white"
+                        className="text-[#F9D0D8] underline underline-offset-4 hover:text-white"
                       >
                         {crumb.label}
                       </Link>
                     ) : (
-                      <span className="text-[#92b5ff]">{crumb.label}</span>
+                      <span className="text-[#F9D0D8]">{crumb.label}</span>
                     )}
                   </span>
                 ))}
@@ -160,7 +160,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                 {spec.hero.title}
               </h1>
 
-              <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-6 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 {spec.hero.lede}
               </p>
 
@@ -169,7 +169,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                 {spec.hero.primaryCta.href ? (
                   <Link
                     href={spec.hero.primaryCta.href}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                   >
                     {spec.hero.primaryCta.label}
                   </Link>
@@ -177,7 +177,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                   <button
                     type="button"
                     onClick={() => openDemoModal(spec.hero.primaryCta.modalTopic || spec.metaTitle)}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                   >
                     {spec.hero.primaryCta.label}
                   </button>
@@ -187,14 +187,14 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                   <button
                     type="button"
                     onClick={() => setChatOpen(true)}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
                   >
                     {spec.hero.secondaryCta.label}
                   </button>
                 ) : (
                   <Link
                     href={spec.hero.secondaryCta.href || "/demo"}
-                    className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                    className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                   >
                     {spec.hero.secondaryCta.label}
                   </Link>
@@ -202,12 +202,12 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
               </div>
 
               {/* Meta Items */}
-              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[13px] text-[#c4c6ca]">
+              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[13px] text-[#A9A8AF]">
                 {spec.hero.meta.map((m) =>
                   m.pill ? (
                     <span
                       key={m.text}
-                      className="rounded-[4px] border border-[#266df0] bg-[#17284a]/60 px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-[#92b5ff]"
+                      className="rounded-[4px] border border-[#D91842] bg-[#2A1219]/60 px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-[#F9D0D8]"
                     >
                       {m.text}
                     </span>
@@ -229,9 +229,9 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
         {spec.hero.bottomStrip && (
           <div className="relative z-10 border-t border-white/10 bg-black/30">
             <Container className="py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <p className="text-[13px] text-[#c4c6ca] max-w-xs">{spec.hero.bottomStrip.lead}</p>
+              <p className="text-[13px] text-[#A9A8AF] max-w-xs">{spec.hero.bottomStrip.lead}</p>
               {spec.hero.bottomStrip.items.length > 0 && (
-                <div className="flex flex-wrap items-center gap-x-10 gap-y-2 text-[14px] font-semibold text-[#989aa0]">
+                <div className="flex flex-wrap items-center gap-x-10 gap-y-2 text-[14px] font-semibold text-[#9A99A1]">
                   {spec.hero.bottomStrip.items.map((item) => (
                     <span key={item}>{item}</span>
                   ))}
@@ -397,7 +397,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
         </section>
       )}
 
-      {/* 4A. ORDERING WEB VISUAL JOURNEY (#journey on #f6f7f7) */}
+      {/* 4A. ORDERING WEB VISUAL JOURNEY (#journey on #F5F5F6) */}
       {spec.journey && (
         <section id={spec.journey.id} className="scroll-mt-24 bg-[var(--od-surface-subtle)] py-16 sm:py-24 my-8">
           <Container>
@@ -439,12 +439,12 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                         {step.previewType === "marketplace-home" && <MarketplaceWebPreview />}
                         {step.previewType === "store-menu" && <RestaurantWebPreview />}
                         {step.previewType === "checkout" && (
-                          <div className="h-full w-full overflow-hidden bg-[#f6f7f7] p-3 flex items-center justify-center">
+                          <div className="h-full w-full overflow-hidden bg-[#F5F5F6] p-3 flex items-center justify-center">
                             <PlatformHeroMockup slug="ordering-web" />
                           </div>
                         )}
                         {step.previewType === "order-details" && (
-                          <div className="h-full w-full overflow-hidden bg-[#f6f7f7] p-3 flex items-center justify-center">
+                          <div className="h-full w-full overflow-hidden bg-[#F5F5F6] p-3 flex items-center justify-center">
                             <PlatformHeroMockup slug="ordering-apps" />
                           </div>
                         )}
@@ -832,7 +832,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                       className={cn(
                         "rounded-[8px] border px-3 py-3 text-center text-[13px] font-semibold",
                         idx === 0
-                          ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
+                          ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
                           : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)]"
                       )}
                     >
@@ -874,30 +874,30 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
       {spec.control && (
         <section id="control" className="scroll-mt-28 py-10">
           <Container>
-            <div className="relative overflow-hidden rounded-[12px] bg-[#0b0c0d] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
+            <div className="relative overflow-hidden rounded-[20px] bg-[#111013] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -right-24 top-1/2 h-[540px] w-[540px] -translate-y-1/2"
                 style={{
-                  background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.22), transparent)",
+                  background: "none",
                 }}
               />
               <div className="relative z-10 lg:col-span-5">
-                <p className="text-[12px] font-medium text-[#c4c6ca]">{spec.control.eyebrow}</p>
+                <p className="text-[12px] font-medium text-[#A9A8AF]">{spec.control.eyebrow}</p>
                 <h2 className="mt-3 text-[32px] sm:text-[42px] font-bold tracking-[-0.035em] leading-[1.08] text-white">
                   {spec.control.title}
                 </h2>
-                <p className="mt-4 text-[15.5px] leading-[1.6] text-[#c4c6ca]">{spec.control.body}</p>
+                <p className="mt-4 text-[15.5px] leading-[1.6] text-[#A9A8AF]">{spec.control.body}</p>
               </div>
 
               <div className="relative z-10 lg:col-span-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {spec.control.cards.map((c) => (
                   <div
                     key={c.title}
-                    className="rounded-[10px] border border-[#34363a] bg-[#17181a] p-6"
+                    className="rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-6"
                   >
                     <h3 className="text-[16px] font-bold text-white">{c.title}</h3>
-                    <p className="mt-2 text-[13.5px] leading-[1.6] text-[#c4c6ca]">{c.body}</p>
+                    <p className="mt-2 text-[13.5px] leading-[1.6] text-[#A9A8AF]">{c.body}</p>
                   </div>
                 ))}
               </div>
@@ -997,12 +997,12 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
       {/* 9. CLOSING DARK CTA BAND (.cta-band) */}
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -1010,13 +1010,13 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
               <h2 className="text-[34px] sm:text-[46px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 {spec.closingCta.title}
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">{spec.closingCta.body}</p>
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{spec.closingCta.body}</p>
               {spec.closingCta.docGuide && (
-                <p className="mt-4 text-[13.5px] text-[#989aa0]">
+                <p className="mt-4 text-[13.5px] text-[#9A99A1]">
                   Product guide:{" "}
                   <Link
                     href={spec.closingCta.docGuide.href}
-                    className="font-semibold text-[#92b5ff] underline underline-offset-4 hover:text-white"
+                    className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"
                   >
                     {spec.closingCta.docGuide.label}
                   </Link>
@@ -1028,7 +1028,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
               {spec.closingCta.primaryCta.href ? (
                 <Link
                   href={spec.closingCta.primaryCta.href}
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
                   {spec.closingCta.primaryCta.label}
                 </Link>
@@ -1036,7 +1036,7 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                 <button
                   type="button"
                   onClick={() => openDemoModal(spec.closingCta.primaryCta.modalTopic || spec.metaTitle)}
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   {spec.closingCta.primaryCta.label}
                 </button>
@@ -1046,14 +1046,14 @@ export function PlatformPageRenderer({ spec }: { spec: PlatformPageSpec }) {
                 <button
                   type="button"
                   onClick={() => setChatOpen(true)}
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
                 >
                   {spec.closingCta.secondaryCta.label}
                 </button>
               ) : (
                 <Link
                   href={spec.closingCta.secondaryCta.href || "/demo"}
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                 >
                   {spec.closingCta.secondaryCta.label}
                 </Link>

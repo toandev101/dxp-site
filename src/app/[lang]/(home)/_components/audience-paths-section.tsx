@@ -77,7 +77,7 @@ export function AudiencePathsSection() {
                   className="group inline-flex items-center gap-2 text-[14.5px] font-medium text-[var(--od-text)] hover:text-[var(--od-action-content)] transition-colors"
                 >
                   <span>{isVi ? item.labelVi : item.labelEn}</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-[#266df0] transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-3.5 w-3.5 text-[#D91842] transition-transform group-hover:translate-x-0.5" />
                 </Link>
               ))}
             </div>
@@ -95,12 +95,12 @@ export function AudiencePathsSection() {
 
           {/* Right Path: Build your platform */}
           <div className="lg:pl-12 lg:border-l lg:border-[var(--od-border)]">
-            {/* Clean Browser + Mobile Marketplace Mockup Card (exact match to Ordering.co screenshot) */}
+            {/* Clean Browser + Mobile Marketplace Mockup Card (exact match to OPERO screenshot) */}
             <div className="relative aspect-[608/290] w-full overflow-hidden rounded-[6px] bg-[#f4f5f6] flex items-center justify-center p-4 sm:p-6">
               <div className="relative w-full max-w-[520px] flex items-center">
                 {/* Browser window */}
-                <div className="w-[82%] rounded-[10px] border border-slate-200 bg-white shadow-[0_14px_34px_-12px_rgba(11,12,13,0.18)] overflow-hidden text-[#0b0c0d]">
-                  <div className="flex items-center gap-1.5 bg-[#f6f7f7] px-3 py-1.5 border-b border-slate-200/80">
+                <div className="w-[82%] rounded-[10px] border border-slate-200 bg-white shadow-[0_14px_34px_-12px_rgba(11,12,13,0.18)] overflow-hidden text-[#151417]">
+                  <div className="flex items-center gap-1.5 bg-[#F5F5F6] px-3 py-1.5 border-b border-slate-200/80">
                     <span className="h-2 w-2 rounded-full bg-rose-400" />
                     <span className="h-2 w-2 rounded-full bg-amber-400" />
                     <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -128,7 +128,7 @@ export function AudiencePathsSection() {
                         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[5px] bg-slate-100">
                           <Image src={cat.img} alt={cat.title} fill sizes="120px" className="object-cover" />
                         </div>
-                        <p className="mt-1.5 text-[9.5px] font-bold text-[#0b0c0d]">{cat.title}</p>
+                        <p className="mt-1.5 text-[9.5px] font-bold text-[#151417]">{cat.title}</p>
                         <p className="truncate text-[8px] text-slate-500">{cat.sub}</p>
                       </div>
                     ))}
@@ -136,8 +136,8 @@ export function AudiencePathsSection() {
                 </div>
 
                 {/* Overlapping Phone */}
-                <div className="w-[26%] -ml-[8%] z-10 rounded-[18px] bg-[#111214] p-1 shadow-[0_18px_40px_-10px_rgba(11,12,13,0.35)]">
-                  <div className="rounded-[14px] bg-white overflow-hidden p-2 text-[#0b0c0d]">
+                <div className="w-[26%] -ml-[8%] z-10 rounded-[18px] bg-[#1B1A1F] p-1 shadow-[0_18px_40px_-10px_rgba(11,12,13,0.35)]">
+                  <div className="rounded-[14px] bg-white overflow-hidden p-2 text-[#151417]">
                     <div className="flex items-center justify-between text-[8px] font-bold mb-1.5">
                       <span>Your Brand</span>
                       <Menu className="h-2.5 w-2.5" />
@@ -177,7 +177,7 @@ export function AudiencePathsSection() {
                   className="group inline-flex items-center gap-2 text-[14.5px] font-medium text-[var(--od-text)] hover:text-[var(--od-action-content)] transition-colors"
                 >
                   <span>{isVi ? item.labelVi : item.labelEn}</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-[#266df0] transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-3.5 w-3.5 text-[#D91842] transition-transform group-hover:translate-x-0.5" />
                 </Link>
               ))}
             </div>

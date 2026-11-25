@@ -4,13 +4,13 @@ import { createContext, useEffect } from "react";
 import Cookies from "js-cookie";
 
 import type { Dictionary } from "@/i18n/messages/en";
-import { enMessages } from "@/i18n/messages/en";
+import { viMessages } from "@/i18n/messages/vi";
 import { getLocale } from "@/utils/locale";
 
 export const TranslationContext = createContext<{
   lang: string;
   messages: Dictionary;
-}>({ lang: "en", messages: enMessages });
+}>({ lang: "vi", messages: viMessages });
 
 export function TranslationProvider({
   lang,

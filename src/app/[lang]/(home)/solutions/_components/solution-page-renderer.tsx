@@ -24,10 +24,10 @@ function ActionButton({
 
   const cls =
     variant === "primary"
-      ? "inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+      ? "inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
       : variant === "secondary"
-        ? "inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
-        : "inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer";
+        ? "inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
+        : "inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer";
 
   if (cta.openChat) {
     return (
@@ -63,7 +63,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -74,7 +74,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -82,22 +82,22 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
-                <Link href="/solutions" className="text-[#92b5ff] underline underline-offset-4 hover:text-white">
+                <Link href="/solutions" className="text-[#F9D0D8] underline underline-offset-4 hover:text-white">
                   Solutions
                 </Link>
-                <span className="text-[#5b5e64]">/</span>
-                <span className="text-[#92b5ff]">{spec.hero.breadcrumbLabel}</span>
+                <span className="text-[#6E6D75]">/</span>
+                <span className="text-[#F9D0D8]">{spec.hero.breadcrumbLabel}</span>
               </nav>
 
               {spec.hero.eyebrow && (
-                <p className="mt-5 font-mono text-[12px] font-medium text-[#c4c6ca]">{spec.hero.eyebrow}</p>
+                <p className="mt-5 font-mono text-[12px] font-medium text-[#A9A8AF]">{spec.hero.eyebrow}</p>
               )}
 
               <h1 className="mt-5 text-[40px] sm:text-[54px] lg:text-[60px] font-bold tracking-[-0.04em] leading-[1.03] text-white [text-wrap:balance]">
                 {spec.hero.title}
               </h1>
 
-              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 {spec.hero.lede}
               </p>
 
@@ -108,7 +108,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                 )}
               </div>
 
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#c4c6ca]">
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#A9A8AF]">
                 {spec.hero.meta.map((m) => (
                   <span key={m}>{m}</span>
                 ))}
@@ -124,9 +124,9 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
         {spec.hero.bottomStrip && (
           <div className="relative z-10 border-t border-white/10 bg-black/30">
             <Container className="py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <p className="max-w-md text-[13px] leading-[1.55] text-[#c4c6ca]">{spec.hero.bottomStrip.lead}</p>
+              <p className="max-w-md text-[13px] leading-[1.55] text-[#A9A8AF]">{spec.hero.bottomStrip.lead}</p>
               {spec.hero.bottomStrip.logos && spec.hero.bottomStrip.logos.length > 0 && (
-                <div className="flex flex-wrap items-center gap-x-9 gap-y-2 text-[15px] font-bold tracking-[-0.02em] text-[#989aa0]">
+                <div className="flex flex-wrap items-center gap-x-9 gap-y-2 text-[15px] font-bold tracking-[-0.02em] text-[#9A99A1]">
                   {spec.hero.bottomStrip.logos.map((logo) => (
                     <span key={logo}>{logo}</span>
                   ))}
@@ -193,7 +193,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                               <ul className="mt-4 space-y-2 border-t border-[var(--od-border)] pt-4 text-[13.5px] text-[var(--od-text-muted)]">
                                 {card.bullets.map((b) => (
                                   <li key={b} className="flex items-start gap-2">
-                                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#266df0]" />
+                                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D91842]" />
                                     <span>{b}</span>
                                   </li>
                                 ))}
@@ -228,12 +228,12 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                   </div>
 
                   {section.extraCallout && (
-                    <div className="mt-6 rounded-[10px] border border-[#266df0]/30 bg-[var(--od-action-soft)]/45 p-6 sm:p-8">
+                    <div className="mt-6 rounded-[10px] border border-[#D91842]/30 bg-[var(--od-action-soft)]/45 p-6 sm:p-8">
                       <h3 className="text-[20px] font-bold text-[var(--od-text)]">{section.extraCallout.title}</h3>
                       <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 text-[14.5px] text-[var(--od-text)]">
                         {section.extraCallout.bullets.map((b) => (
                           <li key={b} className="flex items-start gap-2">
-                            <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                            <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                             <span>{b}</span>
                           </li>
                         ))}
@@ -302,7 +302,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                           <ul className="mt-3 space-y-2 text-[13.5px] text-[var(--od-text-muted)]">
                             {section.sidePanel.bullets.map((b) => (
                               <li key={b} className="flex items-start gap-2">
-                                <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#266df0]" />
+                                <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D91842]" />
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -357,7 +357,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                         className={cn(
                           "rounded-[10px] border p-7",
                           idx === 1
-                            ? "border-[#266df0]/30 bg-[var(--od-action-soft)]/35"
+                            ? "border-[#D91842]/30 bg-[var(--od-action-soft)]/35"
                             : "border-[var(--od-border)] bg-[var(--od-surface-subtle)]"
                         )}
                       >
@@ -373,7 +373,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                         <ul className="mt-4 space-y-2.5 border-t border-[var(--od-border)] pt-4 text-[14.5px] text-[var(--od-text)]">
                           {panel.bullets.map((b) => (
                             <li key={b} className="flex items-start gap-2.5">
-                              <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                              <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                               <span>{b}</span>
                             </li>
                           ))}
@@ -434,7 +434,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                             className={cn(
                               "rounded-[8px] border px-3 py-3 text-center text-[13px] font-semibold",
                               idx === 0
-                                ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
+                                ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)]"
                                 : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)]"
                             )}
                           >
@@ -555,32 +555,32 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
             return (
               <section key={section.id} id={section.id} className="scroll-mt-24 py-10">
                 <Container>
-                  <div className="relative overflow-hidden rounded-[12px] bg-[#0b0c0d] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
+                  <div className="relative overflow-hidden rounded-[20px] bg-[#111013] p-7 sm:p-12 lg:p-14 text-white grid grid-cols-1 gap-10 lg:grid-cols-12 items-center">
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute -right-24 top-1/2 h-[540px] w-[540px] -translate-y-1/2"
                       style={{
-                        background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.22), transparent)",
+                        background: "none",
                       }}
                     />
                     <div className="relative z-10 lg:col-span-5">
-                      <p className="text-[12px] font-mono uppercase tracking-[0.08em] text-[#92b5ff]">
+                      <p className="text-[12px] font-mono uppercase tracking-[0.08em] text-[#F9D0D8]">
                         {section.eyebrow}
                       </p>
                       <h2 className="mt-3 text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.08] text-white">
                         {section.title}
                       </h2>
-                      <p className="mt-4 text-[15.5px] leading-[1.6] text-[#c4c6ca]">{section.body}</p>
+                      <p className="mt-4 text-[15.5px] leading-[1.6] text-[#A9A8AF]">{section.body}</p>
                     </div>
 
                     <div className="relative z-10 lg:col-span-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
                       {section.tiles.map((t) => (
                         <div
                           key={t.title}
-                          className="rounded-[10px] border border-[#34363a] bg-[#17181a] p-6"
+                          className="rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-6"
                         >
                           <h3 className="text-[16px] font-bold text-white">{t.title}</h3>
-                          <p className="mt-2 text-[13.5px] leading-[1.6] text-[#c4c6ca]">{t.body}</p>
+                          <p className="mt-2 text-[13.5px] leading-[1.6] text-[#A9A8AF]">{t.body}</p>
                         </div>
                       ))}
                     </div>
@@ -628,7 +628,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                         <ul className="mt-4 space-y-2.5 text-[14.5px] text-[var(--od-text)]">
                           {section.bullets.map((b) => (
                             <li key={b} className="flex items-start gap-2.5">
-                              <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                              <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                               <span>{b}</span>
                             </li>
                           ))}
@@ -781,12 +781,12 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
       {/* 3. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-24">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -794,13 +794,13 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 {spec.closingCta.title}
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">{spec.closingCta.body}</p>
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{spec.closingCta.body}</p>
               {spec.closingCta.docGuide && (
-                <p className="mt-4 text-[13.5px] text-[#989aa0]">
+                <p className="mt-4 text-[13.5px] text-[#9A99A1]">
                   Product guide:{" "}
                   <Link
                     href={spec.closingCta.docGuide.href}
-                    className="font-semibold text-[#92b5ff] underline underline-offset-4 hover:text-white"
+                    className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"
                   >
                     {spec.closingCta.docGuide.label}
                   </Link>

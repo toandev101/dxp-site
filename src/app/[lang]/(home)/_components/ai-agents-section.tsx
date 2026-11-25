@@ -35,7 +35,7 @@ export function AiAgentsSection() {
   ];
 
   return (
-    <section id="ai" className="relative overflow-hidden bg-[#266df0] text-white">
+    <section id="ai" className="relative overflow-hidden bg-[#D91842] text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[760px]">
         {/* Left Blue Copy Column (aligned to .od-shell left gutter) */}
         <div className="flex items-center py-16 px-4 sm:px-8 lg:py-20 lg:pl-[max(48px,calc(50vw-640px))] lg:pr-14">
@@ -75,7 +75,7 @@ export function AiAgentsSection() {
             <div className="mt-10">
               <Link
                 href="/platform/ai-ordering-agents"
-                className="inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-[4px] bg-white px-[22px] py-[13px] text-[14.4px] font-semibold text-[#1f5fd1] transition-colors hover:bg-[#edf3ff]"
+                className="inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full bg-white px-[22px] py-[13px] text-[14.4px] font-semibold text-[#B8123A] transition-colors hover:bg-[#FDECEF]"
               >
                 <span>{isVi ? "Khám phá AI ordering" : "Explore AI ordering"}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -100,35 +100,35 @@ export function AiAgentsSection() {
             className="object-cover object-center"
           />
 
-          {/* Sleek iPhone Overlaid Right-Center Matching Live Ordering.co Screenshot */}
+          {/* Sleek iPhone Overlaid Right-Center Matching Live OPERO Screenshot */}
           <div className="relative z-10 flex h-full w-full items-center justify-center p-6 sm:p-10">
-            <div className="w-[270px] sm:w-[305px] rotate-[2deg] rounded-[38px] bg-[#111214] p-[9px] shadow-[0_35px_80px_-15px_rgba(11,12,13,0.5)] ring-1 ring-white/20">
-              <div className="overflow-hidden rounded-[30px] bg-white text-[#0b0c0d]">
+            <div className="w-[270px] sm:w-[305px] rotate-[2deg] rounded-[38px] bg-[#1B1A1F] p-[9px] shadow-[0_35px_80px_-15px_rgba(11,12,13,0.5)] ring-1 ring-white/20">
+              <div className="overflow-hidden rounded-[30px] bg-white text-[#151417]">
                 {/* Dynamic Island */}
-                <div className="mx-auto mt-2 h-4 w-20 rounded-full bg-[#111214]" />
+                <div className="mx-auto mt-2 h-4 w-20 rounded-full bg-[#1B1A1F]" />
 
                 {/* App Header */}
                 <div className="relative flex items-center justify-center px-4 pt-2.5 pb-2 border-b border-slate-100">
-                  <ChevronLeft className="absolute left-3.5 h-4 w-4 text-[#266df0]" />
+                  <ChevronLeft className="absolute left-3.5 h-4 w-4 text-[#D91842]" />
                   <div className="text-center">
-                    <p className="text-[13px] font-bold text-[#0b0c0d]">Your Brand</p>
-                    <p className="text-[10px] text-[#3f4145]">AI ordering assistant</p>
+                    <p className="text-[13px] font-bold text-[#151417]">Your Brand</p>
+                    <p className="text-[10px] text-[#3A393F]">AI ordering assistant</p>
                   </div>
                 </div>
 
                 {/* Chat Body */}
                 <div className="p-3.5 space-y-2.5">
-                  <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-[#266df0] px-3 py-2 text-[11px] font-medium text-white">
+                  <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-[#D91842] px-3 py-2 text-[11px] font-medium text-white">
                     {isVi ? "Món gì có gà, không hành tây nhé." : "Something with chicken, no onion."}
                   </div>
 
-                  <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-[#f3f4f6] px-3 py-2 text-[11px] text-[#0b0c0d]">
+                  <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-[#f3f4f6] px-3 py-2 text-[11px] text-[#151417]">
                     {isVi ? "Bạn thử món Grilled chicken bowl này nhé?" : "How about this grilled chicken bowl?"}
                   </div>
 
                   {/* Product Card */}
-                  <div className="overflow-hidden rounded-2xl border border-[#dee0e3] bg-white">
-                    <div className="relative aspect-[16/11] w-full bg-[#f6f7f7]">
+                  <div className="overflow-hidden rounded-2xl border border-[#D9D9DD] bg-white">
+                    <div className="relative aspect-[16/11] w-full bg-[#F5F5F6]">
                       <Image
                         src="/images/hero-bowl-main.jpg"
                         alt="Grilled chicken bowl"
@@ -138,9 +138,9 @@ export function AiAgentsSection() {
                       />
                     </div>
                     <div className="p-3">
-                      <p className="text-[13px] font-bold text-[#0b0c0d]">Grilled chicken bowl</p>
-                      <p className="text-[11px] text-[#3f4145]">No onion</p>
-                      <div className="mt-2.5 rounded-lg bg-[#266df0] py-2 text-center text-[12px] font-semibold text-white">
+                      <p className="text-[13px] font-bold text-[#151417]">Grilled chicken bowl</p>
+                      <p className="text-[11px] text-[#3A393F]">No onion</p>
+                      <div className="mt-2.5 rounded-lg bg-[#D91842] py-2 text-center text-[12px] font-semibold text-white">
                         {isVi ? "Xem đơn hàng" : "Review order"}
                       </div>
                     </div>

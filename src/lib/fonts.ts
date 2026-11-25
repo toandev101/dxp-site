@@ -1,36 +1,9 @@
-import localFont from "next/font/local";
+/**
+ * OPERO Typography System (DESIGN.md §3)
+ * Uses the native Apple system font stack (SF Pro Display / SF Pro Text)
+ * with cross-platform fallbacks. No font files are embedded.
+ */
+export const OPERO_FONT_STACK =
+  "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif";
 
-export const fontPoppins = localFont({
-  src: [
-    {
-      path: "../../public/fonts/poppins/FZ Poppins-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/poppins/FZ Poppins-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/poppins/FZ Poppins-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/poppins/FZ Poppins-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/poppins/FZ Poppins-ExtraBold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-  variable: "--font-poppins",
-  preload: true,
-});
-
-export const allFontVariables = [fontPoppins.variable].join(" ");
+export const allFontVariables = "";

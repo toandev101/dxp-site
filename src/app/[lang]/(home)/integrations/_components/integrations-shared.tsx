@@ -3,6 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { ArrowRight, ChevronDown, Route, Search, Store, Truck } from "lucide-react";
 
+import { OperoLockup } from "@/components/brand/opero-logo";
 import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
 import { BrandLogo } from "@/components/layout/header";
@@ -46,7 +47,7 @@ export function IntegrationHero({
 
   return (
     <section
-      className="relative overflow-hidden bg-[#0b0c0d] text-white"
+      className="relative overflow-hidden bg-[#111013] text-white"
       style={{
         backgroundImage:
           "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -57,7 +58,7 @@ export function IntegrationHero({
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
         style={{
-          background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+          background: "none",
         }}
       />
 
@@ -67,27 +68,27 @@ export function IntegrationHero({
             <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
               {breadcrumbs.map((crumb, idx) => (
                 <span key={crumb.label} className="inline-flex items-center gap-1.5">
-                  {idx > 0 && <span className="text-[#5b5e64]">/</span>}
+                  {idx > 0 && <span className="text-[#6E6D75]">/</span>}
                   {crumb.href ? (
-                    <Link href={crumb.href} className="text-[#92b5ff] underline underline-offset-4 hover:text-white">
+                    <Link href={crumb.href} className="text-[#F9D0D8] underline underline-offset-4 hover:text-white">
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-[#92b5ff]">{crumb.label}</span>
+                    <span className="text-[#F9D0D8]">{crumb.label}</span>
                   )}
                 </span>
               ))}
             </nav>
 
             {eyebrow && (
-              <p className="mt-5 font-mono text-[12px] font-medium text-[#c4c6ca]">{eyebrow}</p>
+              <p className="mt-5 font-mono text-[12px] font-medium text-[#A9A8AF]">{eyebrow}</p>
             )}
 
             <h1 className="mt-4 text-[40px] sm:text-[52px] lg:text-[60px] font-bold tracking-[-0.04em] leading-[1.03] text-white [text-wrap:balance]">
               {title}
             </h1>
 
-            <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">{lede}</p>
+            <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">{lede}</p>
 
             {(primaryCta || secondaryCta) && (
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -95,7 +96,7 @@ export function IntegrationHero({
                   (primaryCta.href ? (
                     <Link
                       href={primaryCta.href}
-                      className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                     >
                       {primaryCta.label}
                     </Link>
@@ -103,7 +104,7 @@ export function IntegrationHero({
                     <button
                       type="button"
                       onClick={() => openDemoModal(primaryCta.modalTopic || title)}
-                      className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                     >
                       {primaryCta.label}
                     </button>
@@ -114,14 +115,14 @@ export function IntegrationHero({
                     <button
                       type="button"
                       onClick={() => setChatOpen(true)}
-                      className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
                     >
                       {secondaryCta.label}
                     </button>
                   ) : (
                     <Link
                       href={secondaryCta.href || "/integrations"}
-                      className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                      className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                     >
                       {secondaryCta.label}
                     </Link>
@@ -130,7 +131,7 @@ export function IntegrationHero({
             )}
 
             {meta && meta.length > 0 && (
-              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-[#c4c6ca]">
+              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-[#A9A8AF]">
                 {meta.map((m) => (
                   <span key={m}>{m}</span>
                 ))}
@@ -149,15 +150,8 @@ export function IntegrationHero({
 export function ProviderLogoMark({ item }: { item: IntegrationItem }) {
   if (item.isOrderingBuiltIn) {
     return (
-      <div className="inline-flex items-center gap-2">
-        <svg viewBox="0 0 32 32" className="h-6 w-6 shrink-0" fill="none" aria-hidden="true">
-          <path d="M 7.5 9.2 A 11 11 0 0 1 17.5 5.1" stroke="#10B981" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M 20.5 6 A 11 11 0 0 1 26.8 14.5" stroke="#266DF0" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M 26.4 18.8 A 11 11 0 0 1 18.8 26.6" stroke="#DB2777" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M 14.6 26.9 A 11 11 0 0 1 6.2 20.8" stroke="#F59E0B" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M 5.2 16.8 A 11 11 0 0 1 5.9 12.2" stroke="#22C55E" strokeWidth="3.2" strokeLinecap="round" />
-        </svg>
-        <span className="text-[14px] font-bold tracking-[-0.02em] text-[var(--od-text)]">{BRAND}</span>
+      <div className="inline-flex items-center text-[var(--od-text)]">
+        <OperoLockup className="h-[22px] w-auto" />
       </div>
     );
   }
@@ -179,7 +173,7 @@ export function ProviderLogoMark({ item }: { item: IntegrationItem }) {
       </span>
       <span
         className="text-[15px] font-extrabold tracking-[-0.03em]"
-        style={{ color: item.brandColor === "#0B0C0D" || item.brandColor === "#111111" ? "var(--od-text)" : item.brandColor }}
+        style={{ color: item.brandColor === "#151417" || item.brandColor === "#111111" ? "var(--od-text)" : item.brandColor }}
       >
         {item.name}
       </span>
@@ -344,7 +338,7 @@ export function FilterableIntegrationsGrid({
             }}
             placeholder={searchPlaceholder}
             aria-label={searchPlaceholder}
-            className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-10 pr-3.5 text-[14px] text-[var(--od-text)] placeholder:text-[var(--od-text-muted)] focus:border-[#266df0] focus:outline-none"
+            className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] pl-10 pr-3.5 text-[14px] text-[var(--od-text)] placeholder:text-[var(--od-text-muted)] focus:border-[#D91842] focus:outline-none"
           />
         </div>
 
@@ -362,7 +356,7 @@ export function FilterableIntegrationsGrid({
               setSelectedCountry(e.target.value);
               setShowAll(false);
             }}
-            className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3 text-[14px] font-medium text-[var(--od-text)] focus:border-[#266df0] focus:outline-none"
+            className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3 text-[14px] font-medium text-[var(--od-text)] focus:border-[#D91842] focus:outline-none"
           >
             <option value="ALL">All countries</option>
             {availableCountries.map((code) => (
@@ -388,7 +382,7 @@ export function FilterableIntegrationsGrid({
                 className={cn(
                   "rounded-[6px] border px-3.5 py-2 text-[13px] font-medium transition-colors cursor-pointer",
                   active
-                    ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
+                    ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
                     : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                 )}
               >
@@ -421,7 +415,7 @@ export function FilterableIntegrationsGrid({
           <button
             type="button"
             onClick={() => openDemoModal("Integration country inquiry")}
-            className="mt-4 inline-flex min-h-[42px] items-center justify-center rounded-[6px] bg-[#266df0] px-4 py-2 text-[13.5px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+            className="mt-4 inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#D91842] px-4 py-2 text-[13.5px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
           >
             Talk to {BRAND}
           </button>
@@ -454,7 +448,7 @@ export function FilterableIntegrationsGrid({
               <button
                 type="button"
                 onClick={() => setShowAll(true)}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
               >
                 Show all {filtered.length} {countNoun}
               </button>
@@ -485,7 +479,7 @@ export function PosFlowDiagram() {
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div className="space-y-1">
                 <div className="flex items-start gap-2">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[11px] font-bold text-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                     1
                   </span>
                   <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">Import menu and prices</p>
@@ -496,7 +490,7 @@ export function PosFlowDiagram() {
               </div>
               <div className="space-y-1">
                 <div className="flex items-start gap-2">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[11px] font-bold text-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                     2
                   </span>
                   <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">Keep it in sync</p>
@@ -507,8 +501,8 @@ export function PosFlowDiagram() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-1 pt-1 text-[#266df0]">
-              <div className="h-[2px] flex-1 bg-[#266df0]" />
+            <div className="flex items-center gap-1 pt-1 text-[#D91842]">
+              <div className="h-[2px] flex-1 bg-[#D91842]" />
               <ArrowRight className="h-4 w-4 shrink-0" />
             </div>
           </div>
@@ -517,7 +511,7 @@ export function PosFlowDiagram() {
           <div className="space-y-2">
             <p className="font-mono text-[11px] text-[var(--od-text-muted)]">Order route</p>
             <div className="flex items-start gap-2">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[11px] font-bold text-white">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                 4
               </span>
               <div>
@@ -527,21 +521,21 @@ export function PosFlowDiagram() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-[#266df0]">
+            <div className="flex items-center gap-1 text-[#D91842]">
               <ArrowRight className="h-4 w-4 shrink-0 rotate-180" />
-              <div className="h-[2px] flex-1 bg-[#266df0]" />
+              <div className="h-[2px] flex-1 bg-[#D91842]" />
             </div>
           </div>
         </div>
 
-        {/* Center: Ordering.co Card (Step 3) */}
-        <div className="lg:col-span-3 flex flex-col justify-between rounded-[10px] border border-[var(--od-border)] border-t-[3px] border-t-[#266df0] bg-[var(--od-bg)] p-5 shadow-xs">
+        {/* Center: OPERO Card (Step 3) */}
+        <div className="lg:col-span-3 flex flex-col justify-between rounded-[10px] border border-[var(--od-border)] border-t-[3px] border-t-[#D91842] bg-[var(--od-bg)] p-5 shadow-xs">
           <div>
             <div className="border-b border-[var(--od-border)] pb-3">
               <BrandLogo />
             </div>
             <div className="mt-4 flex items-start gap-2.5">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[11px] font-bold text-white">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                 3
               </span>
               <div>
@@ -559,7 +553,7 @@ export function PosFlowDiagram() {
         <div className="lg:col-span-3 flex flex-col justify-end gap-4">
           <div className="space-y-1.5">
             <div className="flex items-start gap-2">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[11px] font-bold text-white">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                 5
               </span>
               <div>
@@ -569,8 +563,8 @@ export function PosFlowDiagram() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-[#266df0]">
-              <div className="h-[2px] flex-1 bg-[#266df0]" />
+            <div className="flex items-center gap-1 text-[#D91842]">
+              <div className="h-[2px] flex-1 bg-[#D91842]" />
               <ArrowRight className="h-4 w-4 shrink-0" />
             </div>
           </div>
@@ -618,10 +612,10 @@ export function DeliveryFlowDiagram() {
         {steps.map((s) => (
           <div
             key={s.num}
-            className="rounded-[10px] border border-[var(--od-border)] border-t-[3px] border-t-[#266df0] bg-[var(--od-bg)] p-5"
+            className="rounded-[10px] border border-[var(--od-border)] border-t-[3px] border-t-[#D91842] bg-[var(--od-bg)] p-5"
           >
             <div className="flex items-center gap-2.5">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#266df0] text-[12px] font-bold text-white">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[12px] font-bold text-white">
                 {s.num}
               </span>
               <h3 className="text-[15.5px] font-bold text-[var(--od-text)]">{s.title}</h3>
@@ -632,7 +626,7 @@ export function DeliveryFlowDiagram() {
       </div>
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--od-border)] pt-4 text-[12.5px] text-[var(--od-text-muted)]">
         <span className="inline-flex items-center gap-2 font-medium text-[var(--od-text)]">
-          <Truck className="h-4 w-4 text-[#266df0]" />
+          <Truck className="h-4 w-4 text-[#D91842]" />
           Works with your own fleet, third-party delivery companies, or a hybrid setup per store.
         </span>
         <Link href="/platform/ordering-delivery" className="font-semibold text-[var(--od-action-content)] hover:underline">
@@ -661,12 +655,12 @@ export function IntegrationClosingCta({
   return (
     <section className="py-16 lg:py-24">
       <Container>
-        <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
             style={{
-              background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+              background: "none",
             }}
           />
 
@@ -674,13 +668,13 @@ export function IntegrationClosingCta({
             <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
               {title}
             </h2>
-            <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">{body}</p>
+            <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{body}</p>
             {docGuide && (
-              <p className="mt-4 text-[13.5px] text-[#989aa0]">
+              <p className="mt-4 text-[13.5px] text-[#9A99A1]">
                 Product guide:{" "}
                 <Link
                   href={docGuide.href}
-                  className="font-semibold text-[#92b5ff] underline underline-offset-4 hover:text-white"
+                  className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"
                 >
                   {docGuide.label}
                 </Link>
@@ -692,7 +686,7 @@ export function IntegrationClosingCta({
             {primaryCta.href ? (
               <Link
                 href={primaryCta.href}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 {primaryCta.label}
               </Link>
@@ -700,7 +694,7 @@ export function IntegrationClosingCta({
               <button
                 type="button"
                 onClick={() => openDemoModal(primaryCta.modalTopic || title)}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 {primaryCta.label}
               </button>
@@ -710,14 +704,14 @@ export function IntegrationClosingCta({
               <button
                 type="button"
                 onClick={() => setChatOpen(true)}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
               >
                 {secondaryCta.label}
               </button>
             ) : (
               <Link
                 href={secondaryCta.href || "/pricing"}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 {secondaryCta.label}
               </Link>

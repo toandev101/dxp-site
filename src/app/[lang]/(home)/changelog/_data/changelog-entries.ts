@@ -160,7 +160,7 @@ const RAW_ENTRIES: RawEntry[] = [
     "2026-11-19",
     "dashboard-ai",
     "Sold-out items and option limits in menu imports",
-    "Uber Eats menu imports bring sold-out products and options in as disabled, keep option subtitles as descriptions, and treat a missing selection limit as no limit. DoorDash, Uber Eats, and Ordering.co imports turn an option maximum of 0 into a usable limit instead of rejecting the group.",
+    "Uber Eats menu imports bring sold-out products and options in as disabled, keep option subtitles as descriptions, and treat a missing selection limit as no limit. DoorDash, Uber Eats, and OPERO imports turn an option maximum of 0 into a usable limit instead of rejecting the group.",
   ],
   [
     "November 2026",
@@ -314,7 +314,7 @@ const RAW_ENTRIES: RawEntry[] = [
     "2026-10-30",
     "dashboard-ai",
     "More reliable marketplace menu imports",
-    "Enabled menu importers accept Uber Eats and DoorDash links pasted without https:// and handle deeply nested Uber Eats options whose identifiers exceed the import limit. Imports also check the Ordering.co session against the project API path, avoiding rejection caused by checking only the API host.",
+    "Enabled menu importers accept Uber Eats and DoorDash links pasted without https:// and handle deeply nested Uber Eats options whose identifiers exceed the import limit. Imports also check the OPERO session against the project API path, avoiding rejection caused by checking only the API host.",
   ],
   [
     "October 2026",
@@ -452,7 +452,7 @@ const RAW_ENTRIES: RawEntry[] = [
     "2026-09-30",
     "dashboard",
     "AI Agents opens with the current session",
-    "The AI Agents button in the administrator sidebar opens the AI Agents workspace with the current Ordering.co session and project, so administrators do not need to sign in again.",
+    "The AI Agents button in the administrator sidebar opens the AI Agents workspace with the current OPERO session and project, so administrators do not need to sign in again.",
   ],
   [
     "September 2026",
@@ -468,7 +468,7 @@ const RAW_ENTRIES: RawEntry[] = [
     "2026-09-25",
     "api",
     "MCP server for AI clients",
-    "Added an Ordering.co MCP server that lets configured AI clients authenticate with MCP tokens, inspect the API catalog, and run approved read and write operations. The endpoint stays off until MCP is enabled for the project, and creating a token requires accepting the current data notice.",
+    "Added an OPERO MCP server that lets configured AI clients authenticate with MCP tokens, inspect the API catalog, and run approved read and write operations. The endpoint stays off until MCP is enabled for the project, and creating a token requires accepting the current data notice.",
   ],
   [
     "September 2026",
@@ -776,7 +776,7 @@ const RAW_ENTRIES: RawEntry[] = [
     "2026-03-17",
     "api",
     "Clover POS integration",
-    "Added Clover as a supported POS third-party integration for projects that connect Ordering.co to Clover.",
+    "Added Clover as a supported POS third-party integration for projects that connect OPERO to Clover.",
   ],
   [
     "March 2026",

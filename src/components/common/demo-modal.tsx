@@ -85,11 +85,11 @@ export function DemoModal() {
       <DialogContent>
         {submitted ? (
           <div className="py-6 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#EEF6E8] text-[#3F7A1C]">
               <CheckCircle2 className="h-8 w-8" />
             </div>
-            <h3 className="text-xl font-bold text-c-dark">{t.form_success_title}</h3>
-            <p className="mt-2 text-sm text-c-description">{t.form_success_desc}</p>
+            <h3 className="text-xl font-bold text-[#151417]">{t.form_success_title}</h3>
+            <p className="mt-2 text-sm text-[#6E6D75]">{t.form_success_desc}</p>
             <Button className="mt-6 w-full" onClick={() => handleOpenChange(false)}>
               {isVi ? "Quay lại trang" : "Back to Site"}
             </Button>
@@ -97,7 +97,7 @@ export function DemoModal() {
         ) : (
           <>
             <DialogHeader>
-              <div className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-c-primary-soft px-2.5 py-1 text-xs font-semibold text-c-primary">
+              <div className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#FDECEF] px-3 py-1 text-xs font-semibold text-[#D91842]">
                 <Sparkles className="h-3.5 w-3.5" />
                 <span>
                   {demoModalSource && demoModalSource !== "general" && !demoModalSource.includes("_")
@@ -142,7 +142,7 @@ export function DemoModal() {
                   <label className="mb-1 block text-xs font-semibold text-c-dark">{t.form_business_type}</label>
                   <select
                     {...register("businessType")}
-                    className="flex h-11 w-full rounded-lg border border-c-border bg-white px-3 text-sm text-c-base focus:border-c-primary focus:outline-none focus:ring-2 focus:ring-c-primary/20"
+                    className="flex h-11 w-full rounded-[8px] border border-[#D9D9DD] bg-white px-3 text-sm text-[#151417] focus:border-[#151417] focus:outline-none"
                   >
                     <option value="restaurant">{isVi ? "Nhà hàng / Quán cà phê" : "Restaurant / Cafe"}</option>
                     <option value="franchise">{isVi ? "Chuỗi / Nhượng quyền" : "Franchise / Chain"}</option>
@@ -155,7 +155,7 @@ export function DemoModal() {
                   <label className="mb-1 block text-xs font-semibold text-c-dark">{t.form_locations}</label>
                   <select
                     {...register("locations")}
-                    className="flex h-11 w-full rounded-lg border border-c-border bg-white px-3 text-sm text-c-base focus:border-c-primary focus:outline-none focus:ring-2 focus:ring-c-primary/20"
+                    className="flex h-11 w-full rounded-[8px] border border-[#D9D9DD] bg-white px-3 text-sm text-[#151417] focus:border-[#151417] focus:outline-none"
                   >
                     <option value="1">1</option>
                     <option value="2-10">2 – 10</option>

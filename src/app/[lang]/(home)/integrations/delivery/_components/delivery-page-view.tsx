@@ -136,7 +136,7 @@ export function DeliveryPageView() {
                 key={m.title}
                 className={`rounded-[10px] border p-6 ${
                   m.highlight
-                    ? "border-[#266df0] bg-[var(--od-action-soft)]/40"
+                    ? "border-[#D91842] bg-[var(--od-action-soft)]/40"
                     : "border-[var(--od-border)] bg-[var(--od-bg)]"
                 }`}
               >

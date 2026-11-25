@@ -398,7 +398,7 @@ export function BuildVsBuyView() {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -409,7 +409,7 @@ export function BuildVsBuyView() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -417,18 +417,18 @@ export function BuildVsBuyView() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
-                <Link href="/developers" className="text-[#92b5ff] underline underline-offset-4 hover:text-white">
+                <Link href="/developers" className="text-[#F9D0D8] underline underline-offset-4 hover:text-white">
                   Developers
                 </Link>
-                <span className="text-[#5b5e64]">/</span>
-                <span className="text-[#92b5ff]">Build vs buy</span>
+                <span className="text-[#6E6D75]">/</span>
+                <span className="text-[#F9D0D8]">Build vs buy</span>
               </nav>
 
               <h1 className="text-[40px] sm:text-[54px] lg:text-[60px] font-bold tracking-[-0.04em] leading-[1.03] text-white [text-wrap:balance]">
                 Build vs buy? Build on {BRAND}.
               </h1>
 
-              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 Building from scratch means months of engineering before your first order. Buying a closed SaaS means
                 living inside someone else&apos;s limits. There is a third option: start from 12+ years of ordering
                 technology on managed, auto-scaling, secured infrastructure, then extend it with the API, webhooks, MCP,
@@ -439,13 +439,13 @@ export function BuildVsBuyView() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Build vs buy architecture evaluation")}
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   Talk to {BRAND}
                 </button>
                 <a
                   href="#paths"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
                 >
                   Compare the three paths
                 </a>
@@ -616,7 +616,7 @@ export function BuildVsBuyView() {
                 className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-12 sm:items-start"
               >
                 <div className="sm:col-span-2">
-                  <span className="inline-flex rounded-md border border-[#266df0]/30 bg-[var(--od-action-soft)] px-2.5 py-1 font-mono text-[12px] font-semibold text-[var(--od-action-content)]">
+                  <span className="inline-flex rounded-md border border-[#D91842]/30 bg-[var(--od-action-soft)] px-2.5 py-1 font-mono text-[12px] font-semibold text-[var(--od-action-content)]">
                     {layer.tag}
                   </span>
                 </div>
@@ -691,7 +691,7 @@ export function BuildVsBuyView() {
             ))}
           </ul>
 
-          <div className="mt-7 rounded-[10px] border border-[#266df0]/30 bg-[var(--od-action-soft)]/35 p-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-7 rounded-[10px] border border-[#D91842]/30 bg-[var(--od-action-soft)]/35 p-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[15px] font-medium text-[var(--od-text)]">
               On {BRAND}, the platform underneath keeps moving while your team works on what makes you different.
             </p>
@@ -839,12 +839,12 @@ export function BuildVsBuyView() {
       {/* 11. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -852,7 +852,7 @@ export function BuildVsBuyView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Start twelve years ahead.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Discuss your model and the technical scope your product needs with {BRAND}.
               </p>
             </div>
@@ -860,14 +860,14 @@ export function BuildVsBuyView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <button
                 type="button"
-                onClick={() => openDemoModal("Build on Ordering.co technical scope")}
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                onClick={() => openDemoModal("Build on OPERO technical scope")}
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 Talk to {BRAND}
               </button>
               <Link
                 href="/pricing"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 See pricing
               </Link>
@@ -900,7 +900,7 @@ function GroupRows({ group }: { group: ComparisonGroup }) {
           <td className="px-5 py-4 align-top leading-[1.6] text-[var(--od-text-muted)]">{row.saas}</td>
           <td className="bg-[var(--od-action-soft)]/25 px-5 py-4 align-top leading-[1.6] text-[var(--od-text)]">
             <div className="flex items-start gap-2">
-              <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+              <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
               <span>
                 {row.ordering}
                 {row.orderingLink && (

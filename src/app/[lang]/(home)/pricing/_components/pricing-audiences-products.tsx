@@ -154,14 +154,14 @@ export function PricingAudiencesAndProducts() {
             </article>
 
             {/* Right Dark Card: FOR BUILDERS */}
-            <article className="flex flex-col rounded-[10px] bg-[#0b0c0d] p-7 sm:p-11 text-white">
-              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#92b5ff]">
+            <article className="flex flex-col rounded-[10px] bg-[#111013] p-7 sm:p-11 text-white">
+              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#F9D0D8]">
                 FOR BUILDERS
               </p>
               <h3 className="mt-3 text-[28px] sm:text-[36px] font-bold tracking-[-0.03em] leading-[1.1] text-white">
                 {isVi ? `Xây dựng nền tảng trên ${siteConfig.name}` : `Build your business on ${siteConfig.name}`}
               </h3>
-              <p className="mt-3.5 text-[15.5px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-3.5 text-[15.5px] leading-[1.6] text-[#A9A8AF]">
                 {isVi
                   ? `Ra mắt sàn đa gian hàng, nền tảng đặt hàng và sản phẩm thương mại tùy chỉnh trên hạ tầng, API và công nghệ của ${siteConfig.name}.`
                   : `Launch marketplaces, ordering platforms, and custom commerce products on the ${siteConfig.name} infrastructure, APIs, and technology.`}
@@ -172,7 +172,7 @@ export function PricingAudiencesAndProducts() {
                 {["Entrepreneurs", "Marketplace operators", "Agencies", "Resellers", "Software companies"].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-[#34363a] bg-[#17181a] px-3.5 py-1.5 text-[12.5px] font-medium text-white"
+                    className="rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-3.5 py-1.5 text-[12.5px] font-medium text-white"
                   >
                     {tag}
                   </span>
@@ -180,18 +180,18 @@ export function PricingAudiencesAndProducts() {
               </div>
 
               {/* 2 Bottom Dark Anchor Rows */}
-              <div className="mt-auto pt-10 divide-y divide-[#34363a] border-t border-[#34363a]">
+              <div className="mt-auto pt-10 divide-y divide-[#2A2A2E] border-t border-[#2A2A2E]">
                 <a
                   href="#marketplace"
                   className="group flex items-center justify-between gap-4 py-4 transition-colors hover:opacity-80"
                 >
                   <div>
                     <p className="text-[15.5px] font-bold text-white">Marketplace</p>
-                    <p className="text-[13.5px] text-[#c4c6ca]">
+                    <p className="text-[13.5px] text-[#A9A8AF]">
                       {isVi ? "Trao đổi phạm vi sàn thương mại của bạn" : "Discuss your marketplace scope"}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-[#92b5ff] transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-4 w-4 text-[#F9D0D8] transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a
                   href="#enterprise"
@@ -199,13 +199,13 @@ export function PricingAudiencesAndProducts() {
                 >
                   <div>
                     <p className="text-[15.5px] font-bold text-white">Enterprise</p>
-                    <p className="text-[13.5px] text-[#c4c6ca]">
+                    <p className="text-[13.5px] text-[#A9A8AF]">
                       {isVi
                         ? "Dành cho doanh nghiệp lớn cần phạm vi thiết kế riêng"
                         : "For larger companies that need a tailored scope"}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-[#92b5ff] transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-4 w-4 text-[#F9D0D8] transition-transform group-hover:translate-x-0.5" />
                 </a>
               </div>
             </article>

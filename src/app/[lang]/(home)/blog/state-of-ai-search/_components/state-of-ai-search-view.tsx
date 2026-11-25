@@ -320,7 +320,7 @@ export function StateOfAiSearchView() {
       {/* Top Sticky Reading Progress Bar */}
       <div className="sticky top-[73px] z-20 h-[3px] w-full bg-[var(--od-border)]/60">
         <div
-          className="h-full bg-[#266df0] transition-[width] duration-75"
+          className="h-full bg-[#D91842] transition-[width] duration-75"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -355,7 +355,7 @@ export function StateOfAiSearchView() {
             {/* Author / Meta / Share Strip */}
             <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-y border-[var(--od-border)] py-4">
               <div className="flex flex-wrap items-center gap-3 text-[13.5px]">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0b0c0d] font-mono text-[11.5px] font-bold text-white">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#111013] font-mono text-[11.5px] font-bold text-white">
                   AM
                 </span>
                 <span className="font-bold text-[var(--od-text)]">Avtar Madan</span>
@@ -372,7 +372,7 @@ export function StateOfAiSearchView() {
                 onClick={handleCopyLink}
                 className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-surface-subtle)] px-3 text-[12px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
               >
-                {copied ? <Check className="h-3.5 w-3.5 text-[#16a34a]" /> : <Copy className="h-3.5 w-3.5" />}
+                {copied ? <Check className="h-3.5 w-3.5 text-[#3F7A1C]" /> : <Copy className="h-3.5 w-3.5" />}
                 <span>{copied ? "Link copied" : "Share"}</span>
               </button>
             </div>
@@ -390,7 +390,7 @@ export function StateOfAiSearchView() {
                 profiles, and strengthening trust signals. Success is now measured by answer presence, not rankings.
               </p>
 
-              <div className="rounded-[10px] border border-[var(--od-border)] border-l-4 border-l-[#266df0] bg-[var(--od-surface-subtle)] p-6">
+              <div className="rounded-[10px] border border-[var(--od-border)] border-l-4 border-l-[#D91842] bg-[var(--od-surface-subtle)] p-6">
                 <p className="font-mono text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[var(--od-action-content)]">
                   Summary
                 </p>
@@ -465,7 +465,7 @@ export function StateOfAiSearchView() {
                   "Only a limited set of sources shapes the final answer",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-2.5">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -493,7 +493,7 @@ export function StateOfAiSearchView() {
                   </li>
                 ))}
               </ul>
-              <p className="rounded-[8px] border border-[#266df0]/30 bg-[var(--od-action-soft)]/35 px-4 py-3 text-[14.5px] font-medium text-[var(--od-text)]">
+              <p className="rounded-[8px] border border-[#D91842]/30 bg-[var(--od-action-soft)]/35 px-4 py-3 text-[14.5px] font-medium text-[var(--od-text)]">
                 Fixing visibility gaps starts with structuring your business data for AI discovery across every store
                 and channel.
               </p>
@@ -570,10 +570,10 @@ export function StateOfAiSearchView() {
                           className={cn(
                             "w-full max-w-[54px] rounded-t-[6px] transition-all",
                             bar.highlight
-                              ? "bg-[#266df0]"
+                              ? "bg-[#D91842]"
                               : bar.muted
                                 ? "bg-[var(--od-border-strong)]"
-                                : "bg-[#266df0]/40"
+                                : "bg-[#D91842]/40"
                           )}
                           style={{ height: `${heightPct}%` }}
                         />
@@ -588,7 +588,7 @@ export function StateOfAiSearchView() {
                 </div>
               </figure>
 
-              <div className="rounded-[10px] border border-[#266df0]/30 bg-[var(--od-action-soft)]/35 p-5 text-[14.5px] leading-[1.65] text-[var(--od-text)]">
+              <div className="rounded-[10px] border border-[#D91842]/30 bg-[var(--od-action-soft)]/35 p-5 text-[14.5px] leading-[1.65] text-[var(--od-text)]">
                 <strong>Implication for enterprises:</strong> When owned content lacks clarity or consistency, AI search
                 engines rely more heavily on third-party sources to validate and describe the brand. For multi-location
                 enterprises, this creates a control gap where external platforms represent locations inconsistently.
@@ -623,7 +623,7 @@ export function StateOfAiSearchView() {
                     <ul className="mt-2.5 space-y-1.5 text-[13.5px] text-[var(--od-text-muted)]">
                       {layer.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-2">
-                          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#266df0]" />
+                          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D91842]" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -665,7 +665,7 @@ export function StateOfAiSearchView() {
                           <span className="font-bold">{r.pct}%</span>
                         </div>
                         <div className="mt-1 h-2 w-full rounded-full bg-[var(--od-surface-subtle)]">
-                          <div className="h-full rounded-full bg-[#266df0]" style={{ width: `${r.pct * 3.8}%` }} />
+                          <div className="h-full rounded-full bg-[#D91842]" style={{ width: `${r.pct * 3.8}%` }} />
                         </div>
                       </div>
                     ))}
@@ -689,7 +689,7 @@ export function StateOfAiSearchView() {
                           <span className="font-bold">{r.pct}%</span>
                         </div>
                         <div className="mt-1 h-2 w-full rounded-full bg-[var(--od-surface-subtle)]">
-                          <div className="h-full rounded-full bg-[#266df0]" style={{ width: `${r.pct * 8.5}%` }} />
+                          <div className="h-full rounded-full bg-[#D91842]" style={{ width: `${r.pct * 8.5}%` }} />
                         </div>
                       </div>
                     ))}
@@ -823,7 +823,7 @@ export function StateOfAiSearchView() {
                       <ul className="mt-2.5 space-y-1.5 text-[14.5px] text-[var(--od-text-muted)]">
                         {st.bullets.map((b) => (
                           <li key={b} className="flex items-start gap-2">
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#266df0]" />
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#D91842]" />
                             <span>{b}</span>
                           </li>
                         ))}
@@ -856,7 +856,7 @@ export function StateOfAiSearchView() {
                     <ul className="mt-2.5 space-y-1.5 text-[14px] text-[var(--od-text)]">
                       {cap.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-2">
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#266df0]" />
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#D91842]" />
                           <span>{b}</span>
                         </li>
                       ))}
@@ -912,23 +912,23 @@ export function StateOfAiSearchView() {
               </p>
 
               {/* Inline Dark Watch Demo CTA */}
-              <div className="mt-6 relative overflow-hidden rounded-[12px] bg-[#0b0c0d] p-7 sm:p-9 text-white flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-6 relative overflow-hidden rounded-[20px] bg-[#111013] p-7 sm:p-9 text-white flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute -right-12 top-1/2 h-[280px] w-[320px] -translate-y-1/2"
                   style={{
-                    background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.3), transparent)",
+                    background: "none",
                   }}
                 />
                 <div className="relative z-10 max-w-md">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#92b5ff]">Live walkthrough</p>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#F9D0D8]">Live walkthrough</p>
                   <h3 className="mt-1.5 text-[22px] font-bold leading-snug">
                     See how {BRAND} powers AI discovery across every location.
                   </h3>
                 </div>
                 <Link
                   href="/contact?meeting=demo#book"
-                  className="relative z-10 inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-[6px] bg-[#266df0] px-5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1]"
+                  className="relative z-10 inline-flex min-h-[44px] shrink-0 items-center justify-center rounded-full bg-[#D91842] px-5 text-[14px] font-semibold text-white hover:bg-[#B8123A]"
                 >
                   Watch a free demo
                 </Link>
@@ -937,7 +937,7 @@ export function StateOfAiSearchView() {
 
             {/* AUTHOR BIO BOX */}
             <aside className="mt-12 rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6 sm:p-7 flex flex-col gap-4 sm:flex-row sm:items-start">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#0b0c0d] font-mono text-[15px] font-bold text-white">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#111013] font-mono text-[15px] font-bold text-white">
                 AM
               </span>
               <div>
@@ -958,31 +958,31 @@ export function StateOfAiSearchView() {
           {/* RIGHT STICKY RAIL (4 cols): GEO CHECKLIST LEAD MAGNET */}
           <aside className="lg:col-span-4 lg:sticky lg:top-[96px] space-y-6">
             <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6 shadow-[0_14px_40px_-22px_rgba(11,12,13,0.18)]">
-              {/* Ebook Cover Visual (Ordering.co Dark/Blue Design System) */}
-              <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] p-6 text-white">
+              {/* Ebook Cover Visual (OPERO Dark/Blue Design System) */}
+              <div className="relative overflow-hidden rounded-[10px] bg-[#111013] p-6 text-white">
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute -right-10 -bottom-10 h-44 w-44"
                   style={{
-                    background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.38), transparent)",
+                    background: "none",
                   }}
                 />
                 <div className="relative z-10 mx-auto max-w-[200px] rounded-[8px] border border-white/15 bg-[#151821] p-4 shadow-lg">
-                  <span className="inline-flex items-center gap-1 font-mono text-[9.5px] text-[#92b5ff]">
+                  <span className="inline-flex items-center gap-1 font-mono text-[9.5px] text-[#F9D0D8]">
                     <Sparkles className="h-3 w-3" />
                     {BRAND} GUIDE
                   </span>
                   <p className="mt-2.5 text-[14px] font-bold leading-snug text-white">
                     Generative Engine Optimization (GEO)
                   </p>
-                  <p className="mt-1.5 text-[10.5px] leading-relaxed text-[#989aa0]">
+                  <p className="mt-1.5 text-[10.5px] leading-relaxed text-[#9A99A1]">
                     The Essential Checklist for Multi-Location Businesses
                   </p>
                   <div className="mt-4 flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-[#266df0]" />
+                    <span className="h-2 w-2 rounded-full bg-[#D91842]" />
                     <span className="h-2 w-2 rounded-full bg-[#34d399]" />
                     <span className="h-2 w-2 rounded-full bg-[#fbbf24]" />
-                    <span className="ml-auto font-mono text-[9.5px] text-[#92b5ff]">2026 PDF</span>
+                    <span className="ml-auto font-mono text-[9.5px] text-[#F9D0D8]">2026 PDF</span>
                   </div>
                 </div>
               </div>
@@ -992,8 +992,8 @@ export function StateOfAiSearchView() {
               </h2>
 
               {checklistDone ? (
-                <div className="mt-5 rounded-[8px] border border-[#16a34a]/30 bg-[#16a34a]/10 p-4 text-center">
-                  <CheckCircle2 className="mx-auto h-8 w-8 text-[#16a34a]" />
+                <div className="mt-5 rounded-[8px] border border-[#16a34a]/30 bg-[#5E9B2E]/10 p-4 text-center">
+                  <CheckCircle2 className="mx-auto h-8 w-8 text-[#3F7A1C]" />
                   <p className="mt-2 text-[14.5px] font-bold text-[var(--od-text)]">Checklist sent!</p>
                   <p className="mt-1 text-[13px] text-[var(--od-text-muted)]">
                     We sent the 2026 GEO Checklist PDF to your work inbox.
@@ -1010,13 +1010,13 @@ export function StateOfAiSearchView() {
                       onChange={(e) => setChecklistEmail(e.target.value)}
                       placeholder="Business email"
                       aria-label="Business email"
-                      className="h-[44px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                      className="h-[44px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] pl-9 pr-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={checklistSubmitting}
-                    className="flex h-[44px] w-full items-center justify-center rounded-[6px] bg-[#266df0] px-4 text-[13.5px] font-semibold uppercase tracking-[0.06em] text-white transition-colors hover:bg-[#1f5fd1] disabled:opacity-60 cursor-pointer"
+                    className="flex h-[44px] w-full items-center justify-center rounded-full bg-[#D91842] px-4 text-[13.5px] font-semibold uppercase tracking-[0.06em] text-white transition-colors hover:bg-[#B8123A] disabled:opacity-60 cursor-pointer"
                   >
                     {checklistSubmitting ? "Sending..." : "Download now"}
                   </button>

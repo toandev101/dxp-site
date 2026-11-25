@@ -70,13 +70,13 @@ export function ChangelogPageView() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#releases"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
                   Explore the updates
                 </a>
                 <Link
                   href="/platform"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                 >
                   Platform overview
                 </Link>
@@ -110,7 +110,7 @@ export function ChangelogPageView() {
                   <li key={area.key} className="relative flex items-center gap-4">
                     <span
                       aria-hidden="true"
-                      className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#266df0] bg-[var(--od-bg)] font-mono text-[11.5px] font-semibold text-[#266df0]"
+                      className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D91842] bg-[var(--od-bg)] font-mono text-[11.5px] font-semibold text-[#D91842]"
                     >
                       {area.num}
                     </span>
@@ -157,7 +157,7 @@ export function ChangelogPageView() {
                 className={cn(
                   "rounded-full border px-4 py-2 text-[13.5px] font-medium transition-colors cursor-pointer",
                   activeFilter === "all"
-                    ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
+                    ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
                     : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                 )}
               >
@@ -175,7 +175,7 @@ export function ChangelogPageView() {
                     className={cn(
                       "rounded-full border px-4 py-2 text-[13.5px] font-medium transition-colors cursor-pointer",
                       isActive
-                        ? "border-[#266df0] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
+                        ? "border-[#D91842] bg-[var(--od-action-soft)] text-[var(--od-action-content)] font-semibold"
                         : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                     )}
                   >
@@ -226,7 +226,7 @@ export function ChangelogPageView() {
 
                     {/* Vertical Timeline Marker & Rail */}
                     <div className="relative flex flex-col items-center pt-1.5" aria-hidden="true">
-                      <span className="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-[#266df0] bg-[var(--od-bg)]" />
+                      <span className="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-[#D91842] bg-[var(--od-bg)]" />
                       <span className="mt-2 w-px flex-1 bg-[var(--od-border)]" />
                     </div>
 
@@ -255,12 +255,12 @@ export function ChangelogPageView() {
       {/* 3. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -268,7 +268,7 @@ export function ChangelogPageView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Explore the platform behind these updates.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 See how {BRAND} brings customer ordering, operations, and connected services into one platform, or
                 explore the technical documentation.
               </p>
@@ -277,13 +277,13 @@ export function ChangelogPageView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/demo"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 See a live demo
               </Link>
               <Link
                 href="/developers"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Developer platform
               </Link>

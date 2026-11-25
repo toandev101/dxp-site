@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, ArrowRight, ArrowUpRight, Globe, Moon, Sun } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Globe, Moon, Sun } from "lucide-react";
 
 import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
@@ -83,25 +83,28 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[var(--od-bg)] text-[var(--od-text)] border-t border-[var(--od-border)]">
+    <footer className="bg-[var(--od-bg)] text-[var(--od-text)] border-t border-[var(--od-border-soft)]">
       {/* Band 1: 6-Column Main Directory */}
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-          {/* Col 1: Brand info */}
+          {/* Col 1: OPERO Brand info */}
           <div className="lg:col-span-3 space-y-4">
             <BrandLogo />
+            <p className="text-[13px] font-medium text-[var(--od-text)]">
+              {isVi ? "Kết nối · Vận hành · Tăng trưởng" : "Connect · Operate · Grow"}
+            </p>
             <p className="text-[13.5px] leading-[1.6] text-[var(--od-text-muted)] max-w-[260px]">
               {isVi
-                ? "Hạ tầng đặt hàng cho nhà hàng và thương mại địa phương. Build. Operate. Connect. Extend."
-                : "The ordering infrastructure for restaurants and local commerce. Build. Operate. Connect. Extend."}
+                ? "Nền tảng vận hành số toàn diện cho chuỗi và thương hiệu F&B. Website, App, Zalo Mini App, Loyalty, POS & giao vận."
+                : "The digital operating platform for F&B brands and local commerce. Websites, Apps, Loyalty, POS, and delivery."}
             </p>
             <Link
               href="/api/health"
-              className="inline-flex items-center gap-2 text-[13.5px] font-medium text-[var(--od-action-content)] hover:underline pt-1"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--success-bg)] px-3 py-1.5 text-[12.5px] font-semibold text-[var(--success)] transition-opacity duration-150 hover:opacity-85"
             >
-              <Activity className="h-4 w-4" />
-              <span>{isVi ? "Trạng thái hệ thống" : "System status"}</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <span className="h-2 w-2 rounded-full bg-[#5E9B2E]" aria-hidden="true" />
+              <span>{isVi ? "Hệ thống hoạt động ổn định" : "All systems operational"}</span>
+              <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
 
@@ -123,7 +126,7 @@ export function Footer() {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-2 text-[13.5px] text-[var(--od-text-muted)] transition-colors hover:text-[var(--od-action-content)]"
+                        className="inline-flex items-center gap-2 text-[13.5px] text-[var(--od-text-muted)] transition-colors duration-150 hover:text-[var(--od-action-content)]"
                       >
                         <span>{item.label}</span>
                         {"badge" in item && item.badge && (
@@ -142,8 +145,8 @@ export function Footer() {
       </Container>
 
       {/* Band 2: Apps Strip */}
-      <div className="border-t border-[var(--od-border)]">
-        <Container className="py-6 flex flex-wrap items-center gap-3">
+      <div className="border-t border-[var(--od-border-soft)]">
+        <Container className="py-6 flex flex-wrap items-center gap-2.5">
           <span className="text-[13.5px] font-semibold text-[var(--od-text)] mr-2">Apps</span>
           {[
             { label: "Merchant App", href: "/platform/ordering-merchant" },
@@ -154,7 +157,7 @@ export function Footer() {
             <Link
               key={app.label}
               href={app.href}
-              className="inline-flex items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3.5 py-2 text-[13px] font-medium text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[var(--od-surface-subtle)] px-4 py-2 text-[13px] font-medium text-[var(--od-text)] transition-colors duration-150 hover:bg-[var(--od-border-soft)]"
             >
               <span>{app.label}</span>
               <ArrowUpRight className="h-3.5 w-3.5 text-[var(--od-text-muted)]" />
@@ -165,11 +168,11 @@ export function Footer() {
       </div>
 
       {/* Band 3: Legal & Locale Bar */}
-      <div className="border-t border-[var(--od-border)]">
+      <div className="border-t border-[var(--od-border-soft)]">
         <Container className="py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[13px] text-[var(--od-text-muted)]">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>
-              © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+              © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.domain}). All rights reserved.
             </span>
             <Link href="/demo" className="hover:text-[var(--od-text)] transition-colors">
               Privacy policy &amp; GDPR
@@ -177,8 +180,8 @@ export function Footer() {
             <Link href="/demo" className="hover:text-[var(--od-text)] transition-colors">
               Terms and conditions
             </Link>
-            <Link href="/demo" className="hover:text-[var(--od-text)] transition-colors">
-              Your privacy choices
+            <Link href="/contact" className="hover:text-[var(--od-text)] transition-colors">
+              {siteConfig.supportEmail}
             </Link>
           </div>
 
@@ -214,7 +217,7 @@ export function Footer() {
               type="button"
               onClick={toggleTheme}
               aria-label="Switch theme"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] text-[var(--od-text)] hover:border-[var(--od-border-strong)] cursor-pointer"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--od-surface-subtle)] text-[var(--od-text)] hover:bg-[var(--od-border-soft)] cursor-pointer transition-colors duration-150"
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>

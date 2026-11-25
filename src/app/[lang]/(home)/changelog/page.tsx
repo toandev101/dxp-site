@@ -5,7 +5,7 @@ import { ChangelogPageView } from "./_components/changelog-view";
 export const metadata: Metadata = buildPageMetadata({
   title: "Product changelog",
   description:
-    "Explore Ordering.co updates for ordering channels, franchise experiences, business and delivery operations, the API, Dashboard, and Dashboard AI.",
+    "Explore OPERO updates for ordering channels, franchise experiences, business and delivery operations, the API, Dashboard, and Dashboard AI.",
   path: "/changelog",
 });
 

@@ -177,14 +177,14 @@ export function AnalyticsPageView() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/products#extend"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
               >
                 Open API reference
               </Link>
               <button
                 type="button"
                 onClick={() => openDemoModal("Analytics & BI API access")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
               >
                 Talk to {BRAND}
               </button>

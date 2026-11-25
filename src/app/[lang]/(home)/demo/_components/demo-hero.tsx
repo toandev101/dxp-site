@@ -68,7 +68,7 @@ export function DemoHero() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Guided demo · 30 min")}
-                className="inline-flex min-h-[46px] w-full sm:w-auto items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[46px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
               >
                 <span>{isVi ? "Đặt lịch demo" : "Book a demo"}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -77,7 +77,7 @@ export function DemoHero() {
               <button
                 type="button"
                 onClick={() => setChatOpen(true)}
-                className="inline-flex min-h-[46px] w-full sm:w-auto items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                className="inline-flex min-h-[46px] w-full sm:w-auto items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
               >
                 {isVi ? `Trao đổi với ${siteConfig.name}` : `Talk to ${siteConfig.name}`}
               </button>

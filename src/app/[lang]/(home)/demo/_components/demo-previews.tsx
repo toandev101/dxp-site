@@ -16,17 +16,17 @@ export function MarketplaceWebPreview() {
   ];
 
   return (
-    <div className="h-full w-full bg-white p-3 sm:p-4 text-[#0b0c0d] flex flex-col justify-between overflow-hidden select-none">
+    <div className="h-full w-full bg-white p-3 sm:p-4 text-[#151417] flex flex-col justify-between overflow-hidden select-none">
       {/* Circular Category Icons Row */}
       <div className="flex items-center gap-2 overflow-hidden">
         {categories.map((cat, idx) => (
           <div
             key={cat}
             className={`flex flex-col items-center gap-1 rounded-lg px-2 py-1.5 shrink-0 ${
-              idx === 0 ? "bg-[#edf3ff] text-[#1f5fd1]" : "text-[#3f4145]"
+              idx === 0 ? "bg-[#FDECEF] text-[#B8123A]" : "text-[#3A393F]"
             }`}
           >
-            <div className="h-6 w-6 rounded-full bg-[#f6f7f7] border border-[#dee0e3] flex items-center justify-center text-[9px] font-bold">
+            <div className="h-6 w-6 rounded-full bg-[#F5F5F6] border border-[#D9D9DD] flex items-center justify-center text-[9px] font-bold">
               {cat.slice(0, 2)}
             </div>
             <span className="text-[7.5px] font-medium">{cat}</span>
@@ -40,13 +40,13 @@ export function MarketplaceWebPreview() {
           {filters.map((f) => (
             <span
               key={f}
-              className="rounded-full border border-[#dee0e3] bg-white px-2 py-0.5 text-[7.5px] text-[#3f4145] whitespace-nowrap"
+              className="rounded-full border border-[#D9D9DD] bg-white px-2 py-0.5 text-[7.5px] text-[#3A393F] whitespace-nowrap"
             >
               {f}
             </span>
           ))}
         </div>
-        <div className="hidden sm:flex items-center gap-1 rounded-full border border-[#dee0e3] bg-[#f6f7f7] px-2.5 py-0.5 text-[7.5px] text-[#989aa0] w-28">
+        <div className="hidden sm:flex items-center gap-1 rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-0.5 text-[7.5px] text-[#9A99A1] w-28">
           <Search className="h-2.5 w-2.5" />
           <span>Search</span>
         </div>
@@ -70,19 +70,19 @@ export function MarketplaceWebPreview() {
 
       {/* Top Businesses Grid */}
       <div className="mt-2.5">
-        <p className="text-[9.5px] font-bold text-[#0b0c0d]">Top Businesses</p>
-        <p className="text-[7px] text-[#989aa0]">Sponsored</p>
+        <p className="text-[9.5px] font-bold text-[#151417]">Top Businesses</p>
+        <p className="text-[7px] text-[#9A99A1]">Sponsored</p>
         <div className="mt-1.5 grid grid-cols-5 gap-2">
           {stores.map((st) => (
             <div key={st.name} className="space-y-1">
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg bg-[#f6f7f7]">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg bg-[#F5F5F6]">
                 <Image src={st.img} alt={st.name} fill sizes="120px" className="object-cover" />
                 <span className="absolute left-1 top-1 rounded bg-black/65 px-1 py-0.5 text-[6px] font-semibold text-white">
                   10% off
                 </span>
               </div>
-              <p className="truncate text-[8px] font-semibold text-[#0b0c0d]">{st.name}</p>
-              <p className="text-[6.5px] text-[#989aa0]">{st.time}</p>
+              <p className="truncate text-[8px] font-semibold text-[#151417]">{st.name}</p>
+              <p className="text-[6.5px] text-[#9A99A1]">{st.time}</p>
             </div>
           ))}
         </div>
@@ -96,12 +96,12 @@ export function MarketplaceAppPreview() {
   return (
     <div className="relative h-full w-full flex items-center justify-center overflow-hidden p-4 select-none">
       {/* Far Left Phone */}
-      <div className="hidden sm:block w-[86px] -mr-5 -rotate-[12deg] translate-y-4 rounded-[16px] bg-[#111214] p-1 shadow-lg">
-        <div className="rounded-[12px] bg-white p-1.5 h-[165px] overflow-hidden text-[#0b0c0d]">
+      <div className="hidden sm:block w-[86px] -mr-5 -rotate-[12deg] translate-y-4 rounded-[16px] bg-[#1B1A1F] p-1 shadow-lg">
+        <div className="rounded-[12px] bg-white p-1.5 h-[165px] overflow-hidden text-[#151417]">
           <p className="text-[6.5px] font-bold">Delivery · ASAP</p>
           <div className="mt-1.5 grid grid-cols-2 gap-1">
-            <div className="h-8 rounded bg-[#f6f7f7]" />
-            <div className="h-8 rounded bg-[#f6f7f7]" />
+            <div className="h-8 rounded bg-[#F5F5F6]" />
+            <div className="h-8 rounded bg-[#F5F5F6]" />
           </div>
           <div className="relative mt-2 aspect-[4/3] w-full overflow-hidden rounded-md">
             <Image src="/images/hero-bowl-main.jpg" alt="" fill sizes="80px" className="object-cover" />
@@ -111,9 +111,9 @@ export function MarketplaceAppPreview() {
       </div>
 
       {/* Mid Left Phone */}
-      <div className="w-[100px] sm:w-[108px] -mr-4 -rotate-[6deg] -translate-y-2 rounded-[18px] bg-[#111214] p-1 shadow-xl z-10">
-        <div className="rounded-[14px] bg-white p-2 h-[192px] overflow-hidden text-[#0b0c0d]">
-          <p className="text-[7px] font-bold text-[#3f4145]">Featured items</p>
+      <div className="w-[100px] sm:w-[108px] -mr-4 -rotate-[6deg] -translate-y-2 rounded-[18px] bg-[#1B1A1F] p-1 shadow-xl z-10">
+        <div className="rounded-[14px] bg-white p-2 h-[192px] overflow-hidden text-[#151417]">
+          <p className="text-[7px] font-bold text-[#3A393F]">Featured items</p>
           <div className="mt-1.5 grid grid-cols-2 gap-1.5">
             {["/images/hero-bowl-main.jpg", "/images/bowl-salmon.jpg", "/images/bowl-mediterranean.jpg", "/images/hero-bowl-main.jpg"].map(
               (src, i) => (
@@ -130,7 +130,7 @@ export function MarketplaceAppPreview() {
       </div>
 
       {/* Center Emerald Hero Phone */}
-      <div className="w-[116px] sm:w-[132px] z-20 translate-y-3 rounded-[22px] bg-[#111214] p-[5px] shadow-2xl ring-1 ring-white/20">
+      <div className="w-[116px] sm:w-[132px] z-20 translate-y-3 rounded-[22px] bg-[#1B1A1F] p-[5px] shadow-2xl ring-1 ring-white/20">
         <div className="rounded-[17px] bg-gradient-to-b from-[#2fb36d] via-[#1f9d5a] to-[#0b3d24] p-2.5 h-[222px] flex flex-col justify-between text-white overflow-hidden">
           <div>
             <span className="inline-block rounded-full bg-white/20 px-1.5 py-0.5 text-[6px]">English</span>
@@ -146,39 +146,39 @@ export function MarketplaceAppPreview() {
             <Image src="/images/bowl-mediterranean.jpg" alt="Marketplace app" fill sizes="90px" className="object-cover" />
           </div>
           <div className="space-y-1">
-            <div className="rounded-md bg-[#0b0c0d] py-1 text-center text-[7px] font-semibold">Log in</div>
-            <div className="rounded-md bg-white py-1 text-center text-[7px] font-semibold text-[#0b0c0d]">Sign up</div>
+            <div className="rounded-md bg-[#111013] py-1 text-center text-[7px] font-semibold">Log in</div>
+            <div className="rounded-md bg-white py-1 text-center text-[7px] font-semibold text-[#151417]">Sign up</div>
           </div>
         </div>
       </div>
 
       {/* Mid Right Phone */}
-      <div className="w-[100px] sm:w-[108px] -ml-4 rotate-[7deg] -translate-y-2 rounded-[18px] bg-[#111214] p-1 shadow-xl z-10">
-        <div className="rounded-[14px] bg-white p-2 h-[192px] overflow-hidden text-[#0b0c0d]">
+      <div className="w-[100px] sm:w-[108px] -ml-4 rotate-[7deg] -translate-y-2 rounded-[18px] bg-[#1B1A1F] p-1 shadow-xl z-10">
+        <div className="rounded-[14px] bg-white p-2 h-[192px] overflow-hidden text-[#151417]">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-md">
             <Image src="/images/bowl-salmon.jpg" alt="" fill sizes="90px" className="object-cover" />
           </div>
           <p className="mt-1.5 text-[7.5px] font-bold">Japanese Cuisine</p>
-          <p className="text-[6px] text-[#3f4145]">4.9 ★ · 20–30 min</p>
+          <p className="text-[6px] text-[#3A393F]">4.9 ★ · 20–30 min</p>
           <div className="mt-2 space-y-1">
-            <div className="h-5 rounded bg-[#f6f7f7]" />
-            <div className="h-5 rounded bg-[#f6f7f7]" />
+            <div className="h-5 rounded bg-[#F5F5F6]" />
+            <div className="h-5 rounded bg-[#F5F5F6]" />
           </div>
         </div>
       </div>
 
       {/* Far Right Phone (Checkout) */}
-      <div className="hidden sm:block w-[86px] -ml-5 rotate-[13deg] translate-y-4 rounded-[16px] bg-[#111214] p-1 shadow-lg">
-        <div className="rounded-[12px] bg-white p-2 h-[165px] overflow-hidden text-[#0b0c0d] flex flex-col justify-between">
+      <div className="hidden sm:block w-[86px] -ml-5 rotate-[13deg] translate-y-4 rounded-[16px] bg-[#1B1A1F] p-1 shadow-lg">
+        <div className="rounded-[12px] bg-white p-2 h-[165px] overflow-hidden text-[#151417] flex flex-col justify-between">
           <div>
             <p className="text-[7px] font-bold">Checkout</p>
             <div className="mt-2 space-y-1">
-              <div className="h-3 rounded bg-[#f6f7f7]" />
-              <div className="h-3 rounded bg-[#f6f7f7]" />
-              <div className="h-3 rounded bg-[#f6f7f7]" />
+              <div className="h-3 rounded bg-[#F5F5F6]" />
+              <div className="h-3 rounded bg-[#F5F5F6]" />
+              <div className="h-3 rounded bg-[#F5F5F6]" />
             </div>
           </div>
-          <div className="rounded bg-[#266df0] py-1 text-center text-[6.5px] font-semibold text-white">
+          <div className="rounded bg-[#D91842] py-1 text-center text-[6.5px] font-semibold text-white">
             Place order
           </div>
         </div>
@@ -192,7 +192,7 @@ export function RestaurantWebPreview() {
   const tabs = ["All", "Favorites", "Combos", "Bundles", "Bao", "Fried Rice", "Desserts", "Bowls"];
 
   return (
-    <div className="h-full w-full bg-white text-[#0b0c0d] flex flex-col overflow-hidden select-none">
+    <div className="h-full w-full bg-white text-[#151417] flex flex-col overflow-hidden select-none">
       {/* Banner Header */}
       <div className="relative h-[42%] w-full bg-gradient-to-r from-[#f8f3eb] via-[#f4ede2] to-[#e9e0d2] px-5 flex items-center justify-between overflow-hidden">
         <div className="flex items-center gap-3 z-10">
@@ -203,7 +203,7 @@ export function RestaurantWebPreview() {
             <p className="text-[17px] sm:text-[20px] font-black tracking-wide text-[#182234] leading-none">
               WAGAMOTO
             </p>
-            <p className="mt-0.5 text-[8px] font-semibold tracking-[0.18em] text-[#3f4145]">
+            <p className="mt-0.5 text-[8px] font-semibold tracking-[0.18em] text-[#3A393F]">
               MODERN ASIAN CUISINE
             </p>
           </div>
@@ -214,24 +214,24 @@ export function RestaurantWebPreview() {
       </div>
 
       {/* Store Meta + Delivery Badges */}
-      <div className="px-4 py-2.5 flex items-center justify-between gap-2 border-b border-[#dee0e3]/60">
+      <div className="px-4 py-2.5 flex items-center justify-between gap-2 border-b border-[#D9D9DD]/60">
         <div className="flex items-center gap-2.5">
-          <div className="h-9 w-9 rounded-lg border border-[#dee0e3] bg-white flex items-center justify-center font-black text-xs text-[#182234]">
+          <div className="h-9 w-9 rounded-lg border border-[#D9D9DD] bg-white flex items-center justify-center font-black text-xs text-[#182234]">
             W
           </div>
           <div>
-            <p className="text-[11px] font-bold text-[#0b0c0d]">Wagamoto</p>
-            <p className="text-[7.5px] text-[#3f4145]">2950 Clarendon Blvd, Court House, VA 22201</p>
+            <p className="text-[11px] font-bold text-[#151417]">Wagamoto</p>
+            <p className="text-[7.5px] text-[#3A393F]">2950 Clarendon Blvd, Court House, VA 22201</p>
           </div>
         </div>
         <div className="hidden sm:flex items-center gap-2 text-center">
-          <div className="rounded-md border border-[#dee0e3] px-2.5 py-1">
+          <div className="rounded-md border border-[#D9D9DD] px-2.5 py-1">
             <p className="text-[8.5px] font-bold">0.00 $</p>
-            <p className="text-[6.5px] text-[#989aa0]">Delivery fee</p>
+            <p className="text-[6.5px] text-[#9A99A1]">Delivery fee</p>
           </div>
-          <div className="rounded-md border border-[#dee0e3] px-2.5 py-1">
+          <div className="rounded-md border border-[#D9D9DD] px-2.5 py-1">
             <p className="text-[8.5px] font-bold">25min</p>
-            <p className="text-[6.5px] text-[#989aa0]">Delivery time</p>
+            <p className="text-[6.5px] text-[#9A99A1]">Delivery time</p>
           </div>
         </div>
       </div>
@@ -242,7 +242,7 @@ export function RestaurantWebPreview() {
           <span
             key={tab}
             className={`rounded-full px-2.5 py-0.5 text-[7.5px] font-medium whitespace-nowrap ${
-              idx === 0 ? "bg-[#edf3ff] text-[#1f5fd1] font-semibold" : "bg-[#f6f7f7] text-[#3f4145]"
+              idx === 0 ? "bg-[#FDECEF] text-[#B8123A] font-semibold" : "bg-[#F5F5F6] text-[#3A393F]"
             }`}
           >
             {tab}
@@ -252,7 +252,7 @@ export function RestaurantWebPreview() {
 
       {/* Favorites Row */}
       <div className="px-4 pb-3 flex-1">
-        <p className="text-[9.5px] font-bold text-[#0b0c0d] mb-1.5">Favorites</p>
+        <p className="text-[9.5px] font-bold text-[#151417] mb-1.5">Favorites</p>
         <div className="grid grid-cols-3 gap-2">
           {[
             { name: "Bowl + 2 Bao", img: "/images/hero-bowl-main.jpg" },
@@ -261,12 +261,12 @@ export function RestaurantWebPreview() {
           ].map((item) => (
             <div
               key={item.name}
-              className="flex items-center gap-2 rounded-lg border border-[#dee0e3]/80 p-1.5 bg-white"
+              className="flex items-center gap-2 rounded-lg border border-[#D9D9DD]/80 p-1.5 bg-white"
             >
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-md">
                 <Image src={item.img} alt={item.name} fill sizes="48px" className="object-cover" />
               </div>
-              <p className="text-[7.5px] font-semibold leading-tight text-[#0b0c0d] line-clamp-2">{item.name}</p>
+              <p className="text-[7.5px] font-semibold leading-tight text-[#151417] line-clamp-2">{item.name}</p>
             </div>
           ))}
         </div>
@@ -280,17 +280,17 @@ export function RestaurantAppPreview() {
   return (
     <div className="h-full w-full flex items-center justify-center gap-2 sm:gap-4 p-4 overflow-hidden select-none">
       {/* Left Angled Phone */}
-      <div className="w-[126px] sm:w-[146px] -rotate-[5deg] rounded-[22px] bg-[#111214] p-[5px] shadow-xl">
-        <div className="rounded-[17px] bg-white p-2.5 h-[228px] flex flex-col justify-between text-[#0b0c0d] overflow-hidden">
+      <div className="w-[126px] sm:w-[146px] -rotate-[5deg] rounded-[22px] bg-[#1B1A1F] p-[5px] shadow-xl">
+        <div className="rounded-[17px] bg-white p-2.5 h-[228px] flex flex-col justify-between text-[#151417] overflow-hidden">
           <div>
-            <div className="flex items-center justify-between text-[7px] text-[#3f4145]">
+            <div className="flex items-center justify-between text-[7px] text-[#3A393F]">
               <span className="font-semibold">Delivery</span>
               <span>ASAP</span>
             </div>
             <div className="mt-1.5 flex gap-1">
-              <span className="rounded-full bg-[#16a34a] px-2 py-0.5 text-[6.5px] font-semibold text-white">All</span>
-              <span className="rounded-full bg-[#f6f7f7] px-2 py-0.5 text-[6.5px]">Featured</span>
-              <span className="rounded-full bg-[#f6f7f7] px-2 py-0.5 text-[6.5px]">Popular</span>
+              <span className="rounded-full bg-[#5E9B2E] px-2 py-0.5 text-[6.5px] font-semibold text-white">All</span>
+              <span className="rounded-full bg-[#F5F5F6] px-2 py-0.5 text-[6.5px]">Featured</span>
+              <span className="rounded-full bg-[#F5F5F6] px-2 py-0.5 text-[6.5px]">Popular</span>
             </div>
             <p className="mt-2 text-[8px] font-bold">Featured items</p>
             <div className="mt-1.5 grid grid-cols-2 gap-1.5">
@@ -298,7 +298,7 @@ export function RestaurantAppPreview() {
                 { name: "Signature Bowl", price: "$14.50", img: "/images/hero-bowl-main.jpg" },
                 { name: "Salmon Poke", price: "$16.00", img: "/images/bowl-salmon.jpg" },
               ].map((it) => (
-                <div key={it.name} className="rounded-lg border border-[#dee0e3] p-1">
+                <div key={it.name} className="rounded-lg border border-[#D9D9DD] p-1">
                   <div className="relative aspect-square rounded overflow-hidden">
                     <Image src={it.img} alt={it.name} fill sizes="60px" className="object-cover" />
                     <span className="absolute right-0.5 bottom-0.5 h-3.5 w-3.5 rounded-full bg-white shadow flex items-center justify-center">
@@ -306,22 +306,22 @@ export function RestaurantAppPreview() {
                     </span>
                   </div>
                   <p className="mt-1 truncate text-[6.5px] font-semibold">{it.name}</p>
-                  <p className="text-[6.5px] font-bold text-[#1f5fd1]">{it.price}</p>
+                  <p className="text-[6.5px] font-bold text-[#B8123A]">{it.price}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-full bg-[#0b0c0d] py-1.5 text-center text-[7px] font-semibold text-white">
+          <div className="rounded-full bg-[#111013] py-1.5 text-center text-[7px] font-semibold text-white">
             View Order · $49.38
           </div>
         </div>
       </div>
 
       {/* Right Angled Phone */}
-      <div className="w-[126px] sm:w-[146px] rotate-[4deg] translate-y-2 rounded-[22px] bg-[#111214] p-[5px] shadow-xl">
-        <div className="rounded-[17px] bg-white p-2.5 h-[228px] flex flex-col justify-between text-[#0b0c0d] overflow-hidden">
+      <div className="w-[126px] sm:w-[146px] rotate-[4deg] translate-y-2 rounded-[22px] bg-[#1B1A1F] p-[5px] shadow-xl">
+        <div className="rounded-[17px] bg-white p-2.5 h-[228px] flex flex-col justify-between text-[#151417] overflow-hidden">
           <div>
-            <div className="flex items-center justify-between text-[7px] text-[#3f4145]">
+            <div className="flex items-center justify-between text-[7px] text-[#3A393F]">
               <span className="font-semibold">Delivery</span>
               <span>ASAP</span>
             </div>
@@ -335,7 +335,7 @@ export function RestaurantAppPreview() {
                 <div key={row.name} className="flex items-center justify-between gap-1.5 border-b border-slate-100 pb-1.5">
                   <div className="min-w-0">
                     <p className="truncate text-[7px] font-bold">{row.name}</p>
-                    <p className="text-[6.5px] text-[#3f4145]">{row.price}</p>
+                    <p className="text-[6.5px] text-[#3A393F]">{row.price}</p>
                   </div>
                   <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-md">
                     <Image src={row.img} alt={row.name} fill sizes="40px" className="object-cover" />
@@ -344,7 +344,7 @@ export function RestaurantAppPreview() {
               ))}
             </div>
           </div>
-          <div className="rounded-full bg-[#0b0c0d] py-1.5 text-center text-[7px] font-semibold text-white">
+          <div className="rounded-full bg-[#111013] py-1.5 text-center text-[7px] font-semibold text-white">
             View Order · $18.90
           </div>
         </div>
@@ -359,10 +359,10 @@ export function BusinessAppPreview() {
     <div className="h-full w-full flex items-center justify-center p-4 overflow-hidden select-none">
       <div className="relative flex items-center">
         {/* Back Phone ("Your logo / Welcome") */}
-        <div className="w-[122px] sm:w-[136px] -translate-y-2 rounded-[22px] bg-[#111214] p-[5px] shadow-xl">
+        <div className="w-[122px] sm:w-[136px] -translate-y-2 rounded-[22px] bg-[#1B1A1F] p-[5px] shadow-xl">
           <div className="relative rounded-[17px] h-[222px] overflow-hidden flex flex-col justify-between p-2.5 text-white">
             <Image src="/images/audience-operator.jpg" alt="" fill sizes="140px" className="object-cover brightness-50" />
-            <div className="relative z-10 mt-1 rounded-md bg-white px-2 py-1 text-center text-[10px] font-bold text-[#0b0c0d] shadow">
+            <div className="relative z-10 mt-1 rounded-md bg-white px-2 py-1 text-center text-[10px] font-bold text-[#151417] shadow">
               Your logo
             </div>
             <div className="relative z-10 space-y-1.5">
@@ -370,7 +370,7 @@ export function BusinessAppPreview() {
               <div className="rounded bg-white/15 px-2 py-1 text-[6.5px] text-white/80 border border-white/20">
                 Project name
               </div>
-              <div className="rounded bg-[#266df0] py-1 text-center text-[7.5px] font-semibold">
+              <div className="rounded bg-[#D91842] py-1 text-center text-[7.5px] font-semibold">
                 Set project
               </div>
             </div>
@@ -378,23 +378,23 @@ export function BusinessAppPreview() {
         </div>
 
         {/* Front Phone ("My orders" In Progress) */}
-        <div className="w-[128px] sm:w-[144px] -ml-6 translate-y-4 z-10 rounded-[22px] bg-[#111214] p-[5px] shadow-2xl ring-1 ring-white/20">
-          <div className="rounded-[17px] bg-white p-2.5 h-[222px] text-[#0b0c0d] overflow-hidden">
+        <div className="w-[128px] sm:w-[144px] -ml-6 translate-y-4 z-10 rounded-[22px] bg-[#1B1A1F] p-[5px] shadow-2xl ring-1 ring-white/20">
+          <div className="rounded-[17px] bg-white p-2.5 h-[222px] text-[#151417] overflow-hidden">
             <div className="flex items-center justify-between">
               <p className="text-[9.5px] font-bold">My orders</p>
               <span className="h-2 w-2 rounded-full bg-[#00d17e]" />
             </div>
             <div className="mt-1.5 flex gap-1.5 border-b border-slate-100 pb-1 text-[6.5px]">
-              <span className="text-[#989aa0]">Pending</span>
-              <span className="font-bold text-[#0b0c0d] border-b border-[#0b0c0d] pb-0.5">In Progress</span>
-              <span className="text-[#989aa0]">Completed</span>
+              <span className="text-[#9A99A1]">Pending</span>
+              <span className="font-bold text-[#151417] border-b border-[#151417] pb-0.5">In Progress</span>
+              <span className="text-[#9A99A1]">Completed</span>
             </div>
             <div className="mt-2 space-y-2">
               {[
                 { name: "Italian (DEMO)", status: "Accepted by business", id: "No. 2442", color: "bg-emerald-500" },
                 { name: "Flowers (DEMO)", status: "Driver in business", id: "No. 2439", color: "bg-pink-500" },
                 { name: "Pizza Master", status: "Ready for pickup", id: "No. 2435", color: "bg-orange-500" },
-                { name: "Fresh Bowls", status: "Preparing · 12 min", id: "No. 2431", color: "bg-blue-500" },
+                { name: "Fresh Bowls", status: "Preparing · 12 min", id: "No. 2431", color: "bg-[#D91842]" },
               ].map((ord) => (
                 <div key={ord.id} className="flex items-start gap-2 border-b border-slate-100 pb-1.5">
                   <span className={`mt-0.5 h-5 w-5 shrink-0 rounded-md ${ord.color} text-[7px] font-bold text-white flex items-center justify-center`}>
@@ -402,8 +402,8 @@ export function BusinessAppPreview() {
                   </span>
                   <div className="min-w-0">
                     <p className="truncate text-[7.5px] font-bold">{ord.name}</p>
-                    <p className="text-[6px] text-[#989aa0]">{ord.id}</p>
-                    <p className="truncate text-[6px] font-semibold text-[#1f5fd1]">{ord.status}</p>
+                    <p className="text-[6px] text-[#9A99A1]">{ord.id}</p>
+                    <p className="truncate text-[6px] font-semibold text-[#B8123A]">{ord.status}</p>
                   </div>
                 </div>
               ))}
@@ -426,38 +426,38 @@ export function DriverAppPreview() {
         </div>
 
         {/* Left Map Phone */}
-        <div className="absolute left-2 sm:left-4 top-5 w-[106px] sm:w-[116px] rounded-[18px] bg-[#111214] p-1 shadow-xl z-10">
-          <div className="rounded-[14px] bg-[#edf3ff] h-[182px] overflow-hidden relative p-2 text-[#0b0c0d]">
+        <div className="absolute left-2 sm:left-4 top-5 w-[106px] sm:w-[116px] rounded-[18px] bg-[#1B1A1F] p-1 shadow-xl z-10">
+          <div className="rounded-[14px] bg-[#FDECEF] h-[182px] overflow-hidden relative p-2 text-[#151417]">
             <svg className="absolute inset-0 h-full w-full" viewBox="0 0 120 180" fill="none">
-              <path d="M 10 150 Q 55 95 45 55 T 105 22" stroke="#266df0" strokeWidth="3" strokeDasharray="4 4" />
-              <circle cx="45" cy="55" r="5" fill="#266df0" />
+              <path d="M 10 150 Q 55 95 45 55 T 105 22" stroke="#D91842" strokeWidth="3" strokeDasharray="4 4" />
+              <circle cx="45" cy="55" r="5" fill="#D91842" />
               <circle cx="105" cy="22" r="5" fill="#00d17e" />
             </svg>
             <div className="relative z-10 mt-auto flex flex-col justify-between h-full">
               <span className="inline-flex w-fit items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[6.5px] font-bold shadow-xs">
-                <MapPin className="h-2.5 w-2.5 text-[#266df0]" /> 1.4 km
+                <MapPin className="h-2.5 w-2.5 text-[#D91842]" /> 1.4 km
               </span>
               <div className="rounded-lg bg-white p-1.5 shadow-sm text-[6.5px]">
                 <p className="font-bold">Pickup ready</p>
-                <p className="text-[#3f4145]">ETA 7 mins</p>
+                <p className="text-[#3A393F]">ETA 7 mins</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Front Center Order Details Phone */}
-        <div className="absolute left-[74px] sm:left-[92px] bottom-1 w-[114px] sm:w-[126px] rounded-[20px] bg-[#111214] p-[4px] shadow-2xl z-20 ring-1 ring-white/25">
-          <div className="rounded-[16px] bg-white p-2.5 h-[196px] flex flex-col justify-between text-[#0b0c0d]">
+        <div className="absolute left-[74px] sm:left-[92px] bottom-1 w-[114px] sm:w-[126px] rounded-[20px] bg-[#1B1A1F] p-[4px] shadow-2xl z-20 ring-1 ring-white/25">
+          <div className="rounded-[16px] bg-white p-2.5 h-[196px] flex flex-col justify-between text-[#151417]">
             <div className="space-y-1.5">
               <p className="text-[7px] font-bold leading-tight">Order No. 2437 is Accepted by driver</p>
-              <div className="rounded bg-[#f6f7f7] p-1.5 text-[6px] space-y-0.5">
-                <p className="font-bold text-[#0b0c0d]">Business details</p>
-                <p className="text-[#3f4145]">Downtown Kitchen · 5th Ave</p>
+              <div className="rounded bg-[#F5F5F6] p-1.5 text-[6px] space-y-0.5">
+                <p className="font-bold text-[#151417]">Business details</p>
+                <p className="text-[#3A393F]">Downtown Kitchen · 5th Ave</p>
               </div>
-              <div className="rounded bg-[#f6f7f7] p-1.5 text-[6px] space-y-0.5">
-                <p className="font-bold text-[#0b0c0d]">Customer details</p>
-                <p className="text-[#3f4145]">Alex Morgan · Apt 4B</p>
-                <div className="flex items-center gap-1 text-[#1f5fd1] pt-0.5">
+              <div className="rounded bg-[#F5F5F6] p-1.5 text-[6px] space-y-0.5">
+                <p className="font-bold text-[#151417]">Customer details</p>
+                <p className="text-[#3A393F]">Alex Morgan · Apt 4B</p>
+                <div className="flex items-center gap-1 text-[#B8123A] pt-0.5">
                   <Phone className="h-2 w-2" /> <span>Call customer</span>
                 </div>
               </div>
@@ -481,7 +481,7 @@ export function AiWhatsappPreview() {
       <div className="pointer-events-none absolute h-[240px] w-[240px] rounded-full bg-[#dbe8ff]" />
 
       {/* Hand-drawn style annotation on right */}
-      <div className="hidden sm:flex flex-col items-center absolute right-5 top-12 z-20 text-[#1f5fd1]">
+      <div className="hidden sm:flex flex-col items-center absolute right-5 top-12 z-20 text-[#B8123A]">
         <span className="text-[11px] font-semibold italic leading-tight text-center -rotate-6">
           From
           <br />
@@ -490,22 +490,22 @@ export function AiWhatsappPreview() {
           to order
         </span>
         <svg width="36" height="34" viewBox="0 0 36 34" fill="none" className="mt-1">
-          <path d="M 28 2 C 26 18 16 26 4 28" stroke="#1f5fd1" strokeWidth="1.6" strokeLinecap="round" />
-          <path d="M 9 23 L 3 28 L 10 31" stroke="#1f5fd1" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 28 2 C 26 18 16 26 4 28" stroke="#B8123A" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M 9 23 L 3 28 L 10 31" stroke="#B8123A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
 
       {/* Dark WhatsApp iPhone */}
-      <div className="relative z-10 w-[184px] sm:w-[200px] rounded-[28px] bg-[#111214] p-[6px] shadow-[0_24px_55px_-12px_rgba(11,12,13,0.35)]">
+      <div className="relative z-10 w-[184px] sm:w-[200px] rounded-[28px] bg-[#1B1A1F] p-[6px] shadow-[0_24px_55px_-12px_rgba(11,12,13,0.35)]">
         <div className="rounded-[22px] bg-[#0b141a] overflow-hidden text-white">
           {/* Top Bar */}
           <div className="flex items-center gap-2 bg-[#1f2c34] px-3 py-2.5">
             <ChevronLeft className="h-3.5 w-3.5 text-slate-300" />
-            <span className="h-5 w-5 rounded-full bg-gradient-to-tr from-[#10B981] via-[#266DF0] to-[#F59E0B] p-[2px]">
+            <span className="h-5 w-5 rounded-full bg-gradient-to-tr from-[#10B981] via-[#D91842] to-[#F59E0B] p-[2px]">
               <span className="block h-full w-full rounded-full bg-white" />
             </span>
             <div className="leading-none">
-              <p className="text-[9.5px] font-bold">Ordering.co</p>
+              <p className="text-[9.5px] font-bold">OPERO</p>
               <p className="text-[7px] text-emerald-400 flex items-center gap-0.5 mt-0.5">
                 <Star className="h-2 w-2 fill-current" /> AI Agent
               </p>

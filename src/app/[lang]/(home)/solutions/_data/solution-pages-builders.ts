@@ -887,14 +887,14 @@ export const SOFTWARE_COMPANIES_SPEC: SolutionPageSpec = {
 
 export const MIDDLEWARE_SPEC: SolutionPageSpec = {
   slug: "middleware",
-  metaTitle: "Ordering.co as Middleware for Your Own Website and App",
+  metaTitle: "OPERO as Middleware for Your Own Website and App",
   metaDescription:
-    "Keep your own website, app or kiosk. Connect it once to the Ordering.co API and reach the POS, delivery, marketplace and payment integrations in the Dashboard.",
+    "Keep your own website, app or kiosk. Connect it once to the OPERO API and reach the POS, delivery, marketplace and payment integrations in the Dashboard.",
   hero: {
     breadcrumbLabel: `${BRAND} as middleware`,
     title: "Keep your storefront. Connect it to everything else.",
     lede: `Your website, app or kiosk stays yours. Connect it once to the ${BRAND} API, and ${BRAND} routes menus, orders and statuses to the POS, delivery, marketplace and payment providers already in the Dashboard.`,
-    primaryCta: { label: "Book a demo", modalTopic: "Ordering.co as middleware" },
+    primaryCta: { label: "Book a demo", modalTopic: "OPERO as middleware" },
     secondaryCta: { label: `Talk to ${BRAND}`, openChat: true },
     meta: [
       "More than 15 POS integrations",
@@ -960,7 +960,7 @@ export const MIDDLEWARE_SPEC: SolutionPageSpec = {
         {
           num: "01",
           title: "Create your project",
-          body: "Sign up at accounts.ordering.co. Your project and Dashboard are ready as soon as you log in.",
+          body: "Sign up at accounts.opero.vn. Your project and Dashboard are ready as soon as you log in.",
         },
         {
           num: "02",

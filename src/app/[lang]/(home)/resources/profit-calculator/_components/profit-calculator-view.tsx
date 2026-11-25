@@ -343,13 +343,13 @@ export function ProfitCalculatorView() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#calculator"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Open the calculator
               </a>
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
               >
                 Book a demo
               </Link>
@@ -358,7 +358,7 @@ export function ProfitCalculatorView() {
             <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[12px] text-[var(--od-text-muted)]">
               {["Profit from month 1", "Free, no sign-up", "Download as a spreadsheet"].map((item) => (
                 <li key={item} className="inline-flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#266df0]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#D91842]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -404,7 +404,7 @@ export function ProfitCalculatorView() {
                         step={field.step}
                         value={rawValues[field.name]}
                         onChange={(e) => setRawValues((prev) => ({ ...prev, [field.name]: e.target.value }))}
-                        className="mt-2 h-[42px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[15px] font-medium text-[var(--od-text)] outline-none transition-colors focus:border-[#266df0] focus:ring-2 focus:ring-[#266df0]/20"
+                        className="mt-2 h-[42px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[15px] font-medium text-[var(--od-text)] outline-none transition-colors focus:border-[#D91842] focus:ring-2 focus:ring-[#D91842]/20"
                       />
                     </label>
                   ))}
@@ -434,7 +434,7 @@ export function ProfitCalculatorView() {
                   </dd>
                 </div>
 
-                <div className="rounded-[10px] border-[1.5px] border-[#266df0] bg-[var(--od-bg)] p-5">
+                <div className="rounded-[10px] border-[1.5px] border-[#D91842] bg-[var(--od-bg)] p-5">
                   <dt className="text-[13px] text-[var(--od-text-muted)]">You keep per order</dt>
                   <dd
                     className={cn(
@@ -465,7 +465,7 @@ export function ProfitCalculatorView() {
                   </dd>
                 </div>
 
-                <div className="rounded-[10px] border-[1.5px] border-[#266df0] bg-[var(--od-bg)] p-5">
+                <div className="rounded-[10px] border-[1.5px] border-[#D91842] bg-[var(--od-bg)] p-5">
                   <dt className="text-[13px] text-[var(--od-text-muted)]">Profit after 12 months</dt>
                   <dd
                     className={cn(
@@ -646,12 +646,12 @@ export function ProfitCalculatorView() {
       {/* 5. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -659,7 +659,7 @@ export function ProfitCalculatorView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Want to see your numbers on a real platform?
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 Bring your calculation to a demo. We will show you how {BRAND} handles commissions, delivery fees,
                 drivers and payments for a marketplace like yours.
               </p>
@@ -668,13 +668,13 @@ export function ProfitCalculatorView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?meeting=demo#book"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 Book a demo
               </Link>
               <Link
                 href="/solutions/marketplaces"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 Read the Growth playbooks
               </Link>

@@ -300,13 +300,13 @@ export function ContactPageView() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#book"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
                   Book a meeting
                 </a>
                 <a
                   href="#form"
-                  className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                  className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                 >
                   Send a message
                 </a>
@@ -315,7 +315,7 @@ export function ContactPageView() {
               <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[12px] text-[var(--od-text-muted)]">
                 {["Sales, support and partnerships", "One form, routed by topic", "Answered by email"].map((item) => (
                   <li key={item} className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#266df0]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#D91842]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -331,7 +331,7 @@ export function ContactPageView() {
                 href="#book"
                 className="group flex items-start gap-4 p-6 transition-colors hover:bg-[var(--od-surface-subtle)]"
               >
-                <CalendarClock className="mt-0.5 h-5 w-5 shrink-0 text-[#266df0]" strokeWidth={1.75} />
+                <CalendarClock className="mt-0.5 h-5 w-5 shrink-0 text-[#D91842]" strokeWidth={1.75} />
                 <span className="flex-1">
                   <strong className="block text-[15.5px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                     Book a meeting
@@ -347,7 +347,7 @@ export function ContactPageView() {
                 href="#form"
                 className="group flex items-start gap-4 p-6 transition-colors hover:bg-[var(--od-surface-subtle)]"
               >
-                <MessageSquareText className="mt-0.5 h-5 w-5 shrink-0 text-[#266df0]" strokeWidth={1.75} />
+                <MessageSquareText className="mt-0.5 h-5 w-5 shrink-0 text-[#D91842]" strokeWidth={1.75} />
                 <span className="flex-1">
                   <strong className="block text-[15.5px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                     Send a message
@@ -363,7 +363,7 @@ export function ContactPageView() {
                 href="/demo"
                 className="group flex items-start gap-4 p-6 transition-colors hover:bg-[var(--od-surface-subtle)]"
               >
-                <MonitorPlay className="mt-0.5 h-5 w-5 shrink-0 text-[#266df0]" strokeWidth={1.75} />
+                <MonitorPlay className="mt-0.5 h-5 w-5 shrink-0 text-[#D91842]" strokeWidth={1.75} />
                 <span className="flex-1">
                   <strong className="block text-[15.5px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)]">
                     See a live demo
@@ -382,7 +382,7 @@ export function ContactPageView() {
       {/* 2. CUSTOMER PROOF STRIP */}
       <div className="border-y border-[var(--od-border)] bg-white py-10">
         <Container>
-          <p className="text-center text-[13.5px] text-[#5b5e64]">
+          <p className="text-center text-[13.5px] text-[#6E6D75]">
             Restaurants, franchises, and marketplaces already run their ordering on {BRAND}.
           </p>
           <ul
@@ -428,7 +428,7 @@ export function ContactPageView() {
                     className={cn(
                       "block cursor-pointer rounded-[10px] border p-5 transition-colors",
                       active
-                        ? "border-[#266df0] bg-[var(--od-action-soft)]/55 ring-1 ring-[#266df0]/25"
+                        ? "border-[#D91842] bg-[var(--od-action-soft)]/55 ring-1 ring-[#D91842]/25"
                         : "border-[var(--od-border)] bg-[var(--od-bg)] hover:border-[var(--od-border-strong)]"
                     )}
                   >
@@ -484,8 +484,8 @@ export function ContactPageView() {
               </div>
 
               {bookingConfirmed ? (
-                <div className="mt-8 rounded-[10px] border border-[#16a34a]/30 bg-[#16a34a]/10 p-6 text-center">
-                  <CheckCircle2 className="mx-auto h-10 w-10 text-[#16a34a]" />
+                <div className="mt-8 rounded-[10px] border border-[#16a34a]/30 bg-[#5E9B2E]/10 p-6 text-center">
+                  <CheckCircle2 className="mx-auto h-10 w-10 text-[#3F7A1C]" />
                   <h4 className="mt-3 text-[20px] font-bold text-[var(--od-text)]">Meeting requested</h4>
                   <p className="mt-1.5 text-[14.5px] text-[var(--od-text-muted)]">{bookingConfirmed.summary}</p>
                   <p className="mt-2 font-mono text-[12px] text-[var(--od-action-content)]">
@@ -506,7 +506,7 @@ export function ContactPageView() {
                 <div className="mt-6">
                   <p className="text-[14.5px] text-[var(--od-text-muted)]">Choose a date and time below.</p>
 
-                  <div className="mt-5 rounded-[10px] border border-[var(--od-border)] border-t-4 border-t-[#266df0] bg-[var(--od-bg)] p-5 sm:p-6">
+                  <div className="mt-5 rounded-[10px] border border-[var(--od-border)] border-t-4 border-t-[#D91842] bg-[var(--od-bg)] p-5 sm:p-6">
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
                       {/* Calendar Grid */}
                       <div className="md:col-span-7">
@@ -569,8 +569,8 @@ export function ContactPageView() {
                                   !selectable && "text-[var(--od-text-muted)]/35 cursor-not-allowed",
                                   selectable &&
                                     !isSelected &&
-                                    "bg-[var(--od-action-soft)]/50 text-[var(--od-action-content)] hover:bg-[#266df0] hover:text-white cursor-pointer",
-                                  isSelected && "bg-[#266df0] text-white font-bold cursor-pointer"
+                                    "bg-[var(--od-action-soft)]/50 text-[var(--od-action-content)] hover:bg-[#D91842] hover:text-white cursor-pointer",
+                                  isSelected && "bg-[#D91842] text-white font-bold cursor-pointer"
                                 )}
                               >
                                 {day}
@@ -608,8 +608,8 @@ export function ContactPageView() {
                                   className={cn(
                                     "w-full rounded-[6px] border px-3 py-2 text-[13px] font-semibold transition-colors cursor-pointer",
                                     active
-                                      ? "border-[#266df0] bg-[#266df0] text-white"
-                                      : "border-[#266df0]/40 bg-[var(--od-bg)] text-[var(--od-action-content)] hover:border-[#266df0] hover:bg-[var(--od-action-soft)]/40"
+                                      ? "border-[#D91842] bg-[#D91842] text-white"
+                                      : "border-[#D91842]/40 bg-[var(--od-bg)] text-[var(--od-action-content)] hover:border-[#D91842] hover:bg-[var(--od-action-soft)]/40"
                                   )}
                                 >
                                   {slot}
@@ -632,7 +632,7 @@ export function ContactPageView() {
                           value={bookingName}
                           onChange={(e) => setBookingName(e.target.value)}
                           placeholder="Your name"
-                          className="h-[42px] rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                          className="h-[42px] rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                         />
                         <input
                           type="email"
@@ -640,12 +640,12 @@ export function ContactPageView() {
                           value={bookingEmail}
                           onChange={(e) => setBookingEmail(e.target.value)}
                           placeholder="you@brand.com"
-                          className="h-[42px] rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                          className="h-[42px] rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                         />
                         <button
                           type="submit"
                           disabled={bookingSubmitting}
-                          className="h-[42px] rounded-[6px] bg-[#266df0] px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] disabled:opacity-60 cursor-pointer"
+                          className="h-[42px] rounded-full bg-[#D91842] px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] disabled:opacity-60 cursor-pointer"
                         >
                           {bookingSubmitting ? "Confirming..." : `Confirm ${selectedSlot}`}
                         </button>
@@ -697,8 +697,8 @@ export function ContactPageView() {
             {/* Right Form */}
             <div className="lg:col-span-8">
               {formSuccessId ? (
-                <div className="rounded-[10px] border border-[#16a34a]/30 bg-[#16a34a]/10 p-8 text-center">
-                  <CheckCircle2 className="mx-auto h-11 w-11 text-[#16a34a]" />
+                <div className="rounded-[10px] border border-[#16a34a]/30 bg-[#5E9B2E]/10 p-8 text-center">
+                  <CheckCircle2 className="mx-auto h-11 w-11 text-[#3F7A1C]" />
                   <h3 className="mt-3 text-[22px] font-bold text-[var(--od-text)]">Message received</h3>
                   <p className="mt-2 text-[15px] text-[var(--od-text-muted)]">
                     Your <strong className="text-[var(--od-text)]">{topic}</strong> inquiry has been routed to our team.
@@ -741,7 +741,7 @@ export function ContactPageView() {
                         }}
                         aria-invalid={!!errors.topic}
                         className={cn(
-                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]",
+                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]",
                           errors.topic ? "border-red-500" : "border-[var(--od-border-strong)]"
                         )}
                       >
@@ -775,7 +775,7 @@ export function ContactPageView() {
                         }}
                         aria-invalid={!!errors.name}
                         className={cn(
-                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]",
+                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]",
                           errors.name ? "border-red-500" : "border-[var(--od-border-strong)]"
                         )}
                       />
@@ -796,7 +796,7 @@ export function ContactPageView() {
                         placeholder="Brand or company name"
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
-                        className="mt-1.5 h-[44px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]"
+                        className="mt-1.5 h-[44px] w-full rounded-[6px] border border-[var(--od-border-strong)] bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]"
                       />
                     </div>
 
@@ -820,7 +820,7 @@ export function ContactPageView() {
                         }}
                         aria-invalid={!!errors.email}
                         className={cn(
-                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]",
+                          "mt-1.5 h-[44px] w-full rounded-[6px] border bg-[var(--od-bg)] px-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]",
                           errors.email ? "border-red-500" : "border-[var(--od-border-strong)]"
                         )}
                       />
@@ -850,7 +850,7 @@ export function ContactPageView() {
                       }}
                       aria-invalid={!!errors.message}
                       className={cn(
-                        "mt-2 w-full rounded-[6px] border bg-[var(--od-bg)] p-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#266df0]",
+                        "mt-2 w-full rounded-[6px] border bg-[var(--od-bg)] p-3 text-[14.5px] text-[var(--od-text)] outline-none focus:border-[#D91842]",
                         errors.message ? "border-red-500" : "border-[var(--od-border-strong)]"
                       )}
                     />
@@ -871,7 +871,7 @@ export function ContactPageView() {
                     <button
                       type="submit"
                       disabled={formSubmitting}
-                      className="flex min-h-[48px] w-full items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] disabled:opacity-60 cursor-pointer"
+                      className="flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#D91842] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#B8123A] disabled:opacity-60 cursor-pointer"
                     >
                       {formSubmitting ? "Sending..." : "Send message"}
                     </button>
@@ -1012,12 +1012,12 @@ export function ContactPageView() {
       {/* 7. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -1025,7 +1025,7 @@ export function ContactPageView() {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Or see it with your own menu.
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
                 A live demo of the platform, or the pricing page if that&apos;s the question you came with.
               </p>
             </div>
@@ -1033,13 +1033,13 @@ export function ContactPageView() {
             <div className="relative z-10 flex flex-wrap items-center gap-3">
               <Link
                 href="/demo"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
                 See a live demo
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex min-h-[46px] items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224]"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
                 See pricing
               </Link>

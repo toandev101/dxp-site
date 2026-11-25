@@ -17,7 +17,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm transition-opacity",
+      "fixed inset-0 z-50 bg-[#111013]/55 transition-opacity duration-200",
       className
     )}
     {...props}
@@ -34,7 +34,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 w-[94vw] max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-c-border bg-white p-6 shadow-2xl duration-200 focus:outline-none sm:p-7",
+        "fixed left-1/2 top-1/2 z-50 w-[94vw] max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-[20px] bg-[var(--canvas)] p-6 text-[var(--ink)] shadow-[var(--shadow)] duration-200 focus:outline-none sm:p-7",
         className
       )}
       {...props}
@@ -42,7 +42,7 @@ const DialogContent = React.forwardRef<
       {children}
       <DialogPrimitive.Close
         aria-label="Close"
-        className="absolute right-4 top-4 rounded-lg p-1.5 text-c-muted transition-colors hover:bg-c-surface hover:text-c-base focus:outline-none"
+        className="absolute right-4 top-4 rounded-full p-2 text-[var(--ink-mute)] transition-colors duration-150 hover:bg-[var(--line-soft)] hover:text-[var(--ink)] focus:outline-none"
       >
         <X className="h-4 w-4" />
       </DialogPrimitive.Close>
@@ -62,7 +62,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
-    className={cn("text-xl font-bold leading-tight tracking-tight text-c-dark", className)}
+    className={cn("text-[20px] font-semibold leading-[1.25] text-[var(--ink)]", className)}
     {...props}
   />
 ));
@@ -74,7 +74,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-c-description leading-relaxed", className)}
+    className={cn("text-sm text-[var(--ink-mute)] leading-relaxed", className)}
     {...props}
   />
 ));

@@ -83,7 +83,7 @@ export function DemoCatalog() {
                       href="https://v26-orderingv1.orderingplus.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>{isVi ? "Mở demo web" : "Open web demo"}</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -124,7 +124,7 @@ export function DemoCatalog() {
                       href="https://apps.apple.com/us/app/marketplace-app-v26/id6752963060"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>App Store</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -133,7 +133,7 @@ export function DemoCatalog() {
                       href="https://play.google.com/store/apps/details?id=com.ordering.customertwo"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>Google Play</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -210,7 +210,7 @@ export function DemoCatalog() {
                       href="https://pizzahutdemo.franchises.orderingplus.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>{isVi ? "Mở demo web" : "Open web demo"}</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -251,7 +251,7 @@ export function DemoCatalog() {
                       href="https://apps.apple.com/mx/app/franchise-pizzapp/id6753997032"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>App Store</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -260,7 +260,7 @@ export function DemoCatalog() {
                       href="https://play.google.com/store/apps/details?id=com.franchisepizzapp.franchiseapp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>Google Play</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -317,7 +317,7 @@ export function DemoCatalog() {
                       href="https://apps.apple.com/mx/app/business-app-v26/id6526502488"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>App Store</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -326,7 +326,7 @@ export function DemoCatalog() {
                       href="https://play.google.com/store/apps/details?id=com.orderingplus.storeapp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>Google Play</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -381,7 +381,7 @@ export function DemoCatalog() {
                       href="https://apps.apple.com/mx/app/driver-app-v26/id6526462318"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>App Store</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -390,7 +390,7 @@ export function DemoCatalog() {
                       href="https://play.google.com/store/apps/details?id=com.orderingplus.driverapp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                      className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                     >
                       <span>Google Play</span>
                       <ArrowUpRight className="h-4 w-4 text-[var(--od-text-muted)]" />
@@ -463,7 +463,7 @@ export function DemoCatalog() {
                   <button
                     type="button"
                     onClick={() => openDemoModal("AI Ordering Agents · Guided demo")}
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
                   >
                     {isVi ? "Đặt lịch demo" : "Book a demo"}
                   </button>

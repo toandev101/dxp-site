@@ -23,8 +23,8 @@ export function buildPageMetadata({
     alternates: {
       canonical: path,
       languages: {
-        "en-US": path,
-        "vi-VN": `/vi${path === "/" ? "" : path}`,
+        "vi-VN": path,
+        "en-US": `/en${path === "/" ? "" : path}`,
       },
     },
   };

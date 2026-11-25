@@ -187,7 +187,7 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Restaurant Plan · Request pricing")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[#D91842] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   <span>{isVi ? "Yêu cầu báo giá" : "Request pricing"}</span>
                   <ArrowRight className="h-4 w-4" />
@@ -195,7 +195,7 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Restaurant Plan · Guided demo")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
                 >
                   {isVi ? "Đặt lịch demo" : "Book a demo"}
                 </button>
@@ -310,7 +310,7 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Marketplace Plan · Request pricing")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[#D91842] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   <span>{isVi ? "Yêu cầu báo giá" : "Request pricing"}</span>
                   <ArrowRight className="h-4 w-4" />
@@ -318,7 +318,7 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Marketplace Plan · Guided demo")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-4 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
                 >
                   {isVi ? "Đặt lịch demo" : "Book a demo"}
                 </button>
@@ -328,9 +328,9 @@ export function PricingHeroAndPlans() {
               </div>
             </article>
 
-            {/* PLAN 3: ENTERPRISE (Dark #0b0c0d Card) */}
-            <article id="enterprise" className="scroll-mt-24 flex flex-col bg-[#0b0c0d] p-6 sm:p-9 text-white">
-              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#92b5ff]">
+            {/* PLAN 3: ENTERPRISE (Dark #151417 Card) */}
+            <article id="enterprise" className="scroll-mt-24 flex flex-col bg-[#111013] p-6 sm:p-9 text-white">
+              <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#F9D0D8]">
                 ENTERPRISE
               </p>
 
@@ -338,7 +338,7 @@ export function PricingHeroAndPlans() {
                 Enterprise
               </h3>
 
-              <p className="mt-3 text-[15px] leading-[1.55] text-[#c4c6ca]">
+              <p className="mt-3 text-[15px] leading-[1.55] text-[#A9A8AF]">
                 {isVi
                   ? "Chuỗi vận hành từ 20+ chi nhánh trở lên, hoặc doanh nghiệp cần hợp đồng thương mại, triển khai hay hỗ trợ riêng."
                   : "A multi-location operation of 20+ locations, or one with a scoped commercial, deployment, or support need."}
@@ -347,54 +347,54 @@ export function PricingHeroAndPlans() {
               {/* Key Billing Bullets */}
               <ul className="mt-6 space-y-2.5 text-[14.5px] font-semibold text-white">
                 <li className="flex items-start gap-2.5">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2.2} />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2.2} />
                   <span>{isVi ? "Báo giá tùy chỉnh theo lượng đơn hàng" : "Custom pricing based on your order volume"}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2.2} />
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2.2} />
                   <span>
                     {isVi ? "Công suất và lộ trình triển khai theo hợp đồng" : "Capacity and rollout defined in your agreement"}
                   </span>
                 </li>
               </ul>
 
-              <p className="mt-3 text-[12px] text-[#c4c6ca]">
+              <p className="mt-3 text-[12px] text-[#A9A8AF]">
                 {isVi
                   ? "Triển khai, hỗ trợ và tùy chỉnh theo điều khoản hợp đồng."
                   : "Deployment, support, and custom work follow your agreement."}
               </p>
 
               {/* Divider + Included in every plan */}
-              <div className="mt-6 border-t border-[#34363a] pt-6">
+              <div className="mt-6 border-t border-[#2A2A2E] pt-6">
                 <h4 className="text-[14px] font-bold text-white">
                   {isVi ? "Bao gồm trong mọi gói" : "Included in every plan"}
                 </h4>
-                <ul className="mt-4 space-y-2.5 text-[14px] text-[#c4c6ca]">
+                <ul className="mt-4 space-y-2.5 text-[14px] text-[#A9A8AF]">
                   <li className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2} />
-                    <a href="#pricing-products" className="underline underline-offset-2 text-white hover:text-[#92b5ff]">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2} />
+                    <a href="#pricing-products" className="underline underline-offset-2 text-white hover:text-[#F9D0D8]">
                       {isVi ? "Tất cả sản phẩm" : "All products"}
                     </a>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2} />
-                    <a href="#pricing-features" className="underline underline-offset-2 text-white hover:text-[#92b5ff]">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2} />
+                    <a href="#pricing-features" className="underline underline-offset-2 text-white hover:text-[#F9D0D8]">
                       {isVi ? "Tất cả tính năng" : "All features"}
                     </a>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2} />
-                    <Link href="/integrations" className="underline underline-offset-2 text-white hover:text-[#92b5ff]">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2} />
+                    <Link href="/integrations" className="underline underline-offset-2 text-white hover:text-[#F9D0D8]">
                       {isVi ? "Tất cả tích hợp" : "All integrations"}
                     </Link>
                   </li>
                 </ul>
 
-                <p className="mt-4 text-[13.5px] leading-[1.6] text-[#c4c6ca]">
+                <p className="mt-4 text-[13.5px] leading-[1.6] text-[#A9A8AF]">
                   {isVi
                     ? "Mọi thứ trong gói Restaurant và Marketplace, với đầy đủ sản phẩm, ứng dụng, tính năng và "
                     : "Everything in Restaurant and Marketplace, with the same products, apps, features, and "}
-                  <Link href="/products#extend" className="underline underline-offset-2 text-white hover:text-[#92b5ff]">
+                  <Link href="/products#extend" className="underline underline-offset-2 text-white hover:text-[#F9D0D8]">
                     API &amp; MCP access
                   </Link>
                   .
@@ -403,7 +403,7 @@ export function PricingHeroAndPlans() {
                 <h4 className="mt-6 text-[14px] font-bold text-white">
                   {isVi ? "Tùy chọn theo hợp đồng" : "Options under your agreement"}
                 </h4>
-                <ul className="mt-3.5 space-y-2.5 text-[14px] text-[#c4c6ca]">
+                <ul className="mt-3.5 space-y-2.5 text-[14px] text-[#A9A8AF]">
                   {[
                     {
                       en: "Deployment in your own cloud account (BYOC)",
@@ -423,20 +423,20 @@ export function PricingHeroAndPlans() {
                     },
                   ].map((opt) => (
                     <li key={opt.en} className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2} />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2} />
                       <span>{isVi ? opt.vi : opt.en}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p className="mt-4 text-[12px] leading-[1.5] text-[#989aa0]">
+                <p className="mt-4 text-[12px] leading-[1.5] text-[#9A99A1]">
                   {isVi
                     ? "Phí sử dụng Suite áp dụng riêng. Khả năng tích hợp phụ thuộc nhà cung cấp và khu vực."
                     : "Suite usage fees apply. Integrations depend on provider and regional availability."}
                 </p>
 
                 <div className="mt-4 flex items-center gap-2.5 text-[14px] font-medium text-white">
-                  <Check className="h-4 w-4 shrink-0 text-[#92b5ff]" strokeWidth={2} />
+                  <Check className="h-4 w-4 shrink-0 text-[#F9D0D8]" strokeWidth={2} />
                   <span>{isVi ? "Hỗ trợ Doanh nghiệp (Enterprise Support)" : "Enterprise Support"}</span>
                 </div>
               </div>
@@ -446,7 +446,7 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Enterprise · Request pricing")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#266df0] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[#D91842] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   <span>{isVi ? "Yêu cầu báo giá" : "Request pricing"}</span>
                   <ArrowRight className="h-4 w-4" />
@@ -454,11 +454,11 @@ export function PricingHeroAndPlans() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Enterprise · 45 min")}
-                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[6px] border border-[#34363a] bg-[#17181a] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-4 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
                 >
                   {isVi ? "Đặt lịch demo" : "Book a demo"}
                 </button>
-                <p className="text-center text-[12px] text-[#989aa0]">
+                <p className="text-center text-[12px] text-[#9A99A1]">
                   {isVi ? "Trao đổi phạm vi và mức giá cùng đội ngũ." : "Review scope and pricing with our team."}
                 </p>
               </div>

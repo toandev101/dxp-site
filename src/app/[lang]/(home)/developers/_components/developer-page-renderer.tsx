@@ -24,10 +24,10 @@ function DevActionButton({
 
   const cls =
     variant === "primary"
-      ? "inline-flex min-h-[46px] items-center justify-center gap-1.5 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+      ? "inline-flex min-h-[46px] items-center justify-center gap-1.5 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
       : variant === "secondary"
-        ? "inline-flex min-h-[46px] items-center justify-center gap-1.5 rounded-[6px] border border-[#34363a] bg-[#17181a] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#5b5e64] hover:bg-[#212224] cursor-pointer"
-        : "inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer";
+        ? "inline-flex min-h-[46px] items-center justify-center gap-1.5 rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F] cursor-pointer"
+        : "inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer";
 
   if (cta.href && cta.external) {
     return (
@@ -97,7 +97,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
     <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* 1. DARK HERO */}
       <section
-        className="relative overflow-hidden bg-[#0b0c0d] text-white"
+        className="relative overflow-hidden bg-[#111013] text-white"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -108,7 +108,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
           aria-hidden="true"
           className="pointer-events-none absolute -right-24 -bottom-32 h-[540px] w-[620px]"
           style={{
-            background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.24), transparent)",
+            background: "none",
           }}
         />
 
@@ -117,11 +117,11 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
             <div className="lg:col-span-6">
               {spec.hero.breadcrumbLabel && (
                 <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
-                  <Link href="/developers" className="text-[#92b5ff] underline underline-offset-4 hover:text-white">
+                  <Link href="/developers" className="text-[#F9D0D8] underline underline-offset-4 hover:text-white">
                     Developers
                   </Link>
-                  <span className="text-[#5b5e64]">/</span>
-                  <span className="text-[#92b5ff]">{spec.hero.breadcrumbLabel}</span>
+                  <span className="text-[#6E6D75]">/</span>
+                  <span className="text-[#F9D0D8]">{spec.hero.breadcrumbLabel}</span>
                 </nav>
               )}
 
@@ -129,7 +129,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                 {spec.hero.title}
               </h1>
 
-              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#c4c6ca]">
+              <p className="mt-5 max-w-xl text-[16.5px] sm:text-[18px] leading-[1.6] text-[#A9A8AF]">
                 {spec.hero.lede}
               </p>
 
@@ -140,7 +140,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                 )}
               </div>
 
-              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#c4c6ca]">
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#A9A8AF]">
                 {spec.hero.meta.map((m) => (
                   <span key={m}>{m}</span>
                 ))}
@@ -327,7 +327,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
 
                       <div className="mx-auto h-6 w-px bg-[var(--od-border-strong)]" />
 
-                      <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 rounded-[10px] border border-[#266df0]/40 bg-[var(--od-bg)] px-5 py-4 shadow-xs">
+                      <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 rounded-[10px] border border-[#D91842]/40 bg-[var(--od-bg)] px-5 py-4 shadow-xs">
                         <BrandLogo />
                         <div className="text-center sm:text-right">
                           <p className="text-[14px] font-bold text-[var(--od-text)]">{section.hubTitle}</p>
@@ -383,7 +383,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                           className={cn(
                             "rounded-[10px] border p-6",
                             idx === 1
-                              ? "border-[#266df0]/30 bg-[var(--od-action-soft)]/35"
+                              ? "border-[#D91842]/30 bg-[var(--od-action-soft)]/35"
                               : "border-[var(--od-border)] bg-[var(--od-surface-subtle)]"
                           )}
                         >
@@ -394,7 +394,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                           <ul className="mt-4 space-y-2.5 border-t border-[var(--od-border)] pt-4 text-[14px] text-[var(--od-text)]">
                             {panel.bullets.map((b) => (
                               <li key={b} className="flex items-start gap-2.5">
-                                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#266df0]" />
+                                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#D91842]" />
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -411,26 +411,26 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
             return (
               <section key={section.id} id={section.id} className="scroll-mt-24 py-10">
                 <Container>
-                  <div className="relative overflow-hidden rounded-[12px] bg-[#0b0c0d] p-7 sm:p-12 lg:p-14 text-white">
+                  <div className="relative overflow-hidden rounded-[20px] bg-[#111013] p-7 sm:p-12 lg:p-14 text-white">
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute -right-24 top-1/2 h-[540px] w-[540px] -translate-y-1/2"
                       style={{
-                        background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.22), transparent)",
+                        background: "none",
                       }}
                     />
 
                     <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-12 items-start">
                       <div className="lg:col-span-5">
-                        <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#92b5ff]">
+                        <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#F9D0D8]">
                           {section.eyebrow}
                         </p>
                         <h2 className="mt-3 text-[30px] sm:text-[40px] font-bold tracking-[-0.035em] leading-[1.08] text-white">
                           {section.title}
                         </h2>
-                        <p className="mt-4 text-[15.5px] leading-[1.6] text-[#c4c6ca]">{section.body}</p>
+                        <p className="mt-4 text-[15.5px] leading-[1.6] text-[#A9A8AF]">{section.body}</p>
                         {section.footnote && (
-                          <p className="mt-5 text-[12.5px] leading-[1.55] text-[#989aa0]">{section.footnote}</p>
+                          <p className="mt-5 text-[12.5px] leading-[1.55] text-[#9A99A1]">{section.footnote}</p>
                         )}
                       </div>
 
@@ -438,26 +438,26 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                         {section.tiles.map((t) => (
                           <div
                             key={t.title}
-                            className="rounded-[10px] border border-[#34363a] bg-[#17181a] p-5"
+                            className="rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-5"
                           >
                             <h3 className="text-[16px] font-bold text-white">{t.title}</h3>
-                            <p className="mt-2 text-[13.5px] leading-[1.6] text-[#c4c6ca]">{t.body}</p>
+                            <p className="mt-2 text-[13.5px] leading-[1.6] text-[#A9A8AF]">{t.body}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {section.byocCallout && (
-                      <div className="relative z-10 mt-10 rounded-[10px] border border-[#266df0]/45 bg-[#0e1526]/90 p-6 sm:p-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                      <div className="relative z-10 mt-10 rounded-[10px] border border-[#D91842]/45 bg-[#241218]/90 p-6 sm:p-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                         <div className="max-w-2xl">
                           <h3 className="text-[22px] font-bold text-white">{section.byocCallout.title}</h3>
-                          <p className="mt-2 text-[15px] leading-[1.6] text-[#c4c6ca]">
+                          <p className="mt-2 text-[15px] leading-[1.6] text-[#A9A8AF]">
                             {section.byocCallout.body}
                           </p>
                           <ul className="mt-4 space-y-2 text-[14px] text-[#e4e6ea]">
                             {section.byocCallout.points.map((pt) => (
                               <li key={pt} className="flex items-start gap-2">
-                                <Check className="mt-1 h-4 w-4 shrink-0 text-[#639bff]" />
+                                <Check className="mt-1 h-4 w-4 shrink-0 text-[#F9D0D8]" />
                                 <span>{pt}</span>
                               </li>
                             ))}
@@ -466,7 +466,7 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
                         <div className="shrink-0">
                           <InlineLink
                             link={section.byocCallout.link}
-                            className="inline-flex min-h-[44px] items-center gap-2 rounded-[6px] border border-[#266df0] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1]"
+                            className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[#D91842] bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                           />
                         </div>
                       </div>
@@ -628,12 +628,12 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
       {/* 3. CLOSING DARK CTA BAND */}
       <section className="py-16 lg:py-20">
         <Container>
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
 
@@ -641,15 +641,15 @@ export function DeveloperPageRenderer({ spec }: { spec: DeveloperPageSpec }) {
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 {spec.closingCta.title}
               </h2>
-              <p className="mt-4 text-[16px] leading-[1.6] text-[#c4c6ca]">{spec.closingCta.body}</p>
+              <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{spec.closingCta.body}</p>
               {spec.closingCta.docGuide && (
-                <p className="mt-4 text-[13.5px] text-[#989aa0]">
+                <p className="mt-4 text-[13.5px] text-[#9A99A1]">
                   Product guide:{" "}
                   <a
                     href={spec.closingCta.docGuide.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-[#92b5ff] underline underline-offset-4 hover:text-white"
+                    className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"
                   >
                     {spec.closingCta.docGuide.label}
                   </a>

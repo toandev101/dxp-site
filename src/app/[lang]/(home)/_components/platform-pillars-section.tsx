@@ -257,7 +257,7 @@ export function PlatformPillarsSection() {
                         className="group inline-flex items-start gap-3 text-[14.5px] font-medium text-[var(--od-text)] transition-colors hover:text-[var(--od-action-content)]"
                       >
                         <Icon
-                          className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#266df0]"
+                          className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#D91842]"
                           strokeWidth={1.75}
                         />
                         <span>{item.label}</span>

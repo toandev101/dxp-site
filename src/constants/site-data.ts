@@ -419,7 +419,7 @@ export const INTEGRATIONS_DATA: IntegrationItem[] = [
     descriptionVi: "Đồng bộ danh mục, thuế VAT, chi nhánh và sổ cái đơn hàng với SAP/DXP.",
     badge: "Native",
     initials: "SP",
-    color: "bg-blue-700",
+    color: "bg-[#D91842]",
   },
   {
     id: "stripe",
@@ -495,7 +495,7 @@ export const INTEGRATIONS_DATA: IntegrationItem[] = [
     descriptionEn: "Server-side ecommerce events, conversion API, and campaign attribution.",
     descriptionVi: "Đo lường sự kiện thương mại điện tử server-side và hiệu quả quảng cáo.",
     initials: "GA",
-    color: "bg-blue-500",
+    color: "bg-[#D91842]",
   },
   {
     id: "mcp",
@@ -634,7 +634,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: "UrbanBite Kitchens",
     metricEn: "$48k/mo saved",
     metricVi: "Tiết kiệm $48k/tháng",
-    avatarBg: "bg-blue-600",
+    avatarBg: "bg-[#D91842]",
     initials: "MV",
   },
   {

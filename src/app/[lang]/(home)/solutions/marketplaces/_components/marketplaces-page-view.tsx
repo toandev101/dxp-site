@@ -95,7 +95,7 @@ export function MarketplacesPageView() {
 
               <h1 className="mt-4 text-[44px] sm:text-[58px] lg:text-[66px] font-extrabold tracking-[-0.045em] leading-[1.0] text-[var(--od-text)]">
                 <span className="block">Build your marketplace.</span>
-                <span className="block text-[#266df0]">Run it on {BRAND}.</span>
+                <span className="block text-[#D91842]">Run it on {BRAND}.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-[18px] leading-[1.55] text-[var(--od-text)]">
@@ -110,14 +110,14 @@ export function MarketplacesPageView() {
                 <button
                   type="button"
                   onClick={() => openDemoModal("Marketplace software · Guided demo")}
-                  className="inline-flex min-h-[46px] items-center gap-1.5 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#1f5fd1] cursor-pointer"
+                  className="inline-flex min-h-[46px] items-center gap-1.5 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A] cursor-pointer"
                 >
                   <span>Book a demo</span>
                   <ArrowUpRight className="h-4 w-4" />
                 </button>
                 <a
                   href="#platform"
-                  className="inline-flex min-h-[46px] items-center gap-1.5 rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
+                  className="inline-flex min-h-[46px] items-center gap-1.5 rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                 >
                   <span>See how it works</span>
                   <ArrowDown className="h-4 w-4" />
@@ -133,22 +133,22 @@ export function MarketplacesPageView() {
             <div className="lg:col-span-6">
               <div className="relative mx-auto max-w-[580px] pt-2 pb-4">
                 {/* MacBook Screen Frame */}
-                <div className="w-[88%] overflow-hidden rounded-[16px] border-[8px] border-[#111316] bg-white text-[#0b0c0d] shadow-[0_24px_65px_-20px_rgba(11,12,13,0.3)]">
+                <div className="w-[88%] overflow-hidden rounded-[16px] border-[8px] border-[#111316] bg-white text-[#151417] shadow-[0_24px_65px_-20px_rgba(11,12,13,0.3)]">
                   <div className="flex items-center justify-between border-b border-[#e5e7eb] px-4 py-2.5">
                     <span className="text-[12px] font-extrabold">Local Market</span>
-                    <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-[#dee0e3] bg-[#f8fafc] px-3 py-1 text-[9.5px] text-[#7a7d84]">
+                    <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-[#D9D9DD] bg-[#f8fafc] px-3 py-1 text-[9.5px] text-[#6E6D75]">
                       <Search className="h-3 w-3" />
                       <span>Search for restaurants, grocery, and more...</span>
                     </div>
-                    <ShoppingCart className="h-3.5 w-3.5 text-[#3f4145]" />
+                    <ShoppingCart className="h-3.5 w-3.5 text-[#3A393F]" />
                   </div>
 
                   <div className="p-3.5 space-y-3">
                     <div className="flex gap-1.5 text-[9.5px] font-semibold">
-                      <span className="rounded-full bg-[#266df0] px-2.5 py-1 text-white">Browse</span>
-                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3f4145]">Restaurants</span>
-                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3f4145]">Grocery</span>
-                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3f4145]">Bakery</span>
+                      <span className="rounded-full bg-[#D91842] px-2.5 py-1 text-white">Browse</span>
+                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3A393F]">Restaurants</span>
+                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3A393F]">Grocery</span>
+                      <span className="rounded-full bg-[#f3f4f6] px-2.5 py-1 text-[#3A393F]">Bakery</span>
                     </div>
 
                     <div className="relative aspect-[16/8] w-full overflow-hidden rounded-[8px]">
@@ -162,7 +162,7 @@ export function MarketplacesPageView() {
                     </div>
 
                     <div>
-                      <p className="text-[10px] font-bold text-[#0b0c0d]">Browse by category</p>
+                      <p className="text-[10px] font-bold text-[#151417]">Browse by category</p>
                       <div className="mt-1.5 grid grid-cols-3 gap-2">
                         {[
                           { label: "Restaurants", img: "/images/bowl-mediterranean.jpg" },
@@ -173,7 +173,7 @@ export function MarketplacesPageView() {
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[5px]">
                               <Image src={c.img} alt={c.label} fill sizes="120px" className="object-cover" />
                             </div>
-                            <p className="text-[9px] font-semibold text-[#3f4145]">{c.label}</p>
+                            <p className="text-[9px] font-semibold text-[#3A393F]">{c.label}</p>
                           </div>
                         ))}
                       </div>
@@ -184,12 +184,12 @@ export function MarketplacesPageView() {
                 <div className="mx-auto -mt-0.5 h-3 w-[94%] rounded-b-[12px] bg-gradient-to-b from-[#d1d5db] to-[#9ca3af]" />
 
                 {/* Overlapping iPhone Frame on bottom-right */}
-                <div className="absolute right-0 bottom-2 w-[36%] min-w-[148px] max-w-[192px] overflow-hidden rounded-[24px] border-[5px] border-[#111316] bg-white p-2.5 text-[#0b0c0d] shadow-[0_24px_60px_-12px_rgba(11,12,13,0.45)]">
+                <div className="absolute right-0 bottom-2 w-[36%] min-w-[148px] max-w-[192px] overflow-hidden rounded-[24px] border-[5px] border-[#111316] bg-white p-2.5 text-[#151417] shadow-[0_24px_60px_-12px_rgba(11,12,13,0.45)]">
                   <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-[#111316]" />
                   <p className="text-[10.5px] font-extrabold">Local Market</p>
                   <div className="mt-1.5 flex gap-1 text-[8px] font-semibold">
-                    <span className="rounded-full bg-[#266df0] px-2 py-0.5 text-white">Browse</span>
-                    <span className="rounded-full bg-[#f3f4f6] px-2 py-0.5 text-[#3f4145]">Grocery</span>
+                    <span className="rounded-full bg-[#D91842] px-2 py-0.5 text-white">Browse</span>
+                    <span className="rounded-full bg-[#f3f4f6] px-2 py-0.5 text-[#3A393F]">Grocery</span>
                   </div>
                   <div className="relative mt-2 aspect-[16/11] w-full overflow-hidden rounded-[6px]">
                     <Image src="/images/bowl-mediterranean.jpg" alt="Restaurants app" fill sizes="160px" className="object-cover" />
@@ -237,7 +237,7 @@ export function MarketplacesPageView() {
                   body: "Carry your identity across the website and iOS and Android customer apps.",
                 },
               ].map((b) => (
-                <li key={b.title} className="border-l-2 border-[#266df0] pl-4">
+                <li key={b.title} className="border-l-2 border-[#D91842] pl-4">
                   <h3 className="text-[17px] font-bold text-[var(--od-text)]">{b.title}</h3>
                   <p className="mt-1 text-[14.5px] text-[var(--od-text-muted)]">{b.body}</p>
                 </li>
@@ -246,7 +246,7 @@ export function MarketplacesPageView() {
             <button
               type="button"
               onClick={() => openDemoModal("White-label marketplace")}
-              className="mt-8 inline-flex min-h-[46px] items-center justify-center rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+              className="mt-8 inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
             >
               Book a demo
             </button>
@@ -331,7 +331,7 @@ export function MarketplacesPageView() {
               const Icon = item.icon;
               return (
                 <div key={item.title} className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-6">
-                  <Icon className="h-5 w-5 text-[#266df0]" />
+                  <Icon className="h-5 w-5 text-[#D91842]" />
                   <h3 className="mt-3 text-[18px] font-bold text-[var(--od-text)]">{item.title}</h3>
                   <p className="mt-2 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">{item.body}</p>
                 </div>
@@ -402,7 +402,7 @@ export function MarketplacesPageView() {
                   "Printers, KDS, and POS — Review supported connections and the setup needed for each store.",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5 text-[var(--od-text)]">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                     <span>{line}</span>
                   </li>
                 ))}
@@ -440,7 +440,7 @@ export function MarketplacesPageView() {
                   "A mixed operation — Define which orders your team handles and where an external provider fits.",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5 text-[var(--od-text)]">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                     <span>{line}</span>
                   </li>
                 ))}
@@ -516,21 +516,21 @@ export function MarketplacesPageView() {
       </section>
 
       {/* 11. DARK BUSINESS MODEL BAND (#business-model) */}
-      <section id="business-model" className="scroll-mt-24 bg-[#0b0c0d] py-16 sm:py-20 text-white">
+      <section id="business-model" className="scroll-mt-24 bg-[#111013] py-16 sm:py-20 text-white">
         <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="font-mono text-[11.5px] uppercase tracking-[0.08em] text-[#92b5ff]">Marketplace control</p>
+            <p className="font-mono text-[11.5px] uppercase tracking-[0.08em] text-[#F9D0D8]">Marketplace control</p>
             <h2 className="mt-3 text-[34px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
               You set the rules of your market.
             </h2>
-            <p className="mt-4 text-[15.5px] leading-[1.6] text-[#c4c6ca]">
+            <p className="mt-4 text-[15.5px] leading-[1.6] text-[#A9A8AF]">
               Configure commission percentages, zone delivery fees, service fees, and payout splits across every
               merchant and driver in your marketplace.
             </p>
             <button
               type="button"
               onClick={() => openDemoModal("Marketplace fee & payout rules")}
-              className="mt-7 inline-flex min-h-[46px] items-center gap-1.5 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+              className="mt-7 inline-flex min-h-[46px] items-center gap-1.5 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
             >
               <span>Book a demo</span>
               <ArrowUpRight className="h-4 w-4" />
@@ -538,10 +538,10 @@ export function MarketplacesPageView() {
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-[10px] border border-[#34363a] bg-[#17181a] p-6">
-              <p className="font-mono text-[11px] uppercase text-[#989aa0]">Illustrative configuration</p>
+            <div className="rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-6">
+              <p className="font-mono text-[11px] uppercase text-[#9A99A1]">Illustrative configuration</p>
               <h3 className="mt-1 text-[18px] font-bold text-white">Order summary</h3>
-              <dl className="mt-4 divide-y divide-[#2a2d33] text-[14px]">
+              <dl className="mt-4 divide-y divide-[#2A2A2E] text-[14px]">
                 {[
                   { k: "Order subtotal", v: "$420.00" },
                   { k: "Delivery fee · zone B", v: "$35.00" },
@@ -549,15 +549,15 @@ export function MarketplacesPageView() {
                   { k: "Customer pays", v: "$467.00", bold: true },
                 ].map((row) => (
                   <div key={row.k} className="flex justify-between py-2.5">
-                    <dt className={row.bold ? "font-bold text-white" : "text-[#c4c6ca]"}>{row.k}</dt>
-                    <dd className={row.bold ? "font-bold text-[#92b5ff]" : "font-mono text-white"}>{row.v}</dd>
+                    <dt className={row.bold ? "font-bold text-white" : "text-[#A9A8AF]"}>{row.k}</dt>
+                    <dd className={row.bold ? "font-bold text-[#F9D0D8]" : "font-mono text-white"}>{row.v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
 
-            <div className="rounded-[10px] border border-[#266df0]/40 bg-[#121c33] p-6">
-              <p className="font-mono text-[11px] uppercase text-[#92b5ff]">Split rules</p>
+            <div className="rounded-[10px] border border-[#D91842]/40 bg-[#121c33] p-6">
+              <p className="font-mono text-[11px] uppercase text-[#F9D0D8]">Split rules</p>
               <h3 className="mt-1 text-[18px] font-bold text-white">Illustrative allocation</h3>
               <dl className="mt-4 divide-y divide-white/10 text-[14px]">
                 {[
@@ -566,8 +566,8 @@ export function MarketplacesPageView() {
                   { k: "Marketplace", v: "$94.40", accent: true },
                 ].map((row) => (
                   <div key={row.k} className="flex justify-between py-3">
-                    <dt className="text-[#c4c6ca]">{row.k}</dt>
-                    <dd className={row.accent ? "font-mono font-bold text-[#34d399]" : "font-mono font-semibold text-white"}>
+                    <dt className="text-[#A9A8AF]">{row.k}</dt>
+                    <dd className={row.accent ? "font-mono font-bold text-[#7BC143]" : "font-mono font-semibold text-white"}>
                       {row.v}
                     </dd>
                   </div>
@@ -637,13 +637,13 @@ export function MarketplacesPageView() {
       </section>
 
       {/* 15. DARK EXTEND BAND */}
-      <section id="extend" className="scroll-mt-24 bg-[#0b0c0d] py-16 sm:py-20 text-white my-8">
+      <section id="extend" className="scroll-mt-24 bg-[#111013] py-16 sm:py-20 text-white my-8">
         <Container>
-          <p className="font-mono text-[11.5px] uppercase tracking-[0.08em] text-[#92b5ff]">Flexible by design</p>
+          <p className="font-mono text-[11.5px] uppercase tracking-[0.08em] text-[#F9D0D8]">Flexible by design</p>
           <h2 className="mt-2.5 text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
             Build the experience your market needs.
           </h2>
-          <p className="mt-3 max-w-2xl text-[14.5px] text-[#989aa0]">
+          <p className="mt-3 max-w-2xl text-[14.5px] text-[#9A99A1]">
             Branding and customization do not imply ownership of the backend or platform source. Licensing,
             infrastructure, support, and custom work require their own scope.
           </p>
@@ -674,13 +674,13 @@ export function MarketplacesPageView() {
               <Link
                 key={card.title}
                 href={card.href}
-                className="group rounded-[10px] border border-[#34363a] bg-[#17181a] p-6 transition-colors hover:border-[#5b5e64] flex flex-col justify-between"
+                className="group rounded-[10px] border border-[#2A2A2E] bg-[#1B1A1F] p-6 transition-colors hover:border-[#6E6D75] flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-[17px] font-bold text-white group-hover:text-[#92b5ff]">{card.title}</h3>
-                  <p className="mt-2 text-[14px] leading-[1.6] text-[#c4c6ca]">{card.body}</p>
+                  <h3 className="text-[17px] font-bold text-white group-hover:text-[#F9D0D8]">{card.title}</h3>
+                  <p className="mt-2 text-[14px] leading-[1.6] text-[#A9A8AF]">{card.body}</p>
                 </div>
-                <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[#92b5ff]">
+                <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[#F9D0D8]">
                   Explore <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </Link>
@@ -745,7 +745,7 @@ export function MarketplacesPageView() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Plan your marketplace")}
-                className="mt-6 inline-flex min-h-[46px] items-center gap-1.5 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+                className="mt-6 inline-flex min-h-[46px] items-center gap-1.5 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
               >
                 <span>Book a demo</span>
                 <ArrowUpRight className="h-4 w-4" />
@@ -762,7 +762,7 @@ export function MarketplacesPageView() {
                   "Integrations and launch responsibilities",
                 ].map((it) => (
                   <li key={it} className="flex items-start gap-2.5">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#266df0]" />
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#D91842]" />
                     <span>{it}</span>
                   </li>
                 ))}
@@ -807,21 +807,21 @@ export function MarketplacesPageView() {
       {/* 19 & 20. CLOSING CTA BAND + WHITE-LABEL FOOTER NOTE */}
       <section className="py-16 lg:py-20">
         <Container className="space-y-10">
-          <div className="relative overflow-hidden rounded-[10px] bg-[#0b0c0d] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative overflow-hidden rounded-[10px] bg-[#111013] px-7 py-14 sm:px-14 sm:py-[72px] flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-24 top-1/2 h-[634px] w-[696px] -translate-y-1/2"
               style={{
-                background: "radial-gradient(closest-side, rgba(38, 109, 240, 0.28), transparent)",
+                background: "none",
               }}
             />
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
                 Bring your marketplace plan. Let’s work through the operation.
               </h2>
-              <p className="mt-4 text-[13.5px] text-[#989aa0]">
+              <p className="mt-4 text-[13.5px] text-[#9A99A1]">
                 Product guide:{" "}
-                <Link href="/demo#marketplace" className="font-semibold text-[#92b5ff] underline underline-offset-4 hover:text-white">
+                <Link href="/demo#marketplace" className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white">
                   Marketplace App
                 </Link>
               </p>
@@ -830,7 +830,7 @@ export function MarketplacesPageView() {
               <button
                 type="button"
                 onClick={() => openDemoModal("Marketplace launch walkthrough")}
-                className="inline-flex min-h-[46px] items-center gap-1.5 rounded-[6px] bg-[#266df0] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#1f5fd1] cursor-pointer"
+                className="inline-flex min-h-[46px] items-center gap-1.5 rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
               >
                 <span>Book a demo</span>
                 <ArrowUpRight className="h-4 w-4" />
