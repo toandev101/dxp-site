@@ -136,10 +136,10 @@ const MEGA_MENUS: Record<
       },
     },
     bottomStrip: [
-      { title: "Platform overview", desc: "One platform. Every part of ordering.", href: "/#platform" },
+      { title: "Platform overview", desc: "One platform. Every part of ordering.", href: "/platform" },
       { title: "Live demos", desc: "Web, apps, merchant, and driver, live.", href: "/demo" },
       { title: "All features", desc: "The complete list, by product.", href: "/products" },
-      { title: "What's new", desc: "Releases every two weeks.", href: "/products" },
+      { title: "What's new", desc: "Releases every two weeks.", href: "/changelog" },
     ],
   },
   solutions: {
@@ -183,7 +183,7 @@ const MEGA_MENUS: Record<
       title: "Global brands & local operators",
       description: "Domino's, Burger King, Starbucks, and KFC run on the same connected infrastructure.",
       cta: "Read success stories",
-      href: "/#customers",
+      href: "/customers",
     },
     bottomStrip: [
       { title: "For Restaurants", desc: "Ready to run your own ordering.", href: "/solutions/restaurants" },
@@ -245,7 +245,8 @@ const MEGA_MENUS: Record<
         eyebrow: "Learn",
         summary: "Guides and stories.",
         links: [
-          { label: "Success stories", href: "/#customers" },
+          { label: "Blog", href: "/blog" },
+          { label: "Success stories", href: "/customers" },
           { label: "Live demos", href: "/demo" },
           { label: "FAQ", href: "/#faq" },
         ],
@@ -264,7 +265,7 @@ const MEGA_MENUS: Record<
         summary: "About & contact.",
         links: [
           { label: `About ${siteConfig.name}`, href: "/company/about" },
-          { label: "Customers", href: "/#customers" },
+          { label: "Customers", href: "/customers" },
           { label: "Integrations", href: "/integrations" },
           { label: "Contact", href: "/contact" },
         ],
@@ -346,7 +347,7 @@ export function Header() {
             })}
 
             <Link
-              href="/#customers"
+              href="/customers"
               onMouseEnter={() => setOpenMega(null)}
               className="rounded-md px-3 py-2 text-[14px] font-medium text-[var(--od-text)] transition-colors hover:text-[var(--od-action-content)]"
             >

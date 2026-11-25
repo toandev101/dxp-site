@@ -149,7 +149,7 @@ export function ProofSection() {
         {/* Horizontal Divider + Read customer stories link */}
         <div className="mt-9 border-t border-[var(--od-border)] pt-6 flex justify-end">
           <Link
-            href="/#customers"
+            href="/customers"
             className="inline-flex items-center gap-2 text-[14.4px] font-semibold text-[var(--od-action-content)] hover:underline"
           >
             <span>{isVi ? "Xem câu chuyện khách hàng" : "Read customer stories"}</span>
@@ -163,7 +163,7 @@ export function ProofSection() {
             {brands.map((brand) => (
               <Link
                 key={brand}
-                href="/#customers"
+                href="/customers"
                 className="flex h-[108px] items-center justify-center rounded-lg transition-opacity hover:opacity-80"
               >
                 <EnterpriseBrandMark brand={brand} />

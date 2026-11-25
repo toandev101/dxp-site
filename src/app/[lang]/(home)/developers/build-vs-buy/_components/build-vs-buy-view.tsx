@@ -520,7 +520,7 @@ export function BuildVsBuyView() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/#platform"
+                href="/platform"
                 className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
               >
                 <span>Explore the platform</span>
@@ -696,7 +696,7 @@ export function BuildVsBuyView() {
               On {BRAND}, the platform underneath keeps moving while your team works on what makes you different.
             </p>
             <Link
-              href="/products"
+              href="/changelog"
               className="inline-flex shrink-0 items-center gap-1.5 text-[14px] font-semibold text-[var(--od-action-content)] hover:underline"
             >
               <span>See what shipped recently</span>

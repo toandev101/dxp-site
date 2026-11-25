@@ -13,25 +13,25 @@ const LAYERS = [
     num: "01",
     title: "Build",
     body: "Ordering websites, apps, kiosks, call center, marketplaces, multi-store ordering, and AI ordering agents: the surfaces customers use to place an order.",
-    href: "/#platform",
+    href: "/platform#build",
   },
   {
     num: "02",
     title: "Operate",
     body: "Merchant apps, order management, multi-location operations, driver apps and dispatch, in-house and third-party delivery. Everything that happens after an order is placed.",
-    href: "/platform/ordering-merchant",
+    href: "/platform#operate",
   },
   {
     num: "03",
     title: "Connect",
     body: "POS, payment gateways, delivery networks, loyalty, CRM, and analytics: the systems that need an accurate view of the ordering operation.",
-    href: "/integrations",
+    href: "/platform#connect",
   },
   {
     num: "04",
     title: "Extend",
     body: "API, SDKs, webhooks, white-label surfaces, and custom solutions: options for teams that need to adapt the experience or connect their own systems.",
-    href: "/developers",
+    href: "/platform#extend",
   },
 ];
 
@@ -78,7 +78,7 @@ const RELATED_CARDS = [
     label: "Customers",
     title: "Success stories",
     body: `The operators and brands that run on ${BRAND}.`,
-    href: "/#customers",
+    href: "/customers",
   },
   {
     label: "Contact",

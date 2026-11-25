@@ -391,7 +391,7 @@ export function ContactPageView() {
           >
             {CUSTOMER_BRANDS.map((brand) => (
               <li key={brand} className="scale-[0.74] origin-center">
-                <Link href="/#customers" className="inline-flex items-center justify-center hover:opacity-80">
+                <Link href="/customers" className="inline-flex items-center justify-center hover:opacity-80">
                   <EnterpriseBrandMark brand={brand} />
                 </Link>
               </li>
