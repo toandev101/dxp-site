@@ -26,20 +26,29 @@ export function Footer() {
 
   const columns = {
     platform: [
-      { label: "Ordering Web", href: "/platform/ordering-web" },
-      { label: "Ordering Apps", href: "/platform/ordering-apps" },
-      { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
-      { label: "Ordering Call Center", href: "/platform/ordering-call-center" },
-      { label: "AI Ordering Agents", href: "/platform/ai-ordering-agents", badge: "New" },
-      { label: "Ordering Merchant", href: "/platform/ordering-merchant" },
-      { label: "Ordering Delivery", href: "/platform/ordering-delivery" },
-      { label: "Integrations", href: "/integrations" },
+      { label: isVi ? "Website đặt hàng" : "Ordering Web", href: "/platform/ordering-web" },
+      { label: isVi ? "Ứng dụng đặt hàng" : "Ordering Apps", href: "/platform/ordering-apps" },
+      { label: isVi ? "Kiosk tự phục vụ" : "Ordering Kiosk", href: "/platform/ordering-kiosk" },
+      { label: isVi ? "Tổng đài đặt hàng" : "Ordering Call Center", href: "/platform/ordering-call-center" },
+      { label: "AI Ordering Agents", href: "/platform/ai-ordering-agents", badge: isVi ? "Mới" : "New" },
+      { label: isVi ? "Ứng dụng cửa hàng" : "Ordering Merchant", href: "/platform/ordering-merchant" },
+      { label: isVi ? "Quản lý giao hàng" : "Ordering Delivery", href: "/platform/ordering-delivery" },
+      { label: isVi ? "Tích hợp" : "Integrations", href: "/integrations" },
     ],
     solutions: [
-      { label: "All solutions", href: "/solutions" },
-      { label: `${siteConfig.name} for Restaurants`, href: "/solutions/restaurants" },
-      { label: `${siteConfig.name} for Franchises`, href: "/solutions/franchises" },
-      { label: `${siteConfig.name} for Enterprise`, href: "/solutions/enterprise" },
+      { label: isVi ? "Tất cả giải pháp" : "All solutions", href: "/solutions" },
+      {
+        label: isVi ? `${siteConfig.name} cho Nhà hàng` : `${siteConfig.name} for Restaurants`,
+        href: "/solutions/restaurants",
+      },
+      {
+        label: isVi ? `${siteConfig.name} cho Chuỗi nhượng quyền` : `${siteConfig.name} for Franchises`,
+        href: "/solutions/franchises",
+      },
+      {
+        label: isVi ? `${siteConfig.name} cho Doanh nghiệp lớn` : `${siteConfig.name} for Enterprise`,
+        href: "/solutions/enterprise",
+      },
       // { label: `${siteConfig.name} for Marketplaces`, href: "/solutions/marketplaces" },
       // { label: "Agencies & resellers", href: "/solutions/agencies-resellers" },
       // { label: "Groceries & local stores", href: "/solutions/groceries" },
@@ -57,23 +66,23 @@ export function Footer() {
       // { label: "White label", href: "/developers/white-label" },
       // { label: "Source code license", href: "/developers/source-code-license" },
       // { label: "Bring your own cloud", href: "/developers/bring-your-own-cloud" },
-      { label: "Changelog", href: "/changelog" },
+      { label: isVi ? "Nhật ký cập nhật" : "Changelog", href: "/changelog" },
       // { label: "System status", href: "/api/health" },
     ],
     resources: [
       // { label: "All resources", href: "/products" },
       { label: "Blog", href: "/blog" },
-      { label: "Success stories", href: "/customers" },
-      { label: "Knowledge base", href: "/#faq" },
-      { label: "Live demos", href: "/demo" },
-      { label: "Pricing", href: "/pricing" },
+      { label: isVi ? "Câu chuyện khách hàng" : "Success stories", href: "/customers" },
+      { label: isVi ? "Trung tâm kiến thức" : "Knowledge base", href: "/#faq" },
+      { label: isVi ? "Trải nghiệm demo" : "Live demos", href: "/demo" },
+      { label: isVi ? "Bảng giá" : "Pricing", href: "/pricing" },
       // { label: "Compare platforms", href: "/#migration" },
       // { label: `${siteConfig.name} vs Olo`, href: "/#migration" },
       // { label: `${siteConfig.name} vs GloriaFood`, href: "/#migration" },
       // { label: "52 business models", href: "/solutions#marketplaces" },
     ],
     company: [
-      { label: `About ${siteConfig.name}`, href: "/company/about" },
+      { label: isVi ? `Về ${siteConfig.name}` : `About ${siteConfig.name}`, href: "/company/about" },
       // { label: "Customers", href: "/customers" },
       // { label: "Partners", href: "/solutions/agencies-resellers" },
       // { label: "Support", href: "/contact#support" },
@@ -112,11 +121,11 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-9 lg:grid-cols-5">
             {(
               [
-                { title: "Platform", list: columns.platform },
-                { title: "Solutions", list: columns.solutions },
-                { title: "Developers", list: columns.developers },
-                { title: "Resources", list: columns.resources },
-                { title: "Company", list: columns.company },
+                { title: isVi ? "Nền tảng" : "Platform", list: columns.platform },
+                { title: isVi ? "Giải pháp" : "Solutions", list: columns.solutions },
+                { title: isVi ? "Nhà phát triển" : "Developers", list: columns.developers },
+                { title: isVi ? "Tài nguyên" : "Resources", list: columns.resources },
+                { title: isVi ? "Công ty" : "Company", list: columns.company },
               ] as const
             ).map((col) => (
               <div key={col.title}>
@@ -147,12 +156,14 @@ export function Footer() {
       {/* Band 2: Apps Strip */}
       <div className="border-t border-[var(--od-border-soft)]">
         <Container className="py-6 flex flex-wrap items-center gap-2.5">
-          <span className="text-[13.5px] font-semibold text-[var(--od-text)] mr-2">Apps</span>
+          <span className="text-[13.5px] font-semibold text-[var(--od-text)] mr-2">
+            {isVi ? "Ứng dụng" : "Apps"}
+          </span>
           {[
-            { label: "Merchant App", href: "/platform/ordering-merchant" },
-            { label: "Driver App", href: "/platform/driver-app" },
+            { label: isVi ? "App Cửa hàng" : "Merchant App", href: "/platform/ordering-merchant" },
+            { label: isVi ? "App Tài xế" : "Driver App", href: "/platform/driver-app" },
             // { label: "Kiosk", href: "/platform/ordering-kiosk" },
-            { label: "Call Center", href: "/platform/ordering-call-center" },
+            { label: isVi ? "Tổng đài" : "Call Center", href: "/platform/ordering-call-center" },
           ].map((app) => (
             <Link
               key={app.label}
@@ -172,13 +183,14 @@ export function Footer() {
         <Container className="py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[13px] text-[var(--od-text-muted)]">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>
-              © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.domain}). All rights reserved.
+              © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.domain}).{" "}
+              {isVi ? "Bảo lưu mọi quyền." : "All rights reserved."}
             </span>
             <Link href="/demo" className="hover:text-[var(--od-text)] transition-colors">
-              Privacy policy &amp; GDPR
+              {isVi ? "Chính sách bảo mật & GDPR" : "Privacy policy & GDPR"}
             </Link>
             <Link href="/demo" className="hover:text-[var(--od-text)] transition-colors">
-              Terms and conditions
+              {isVi ? "Điều khoản sử dụng" : "Terms and conditions"}
             </Link>
             <Link href="/contact" className="hover:text-[var(--od-text)] transition-colors">
               {siteConfig.supportEmail}

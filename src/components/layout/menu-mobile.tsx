@@ -5,7 +5,7 @@ import { useRouter as useNextRouter, usePathname as useNextPathname } from "next
 import Cookies from "js-cookie";
 import { ChevronDown, Moon, Sun } from "lucide-react";
 
-import { MEGA_MENUS, type MegaKey } from "./header";
+import { getMegaMenus, type MegaKey } from "./header";
 import { Link } from "@/components/ui/link";
 import { useTheme } from "@/providers/theme-provider";
 import useDictionaries from "@/hooks/useDictionaries";
@@ -29,6 +29,7 @@ export function MenuMobile() {
 
   const router = useNextRouter();
   const pathname = useNextPathname();
+  const megaMenus = getMegaMenus(isVi);
 
   if (!isMobileMenuOpen) return null;
 
@@ -60,7 +61,7 @@ export function MenuMobile() {
           <div className="divide-y divide-[var(--line-soft)] border-b border-[var(--line-soft)]">
             {ACCORDION_ITEMS.map((item) => {
               const isOpen = expandedKey === item.key;
-              const menuData = MEGA_MENUS[item.key];
+              const menuData = megaMenus[item.key];
 
               return (
                 <div key={item.key}>
