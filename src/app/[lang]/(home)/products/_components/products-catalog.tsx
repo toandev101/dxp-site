@@ -107,18 +107,17 @@ export function ProductsCatalog() {
   const visibleSections = selected === "all" ? sections : sections.filter((s) => s.key === selected);
 
   return (
-    <div className="bg-white">
+    <div className="bg-[var(--od-bg)] text-[var(--od-text)]">
       {/* Header Banner */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/70 to-white py-16 lg:py-24 border-b border-c-border">
-        <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-60" />
+      <section className="relative overflow-hidden bg-[var(--od-surface)] py-16 lg:py-24 border-b border-[var(--od-border)]">
         <Container className="relative z-10 text-center max-w-3xl">
           <Badge variant="primary" className="mb-4">
             {isVi ? "Hệ sinh thái mô-đun" : "Modular Product Ecosystem"}
           </Badge>
-          <h1 className="text-4xl font-extrabold tracking-tight text-c-dark sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-[var(--od-text)] sm:text-5xl">
             {isVi ? "20+ sản phẩm kết nối trên một lõi duy nhất." : "20+ connected products on one unified engine."}
           </h1>
-          <p className="mt-4 text-base text-c-description sm:text-lg">
+          <p className="mt-4 text-base text-[var(--od-text-muted)] sm:text-lg">
             {isVi
               ? "Bắt đầu với những mô-đun bạn cần hôm nay và bật thêm kênh bán hàng mới bất cứ lúc nào khi doanh nghiệp tăng trưởng."
               : "Start with the modules you need today and switch on new ordering channels, dispatch engines, or AI agents whenever you scale."}
@@ -140,10 +139,10 @@ export function ProductsCatalog() {
                 type="button"
                 onClick={() => setSelected(tab.key)}
                 className={cn(
-                  "rounded-full px-4 py-2 text-xs font-bold border transition-all",
+                  "rounded-full px-4 py-2 text-xs font-bold border transition-all cursor-pointer",
                   selected === tab.key
-                    ? "bg-c-primary text-white border-c-primary shadow-sm"
-                    : "bg-white text-c-description border-c-border hover:border-c-primary hover:text-c-primary"
+                    ? "bg-[#D91842] text-white border-[#D91842]"
+                    : "bg-[var(--od-bg)] text-[var(--od-text-secondary)] border-[var(--od-border)] hover:border-[#D91842] hover:text-[var(--od-action-content)]"
                 )}
               >
                 {tab.label}
@@ -160,10 +159,10 @@ export function ProductsCatalog() {
           return (
             <div key={section.key} id={section.key} className="scroll-mt-24">
               <div className="max-w-2xl">
-                <h2 className="text-2xl font-bold tracking-tight text-c-dark sm:text-3xl">
+                <h2 className="text-2xl font-bold tracking-tight text-[var(--od-text)] sm:text-3xl">
                   {isVi ? section.titleVi : section.titleEn}
                 </h2>
-                <p className="mt-2 text-sm text-c-description sm:text-base">
+                <p className="mt-2 text-sm text-[var(--od-text-muted)] sm:text-base">
                   {isVi ? section.descVi : section.descEn}
                 </p>
               </div>
@@ -172,32 +171,32 @@ export function ProductsCatalog() {
                 {products.map((product) => (
                   <div
                     key={product.id}
-                    className="rounded-2xl border border-c-border bg-white p-6 shadow-bx-card flex flex-col justify-between hover:border-c-primary/40 transition-all"
+                    className="rounded-2xl border border-[var(--od-border)] bg-[var(--od-surface)] p-6 flex flex-col justify-between hover:border-[var(--od-border-strong)] transition-colors"
                   >
                     <div>
                       <div className="flex items-center justify-between">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-c-primary-soft text-c-primary">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--od-action-soft)] text-[var(--od-action-content)]">
                           <ProductIcon name={product.icon} />
                         </div>
                         {product.badge && (
-                          <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-[11px] font-bold text-indigo-700 border border-indigo-200">
+                          <span className="rounded-full bg-[var(--od-action-soft)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--od-action-content)] border border-[var(--od-action)]/25">
                             {product.badge}
                           </span>
                         )}
                       </div>
-                      <h3 className="mt-5 text-lg font-bold text-c-dark">
+                      <h3 className="mt-5 text-lg font-bold text-[var(--od-text)]">
                         {isVi ? product.titleVi : product.titleEn}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-c-description">
+                      <p className="mt-2 text-sm leading-relaxed text-[var(--od-text-muted)]">
                         {isVi ? product.descriptionVi : product.descriptionEn}
                       </p>
                     </div>
 
-                    <div className="mt-5 border-t border-c-border/70 pt-4 space-y-3">
+                    <div className="mt-5 border-t border-[var(--od-border-soft)] pt-4 space-y-3">
                       <ul className="space-y-1.5">
                         {(isVi ? product.highlightsVi : product.highlightsEn).map((hl) => (
-                          <li key={hl} className="flex items-center gap-2 text-xs text-c-base">
-                            <Check className="h-3.5 w-3.5 text-c-primary shrink-0" />
+                          <li key={hl} className="flex items-center gap-2 text-xs text-[var(--od-text-secondary)]">
+                            <Check className="h-3.5 w-3.5 text-[var(--od-action-content)] shrink-0" />
                             <span>{hl}</span>
                           </li>
                         ))}

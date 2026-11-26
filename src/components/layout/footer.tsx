@@ -40,45 +40,45 @@ export function Footer() {
       { label: `${siteConfig.name} for Restaurants`, href: "/solutions/restaurants" },
       { label: `${siteConfig.name} for Franchises`, href: "/solutions/franchises" },
       { label: `${siteConfig.name} for Enterprise`, href: "/solutions/enterprise" },
-      { label: `${siteConfig.name} for Marketplaces`, href: "/solutions/marketplaces" },
-      { label: "Agencies & resellers", href: "/solutions/agencies-resellers" },
-      { label: "Groceries & local stores", href: "/solutions/groceries" },
-      { label: "Delivery companies", href: "/solutions/delivery-companies" },
-      { label: "Startups & entrepreneurs", href: "/solutions/startups" },
-      { label: "Software companies", href: "/solutions/software-companies" },
-      { label: "As middleware", href: "/solutions/middleware" },
+      // { label: `${siteConfig.name} for Marketplaces`, href: "/solutions/marketplaces" },
+      // { label: "Agencies & resellers", href: "/solutions/agencies-resellers" },
+      // { label: "Groceries & local stores", href: "/solutions/groceries" },
+      // { label: "Delivery companies", href: "/solutions/delivery-companies" },
+      // { label: "Startups & entrepreneurs", href: "/solutions/startups" },
+      // { label: "Software companies", href: "/solutions/software-companies" },
+      // { label: "As middleware", href: "/solutions/middleware" },
     ],
     developers: [
-      { label: "API reference", href: "/developers#api" },
-      { label: "Documentation", href: "/developers#docs" },
+      { label: "API & MCP", href: "/developers#api" },
+      // { label: "Documentation", href: "/developers#docs" },
       { label: "SDKs & webhooks", href: "/developers#sdks" },
-      { label: `Build on ${siteConfig.name}`, href: "/developers" },
-      { label: "Build vs buy", href: "/developers/build-vs-buy" },
-      { label: "White label", href: "/developers/white-label" },
-      { label: "Source code license", href: "/developers/source-code-license" },
-      { label: "Bring your own cloud", href: "/developers/bring-your-own-cloud" },
+      // { label: `Build on ${siteConfig.name}`, href: "/developers" },
+      // { label: "Build vs buy", href: "/developers/build-vs-buy" },
+      // { label: "White label", href: "/developers/white-label" },
+      // { label: "Source code license", href: "/developers/source-code-license" },
+      // { label: "Bring your own cloud", href: "/developers/bring-your-own-cloud" },
       { label: "Changelog", href: "/changelog" },
-      { label: "System status", href: "/api/health" },
+      // { label: "System status", href: "/api/health" },
     ],
     resources: [
-      { label: "All resources", href: "/products" },
+      // { label: "All resources", href: "/products" },
       { label: "Blog", href: "/blog" },
       { label: "Success stories", href: "/customers" },
       { label: "Knowledge base", href: "/#faq" },
       { label: "Live demos", href: "/demo" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Compare platforms", href: "/#migration" },
-      { label: `${siteConfig.name} vs Olo`, href: "/#migration" },
-      { label: `${siteConfig.name} vs GloriaFood`, href: "/#migration" },
-      { label: "52 business models", href: "/solutions#marketplaces" },
+      // { label: "Compare platforms", href: "/#migration" },
+      // { label: `${siteConfig.name} vs Olo`, href: "/#migration" },
+      // { label: `${siteConfig.name} vs GloriaFood`, href: "/#migration" },
+      // { label: "52 business models", href: "/solutions#marketplaces" },
     ],
     company: [
       { label: `About ${siteConfig.name}`, href: "/company/about" },
-      { label: "Customers", href: "/customers" },
-      { label: "Partners", href: "/solutions/agencies-resellers" },
-      { label: "Support", href: "/contact#support" },
-      { label: "Contact", href: "/contact" },
-      { label: "Book a demo", href: "/contact?meeting=demo#book" },
+      // { label: "Customers", href: "/customers" },
+      // { label: "Partners", href: "/solutions/agencies-resellers" },
+      // { label: "Support", href: "/contact#support" },
+      // { label: "Contact", href: "/contact" },
+      // { label: "Book a demo", href: "/contact?meeting=demo#book" },
     ],
   };
 
@@ -151,7 +151,7 @@ export function Footer() {
           {[
             { label: "Merchant App", href: "/platform/ordering-merchant" },
             { label: "Driver App", href: "/platform/driver-app" },
-            { label: "Kiosk", href: "/platform/ordering-kiosk" },
+            // { label: "Kiosk", href: "/platform/ordering-kiosk" },
             { label: "Call Center", href: "/platform/ordering-call-center" },
           ].map((app) => (
             <Link
@@ -163,7 +163,7 @@ export function Footer() {
               <ArrowUpRight className="h-3.5 w-3.5 text-[var(--od-text-muted)]" />
             </Link>
           ))}
-          <span className="text-[13px] text-[var(--od-text-muted)] ml-1">iOS · Android · Web</span>
+          <span className="text-[13px] text-[var(--od-text-muted)] ml-1">Zalo Mini App · iOS · Android · Web</span>
         </Container>
       </div>
 

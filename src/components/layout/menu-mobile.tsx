@@ -17,7 +17,6 @@ import { cn } from "@/lib/utils";
 const ACCORDION_ITEMS: { key: MegaKey; labelEn: string; labelVi: string }[] = [
   { key: "platform", labelEn: "Platform", labelVi: "Nền tảng" },
   { key: "solutions", labelEn: "Solutions", labelVi: "Giải pháp" },
-  { key: "developers", labelEn: "Developers", labelVi: "Developers" },
   { key: "resources", labelEn: "Resources", labelVi: "Tài nguyên" },
 ];
 
@@ -82,47 +81,72 @@ export function MenuMobile() {
 
                   {isOpen && (
                     <div className="pb-5 pt-1 space-y-5">
-                      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                        {menuData.columns.map((col) => (
-                          <div key={col.eyebrow}>
-                            <p className="text-[12px] font-semibold text-[#D91842]">{col.eyebrow}</p>
-                            <p className="mt-0.5 text-[12px] text-[var(--ink-mute)]">{col.summary}</p>
-                            <ul className="mt-2.5 space-y-2">
-                              {col.links.map((link) => (
-                                <li key={link.label}>
-                                  <Link
-                                    href={link.href}
-                                    onClick={closeAll}
-                                    className="inline-flex items-center gap-2 py-0.5 text-[14px] font-medium text-[var(--ink-2)] hover:text-[#D91842] transition-colors"
-                                  >
-                                    <span>{link.label}</span>
-                                    {link.badge && (
-                                      <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
-                                        {link.badge}
-                                      </span>
-                                    )}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
+                      {menuData.variant === "dropdown" ? (
+                        <ul className="space-y-2">
+                          {menuData.columns
+                            .flatMap((col) => col.links)
+                            .map((link) => (
+                              <li key={link.label}>
+                                <Link
+                                  href={link.href}
+                                  onClick={closeAll}
+                                  className="inline-flex items-center gap-2 py-0.5 text-[14px] font-medium text-[var(--ink-2)] hover:text-[#D91842] transition-colors"
+                                >
+                                  <span>{link.label}</span>
+                                  {link.badge && (
+                                    <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
+                                      {link.badge}
+                                    </span>
+                                  )}
+                                </Link>
+                              </li>
+                            ))}
+                        </ul>
+                      ) : (
+                        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                          {menuData.columns.map((col) => (
+                            <div key={col.eyebrow}>
+                              <p className="text-[12px] font-semibold text-[#D91842]">{col.eyebrow}</p>
+                              <p className="mt-0.5 text-[12px] text-[var(--ink-mute)]">{col.summary}</p>
+                              <ul className="mt-2.5 space-y-2">
+                                {col.links.map((link) => (
+                                  <li key={link.label}>
+                                    <Link
+                                      href={link.href}
+                                      onClick={closeAll}
+                                      className="inline-flex items-center gap-2 py-0.5 text-[14px] font-medium text-[var(--ink-2)] hover:text-[#D91842] transition-colors"
+                                    >
+                                      <span>{link.label}</span>
+                                      {link.badge && (
+                                        <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
+                                          {link.badge}
+                                        </span>
+                                      )}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      )}
 
                       {/* Quick bottom strip links inside accordion */}
-                      <div className="grid grid-cols-2 gap-2.5 border-t border-[var(--line-soft)] pt-4">
-                        {menuData.bottomStrip.map((strip) => (
-                          <Link
-                            key={strip.title}
-                            href={strip.href}
-                            onClick={closeAll}
-                            className="rounded-[12px] bg-[var(--canvas-soft)] p-3 transition-colors hover:bg-[var(--line-soft)]"
-                          >
-                            <p className="text-[13px] font-semibold text-[var(--ink)]">{strip.title}</p>
-                            <p className="mt-0.5 text-[11.5px] leading-snug text-[var(--ink-mute)]">{strip.desc}</p>
-                          </Link>
-                        ))}
-                      </div>
+                      {menuData.bottomStrip && menuData.bottomStrip.length > 0 && (
+                        <div className="grid grid-cols-2 gap-2.5 border-t border-[var(--line-soft)] pt-4">
+                          {menuData.bottomStrip.map((strip) => (
+                            <Link
+                              key={strip.title}
+                              href={strip.href}
+                              onClick={closeAll}
+                              className="rounded-[12px] bg-[var(--canvas-soft)] p-3 transition-colors hover:bg-[var(--line-soft)]"
+                            >
+                              <p className="text-[13px] font-semibold text-[var(--ink)]">{strip.title}</p>
+                              <p className="mt-0.5 text-[11.5px] leading-snug text-[var(--ink-mute)]">{strip.desc}</p>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
