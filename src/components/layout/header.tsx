@@ -26,169 +26,202 @@ export function BrandLogo({ forceDark = false, size = "md" }: { forceDark?: bool
         forceDark ? "text-white" : "text-[var(--od-text)]"
       )}
     >
-      {/* <OperoLockup
+      <OperoLockup
         variant={forceDark ? "dark" : "auto"}
         className={size === "lg" ? "h-8 sm:h-9 w-auto" : "h-[26px] sm:h-[28px] w-auto"}
-      /> */}
+      />
     </Link>
   );
 }
 
-export const MEGA_MENUS: Record<
-  MegaKey,
-  {
-    variant?: "mega" | "dropdown";
-    columns: {
-      eyebrow: string;
-      summary: string;
-      links: { label: string; href: string; badge?: string }[];
-    }[];
-    promo?: {
-      eyebrow?: string;
-      title?: string;
-      description?: string;
-      cta?: string;
-      href?: string;
-      code?: string;
-      chat?: { q: string; a: string };
-    } | null;
-    bottomStrip?: { title: string; desc: string; href: string }[] | null;
-  }
-> = {
-  platform: {
-    columns: [
-      {
-        eyebrow: "01 · Build",
-        summary: "Create the customer experience.",
-        links: [
-          // { label: "Marketplace website", href: "/platform/ordering-web" },
-          // { label: "Marketplace app", href: "/platform/ordering-apps" },
-          { label: "Restaurant website", href: "/platform/restaurant-website" },
-          { label: "Restaurant zalo mini app", href: "/platform/restaurant-zalo-mini-app" },
-          { label: "Restaurant mobile app", href: "/platform/restaurant-app" },
-          // { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
-          { label: "Ordering Call Center", href: "/platform/ordering-call-center" },
-          // { label: "Marketplaces", href: "/solutions/marketplaces" },
-          { label: "Multi-store ordering", href: "/platform/multi-store-ordering" },
-          { label: "AI Ordering Agents", href: "/platform/ai-ordering-agents", badge: "New" },
-        ],
-      },
-      {
-        eyebrow: "02 · Operate",
-        summary: "Everything behind every order.",
-        links: [
-          { label: "Ordering Merchant", href: "/platform/ordering-merchant" },
-          { label: "Dashboard", href: "/platform/dashboard" },
-          { label: "Order management", href: "/platform/ordering-merchant#order-management" },
-          { label: "Multi-location ops", href: "/platform/multi-location-operations" },
-          { label: "Ordering Delivery", href: "/platform/ordering-delivery" },
-          { label: "Driver App & dispatch", href: "/platform/driver-app" },
-          { label: "Third-party delivery", href: "/platform/third-party-delivery" },
-        ],
-      },
-      {
-        eyebrow: "03 · Connect",
-        summary: "Fit into your stack.",
-        links: [
-          { label: "Payment gateways", href: "/integrations/payments" },
-          { label: "POS integrations", href: "/integrations/pos" },
-          { label: "Delivery networks", href: "/integrations/delivery" },
-          { label: "Loyalty & CRM", href: "/integrations/loyalty" },
-          { label: "Analytics & reports", href: "/integrations/analytics" },
-          { label: "Automation & more", href: "/integrations/automation" },
-          { label: "Login & security", href: "/integrations/login-security" },
-          { label: "All integrations", href: "/integrations" },
-        ],
-      },
-      {
-        eyebrow: "04 · Extend",
-        summary: "Build on top of the platform.",
-        links: [
-          { label: "OPERO API", href: "/developers#api" },
-          { label: "API & MCP", href: "/developers" },
-          { label: "SDKs & webhooks", href: "/developers#sdks" },
-          // { label: "White label", href: "/developers/white-label" },
-          // { label: "Reseller platform", href: "/solutions/agencies-resellers" },
-          // { label: "Source code license", href: "/developers/source-code-license" },
-          // { label: "Bring your own cloud", href: "/developers/bring-your-own-cloud" },
-        ],
-      },
-    ],
-    promo: {
-      eyebrow: "New in platform",
-      title: "AI Ordering Agents",
-      description: "Let customers order through conversation, on your infrastructure.",
-      cta: "Explore AI ordering",
-      href: "/platform/ai-ordering-agents",
-      chat: {
-        q: "Two pepperoni pizzas to 14 Elm St at 7",
-        a: "Done. $36.90, delivery 7:00 pm. Pay with card ending 4412?",
-      },
-    },
-    bottomStrip: [
-      { title: "Platform overview", desc: "One platform. Every part of ordering.", href: "/platform" },
-      { title: "Live demos", desc: "Web, apps, merchant, and driver, live.", href: "/demo" },
-      { title: "All features", desc: "The complete list, by product.", href: "/products" },
-      { title: "What's new", desc: "Releases every two weeks.", href: "/changelog" },
-    ],
-  },
-  solutions: {
-    variant: "dropdown",
-    columns: [
-      {
-        eyebrow: "For businesses",
-        summary: "Run your ordering operations.",
-        links: [
-          { label: "All solutions", href: "/solutions" },
-          { label: "For Restaurants", href: "/solutions/restaurants" },
-          { label: "For Franchises", href: "/solutions/franchises" },
-          { label: "For Enterprise", href: "/solutions/enterprise" },
-        ],
-      },
-    ],
-  },
-  resources: {
-    variant: "dropdown",
-    columns: [
-      {
-        eyebrow: "Learn",
-        summary: "Guides and stories.",
-        links: [
-          { label: "Blog", href: "/blog" },
-          { label: "Success stories", href: "/customers" },
-          { label: "Live demos", href: "/demo" },
-          { label: "Profit calculator", href: "/resources/profit-calculator" },
-          { label: "FAQ", href: "/#faq" },
-        ],
-      },
-    ],
-  },
-  // company: {
-  //   variant: "dropdown",
-  //   columns: [
-  //     {
-  //       eyebrow: "Company",
-  //       summary: "About & contact.",
-  //       links: [
-  //         { label: `About ${siteConfig.name}`, href: "/company/about" },
-  //         { label: "Contact", href: "/contact" },
-  //       ],
-  //     },
-  //   ],
-  //   promo: {
-  //     eyebrow: "Guide",
-  //     title: "52 scalable ordering business models",
-  //     description: `What you can launch on ${siteConfig.name}, from a single kitchen to a city-wide marketplace.`,
-  //     cta: "Explore the guide",
-  //     href: "/solutions/marketplaces",
-  //   },
-  //   bottomStrip: [
-  //     { title: "Live demos", desc: "Try restaurant and marketplace storefronts.", href: "/demo" },
-  //     { title: "Pricing plans", desc: "0% order commission across plans.", href: "/pricing" },
-  //     { title: "Talk to our team", desc: "Get a tailored architecture walkthrough.", href: "/contact" },
-  //   ],
-  // },
+export type MegaMenuConfig = {
+  variant?: "mega" | "dropdown";
+  columns: {
+    eyebrow: string;
+    summary: string;
+    links: { label: string; href: string; badge?: string }[];
+  }[];
+  promo?: {
+    eyebrow?: string;
+    title?: string;
+    description?: string;
+    cta?: string;
+    href?: string;
+    code?: string;
+    chat?: { q: string; a: string };
+  } | null;
+  bottomStrip?: { title: string; desc: string; href: string }[] | null;
 };
+
+export function getMegaMenus(isVi: boolean): Record<MegaKey, MegaMenuConfig> {
+  return {
+    platform: {
+      columns: [
+        {
+          eyebrow: isVi ? "01 · Xây dựng" : "01 · Build",
+          summary: isVi ? "Tạo trải nghiệm đặt hàng cho khách." : "Create the customer experience.",
+          links: [
+            // { label: "Marketplace website", href: "/platform/ordering-web" },
+            // { label: "Marketplace app", href: "/platform/ordering-apps" },
+            { label: isVi ? "Website đặt hàng nhà hàng" : "Restaurant website", href: "/platform/restaurant-website" },
+            {
+              label: isVi ? "Zalo Mini App nhà hàng" : "Restaurant zalo mini app",
+              href: "/platform/restaurant-zalo-mini-app",
+            },
+            { label: isVi ? "App di động nhà hàng" : "Restaurant mobile app", href: "/platform/restaurant-app" },
+            // { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
+            {
+              label: isVi ? "Tổng đài đặt hàng (Call Center)" : "Ordering Call Center",
+              href: "/platform/ordering-call-center",
+            },
+            // { label: "Marketplaces", href: "/solutions/marketplaces" },
+            { label: isVi ? "Đặt hàng đa chi nhánh" : "Multi-store ordering", href: "/platform/multi-store-ordering" },
+            {
+              label: "AI Ordering Agents",
+              href: "/platform/ai-ordering-agents",
+              badge: isVi ? "Mới" : "New",
+            },
+          ],
+        },
+        {
+          eyebrow: isVi ? "02 · Vận hành" : "02 · Operate",
+          summary: isVi ? "Mọi quy trình phía sau từng đơn hàng." : "Everything behind every order.",
+          links: [
+            { label: isVi ? "Ứng dụng nhận đơn cửa hàng" : "Ordering Merchant", href: "/platform/ordering-merchant" },
+            { label: isVi ? "Bảng điều khiển (Dashboard)" : "Dashboard", href: "/platform/dashboard" },
+            {
+              label: isVi ? "Quản lý đơn hàng" : "Order management",
+              href: "/platform/ordering-merchant#order-management",
+            },
+            {
+              label: isVi ? "Vận hành đa chi nhánh" : "Multi-location ops",
+              href: "/platform/multi-location-operations",
+            },
+            { label: isVi ? "Quản lý giao hàng" : "Ordering Delivery", href: "/platform/ordering-delivery" },
+            { label: isVi ? "App tài xế & điều phối" : "Driver App & dispatch", href: "/platform/driver-app" },
+            {
+              label: isVi ? "Giao hàng bên thứ ba (3PL)" : "Third-party delivery",
+              href: "/platform/third-party-delivery",
+            },
+          ],
+        },
+        {
+          eyebrow: isVi ? "03 · Kết nối" : "03 · Connect",
+          summary: isVi ? "Tích hợp liền mạch hệ thống sẵn có." : "Fit into your stack.",
+          links: [
+            { label: isVi ? "Cổng thanh toán" : "Payment gateways", href: "/integrations/payments" },
+            { label: isVi ? "Tích hợp POS" : "POS integrations", href: "/integrations/pos" },
+            { label: isVi ? "Mạng lưới giao hàng" : "Delivery networks", href: "/integrations/delivery" },
+            { label: "Loyalty & CRM", href: "/integrations/loyalty" },
+            { label: isVi ? "Phân tích & báo cáo" : "Analytics & reports", href: "/integrations/analytics" },
+            { label: isVi ? "Tự động hóa & mở rộng" : "Automation & more", href: "/integrations/automation" },
+            { label: isVi ? "Đăng nhập & bảo mật" : "Login & security", href: "/integrations/login-security" },
+            { label: isVi ? "Tất cả tích hợp" : "All integrations", href: "/integrations" },
+          ],
+        },
+        {
+          eyebrow: isVi ? "04 · Mở rộng" : "04 · Extend",
+          summary: isVi ? "Phát triển mở rộng trên nền tảng." : "Build on top of the platform.",
+          links: [
+            { label: "OPERO API", href: "/developers#api" },
+            { label: "API & MCP", href: "/developers" },
+            { label: "SDKs & webhooks", href: "/developers#sdks" },
+            // { label: "White label", href: "/developers/white-label" },
+            // { label: "Reseller platform", href: "/solutions/agencies-resellers" },
+            // { label: "Source code license", href: "/developers/source-code-license" },
+            // { label: "Bring your own cloud", href: "/developers/bring-your-own-cloud" },
+          ],
+        },
+      ],
+      promo: {
+        eyebrow: isVi ? "Mới trên nền tảng" : "New in platform",
+        title: "AI Ordering Agents",
+        description: isVi
+          ? "Cho phép khách đặt món qua hội thoại trực tiếp trên hạ tầng của bạn."
+          : "Let customers order through conversation, on your infrastructure.",
+        cta: isVi ? "Khám phá AI đặt món" : "Explore AI ordering",
+        href: "/platform/ai-ordering-agents",
+        chat: isVi
+          ? {
+              q: "Cho mình 2 pizza pepperoni giao tới 14 Nguyễn Huệ lúc 19h",
+              a: "Đã nhận đơn. 420.000đ, giao lúc 19:00. Thanh toán qua thẻ đuôi 4412 nhé?",
+            }
+          : {
+              q: "Two pepperoni pizzas to 14 Elm St at 7",
+              a: "Done. $36.90, delivery 7:00 pm. Pay with card ending 4412?",
+            },
+      },
+      bottomStrip: [
+        {
+          title: isVi ? "Tổng quan nền tảng" : "Platform overview",
+          desc: isVi ? "Một nền tảng cho toàn bộ quy trình đặt hàng." : "One platform. Every part of ordering.",
+          href: "/platform",
+        },
+        {
+          title: isVi ? "Trải nghiệm demo" : "Live demos",
+          desc: isVi ? "Dùng thử trực tiếp Web, App, Merchant và Driver." : "Web, apps, merchant, and driver, live.",
+          href: "/demo",
+        },
+        {
+          title: isVi ? "Tất cả tính năng" : "All features",
+          desc: isVi ? "Danh sách đầy đủ theo từng sản phẩm." : "The complete list, by product.",
+          href: "/products",
+        },
+        {
+          title: isVi ? "Có gì mới" : "What's new",
+          desc: isVi ? "Cập nhật tính năng mới mỗi 2 tuần." : "Releases every two weeks.",
+          href: "/changelog",
+        },
+      ],
+    },
+    solutions: {
+      variant: "dropdown",
+      columns: [
+        {
+          eyebrow: isVi ? "Cho doanh nghiệp" : "For businesses",
+          summary: isVi ? "Vận hành toàn diện hệ thống đặt hàng." : "Run your ordering operations.",
+          links: [
+            { label: isVi ? "Tất cả giải pháp" : "All solutions", href: "/solutions" },
+            { label: isVi ? "Cho Nhà hàng" : "For Restaurants", href: "/solutions/restaurants" },
+            { label: isVi ? "Cho Chuỗi nhượng quyền" : "For Franchises", href: "/solutions/franchises" },
+            { label: isVi ? "Cho Doanh nghiệp lớn" : "For Enterprise", href: "/solutions/enterprise" },
+          ],
+        },
+      ],
+    },
+    resources: {
+      variant: "dropdown",
+      columns: [
+        {
+          eyebrow: isVi ? "Tìm hiểu" : "Learn",
+          summary: isVi ? "Hướng dẫn và câu chuyện thực tế." : "Guides and stories.",
+          links: [
+            { label: "Blog", href: "/blog" },
+            { label: isVi ? "Câu chuyện khách hàng" : "Success stories", href: "/customers" },
+            { label: isVi ? "Trải nghiệm demo" : "Live demos", href: "/demo" },
+            { label: isVi ? "Công cụ tính lợi nhuận" : "Profit calculator", href: "/resources/profit-calculator" },
+            { label: isVi ? "Câu hỏi thường gặp (FAQ)" : "FAQ", href: "/#faq" },
+          ],
+        },
+      ],
+    },
+    // company: {
+    //   variant: "dropdown",
+    //   columns: [
+    //     {
+    //       eyebrow: "Company",
+    //       summary: "About & contact.",
+    //       links: [
+    //         { label: `About ${siteConfig.name}`, href: "/company/about" },
+    //         { label: "Contact", href: "/contact" },
+    //       ],
+    //     },
+    //   ],
+    // },
+  };
+}
+
+export const MEGA_MENUS: Record<MegaKey, MegaMenuConfig> = getMegaMenus(false);
 
 export function Header() {
   const { lang } = useDictionaries();
@@ -210,7 +243,8 @@ export function Header() {
     { key: "resources", labelEn: "Resources", labelVi: "Tài nguyên" },
   ];
 
-  const activeMega = openMega ? MEGA_MENUS[openMega] : null;
+  const megaMenus = getMegaMenus(isVi);
+  const activeMega = openMega ? megaMenus[openMega] : null;
 
   return (
     <header
@@ -228,7 +262,7 @@ export function Header() {
           <nav aria-label="Primary navigation" className="hidden xl:flex items-center gap-0.5">
             {navDropdowns.map((item) => {
               const isOpen = openMega === item.key;
-              const menuConfig = MEGA_MENUS[item.key];
+              const menuConfig = megaMenus[item.key];
               const isSingleDropdown = menuConfig.variant === "dropdown";
               const dropdownLinks = isSingleDropdown
                 ? menuConfig.columns.flatMap((col) => col.links)
@@ -272,7 +306,7 @@ export function Header() {
                             >
                               <span>{link.label}</span>
                               {link.badge && (
-                                <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
+                                <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--od-action-content)]">
                                   {link.badge}
                                 </span>
                               )}
@@ -402,7 +436,7 @@ export function Header() {
                             >
                               <span>{item.label}</span>
                               {item.badge && (
-                                <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--brand-red)]">
+                                <span className="rounded-full bg-[var(--brand-red-50)] px-2 py-0.5 text-[10px] font-semibold text-[var(--od-action-content)]">
                                   {item.badge}
                                 </span>
                               )}
