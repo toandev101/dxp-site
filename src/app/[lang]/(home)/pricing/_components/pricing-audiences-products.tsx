@@ -42,6 +42,7 @@ export function PricingAudiencesAndProducts() {
         { icon: Globe, label: "Marketplace website", href: "/platform/ordering-web" },
         { icon: Smartphone, label: "Marketplace app", href: "/platform/ordering-apps" },
         { icon: UtensilsCrossed, label: "Restaurant website", href: "/platform/restaurant-website" },
+        { icon: Smartphone, label: "Restaurant Zalo Mini App", href: "/platform/restaurant-zalo-mini-app" },
         { icon: Smartphone, label: "Restaurant app", href: "/platform/restaurant-app" },
         { icon: Monitor, label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
         { icon: Headphones, label: "Ordering Call Center", href: "/platform/ordering-call-center" },

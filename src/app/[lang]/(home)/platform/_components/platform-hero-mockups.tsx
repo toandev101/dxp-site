@@ -39,6 +39,7 @@ export function PlatformHeroMockup({ slug, caption }: { slug: PlatformSlug; capt
       {slug === "ordering-apps" && <OrderingAppsMockup />}
       {slug === "restaurant-website" && <RestaurantWebsiteMockup />}
       {slug === "restaurant-app" && <RestaurantAppMockup />}
+      {slug === "restaurant-zalo-mini-app" && <RestaurantZaloMiniAppMockup />}
       {slug === "ordering-kiosk" && <OrderingKioskMockup />}
       {slug === "ordering-call-center" && <OrderingCallCenterMockup />}
       {slug === "multi-store-ordering" && <MultiStoreMockup />}
@@ -348,6 +349,87 @@ function RestaurantAppMockup() {
             <span>View cart · 2 items</span>
             <span>$25.50</span>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RestaurantZaloMiniAppMockup() {
+  return (
+    <div className="flex justify-center">
+      <div className="w-[300px] sm:w-[330px] rounded-[34px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
+        <div className="rounded-[24px] bg-white p-4 text-[#151417]">
+          {/* Zalo Mini App Top Navigation Capsule */}
+          <div className="flex items-center justify-between border-b border-[#F0F0F2] pb-2.5">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0068FF] text-[10px] font-bold text-white">
+                Z
+              </span>
+              <div>
+                <p className="text-[12.5px] font-bold leading-tight">Verde Cocina</p>
+                <p className="text-[9.5px] font-medium text-[#0068FF]">Zalo Mini App · Official</p>
+              </div>
+            </div>
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-1 text-[10px] font-semibold text-[#3A393F]">
+              <span>•••</span>
+              <span className="h-2.5 w-px bg-[#D9D9DD]" />
+              <span>✕</span>
+            </div>
+          </div>
+
+          {/* E-Membership & OA Loyalty Strip */}
+          <div className="mt-3 flex items-center justify-between rounded-[10px] bg-gradient-to-r from-[#0068FF] to-[#0052CC] px-3 py-2.5 text-white">
+            <div>
+              <p className="text-[9.5px] uppercase tracking-[0.06em] text-white/80">Gold Member · Zalo ID</p>
+              <p className="text-[12.5px] font-bold">1,240 pts · 2 vouchers</p>
+            </div>
+            <span className="rounded-full bg-white/15 px-2 py-0.5 text-[9.5px] font-semibold text-white">
+              OA Linked
+            </span>
+          </div>
+
+          {/* Order Type Tabs */}
+          <div className="mt-3 flex gap-1.5 text-[10px]">
+            <span className="rounded-full bg-[#111013] px-2.5 py-1 font-semibold text-white">Delivery</span>
+            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">Pickup</span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">
+              <QrCode className="h-2.5 w-2.5 text-[#0068FF]" />
+              Dine in
+            </span>
+          </div>
+
+          {/* Menu Items */}
+          <div className="mt-3 space-y-2">
+            {[
+              { name: "Green bowl", sub: "Brown rice · Avocado · $12.50" },
+              { name: "Chipotle bowl", sub: "Grilled chicken · $13.00" },
+              { name: "Hibiscus agua fresca", sub: "16 oz · $4.00" },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center justify-between rounded-[8px] border border-[#D9D9DD] p-2.5"
+              >
+                <div>
+                  <p className="text-[11.5px] font-bold">{item.name}</p>
+                  <p className="text-[10px] text-[#3A393F]">{item.sub}</p>
+                </div>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F5F5F6] text-[#151417]">
+                  <Plus className="h-3 w-3" />
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Checkout CTA */}
+          <div className="mt-3.5 flex items-center justify-between rounded-[8px] bg-[#D91842] px-3.5 py-2.5 text-[11.5px] font-semibold text-white">
+            <span>Checkout · 2 items</span>
+            <span>$25.50</span>
+          </div>
+
+          <p className="mt-2 text-center text-[9.5px] text-[#6E6D75]">
+            ZaloPay · VietQR · ZNS order updates
+          </p>
         </div>
       </div>
     </div>

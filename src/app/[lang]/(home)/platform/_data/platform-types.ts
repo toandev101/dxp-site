@@ -3,6 +3,7 @@ export type PlatformSlug =
   | "ordering-apps"
   | "restaurant-website"
   | "restaurant-app"
+  | "restaurant-zalo-mini-app"
   | "ordering-kiosk"
   | "ordering-call-center"
   | "multi-store-ordering"

@@ -160,6 +160,200 @@ const RESTAURANT_APP_CATEGORIES: PlatformFeatureCategory[] = RESTAURANT_WEBSITE_
   return { category: cat.category, items: filtered };
 });
 
+const ZALO_EXCLUDED_TITLES = new Set([
+  "Branded ordering website",
+  "Progressive web app",
+  "QR code ordering",
+  "B2B ordering",
+  "Website ordering widgets",
+  "Sell on social media",
+  "Ordering from Google",
+  "Login options",
+  "Social login",
+  "School ordering",
+  "Appointments and services",
+  "Guest checkout",
+  "Apple Pay and Google Pay",
+  "PayPal",
+  "Local payment methods",
+  "Saved cards",
+  "Order notifications",
+  "Store SEO and social links",
+  "Multi-country platform",
+  "Loyalty levels",
+  "SEO settings",
+  "Content management",
+  "Custom domain and SSL",
+  "Bot protection",
+  "Verified signups",
+  "Analytics and tracking",
+]);
+
+const RESTAURANT_ZALO_MINI_APP_CATEGORIES: PlatformFeatureCategory[] = RESTAURANT_WEBSITE_CATEGORIES.map((cat) => {
+  const filtered = cat.items.filter((item) => !ZALO_EXCLUDED_TITLES.has(item.title));
+
+  if (cat.category === "Ordering experience") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "Branded Zalo Mini App",
+          description: "A lightweight, branded ordering experience running directly inside Zalo with instant cached loading and zero app download.",
+          href: "/platform/restaurant-zalo-mini-app",
+        },
+        {
+          title: "Zalo OA & QR entry points",
+          description: "Launch your Mini App in one tap from Zalo Official Account menus, broadcast messages, shared links, or QR codes.",
+          href: "/platform/restaurant-zalo-mini-app",
+        },
+        {
+          title: "Table QR scan-and-order",
+          description: "Assign a unique QR code to each dining table so guests scan, order, and send tickets straight to the kitchen.",
+          href: "/products#build",
+        },
+        {
+          title: "One-tap Zalo login & phone consent",
+          description: "Identify guests automatically through their verified Zalo profile and phone number permission—no passwords or manual forms.",
+          href: "/platform/restaurant-zalo-mini-app",
+        },
+        {
+          title: "Zalo social sharing",
+          description: "Customers share favorite dishes, store links, or referral vouchers directly to Zalo friends and group chats.",
+          href: "/products#build",
+        },
+        ...filtered,
+      ],
+    };
+  }
+
+  if (cat.category === "Cart, checkout, and payments") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "ZaloPay in-app checkout",
+          description: "Frictionless one-tap checkout via ZaloPay Checkout SDK using ZaloPay wallet or linked bank accounts inside Zalo.",
+          href: "/integrations/payments",
+        },
+        {
+          title: "VietQR & domestic bank transfer",
+          description: "Instant VietQR and ATM/Napas bank payments with automatic order confirmation for delivery, pickup, and dine-in.",
+          href: "/integrations/payments",
+        },
+        ...filtered.map((item) =>
+          item.title === "Cart sync across channels"
+            ? {
+                ...item,
+                description: "The cart stays in sync when customers switch between your Zalo Mini App, website, and mobile app.",
+              }
+            : item
+        ),
+      ],
+    };
+  }
+
+  if (cat.category === "Order management") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "ZNS transactional notifications",
+          description: "Automated order confirmations, kitchen updates, delivery statuses, and loyalty point alerts delivered via verified Zalo ZNS.",
+          href: "/integrations/loyalty",
+        },
+        {
+          title: "Zalo OA live customer care",
+          description: "Connect guests from inside the Mini App straight to your Zalo Official Account chat for fast support.",
+          href: "/integrations/loyalty",
+        },
+        ...filtered,
+      ],
+    };
+  }
+
+  if (cat.category === "Stores and locations") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "Nearby store detection via Zalo GPS",
+          description: "Use Zalo’s native location API to automatically match guests with the closest open branch.",
+          href: "/platform/multi-store-ordering",
+        },
+        ...filtered,
+      ],
+    };
+  }
+
+  if (cat.category === "Marketing and loyalty") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "E-Membership & loyalty tiers",
+          description: "Digital member cards tied to each customer’s Zalo ID with automatic tier upgrades (Silver, Gold, VIP) based on spend.",
+          href: "/integrations/loyalty",
+        },
+        {
+          title: "Zalo OA follow widget",
+          description: "Invite customers to follow your Zalo Official Account in one tap during onboarding or order confirmation.",
+          href: "/integrations/loyalty",
+        },
+        {
+          title: "Gamification & voucher campaigns",
+          description: "Run interactive lucky spins, check-in rewards, and birthday vouchers inside Zalo to drive repeat visits.",
+          href: "/integrations/loyalty",
+        },
+        ...filtered,
+      ],
+    };
+  }
+
+  if (cat.category === "Administration and security") {
+    return {
+      category: cat.category,
+      items: [
+        ...filtered,
+        {
+          title: "Zalo Mini App publishing & updates",
+          description: "Streamlined release workflow aligned with Zalo Mini App Studio review guidelines and UI standards.",
+          href: "/#control",
+        },
+        {
+          title: "Native Zalo permission controls",
+          description: "Explicit guest consent for phone number, user profile, and GPS access managed via Zalo’s official APIs.",
+          href: "/integrations/login-security",
+        },
+      ],
+    };
+  }
+
+  if (cat.category === "Integrations and developer tools") {
+    return {
+      category: cat.category,
+      items: [
+        {
+          title: "POS, CRM & CDP sync",
+          description: "Sync menus, orders, inventory, and member profiles in real time with your restaurant POS, CRM, or ERP via open APIs.",
+          href: "/integrations/pos",
+        },
+        {
+          title: "Channel & campaign analytics",
+          description: "Track QR scans, Zalo OA conversions, voucher redemptions, and repeat purchase cohorts from one dashboard.",
+          href: "/integrations/analytics",
+        },
+      ],
+    };
+  }
+
+  return { category: cat.category, items: filtered };
+});
+
+const RESTAURANT_ZALO_MINI_APP_FEATURE_COUNT = RESTAURANT_ZALO_MINI_APP_CATEGORIES.reduce(
+  (sum, cat) => sum + cat.items.length,
+  0
+);
+
 export const RESTAURANT_WEBSITE_SPEC: PlatformPageSpec = {
   slug: "restaurant-website",
   template: "catalog",
@@ -200,6 +394,7 @@ export const RESTAURANT_WEBSITE_SPEC: PlatformPageSpec = {
   related: {
     title: "Other products in ordering channels",
     items: [
+      { title: "Restaurant Zalo Mini App", body: "Your restaurant’s zero-download ordering and loyalty Mini App inside Zalo.", href: "/platform/restaurant-zalo-mini-app" },
       { title: "Restaurant customer app", body: "Your restaurant’s branded iOS and Android app.", href: "/platform/restaurant-app" },
       { title: "Marketplace customer website", body: "A multi-store ordering website for your marketplace.", href: "/platform/ordering-web" },
       { title: "Marketplace customer app", body: "Your marketplace on iOS and Android.", href: "/platform/ordering-apps" },
@@ -268,6 +463,7 @@ export const RESTAURANT_APP_SPEC: PlatformPageSpec = {
   related: {
     title: "Other products in ordering channels",
     items: [
+      { title: "Restaurant Zalo Mini App", body: "Your restaurant’s zero-download ordering and loyalty Mini App inside Zalo.", href: "/platform/restaurant-zalo-mini-app" },
       { title: "Restaurant customer website", body: "Your restaurant’s branded ordering website.", href: "/platform/restaurant-website" },
       { title: "Marketplace customer website", body: "A multi-store ordering website for your marketplace.", href: "/platform/ordering-web" },
       { title: "Marketplace customer app", body: "Your marketplace on iOS and Android.", href: "/platform/ordering-apps" },
@@ -282,6 +478,99 @@ export const RESTAURANT_APP_SPEC: PlatformPageSpec = {
     body: "Tell us how you sell and deliver, and we will walk through the products and features that fit.",
     docGuide: { label: "Customer App overview", href: "/demo#restaurant" },
     primaryCta: { label: `Talk to ${BRAND}`, modalTopic: "Restaurant App · Guided demo" },
+    secondaryCta: { label: "See pricing", href: "/pricing" },
+  },
+};
+
+export const RESTAURANT_ZALO_MINI_APP_SPEC: PlatformPageSpec = {
+  slug: "restaurant-zalo-mini-app",
+  template: "catalog",
+  metaTitle: "Restaurant Zalo Mini App",
+  metaDescription:
+    "Your restaurant’s branded ordering and loyalty Mini App inside Zalo—zero app downloads, connected to Zalo OA, ZNS, ZaloPay, and your store operations.",
+  hero: {
+    breadcrumbs: [
+      { label: "Platform", href: "/products" },
+      { label: "Restaurant Zalo Mini App" },
+    ],
+    title: "Your restaurant’s ordering app, right inside Zalo.",
+    lede: "Let customers scan a QR code or tap your Zalo OA to browse your menu, order for delivery, pickup, or dine in, earn loyalty points, and pay with ZaloPay—with zero app download. Menus, orders, and member data stay synced with the Dashboard and Merchant app your team uses.",
+    primaryCta: { label: "See a live demo", href: "/demo#restaurant" },
+    secondaryCta: { label: `Talk to ${BRAND}`, openChat: true },
+    meta: [
+      { text: "Runs natively inside Zalo" },
+      { text: "No App Store download" },
+      { text: "OA · ZNS · ZaloPay ready" },
+    ],
+  },
+  pillars: {
+    title: "What the Zalo Mini App gives your customers.",
+    numbered: false,
+    items: [
+      {
+        title: "Zero-download instant access",
+        body: "Reach 75M+ active Zalo users without asking them to install another app. Guests launch your storefront in one tap from Zalo OA, shared chat links, or a QR code at the table, counter, or packaging.",
+      },
+      {
+        title: "One-tap Zalo login & QR ordering",
+        body: "Identify customers automatically via their verified Zalo profile and phone number with explicit consent. Support delivery, pickup, and table-level QR scan-and-order sent directly to the kitchen.",
+      },
+      {
+        title: "Built-in E-Membership, vouchers & ZNS",
+        body: "Issue digital membership cards, tiered reward points, and gamified vouchers right inside Zalo. Keep guests coming back with verified ZNS order notifications and Zalo OA live support.",
+      },
+      {
+        title: "ZaloPay & synced omnichannel ops",
+        body: "Accept ZaloPay, VietQR bank transfers, domestic cards, and cash on delivery in one screen—while menus, carts, and orders stay synced in real time with your POS, website, and mobile apps.",
+      },
+    ],
+    footnote:
+      "Zalo Official Account (OA) verification and ZNS message usage fees are billed directly by Zalo based on your account tier.",
+  },
+  featureCatalog: {
+    title: `${RESTAURANT_ZALO_MINI_APP_FEATURE_COUNT} features, built for the Zalo ecosystem.`,
+    categories: RESTAURANT_ZALO_MINI_APP_CATEGORIES,
+    footnote: "10 more features work across the whole platform. The feature catalog lists them all.",
+    cta: { label: "Open in the feature catalog", href: "/pricing#pricing-features" },
+  },
+  capabilitiesList: {
+    id: "capabilities",
+    eyebrow: "Zalo ecosystem",
+    title: "Turn every Zalo touchpoint into a direct repeat order.",
+    lead: "Unify Mini App, Zalo OA, ZNS, and ZaloPay into one closed-loop ordering and retention channel with 0% order commission.",
+    items: [
+      {
+        title: "Automated ZNS & Zalo OA re-engagement",
+        body: "Send verified ZNS messages for order confirmations, kitchen readiness, earned points, and expiring vouchers directly to each customer’s Zalo inbox.",
+      },
+      {
+        title: "Table, counter & packaging QR acquisition",
+        body: "Place Mini App QR codes on dining tables, receipts, and takeaway bags so walk-in and third-party guests convert into owned, direct-ordering members.",
+      },
+      {
+        title: "Faster launch than standalone native apps",
+        body: "Deploy across both iOS and Android inside Zalo without maintaining separate App Store and Google Play releases—while sharing one menu and backend with your web and mobile apps.",
+      },
+    ],
+  },
+  related: {
+    title: "Other products in ordering channels",
+    items: [
+      { title: "Restaurant customer app", body: "Your restaurant’s branded iOS and Android app.", href: "/platform/restaurant-app" },
+      { title: "Restaurant customer website", body: "Your restaurant’s branded ordering website.", href: "/platform/restaurant-website" },
+      { title: "Marketplace customer website", body: "A multi-store ordering website for your marketplace.", href: "/platform/ordering-web" },
+      { title: "Marketplace customer app", body: "Your marketplace on iOS and Android.", href: "/platform/ordering-apps" },
+      { title: "Kiosk", body: "Self-ordering screens inside the store.", href: "/platform/ordering-kiosk" },
+      { title: "Call center software", body: "Phone orders taken by your agents.", href: "/platform/ordering-call-center" },
+      { label: "New", title: "Web AI Ordering", body: "Customers order through conversations inside your online ordering experience.", href: "/platform/ai-ordering-agents" },
+      { label: "New", title: "WhatsApp AI Ordering", body: "Customers order through WhatsApp conversations.", href: "/platform/ai-ordering-agents" },
+    ],
+  },
+  closingCta: {
+    title: "See it working with your operation.",
+    body: "Tell us how you sell, deliver, and engage guests on Zalo, and we will walk through the Mini App setup, ZNS flows, and POS integrations that fit.",
+    docGuide: { label: "Zalo Mini App overview", href: "/demo#restaurant" },
+    primaryCta: { label: `Talk to ${BRAND}`, modalTopic: "Restaurant Zalo Mini App · Guided demo" },
     secondaryCta: { label: "See pricing", href: "/pricing" },
   },
 };
