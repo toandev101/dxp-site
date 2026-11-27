@@ -4,26 +4,28 @@ import { useMemo, useState } from "react";
 
 import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
+import useDictionaries from "@/hooks/useDictionaries";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
-import {
-  CHANGELOG_ENTRIES,
-  CHANGELOG_PRODUCT_AREAS,
-  type ChangelogEntry,
-  type ChangelogProductKey,
-} from "../_data/changelog-entries";
+import type { ChangelogEntry, ChangelogProductKey } from "../_data/changelog-entries";
+import { getChangelogEntries, getChangelogProductAreas } from "../_data/changelog-entries-vi";
 
 const BRAND = siteConfig.name;
 
 type FilterKey = "all" | ChangelogProductKey;
 
 export function ChangelogPageView() {
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
 
+  const productAreas = useMemo(() => getChangelogProductAreas(isVi), [isVi]);
+  const allEntries = useMemo(() => getChangelogEntries(isVi), [isVi]);
+
   const filteredEntries = useMemo(() => {
-    if (activeFilter === "all") return CHANGELOG_ENTRIES;
-    return CHANGELOG_ENTRIES.filter((entry) => entry.product === activeFilter);
-  }, [activeFilter]);
+    if (activeFilter === "all") return allEntries;
+    return allEntries.filter((entry) => entry.product === activeFilter);
+  }, [activeFilter, allEntries]);
 
   const monthGroups = useMemo(() => {
     const map = new Map<string, ChangelogEntry[]>();
@@ -48,23 +50,24 @@ export function ChangelogPageView() {
                   href="/products"
                   className="font-medium text-[var(--od-action-content)] underline underline-offset-4"
                 >
-                  Resources
+                  {isVi ? "Tài nguyên" : "Resources"}
                 </Link>
                 <span className="text-[var(--od-text-muted)]">/</span>
-                <span className="text-[var(--od-text)]">What&apos;s new</span>
+                <span className="text-[var(--od-text)]">{isVi ? "Có gì mới" : "What’s new"}</span>
               </nav>
 
               <p className="mt-7 font-mono text-[12px] font-semibold text-[var(--od-action-content)]">
-                January 2, 2025–November 23, 2026
+                {isVi ? "02/01/2025 – 23/11/2026" : "January 2, 2025–November 23, 2026"}
               </p>
 
               <h1 className="mt-3.5 text-[42px] sm:text-[58px] lg:text-[64px] font-bold tracking-[-0.045em] leading-[1.03] text-[var(--od-text)] [text-wrap:balance]">
-                See what&apos;s moving across {BRAND}
+                {isVi ? `Theo dõi mọi cập nhật mới trên ${BRAND}` : `See what’s moving across ${BRAND}`}
               </h1>
 
               <p className="mt-5 max-w-xl text-[17px] sm:text-[18.5px] leading-[1.6] text-[var(--od-text-muted)]">
-                Follow product work across ordering channels, franchise experiences, business and delivery operations,
-                the API, Dashboard, and Dashboard AI.
+                {isVi
+                  ? "Cập nhật tiến độ phát triển sản phẩm xuyên suốt các kênh đặt hàng, trải nghiệm chuỗi nhượng quyền, vận hành cửa hàng và giao hàng, API, Bảng điều khiển và Bảng điều khiển AI."
+                  : "Follow product work across ordering channels, franchise experiences, business and delivery operations, the API, Dashboard, and Dashboard AI."}
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -72,19 +75,21 @@ export function ChangelogPageView() {
                   href="#releases"
                   className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
                 >
-                  Explore the updates
+                  {isVi ? "Khám phá các bản cập nhật" : "Explore the updates"}
                 </a>
                 <Link
                   href="/platform"
                   className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] transition-colors hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)]"
                 >
-                  Platform overview
+                  {isVi ? "Tổng quan nền tảng" : "Platform overview"}
                 </Link>
               </div>
 
-              <dl aria-label="Changelog coverage" className="mt-12">
+              <dl aria-label={isVi ? "Phạm vi nhật ký cập nhật" : "Changelog coverage"} className="mt-12">
                 <div className="flex flex-col-reverse">
-                  <dt className="mt-1.5 text-[13.5px] text-[var(--od-text-muted)]">connected product areas</dt>
+                  <dt className="mt-1.5 text-[13.5px] text-[var(--od-text-muted)]">
+                    {isVi ? "mảng sản phẩm kết nối" : "connected product areas"}
+                  </dt>
                   <dd className="text-[48px] sm:text-[56px] font-bold tracking-[-0.04em] leading-none text-[var(--od-text)]">
                     9
                   </dd>
@@ -94,11 +99,11 @@ export function ChangelogPageView() {
 
             {/* Right Connected Release Rail */}
             <aside
-              aria-label="Product areas covered by this changelog"
+              aria-label={isVi ? "Các mảng sản phẩm trong nhật ký cập nhật" : "Product areas covered by this changelog"}
               className="lg:col-span-5 rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6 sm:p-8"
             >
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--od-text-muted)]">
-                One connected release rail
+                {isVi ? "Một lộ trình phát hành thống nhất" : "One connected release rail"}
               </p>
 
               <ol className="relative mt-6 space-y-4">
@@ -106,7 +111,7 @@ export function ChangelogPageView() {
                   aria-hidden="true"
                   className="pointer-events-none absolute left-[17px] top-4 bottom-4 w-px bg-[var(--od-border-strong)]"
                 />
-                {CHANGELOG_PRODUCT_AREAS.map((area) => (
+                {productAreas.map((area) => (
                   <li key={area.key} className="relative flex items-center gap-4">
                     <span
                       aria-hidden="true"
@@ -132,16 +137,29 @@ export function ChangelogPageView() {
       <section id="releases" className="scroll-mt-24 pt-12 pb-16 lg:pt-16 lg:pb-24">
         <Container>
           {/* Section Header */}
-          <p className="font-mono text-[12px] font-semibold text-[var(--od-action-content)]">Release rail</p>
+          <p className="font-mono text-[12px] font-semibold text-[var(--od-action-content)]">
+            {isVi ? "Nhật ký phát hành" : "Release rail"}
+          </p>
           <div className="mt-2.5 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end">
             <h2 className="lg:col-span-7 text-[36px] sm:text-[48px] font-bold tracking-[-0.04em] leading-[1.05] text-[var(--od-text)]">
-              Latest product
-              <br />
-              progress
+              {isVi ? (
+                <>
+                  Tiến độ sản phẩm
+                  <br />
+                  mới nhất
+                </>
+              ) : (
+                <>
+                  Latest product
+                  <br />
+                  progress
+                </>
+              )}
             </h2>
             <p className="lg:col-span-5 text-[15.5px] leading-[1.6] text-[var(--od-text-muted)]">
-              Browse every update in reverse chronological order or narrow the feed to one product area. Dates track
-              completed implementation milestones; availability varies by project and rollout.
+              {isVi
+                ? "Xem mọi cập nhật theo thứ tự mới nhất hoặc lọc theo từng mảng sản phẩm. Các mốc ngày ghi nhận thời điểm hoàn tất triển khai; phạm vi áp dụng tùy theo dự án và đợt phát hành."
+                : "Browse every update in reverse chronological order or narrow the feed to one product area. Dates track completed implementation milestones; availability varies by project and rollout."}
             </p>
           </div>
         </Container>
@@ -149,7 +167,11 @@ export function ChangelogPageView() {
         {/* Sticky Filter Bar */}
         <div className="sticky top-[73px] z-20 mt-10 border-y border-[var(--od-border)] bg-[var(--od-bg)]/95 backdrop-blur-xs">
           <Container className="py-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div role="group" aria-label="Filter by product" className="flex flex-wrap items-center gap-2">
+            <div
+              role="group"
+              aria-label={isVi ? "Lọc theo sản phẩm" : "Filter by product"}
+              className="flex flex-wrap items-center gap-2"
+            >
               <button
                 type="button"
                 aria-pressed={activeFilter === "all"}
@@ -161,10 +183,10 @@ export function ChangelogPageView() {
                     : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                 )}
               >
-                All updates
+                {isVi ? "Tất cả cập nhật" : "All updates"}
               </button>
 
-              {CHANGELOG_PRODUCT_AREAS.map((area) => {
+              {productAreas.map((area) => {
                 const isActive = activeFilter === area.key;
                 return (
                   <button
@@ -190,7 +212,9 @@ export function ChangelogPageView() {
               aria-atomic="true"
               className="shrink-0 font-mono text-[12px] text-[var(--od-text-muted)]"
             >
-              Showing {filteredEntries.length} {filteredEntries.length === 1 ? "update" : "updates"}
+              {isVi
+                ? `Hiển thị ${filteredEntries.length} cập nhật`
+                : `Showing ${filteredEntries.length} ${filteredEntries.length === 1 ? "update" : "updates"}`}
             </p>
           </Container>
         </div>
@@ -266,11 +290,14 @@ export function ChangelogPageView() {
 
             <div className="relative z-10 max-w-xl">
               <h2 className="text-[32px] sm:text-[44px] font-bold tracking-[-0.035em] leading-[1.06] text-white">
-                Explore the platform behind these updates.
+                {isVi
+                  ? "Khám phá nền tảng đứng sau những cập nhật này."
+                  : "Explore the platform behind these updates."}
               </h2>
               <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">
-                See how {BRAND} brings customer ordering, operations, and connected services into one platform, or
-                explore the technical documentation.
+                {isVi
+                  ? `Xem cách ${BRAND} hợp nhất kênh đặt hàng, vận hành và các dịch vụ kết nối trên cùng một nền tảng, hoặc khám phá tài liệu kỹ thuật.`
+                  : `See how ${BRAND} brings customer ordering, operations, and connected services into one platform, or explore the technical documentation.`}
               </p>
             </div>
 
@@ -279,13 +306,13 @@ export function ChangelogPageView() {
                 href="/demo"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full bg-[#D91842] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#B8123A]"
               >
-                See a live demo
+                {isVi ? "Xem bản demo trực tiếp" : "See a live demo"}
               </Link>
               <Link
                 href="/developers"
                 className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-[#2A2A2E] bg-[#1B1A1F] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:border-[#6E6D75] hover:bg-[#1B1A1F]"
               >
-                Developer platform
+                {isVi ? "Nền tảng lập trình viên" : "Developer platform"}
               </Link>
             </div>
           </div>

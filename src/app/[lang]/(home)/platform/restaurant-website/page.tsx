@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/utils/metadata";
 import { PlatformPageRenderer } from "../_components/platform-page-renderer";
 import { RESTAURANT_WEBSITE_SPEC } from "../_data/platform-pages-restaurant";
+import { RESTAURANT_WEBSITE_SPEC_VI } from "../_data/platform-pages-restaurant-vi";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: RESTAURANT_WEBSITE_SPEC.metaTitle,
-  description: RESTAURANT_WEBSITE_SPEC.metaDescription,
-  path: "/platform/restaurant-website",
-});
+type Props = { params: Promise<{ lang: string }> };
 
-export default function RestaurantWebsitePage() {
-  return <PlatformPageRenderer spec={RESTAURANT_WEBSITE_SPEC} />;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const spec = lang === "vi" ? RESTAURANT_WEBSITE_SPEC_VI : RESTAURANT_WEBSITE_SPEC;
+  return buildPageMetadata({
+    title: spec.metaTitle,
+    description: spec.metaDescription,
+    path: "/platform/restaurant-website",
+  });
+}
+
+export default async function RestaurantWebsitePage({ params }: Props) {
+  const { lang } = await params;
+  const spec = lang === "vi" ? RESTAURANT_WEBSITE_SPEC_VI : RESTAURANT_WEBSITE_SPEC;
+  return <PlatformPageRenderer spec={spec} />;
 }
