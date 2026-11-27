@@ -69,7 +69,7 @@ export function getMegaMenus(isVi: boolean): Record<MegaKey, MegaMenuConfig> {
               href: "/platform/restaurant-zalo-mini-app",
             },
             { label: isVi ? "App di động nhà hàng" : "Restaurant mobile app", href: "/platform/restaurant-app" },
-            // { label: "Ordering Kiosk", href: "/platform/ordering-kiosk" },
+            { label: isVi ? "Kiosk tự phục vụ" : "Ordering Kiosk", href: "/platform/ordering-kiosk" },
             {
               label: isVi ? "Tổng đài đặt hàng (Call Center)" : "Ordering Call Center",
               href: "/platform/ordering-call-center",
@@ -123,7 +123,6 @@ export function getMegaMenus(isVi: boolean): Record<MegaKey, MegaMenuConfig> {
           eyebrow: isVi ? "04 · Mở rộng" : "04 · Extend",
           summary: isVi ? "Phát triển mở rộng trên nền tảng." : "Build on top of the platform.",
           links: [
-            { label: "OPERO API", href: "/developers#api" },
             { label: "API & MCP", href: "/developers" },
             { label: "SDKs & webhooks", href: "/developers#sdks" },
             // { label: "White label", href: "/developers/white-label" },
@@ -378,14 +377,14 @@ export function Header() {
 
         {/* Mobile & Tablet Right Controls — [Search] + [≡ / ✕ Menu] */}
         <div className="flex xl:hidden items-center gap-2">
-          <button
+          {/* <button
             type="button"
             onClick={() => setSearchModalOpen(true)}
             aria-label="Search"
             className="inline-flex h-[42px] w-[42px] items-center justify-center rounded-full border border-[var(--line)] bg-[var(--canvas)] text-[var(--ink)] transition-colors duration-150 hover:bg-[var(--canvas-soft)] cursor-pointer"
           >
             <Search className="h-[18px] w-[18px]" />
-          </button>
+          </button> */}
           <button
             type="button"
             aria-label="Toggle Menu"

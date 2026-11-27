@@ -6,6 +6,7 @@ import { ArrowRight, Check, Plus } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
 import { BrandLogo } from "@/components/layout/header";
+import useDictionaries from "@/hooks/useDictionaries";
 import { useUiStore } from "@/stores/ui-store";
 import { cn } from "@/lib/utils";
 import type { SolutionLink, SolutionPageSpec } from "../_data/solution-types";
@@ -57,6 +58,8 @@ function ActionButton({
 }
 
 export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
   const [openFaq, setOpenFaq] = useState<Record<string, boolean>>({});
 
   return (
@@ -83,7 +86,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
             <div className="lg:col-span-6">
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 font-mono text-[12px]">
                 <Link href="/solutions" className="text-[#F9D0D8] underline underline-offset-4 hover:text-white">
-                  Solutions
+                  {isVi ? "Giải pháp" : "Solutions"}
                 </Link>
                 <span className="text-[#6E6D75]">/</span>
                 <span className="text-[#F9D0D8]">{spec.hero.breadcrumbLabel}</span>
@@ -202,7 +205,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                           </div>
                           {card.href && (
                             <span className="mt-4 inline-flex items-center gap-1 text-[13.5px] font-semibold text-[var(--od-action-content)]">
-                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                              {isVi ? "Khám phá" : "Explore"} <ArrowRight className="h-3.5 w-3.5" />
                             </span>
                           )}
                         </>
@@ -767,7 +770,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
                           <p className="mt-2 text-[13.5px] leading-[1.55] text-[var(--od-text-muted)]">{item.body}</p>
                         </div>
                         <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[var(--od-action-content)]">
-                          Explore <ArrowRight className="h-3.5 w-3.5" />
+                          {isVi ? "Khám phá" : "Explore"} <ArrowRight className="h-3.5 w-3.5" />
                         </span>
                       </Link>
                     ))}
@@ -797,7 +800,7 @@ export function SolutionPageRenderer({ spec }: { spec: SolutionPageSpec }) {
               <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{spec.closingCta.body}</p>
               {spec.closingCta.docGuide && (
                 <p className="mt-4 text-[13.5px] text-[#9A99A1]">
-                  Product guide:{" "}
+                  {isVi ? "Hướng dẫn sản phẩm:" : "Product guide:"}{" "}
                   <Link
                     href={spec.closingCta.docGuide.href}
                     className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"

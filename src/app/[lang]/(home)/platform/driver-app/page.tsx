@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/utils/metadata";
 import { PlatformPageRenderer } from "../_components/platform-page-renderer";
 import { DRIVER_APP_SPEC } from "../_data/platform-pages-operate";
+import { DRIVER_APP_SPEC_VI } from "../_data/platform-pages-operate-vi";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: DRIVER_APP_SPEC.metaTitle,
-  description: DRIVER_APP_SPEC.metaDescription,
-  path: "/platform/driver-app",
-});
+type Props = { params: Promise<{ lang: string }> };
 
-export default function DriverAppPage() {
-  return <PlatformPageRenderer spec={DRIVER_APP_SPEC} />;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const spec = lang === "vi" ? DRIVER_APP_SPEC_VI : DRIVER_APP_SPEC;
+  return buildPageMetadata({
+    title: spec.metaTitle,
+    description: spec.metaDescription,
+    path: "/platform/driver-app",
+  });
+}
+
+export default async function DriverAppPage({ params }: Props) {
+  const { lang } = await params;
+  const spec = lang === "vi" ? DRIVER_APP_SPEC_VI : DRIVER_APP_SPEC;
+  return <PlatformPageRenderer spec={spec} />;
 }

@@ -11,6 +11,7 @@ import {
   Globe,
   Headphones,
   LayoutDashboard,
+  MessageCircle,
   Monitor,
   Plug,
   Route,
@@ -36,6 +37,8 @@ function ProductIcon({ name }: { name: string }) {
       return <Globe className={cls} />;
     case "smartphone":
       return <Smartphone className={cls} />;
+    case "message-circle":
+      return <MessageCircle className={cls} />;
     case "bot":
       return <Bot className={cls} />;
     case "monitor":
@@ -78,8 +81,8 @@ export function ProductsCatalog() {
       key: "build",
       titleEn: "01. Build — Customer Ordering Surfaces",
       titleVi: "01. Build — Kênh Đặt Hàng Khách Hàng",
-      descEn: "Branded web storefronts, native mobile apps, AI ordering agents, kiosks, and call center tools.",
-      descVi: "Website thương hiệu, app iOS/Android, AI Agent chốt đơn, Kiosk tại quầy và tổng đài đặt hàng.",
+      descEn: "Branded web storefronts, Zalo Mini App, native mobile apps, AI ordering agents, kiosks, and call center tools.",
+      descVi: "Website thương hiệu, Zalo Mini App, app iOS/Android, AI Agent chốt đơn, Kiosk tại quầy và tổng đài đặt hàng.",
     },
     {
       key: "operate",
@@ -180,7 +183,7 @@ export function ProductsCatalog() {
                         </div>
                         {product.badge && (
                           <span className="rounded-full bg-[var(--od-action-soft)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--od-action-content)] border border-[var(--od-action)]/25">
-                            {product.badge}
+                            {product.badge === "NEW" && isVi ? "MỚI" : product.badge}
                           </span>
                         )}
                       </div>

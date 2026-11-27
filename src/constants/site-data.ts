@@ -34,6 +34,27 @@ export const PRODUCTS_DATA: ProductItem[] = [
     icon: "globe",
   },
   {
+    id: "zalo-mini-app",
+    pillar: "build",
+    titleEn: "Zalo Mini App",
+    titleVi: "Zalo Mini App Đặt Hàng",
+    descriptionEn:
+      "Your branded ordering and loyalty Mini App running natively inside Zalo with zero app downloads — connected to Zalo OA, ZNS, ZaloPay, and VietQR.",
+    descriptionVi:
+      "Ứng dụng đặt món và tích điểm mang thương hiệu riêng chạy ngay trong Zalo không cần tải app — kết nối sẵn Zalo OA, ZNS, ZaloPay và VietQR.",
+    highlightsEn: [
+      "Zero download & 1-tap Zalo login",
+      "ZaloPay & VietQR in-app checkout",
+      "ZNS order alerts & E-Membership",
+    ],
+    highlightsVi: [
+      "Không cần tải app, đăng nhập Zalo 1 chạm",
+      "Thanh toán ZaloPay & VietQR ngay trong app",
+      "Thông báo đơn ZNS & thẻ thành viên điện tử",
+    ],
+    icon: "message-circle",
+  },
+  {
     id: "native-apps",
     pillar: "build",
     titleEn: "Native iOS & Android Apps",
@@ -45,20 +66,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
     highlightsEn: ["100% your brand identity", "Automated push campaigns", "Biometric checkout"],
     highlightsVi: ["100% nhận diện thương hiệu", "Chiến dịch Push tự động", "Thanh toán sinh trắc học"],
     icon: "smartphone",
-  },
-  {
-    id: "ai-ordering-agents",
-    pillar: "build",
-    titleEn: "AI Ordering Agents",
-    titleVi: "Trợ Lý AI Chốt Đơn (AI Agents)",
-    descriptionEn:
-      "Conversational AI agents that take accurate orders via Web Chat, WhatsApp, and Phone Voice — synced live with menu availability and zones.",
-    descriptionVi:
-      "Trợ lý AI hội thoại tự động chốt đơn qua Web Chat, WhatsApp và Tổng đài thoại — đồng bộ trực tiếp thực đơn, tồn kho và vùng giao.",
-    highlightsEn: ["WhatsApp, Web & Voice", "Modifier & allergen aware", "Seamless human handoff"],
-    highlightsVi: ["WhatsApp, Web & Giọng nói", "Hiểu topping & ghi chú món", "Chuyển nhân viên mượt mà"],
-    icon: "bot",
-    badge: "NEW",
   },
   {
     id: "self-ordering-kiosks",
@@ -87,18 +94,32 @@ export const PRODUCTS_DATA: ProductItem[] = [
     icon: "headphones",
   },
   {
-    id: "marketplace-hub",
+    id: "ai-ordering-agents",
     pillar: "build",
-    titleEn: "Multi-Vendor Marketplace",
-    titleVi: "Sàn Thương Mại Đa Gian Hàng",
+    titleEn: "AI Ordering Agents",
+    titleVi: "Trợ Lý AI Chốt Đơn (AI Agents)",
     descriptionEn:
-      "Launch a regional delivery marketplace with vendor onboarding, split payouts, dynamic delivery fees, and multi-store cart management.",
+      "Conversational AI agents that take accurate orders via Web Chat, WhatsApp, and Phone Voice — synced live with menu availability and zones.",
     descriptionVi:
-      "Triển khai sàn giao đồ ăn/bán lẻ khu vực với phân quyền đối tác, chia doanh thu tự động, phí giao linh hoạt và giỏ hàng đa cửa hàng.",
-    highlightsEn: ["Vendor commission rules", "Automated split payouts", "Zone & radius geofencing"],
-    highlightsVi: ["Cấu hình chiết khấu đối tác", "Đối soát & chia tiền tự động", "Khoanh vùng giao bản đồ"],
-    icon: "store",
+      "Trợ lý AI hội thoại tự động chốt đơn qua Web Chat, WhatsApp và Tổng đài thoại — đồng bộ trực tiếp thực đơn, tồn kho và vùng giao.",
+    highlightsEn: ["WhatsApp, Web & Voice", "Modifier & allergen aware", "Seamless human handoff"],
+    highlightsVi: ["WhatsApp, Web & Giọng nói", "Hiểu topping & ghi chú món", "Chuyển nhân viên mượt mà"],
+    icon: "bot",
+    badge: "NEW",
   },
+  // {
+  //   id: "marketplace-hub",
+  //   pillar: "build",
+  //   titleEn: "Multi-Vendor Marketplace",
+  //   titleVi: "Sàn Thương Mại Đa Gian Hàng",
+  //   descriptionEn:
+  //     "Launch a regional delivery marketplace with vendor onboarding, split payouts, dynamic delivery fees, and multi-store cart management.",
+  //   descriptionVi:
+  //     "Triển khai sàn giao đồ ăn/bán lẻ khu vực với phân quyền đối tác, chia doanh thu tự động, phí giao linh hoạt và giỏ hàng đa cửa hàng.",
+  //   highlightsEn: ["Vendor commission rules", "Automated split payouts", "Zone & radius geofencing"],
+  //   highlightsVi: ["Cấu hình chiết khấu đối tác", "Đối soát & chia tiền tự động", "Khoanh vùng giao bản đồ"],
+  //   icon: "store",
+  // },
 
   // OPERATE
   {
@@ -210,19 +231,19 @@ export const PRODUCTS_DATA: ProductItem[] = [
     icon: "cpu",
     badge: "NEW",
   },
-  {
-    id: "open-source-frontend",
-    pillar: "extend",
-    titleEn: "Open Frontend Source Code",
-    titleVi: "Mã Nguồn Frontend Mở",
-    descriptionEn:
-      "Need pixel-perfect custom UX? Get full access to our Next.js & React Native frontend repositories so your engineers own the last mile.",
-    descriptionVi:
-      "Cần trải nghiệm UX đặc thù? Sở hữu mã nguồn Next.js & React Native để đội ngũ kỹ sư tự do tùy biến hoàn toàn không giới hạn.",
-    highlightsEn: ["Next.js App Router + Tailwind", "Zero vendor lock-in", "Deploy on your own cloud"],
-    highlightsVi: ["Next.js App Router + Tailwind", "Không bị khóa nhà cung cấp", "Triển khai trên hạ tầng riêng"],
-    icon: "git-branch",
-  },
+  // {
+  //   id: "open-source-frontend",
+  //   pillar: "extend",
+  //   titleEn: "Open Frontend Source Code",
+  //   titleVi: "Mã Nguồn Frontend Mở",
+  //   descriptionEn:
+  //     "Need pixel-perfect custom UX? Get full access to our Next.js & React Native frontend repositories so your engineers own the last mile.",
+  //   descriptionVi:
+  //     "Cần trải nghiệm UX đặc thù? Sở hữu mã nguồn Next.js & React Native để đội ngũ kỹ sư tự do tùy biến hoàn toàn không giới hạn.",
+  //   highlightsEn: ["Next.js App Router + Tailwind", "Zero vendor lock-in", "Deploy on your own cloud"],
+  //   highlightsVi: ["Next.js App Router + Tailwind", "Không bị khóa nhà cung cấp", "Triển khai trên hạ tầng riêng"],
+  //   icon: "git-branch",
+  // },
 ];
 
 export const SOLUTIONS_DATA: SolutionItem[] = [
@@ -280,60 +301,60 @@ export const SOLUTIONS_DATA: SolutionItem[] = [
     icon: "building",
     accent: "from-slate-800 to-slate-950",
   },
-  {
-    id: "marketplaces",
-    titleEn: "Multi-Vendor Delivery Marketplaces",
-    titleVi: "Sàn Giao Hàng Đa Gian Hàng",
-    subtitleEn: "Launch your regional super-app in weeks.",
-    subtitleVi: "Ra mắt siêu ứng dụng giao hàng khu vực trong vài tuần.",
-    descriptionEn:
-      "Run a local food, grocery, or multi-vertical marketplace with self-serve merchant onboarding, custom commission structures, and automated driver dispatch.",
-    descriptionVi:
-      "Vận hành sàn giao đồ ăn, tạp hóa hoặc đa ngành hàng với cổng đối tác tự đăng ký, cấu hình hoa hồng linh hoạt và điều phối tài xế tự động.",
-    metricsEn: "Launch 10x faster than custom builds",
-    metricsVi: "Ra mắt nhanh gấp 10 lần so với tự xây",
-    featuresEn: [
-      "Merchant portal & live onboarding approvals",
-      "Automated split payouts & commission tiers",
-      "Zone-based surge pricing & delivery fees",
-      "Fleet auto-dispatch & live map analytics",
-    ],
-    featuresVi: [
-      "Cổng đăng ký và duyệt gian hàng đối tác",
-      "Tự động chia doanh thu & hoa hồng",
-      "Phí giao linh hoạt theo khu vực & giờ cao điểm",
-      "Điều phối đội xe tự động & bản đồ trực tiếp",
-    ],
-    icon: "store",
-    accent: "from-emerald-600 to-teal-600",
-  },
-  {
-    id: "retail",
-    titleEn: "Grocery, Pharmacy & Local Retail",
-    titleVi: "Siêu Thị, Nhà Thuốc & Bán Lẻ",
-    subtitleEn: "Built for 50,000+ SKUs and scheduled slots.",
-    subtitleVi: "Xử lý hơn 50.000 SKU và khung giờ giao hẹn trước.",
-    descriptionEn:
-      "Handle high-SKU inventories, weighted produce, item substitutions, barcode picking workflows, and same-day scheduled delivery windows seamlessly.",
-    descriptionVi:
-      "Quản lý danh mục hàng chục nghìn sản phẩm, hàng cân ký, thay thế món hết, quy trình soạn hàng mã vạch và giao hàng theo khung giờ.",
-    metricsEn: "<150ms catalog search across 50k SKUs",
-    metricsVi: "Tìm kiếm dưới 150ms trên 50.000 sản phẩm",
-    featuresEn: [
-      "Multi-level categories & faceted search",
-      "Real-time ERP & warehouse inventory sync",
-      "Scheduled delivery & curbside pickup slots",
-      "Picker app & customer substitution chat",
-    ],
-    featuresVi: [
-      "Danh mục đa cấp & bộ lọc tìm kiếm nhanh",
-      "Đồng bộ tồn kho ERP & kho hàng thời gian thực",
-      "Đặt lịch giao theo khung giờ & nhận tại quầy",
-      "Ứng dụng soạn hàng & xác nhận đổi sản phẩm",
-    ],
-    icon: "shopping-bag",
-    accent: "from-violet-600 to-purple-700",
-  },
+  // {
+  //   id: "marketplaces",
+  //   titleEn: "Multi-Vendor Delivery Marketplaces",
+  //   titleVi: "Sàn Giao Hàng Đa Gian Hàng",
+  //   subtitleEn: "Launch your regional super-app in weeks.",
+  //   subtitleVi: "Ra mắt siêu ứng dụng giao hàng khu vực trong vài tuần.",
+  //   descriptionEn:
+  //     "Run a local food, grocery, or multi-vertical marketplace with self-serve merchant onboarding, custom commission structures, and automated driver dispatch.",
+  //   descriptionVi:
+  //     "Vận hành sàn giao đồ ăn, tạp hóa hoặc đa ngành hàng với cổng đối tác tự đăng ký, cấu hình hoa hồng linh hoạt và điều phối tài xế tự động.",
+  //   metricsEn: "Launch 10x faster than custom builds",
+  //   metricsVi: "Ra mắt nhanh gấp 10 lần so với tự xây",
+  //   featuresEn: [
+  //     "Merchant portal & live onboarding approvals",
+  //     "Automated split payouts & commission tiers",
+  //     "Zone-based surge pricing & delivery fees",
+  //     "Fleet auto-dispatch & live map analytics",
+  //   ],
+  //   featuresVi: [
+  //     "Cổng đăng ký và duyệt gian hàng đối tác",
+  //     "Tự động chia doanh thu & hoa hồng",
+  //     "Phí giao linh hoạt theo khu vực & giờ cao điểm",
+  //     "Điều phối đội xe tự động & bản đồ trực tiếp",
+  //   ],
+  //   icon: "store",
+  //   accent: "from-emerald-600 to-teal-600",
+  // },
+  // {
+  //   id: "retail",
+  //   titleEn: "Grocery, Pharmacy & Local Retail",
+  //   titleVi: "Siêu Thị, Nhà Thuốc & Bán Lẻ",
+  //   subtitleEn: "Built for 50,000+ SKUs and scheduled slots.",
+  //   subtitleVi: "Xử lý hơn 50.000 SKU và khung giờ giao hẹn trước.",
+  //   descriptionEn:
+  //     "Handle high-SKU inventories, weighted produce, item substitutions, barcode picking workflows, and same-day scheduled delivery windows seamlessly.",
+  //   descriptionVi:
+  //     "Quản lý danh mục hàng chục nghìn sản phẩm, hàng cân ký, thay thế món hết, quy trình soạn hàng mã vạch và giao hàng theo khung giờ.",
+  //   metricsEn: "<150ms catalog search across 50k SKUs",
+  //   metricsVi: "Tìm kiếm dưới 150ms trên 50.000 sản phẩm",
+  //   featuresEn: [
+  //     "Multi-level categories & faceted search",
+  //     "Real-time ERP & warehouse inventory sync",
+  //     "Scheduled delivery & curbside pickup slots",
+  //     "Picker app & customer substitution chat",
+  //   ],
+  //   featuresVi: [
+  //     "Danh mục đa cấp & bộ lọc tìm kiếm nhanh",
+  //     "Đồng bộ tồn kho ERP & kho hàng thời gian thực",
+  //     "Đặt lịch giao theo khung giờ & nhận tại quầy",
+  //     "Ứng dụng soạn hàng & xác nhận đổi sản phẩm",
+  //   ],
+  //   icon: "shopping-bag",
+  //   accent: "from-violet-600 to-purple-700",
+  // },
   {
     id: "cloud-kitchens",
     titleEn: "Cloud Kitchens & Virtual Brands",

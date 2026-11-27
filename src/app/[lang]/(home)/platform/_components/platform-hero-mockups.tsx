@@ -30,26 +30,30 @@ import {
   Users,
   UtensilsCrossed,
 } from "lucide-react";
+import useDictionaries from "@/hooks/useDictionaries";
 import type { PlatformSlug } from "../_data/platform-types";
 
 export function PlatformHeroMockup({ slug, caption }: { slug: PlatformSlug; caption?: string }) {
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
+
   return (
     <div className="w-full">
       {slug === "ordering-web" && <OrderingWebMockup />}
       {slug === "ordering-apps" && <OrderingAppsMockup />}
-      {slug === "restaurant-website" && <RestaurantWebsiteMockup />}
-      {slug === "restaurant-app" && <RestaurantAppMockup />}
-      {slug === "restaurant-zalo-mini-app" && <RestaurantZaloMiniAppMockup />}
-      {slug === "ordering-kiosk" && <OrderingKioskMockup />}
-      {slug === "ordering-call-center" && <OrderingCallCenterMockup />}
-      {slug === "multi-store-ordering" && <MultiStoreMockup />}
-      {slug === "ai-ordering-agents" && <AiAgentsHeroMockup />}
-      {slug === "ordering-merchant" && <OrderingMerchantMockup />}
-      {slug === "dashboard" && <DashboardMockup />}
-      {slug === "multi-location-operations" && <MultiLocationMockup />}
-      {slug === "ordering-delivery" && <OrderingDeliveryMockup />}
-      {slug === "driver-app" && <DriverAppMockup />}
-      {slug === "third-party-delivery" && <ThirdPartyDeliveryMockup />}
+      {slug === "restaurant-website" && <RestaurantWebsiteMockup isVi={isVi} />}
+      {slug === "restaurant-app" && <RestaurantAppMockup isVi={isVi} />}
+      {slug === "restaurant-zalo-mini-app" && <RestaurantZaloMiniAppMockup isVi={isVi} />}
+      {slug === "ordering-kiosk" && <OrderingKioskMockup isVi={isVi} />}
+      {slug === "ordering-call-center" && <OrderingCallCenterMockup isVi={isVi} />}
+      {slug === "multi-store-ordering" && <MultiStoreMockup isVi={isVi} />}
+      {slug === "ai-ordering-agents" && <AiAgentsHeroMockup isVi={isVi} />}
+      {slug === "ordering-merchant" && <OrderingMerchantMockup isVi={isVi} />}
+      {slug === "dashboard" && <DashboardMockup isVi={isVi} />}
+      {slug === "multi-location-operations" && <MultiLocationMockup isVi={isVi} />}
+      {slug === "ordering-delivery" && <OrderingDeliveryMockup isVi={isVi} />}
+      {slug === "driver-app" && <DriverAppMockup isVi={isVi} />}
+      {slug === "third-party-delivery" && <ThirdPartyDeliveryMockup isVi={isVi} />}
 
       {caption && (
         <p className="mt-3 text-[12px] font-mono text-[#9A99A1]">{caption}</p>
@@ -230,7 +234,19 @@ function OrderingAppsMockup() {
   );
 }
 
-function RestaurantWebsiteMockup() {
+function RestaurantWebsiteMockup({ isVi }: { isVi: boolean }) {
+  const items = isVi
+    ? [
+        { name: "Cơm gà nướng bơ", sub: "Chọn đế cơm · 125.000đ" },
+        { name: "Bowl gà sốt Chipotle", sub: "Chọn đế cơm · 130.000đ" },
+        { name: "Bắp nướng phô mai", sub: "Món phụ · 50.000đ" },
+      ]
+    : [
+        { name: "Green bowl", sub: "Choose a base · $12.50" },
+        { name: "Chipotle bowl", sub: "Choose a base · $13.00" },
+        { name: "Street corn", sub: "Side · $5.00" },
+      ];
+
   return (
     <div className="overflow-hidden rounded-[12px] border border-[#2A2A2E] bg-[#1e2024] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
       <div className="flex items-center gap-3 px-4 pt-3 pb-2 bg-[#1B1A1F]">
@@ -254,30 +270,34 @@ function RestaurantWebsiteMockup() {
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p className="text-[15px] font-bold">Verde Cocina</p>
           <div className="inline-flex rounded-full bg-[#F5F5F6] p-0.5 text-[10.5px]">
-            <span className="rounded-full bg-white px-2.5 py-1 font-semibold shadow-xs">Delivery</span>
-            <span className="px-2.5 py-1 text-[#3A393F]">Pickup</span>
-            <span className="px-2.5 py-1 text-[#3A393F]">Dine in</span>
+            <span className="rounded-full bg-white px-2.5 py-1 font-semibold shadow-xs">
+              {isVi ? "Giao hàng" : "Delivery"}
+            </span>
+            <span className="px-2.5 py-1 text-[#3A393F]">{isVi ? "Mang về" : "Pickup"}</span>
+            <span className="px-2.5 py-1 text-[#3A393F]">{isVi ? "Tại bàn" : "Dine in"}</span>
           </div>
         </div>
 
         <p className="mt-2 inline-flex items-center gap-1.5 text-[11px] text-[#3A393F]">
           <MapPin className="h-3.5 w-3.5 text-[#6E6D75]" />
-          <span>14 Elm St · As soon as possible</span>
+          <span>{isVi ? "14 Nguyễn Huệ, Q.1 · Giao sớm nhất" : "14 Elm St · As soon as possible"}</span>
         </p>
 
         <div className="mt-3.5 flex flex-wrap gap-1.5 text-[10.5px]">
-          <span className="rounded-full bg-[#111013] px-3 py-1 font-semibold text-white">Bowls</span>
+          <span className="rounded-full bg-[#111013] px-3 py-1 font-semibold text-white">
+            {isVi ? "Món chính" : "Bowls"}
+          </span>
           <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">Tacos</span>
-          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">Sides</span>
-          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">Drinks</span>
+          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">
+            {isVi ? "Món phụ" : "Sides"}
+          </span>
+          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">
+            {isVi ? "Đồ uống" : "Drinks"}
+          </span>
         </div>
 
         <div className="mt-4 space-y-2.5">
-          {[
-            { name: "Green bowl", sub: "Choose a base · $12.50" },
-            { name: "Chipotle bowl", sub: "Choose a base · $13.00" },
-            { name: "Street corn", sub: "Side · $5.00" },
-          ].map((item) => (
+          {items.map((item) => (
             <div
               key={item.name}
               className="flex items-center justify-between rounded-[8px] border border-[#D9D9DD] px-3.5 py-3"
@@ -297,15 +317,29 @@ function RestaurantWebsiteMockup() {
         </div>
 
         <div className="mt-4 flex items-center justify-between rounded-[8px] bg-[#D91842] px-4 py-3 text-white text-[12px] font-semibold">
-          <span>2 items · $25.50</span>
-          <span className="rounded border border-white/40 px-2.5 py-0.5 text-[11px]">Checkout</span>
+          <span>{isVi ? "2 món · 255.000đ" : "2 items · $25.50"}</span>
+          <span className="rounded border border-white/40 px-2.5 py-0.5 text-[11px]">
+            {isVi ? "Thanh toán" : "Checkout"}
+          </span>
         </div>
       </div>
     </div>
   );
 }
 
-function RestaurantAppMockup() {
+function RestaurantAppMockup({ isVi }: { isVi: boolean }) {
+  const items = isVi
+    ? [
+        { name: "Cơm gà nướng bơ", sub: "Gạo lứt · Bơ tươi · 125.000đ" },
+        { name: "Bowl gà sốt Chipotle", sub: "Gà nướng · 130.000đ" },
+        { name: "Trà hoa bụp giấm", sub: "Size L · 40.000đ" },
+      ]
+    : [
+        { name: "Green bowl", sub: "Brown rice · Avocado · $12.50" },
+        { name: "Chipotle bowl", sub: "Grilled chicken · $13.00" },
+        { name: "Hibiscus agua fresca", sub: "16 oz · $4.00" },
+      ];
+
   return (
     <div className="flex justify-center">
       <div className="w-[300px] sm:w-[325px] rounded-[34px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
@@ -319,17 +353,19 @@ function RestaurantAppMockup() {
           </div>
 
           <div className="mt-3 flex gap-1.5 text-[10px]">
-            <span className="rounded-full bg-[#111013] px-2.5 py-1 font-semibold text-white">Delivery</span>
-            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">Pickup</span>
-            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">Curbside</span>
+            <span className="rounded-full bg-[#111013] px-2.5 py-1 font-semibold text-white">
+              {isVi ? "Giao hàng" : "Delivery"}
+            </span>
+            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">
+              {isVi ? "Mang về" : "Pickup"}
+            </span>
+            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">
+              {isVi ? "Nhận nhanh" : "Curbside"}
+            </span>
           </div>
 
           <div className="mt-3.5 space-y-2">
-            {[
-              { name: "Green bowl", sub: "Brown rice · Avocado · $12.50" },
-              { name: "Chipotle bowl", sub: "Grilled chicken · $13.00" },
-              { name: "Hibiscus agua fresca", sub: "16 oz · $4.00" },
-            ].map((item) => (
+            {items.map((item) => (
               <div
                 key={item.name}
                 className="flex items-center justify-between rounded-[8px] border border-[#D9D9DD] p-2.5"
@@ -346,8 +382,8 @@ function RestaurantAppMockup() {
           </div>
 
           <div className="mt-4 flex items-center justify-between rounded-[8px] bg-[#D91842] px-3.5 py-2.5 text-[11.5px] font-semibold text-white">
-            <span>View cart · 2 items</span>
-            <span>$25.50</span>
+            <span>{isVi ? "Xem giỏ hàng · 2 món" : "View cart · 2 items"}</span>
+            <span>{isVi ? "255.000đ" : "$25.50"}</span>
           </div>
         </div>
       </div>
@@ -355,7 +391,19 @@ function RestaurantAppMockup() {
   );
 }
 
-function RestaurantZaloMiniAppMockup() {
+function RestaurantZaloMiniAppMockup({ isVi }: { isVi: boolean }) {
+  const items = isVi
+    ? [
+        { name: "Cơm gà nướng bơ", sub: "Gạo lứt · Bơ tươi · 125.000đ" },
+        { name: "Bowl gà sốt Chipotle", sub: "Gà nướng · 130.000đ" },
+        { name: "Trà hoa bụp giấm", sub: "Size L · 40.000đ" },
+      ]
+    : [
+        { name: "Green bowl", sub: "Brown rice · Avocado · $12.50" },
+        { name: "Chipotle bowl", sub: "Grilled chicken · $13.00" },
+        { name: "Hibiscus agua fresca", sub: "16 oz · $4.00" },
+      ];
+
   return (
     <div className="flex justify-center">
       <div className="w-[300px] sm:w-[330px] rounded-[34px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
@@ -368,7 +416,9 @@ function RestaurantZaloMiniAppMockup() {
               </span>
               <div>
                 <p className="text-[12.5px] font-bold leading-tight">Verde Cocina</p>
-                <p className="text-[9.5px] font-medium text-[#0068FF]">Zalo Mini App · Official</p>
+                <p className="text-[9.5px] font-medium text-[#0068FF]">
+                  {isVi ? "Zalo Mini App · Chính thức" : "Zalo Mini App · Official"}
+                </p>
               </div>
             </div>
             <div className="inline-flex items-center gap-1.5 rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-1 text-[10px] font-semibold text-[#3A393F]">
@@ -381,31 +431,35 @@ function RestaurantZaloMiniAppMockup() {
           {/* E-Membership & OA Loyalty Strip */}
           <div className="mt-3 flex items-center justify-between rounded-[10px] bg-gradient-to-r from-[#0068FF] to-[#0052CC] px-3 py-2.5 text-white">
             <div>
-              <p className="text-[9.5px] uppercase tracking-[0.06em] text-white/80">Gold Member · Zalo ID</p>
-              <p className="text-[12.5px] font-bold">1,240 pts · 2 vouchers</p>
+              <p className="text-[9.5px] uppercase tracking-[0.06em] text-white/80">
+                {isVi ? "Hạng Vàng · Zalo ID" : "Gold Member · Zalo ID"}
+              </p>
+              <p className="text-[12.5px] font-bold">
+                {isVi ? "1.240 điểm · 2 voucher" : "1,240 pts · 2 vouchers"}
+              </p>
             </div>
             <span className="rounded-full bg-white/15 px-2 py-0.5 text-[9.5px] font-semibold text-white">
-              OA Linked
+              {isVi ? "Đã liên kết OA" : "OA Linked"}
             </span>
           </div>
 
           {/* Order Type Tabs */}
           <div className="mt-3 flex gap-1.5 text-[10px]">
-            <span className="rounded-full bg-[#111013] px-2.5 py-1 font-semibold text-white">Delivery</span>
-            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">Pickup</span>
+            <span className="rounded-full bg-[#111013] px-2.5 py-1 font-semibold text-white">
+              {isVi ? "Giao hàng" : "Delivery"}
+            </span>
+            <span className="rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">
+              {isVi ? "Mang về" : "Pickup"}
+            </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-[#D9D9DD] px-2.5 py-1 text-[#3A393F]">
               <QrCode className="h-2.5 w-2.5 text-[#0068FF]" />
-              Dine in
+              {isVi ? "Tại bàn" : "Dine in"}
             </span>
           </div>
 
           {/* Menu Items */}
           <div className="mt-3 space-y-2">
-            {[
-              { name: "Green bowl", sub: "Brown rice · Avocado · $12.50" },
-              { name: "Chipotle bowl", sub: "Grilled chicken · $13.00" },
-              { name: "Hibiscus agua fresca", sub: "16 oz · $4.00" },
-            ].map((item) => (
+            {items.map((item) => (
               <div
                 key={item.name}
                 className="flex items-center justify-between rounded-[8px] border border-[#D9D9DD] p-2.5"
@@ -423,12 +477,12 @@ function RestaurantZaloMiniAppMockup() {
 
           {/* Checkout CTA */}
           <div className="mt-3.5 flex items-center justify-between rounded-[8px] bg-[#D91842] px-3.5 py-2.5 text-[11.5px] font-semibold text-white">
-            <span>Checkout · 2 items</span>
-            <span>$25.50</span>
+            <span>{isVi ? "Thanh toán · 2 món" : "Checkout · 2 items"}</span>
+            <span>{isVi ? "255.000đ" : "$25.50"}</span>
           </div>
 
           <p className="mt-2 text-center text-[9.5px] text-[#6E6D75]">
-            ZaloPay · VietQR · ZNS order updates
+            {isVi ? "ZaloPay · VietQR · Cập nhật đơn qua ZNS" : "ZaloPay · VietQR · ZNS order updates"}
           </p>
         </div>
       </div>
@@ -436,50 +490,65 @@ function RestaurantZaloMiniAppMockup() {
   );
 }
 
-function OrderingKioskMockup() {
+function OrderingKioskMockup({ isVi }: { isVi: boolean }) {
+  const items = isVi
+    ? [
+        { name: "Cơm gà nướng bơ", sub: "Chọn cơm/salad" },
+        { name: "Cơm bò Chipotle", sub: "Chọn cơm/salad" },
+        { name: "Bắp nướng phô mai", sub: "Thêm topping" },
+        { name: "Trà đào cam sả", sub: "Hai kích cỡ" },
+      ]
+    : [
+        { name: "Green bowl", sub: "Choose a base" },
+        { name: "Chipotle bowl", sub: "Choose a base" },
+        { name: "Street corn", sub: "Add a topping" },
+        { name: "Horchata", sub: "Two sizes" },
+      ];
+
   return (
     <div className="flex flex-col items-center">
       <div className="w-full max-w-[360px] rounded-[16px] border border-[#2A2A2E] bg-[#181a1e] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
         <div className="rounded-[10px] bg-white p-4 text-[#151417]">
           <div className="flex items-center justify-between border-b border-[#D9D9DD] pb-2.5">
             <span className="text-[13px] font-bold">Verde Cocina</span>
-            <span className="font-mono text-[10px] tracking-[0.12em] text-[#6E6D75]">SELF-ORDER</span>
+            <span className="font-mono text-[10px] tracking-[0.12em] text-[#6E6D75]">
+              {isVi ? "TỰ ĐẶT MÓN" : "SELF-ORDER"}
+            </span>
           </div>
 
-          <p className="mt-3 text-[13px] font-bold">How would you like to eat?</p>
+          <p className="mt-3 text-[13px] font-bold">
+            {isVi ? "Bạn muốn dùng bữa thế nào?" : "How would you like to eat?"}
+          </p>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <div className="rounded-[8px] border-2 border-[#D91842] bg-[#FDECEF]/60 p-2.5">
               <UtensilsCrossed className="h-4 w-4 text-[#D91842]" />
-              <p className="mt-1 text-[11.5px] font-bold">Eat in</p>
-              <p className="text-[10px] text-[#3A393F]">Table service</p>
+              <p className="mt-1 text-[11.5px] font-bold">{isVi ? "Dùng tại chỗ" : "Eat in"}</p>
+              <p className="text-[10px] text-[#3A393F]">{isVi ? "Phục vụ tại bàn" : "Table service"}</p>
             </div>
             <div className="rounded-[8px] border border-[#D9D9DD] p-2.5">
               <ShoppingBag className="h-4 w-4 text-[#3A393F]" />
-              <p className="mt-1 text-[11.5px] font-bold">Take out</p>
-              <p className="text-[10px] text-[#3A393F]">Ready at the counter</p>
+              <p className="mt-1 text-[11.5px] font-bold">{isVi ? "Mang đi" : "Take out"}</p>
+              <p className="text-[10px] text-[#3A393F]">
+                {isVi ? "Nhận tại quầy" : "Ready at the counter"}
+              </p>
             </div>
           </div>
 
           <div className="mt-3 flex gap-3 border-b border-[#D9D9DD] pb-2 text-[10.5px] text-[#3A393F]">
-            <span className="font-bold text-[#151417]">Bowls</span>
+            <span className="font-bold text-[#151417]">{isVi ? "Món chính" : "Bowls"}</span>
             <span>Tacos</span>
-            <span>Sides</span>
-            <span>Drinks</span>
+            <span>{isVi ? "Món kèm" : "Sides"}</span>
+            <span>{isVi ? "Đồ uống" : "Drinks"}</span>
           </div>
 
           <div className="mt-3 grid grid-cols-2 gap-2">
-            {[
-              { name: "Green bowl", sub: "Choose a base" },
-              { name: "Chipotle bowl", sub: "Choose a base" },
-              { name: "Street corn", sub: "Add a topping" },
-              { name: "Horchata", sub: "Two sizes" },
-            ].map((item) => (
+            {items.map((item) => (
               <div key={item.name} className="rounded-[8px] border border-[#D9D9DD] p-2.5">
                 <div className="h-7 rounded bg-[#f3f4f6]" />
                 <p className="mt-2 text-[11px] font-bold">{item.name}</p>
                 <p className="text-[9.5px] text-[#3A393F]">{item.sub}</p>
                 <span className="mt-2 inline-block rounded-full bg-[#D91842] px-2.5 py-1 text-[10px] font-semibold text-white">
-                  + Add
+                  {isVi ? "+ Thêm" : "+ Add"}
                 </span>
               </div>
             ))}
@@ -487,18 +556,18 @@ function OrderingKioskMockup() {
 
           <div className="mt-3.5 flex items-center justify-between border-t border-[#D9D9DD] pt-3">
             <div>
-              <p className="text-[11px] font-bold">Your order</p>
-              <p className="text-[10px] text-[#3A393F]">3 items</p>
+              <p className="text-[11px] font-bold">{isVi ? "Đơn của bạn" : "Your order"}</p>
+              <p className="text-[10px] text-[#3A393F]">{isVi ? "3 món" : "3 items"}</p>
             </div>
             <span className="rounded-full bg-[#D91842] px-3.5 py-2 text-[11px] font-semibold text-white">
-              Review and pay
+              {isVi ? "Xem & thanh toán" : "Review and pay"}
             </span>
           </div>
 
           <div className="mt-3 flex items-center justify-center gap-2 border-t border-[#D9D9DD] pt-2.5 text-[10px] text-[#6E6D75]">
             <CreditCard className="h-3.5 w-3.5" />
             <QrCode className="h-3.5 w-3.5" />
-            <span>Card terminal · QR pay</span>
+            <span>{isVi ? "Máy quẹt thẻ · Thanh toán QR" : "Card terminal · QR pay"}</span>
           </div>
         </div>
       </div>
@@ -509,7 +578,7 @@ function OrderingKioskMockup() {
   );
 }
 
-function OrderingCallCenterMockup() {
+function OrderingCallCenterMockup({ isVi }: { isVi: boolean }) {
   return (
     <div className="overflow-hidden rounded-[20px] border border-[#2A2A2E] bg-[#1B1A1F] p-4 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="rounded-[8px] bg-white p-4 text-[#151417] space-y-3">
@@ -519,42 +588,54 @@ function OrderingCallCenterMockup() {
               <Phone className="h-3.5 w-3.5" />
             </span>
             <div>
-              <p className="text-[12px] font-bold">Caller: +1 (555) 234-8890</p>
-              <p className="text-[10px] text-[#3A393F]">Maya Patel · 14 past orders</p>
+              <p className="text-[12px] font-bold">
+                {isVi ? "Người gọi: 0908 234 890" : "Caller: +1 (555) 234-8890"}
+              </p>
+              <p className="text-[10px] text-[#3A393F]">
+                {isVi ? "Minh Anh · 14 đơn trước đó" : "Maya Patel · 14 past orders"}
+              </p>
             </div>
           </div>
           <span className="rounded-full bg-[#FDECEF] px-2.5 py-0.5 text-[10px] font-semibold text-[#B8123A]">
-            Agent Console
+            {isVi ? "Màn hình tổng đài" : "Agent Console"}
           </span>
         </div>
 
         <div className="rounded-[8px] bg-[#F5F5F6] p-3 border border-[#D9D9DD] text-[11px]">
           <div className="flex justify-between">
-            <span className="font-semibold">Saved address</span>
-            <span className="text-[#B8123A] font-semibold">Nearest store matched</span>
+            <span className="font-semibold">{isVi ? "Địa chỉ đã lưu" : "Saved address"}</span>
+            <span className="text-[#B8123A] font-semibold">
+              {isVi ? "Đã khớp chi nhánh gần nhất" : "Nearest store matched"}
+            </span>
           </div>
-          <p className="mt-1 text-[#3A393F]">14 Elm St, Apt 3B → Verde Cocina Riverside (1.2 mi)</p>
+          <p className="mt-1 text-[#3A393F]">
+            {isVi
+              ? "14 Nguyễn Huệ, Q.1 → Verde Cocina Quận 1 (1,2 km)"
+              : "14 Elm St, Apt 3B → Verde Cocina Riverside (1.2 mi)"}
+          </p>
         </div>
 
         <div className="space-y-1.5 text-[11px]">
           <div className="flex justify-between rounded border border-[#D9D9DD] px-3 py-2">
-            <span className="font-medium">2× Green bowl (Extra avocado)</span>
-            <span className="font-bold">$28.00</span>
+            <span className="font-medium">
+              {isVi ? "2× Cơm gà nướng bơ (Thêm bơ)" : "2× Green bowl (Extra avocado)"}
+            </span>
+            <span className="font-bold">{isVi ? "280.000đ" : "$28.00"}</span>
           </div>
           <div className="flex justify-between rounded border border-[#D9D9DD] px-3 py-2">
-            <span className="font-medium">1× Street corn</span>
-            <span className="font-bold">$5.00</span>
+            <span className="font-medium">{isVi ? "1× Bắp nướng phô mai" : "1× Street corn"}</span>
+            <span className="font-bold">{isVi ? "50.000đ" : "$5.00"}</span>
           </div>
         </div>
 
         <div className="flex items-center justify-between gap-2 pt-2 border-t border-[#D9D9DD]">
-          <span className="text-[12px] font-bold">Total: $36.40</span>
+          <span className="text-[12px] font-bold">{isVi ? "Tổng cộng: 355.000đ" : "Total: $36.40"}</span>
           <div className="flex gap-2">
             <span className="rounded-[5px] border border-[#D9D9DD] px-2.5 py-1.5 text-[10.5px] font-semibold">
-              Card on file
+              {isVi ? "Thẻ đã lưu" : "Card on file"}
             </span>
             <span className="rounded-full bg-[#D91842] px-3 py-1.5 text-[10.5px] font-semibold text-white">
-              Send payment link
+              {isVi ? "Gửi link thanh toán" : "Send payment link"}
             </span>
           </div>
         </div>
@@ -563,21 +644,33 @@ function OrderingCallCenterMockup() {
   );
 }
 
-function MultiStoreMockup() {
-  const stores = [
-    { name: "Verde Cocina · Riverside", dist: "1.2 mi", eta: "20–25 min", status: "Delivery & Pickup", active: true },
-    { name: "Verde Cocina · Downtown", dist: "2.8 mi", eta: "30–35 min", status: "Delivery & Pickup", active: false },
-    { name: "Verde Cocina · Airport", dist: "6.4 mi", eta: "15 min", status: "Pickup only", active: false },
-  ];
+function MultiStoreMockup({ isVi }: { isVi: boolean }) {
+  const stores = isVi
+    ? [
+        { name: "Verde Cocina · Quận 1", dist: "1,2 km", eta: "20–25 phút", status: "Giao & Mang về", active: true },
+        { name: "Verde Cocina · Thảo Điền", dist: "2,8 km", eta: "30–35 phút", status: "Giao & Mang về", active: false },
+        { name: "Verde Cocina · Sân bay", dist: "6,4 km", eta: "15 phút", status: "Chỉ mang về", active: false },
+      ]
+    : [
+        { name: "Verde Cocina · Riverside", dist: "1.2 mi", eta: "20–25 min", status: "Delivery & Pickup", active: true },
+        { name: "Verde Cocina · Downtown", dist: "2.8 mi", eta: "30–35 min", status: "Delivery & Pickup", active: false },
+        { name: "Verde Cocina · Airport", dist: "6.4 mi", eta: "15 min", status: "Pickup only", active: false },
+      ];
 
   return (
     <div className="overflow-hidden rounded-[20px] border border-[#2A2A2E] bg-[#1B1A1F] p-4 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="rounded-[8px] bg-white p-5 text-[#151417]">
-        <p className="text-[11px] font-mono uppercase text-[#B8123A]">Store finder</p>
-        <p className="mt-1 text-[16px] font-bold">Choose your location</p>
+        <p className="text-[11px] font-mono uppercase text-[#B8123A]">
+          {isVi ? "Tìm chi nhánh" : "Store finder"}
+        </p>
+        <p className="mt-1 text-[16px] font-bold">
+          {isVi ? "Chọn chi nhánh phục vụ" : "Choose your location"}
+        </p>
         <div className="mt-3 flex items-center gap-2 rounded-[6px] border border-[#D9D9DD] bg-[#F5F5F6] px-3 py-2 text-[12px]">
           <MapPin className="h-4 w-4 text-[#D91842]" />
-          <span className="font-medium">14 Elm St, Austin, TX</span>
+          <span className="font-medium">
+            {isVi ? "14 Nguyễn Huệ, Quận 1, TP.HCM" : "14 Elm St, Austin, TX"}
+          </span>
         </div>
 
         <div className="mt-4 space-y-2.5">
@@ -599,7 +692,7 @@ function MultiStoreMockup() {
                   st.active ? "bg-[#D91842] text-white" : "border border-[#D9D9DD] text-[#151417]"
                 }`}
               >
-                {st.active ? "Order here" : "Select"}
+                {st.active ? (isVi ? "Đặt tại đây" : "Order here") : isVi ? "Chọn" : "Select"}
               </span>
             </div>
           ))}
@@ -609,72 +702,89 @@ function MultiStoreMockup() {
   );
 }
 
-function AiAgentsHeroMockup() {
+function AiAgentsHeroMockup({ isVi }: { isVi: boolean }) {
   return (
     <div className="overflow-hidden rounded-[12px] border border-[#2b2d32] bg-[#141518] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="flex items-center justify-between border-b border-[#1B1A1F] px-5 py-3.5 text-[12px]">
-        <span className="font-semibold text-white">Verde Cocina · WhatsApp</span>
+        <span className="font-semibold text-white">
+          {isVi ? "Verde Cocina · Zalo / WhatsApp" : "Verde Cocina · WhatsApp"}
+        </span>
         <span className="inline-flex items-center gap-1.5 text-[11px] text-[#A9A8AF]">
           <span className="h-2 w-2 rounded-full bg-[#00d17e]" />
-          Agent online
+          {isVi ? "AI đang trực tuyến" : "Agent online"}
         </span>
       </div>
 
       <div className="p-5 space-y-3 text-[12.5px] leading-[1.45]">
         <div className="ml-auto max-w-[82%] rounded-[10px] rounded-br-[3px] bg-[#D91842] px-3.5 py-2.5 text-white">
-          Hi, two green bowls and an agua fresca for delivery to 14 Elm St.
+          {isVi
+            ? "Cho mình 2 phần cơm gà nướng bơ và 1 trà hoa bụp giấm giao tới 14 Nguyễn Huệ nhé."
+            : "Hi, two green bowls and an agua fresca for delivery to 14 Elm St."}
         </div>
 
         <div className="max-w-[84%] rounded-[10px] rounded-bl-[3px] bg-[#222428] px-3.5 py-2.5 text-[#e5e7eb]">
-          Two green bowls and one hibiscus agua fresca from Verde Cocina Riverside, delivering to 14 Elm St. Anything
-          else?
+          {isVi
+            ? "Đã ghi nhận 2 cơm gà nướng bơ và 1 trà hoa bụp giấm từ Verde Cocina Quận 1, giao tới 14 Nguyễn Huệ. Bạn có muốn thêm món gì nữa không?"
+            : "Two green bowls and one hibiscus agua fresca from Verde Cocina Riverside, delivering to 14 Elm St. Anything else?"}
         </div>
 
         <div className="ml-auto w-fit rounded-[10px] rounded-br-[3px] bg-[#D91842] px-3.5 py-2 text-white">
-          That&apos;s everything.
+          {isVi ? "Đủ rồi bạn ơi." : "That's everything."}
         </div>
 
         <div className="max-w-[80%] rounded-[10px] rounded-bl-[3px] bg-[#222428] px-3.5 py-2.5 text-[#e5e7eb]">
-          I&apos;ll share the next step to complete this order.
+          {isVi
+            ? "Mình gửi link xác nhận & thanh toán để hoàn tất đơn hàng này nhé."
+            : "I'll share the next step to complete this order."}
         </div>
 
         <div className="ml-auto w-fit rounded-[10px] rounded-br-[3px] bg-[#D91842] px-3.5 py-2 text-white">
-          Thanks, I&apos;ve completed that step.
+          {isVi ? "Cảm ơn, mình đã thanh toán xong." : "Thanks, I've completed that step."}
         </div>
 
         <div className="mt-4 rounded-[8px] border border-[#2A2A2E] bg-[#18191d] p-3.5 text-[11.5px]">
-          <p className="font-mono text-[10.5px] text-[#9A99A1]">Illustrative order handoff</p>
-          <p className="mt-1 font-semibold text-white">Order context passed to the operations team</p>
-          <p className="mt-0.5 text-[#A9A8AF]">Store, fulfillment, and handoff details kept together</p>
+          <p className="font-mono text-[10.5px] text-[#9A99A1]">
+            {isVi ? "Chuyển tiếp đơn minh họa" : "Illustrative order handoff"}
+          </p>
+          <p className="mt-1 font-semibold text-white">
+            {isVi ? "Đầy đủ ngữ cảnh đơn hàng đã chuyển về đội vận hành" : "Order context passed to the operations team"}
+          </p>
+          <p className="mt-0.5 text-[#A9A8AF]">
+            {isVi
+              ? "Chi nhánh, phương thức giao và chi tiết bàn giao được đồng bộ trọn vẹn"
+              : "Store, fulfillment, and handoff details kept together"}
+          </p>
         </div>
       </div>
     </div>
   );
 }
 
-function OrderingMerchantMockup() {
+function OrderingMerchantMockup({ isVi }: { isVi: boolean }) {
   return (
     <div className="overflow-hidden rounded-[20px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="rounded-[10px] bg-white p-4 sm:p-5 text-[#151417]">
         {/* Store Header + Toggle */}
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D9DD] pb-3">
-          <span className="text-[13.5px] font-bold">Verde Cocina · Riverside</span>
+          <span className="text-[13.5px] font-bold">
+            {isVi ? "Verde Cocina · Quận 1" : "Verde Cocina · Riverside"}
+          </span>
           <div className="inline-flex items-center gap-2 text-[11px]">
-            <span className="text-[#6E6D75] font-medium">Store</span>
+            <span className="text-[#6E6D75] font-medium">{isVi ? "Cửa hàng" : "Store"}</span>
             <span className="inline-flex h-5 w-9 items-center justify-end rounded-full bg-[#5E9B2E] p-0.5">
               <span className="h-4 w-4 rounded-full bg-white shadow-xs" />
             </span>
-            <span className="font-semibold text-[#3F7A1C]">Open</span>
+            <span className="font-semibold text-[#3F7A1C]">{isVi ? "Đang mở" : "Open"}</span>
           </div>
         </div>
 
         {/* Queue Subhead */}
         <div className="mt-3 flex items-center justify-between">
           <span className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.08em] text-[#6E6D75]">
-            Incoming orders
+            {isVi ? "Đơn hàng đến" : "Incoming orders"}
           </span>
           <span className="rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-0.5 text-[10.5px] font-medium text-[#3A393F]">
-            All channels
+            {isVi ? "Tất cả kênh" : "All channels"}
           </span>
         </div>
 
@@ -682,46 +792,54 @@ function OrderingMerchantMockup() {
         <ul className="mt-3 space-y-2.5">
           <li className="rounded-[9px] border border-[#D91842]/40 bg-[#FDECEF]/65 p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[12.5px] font-bold">Order #1841</span>
+              <span className="text-[12.5px] font-bold">{isVi ? "Đơn #1841" : "Order #1841"}</span>
               <span className="rounded-full bg-[#D91842] px-2 py-0.5 text-[10px] font-semibold text-white">
-                New
+                {isVi ? "Mới" : "New"}
               </span>
             </div>
-            <p className="mt-0.5 text-[10.5px] font-medium text-[#B8123A]">Website · Delivery</p>
+            <p className="mt-0.5 text-[10.5px] font-medium text-[#B8123A]">
+              {isVi ? "Website · Giao hàng" : "Website · Delivery"}
+            </p>
             <div className="mt-1.5 flex flex-wrap gap-x-3 text-[11px] text-[#3A393F]">
-              <span>1 × Green bowl</span>
-              <span>1 × Agua fresca</span>
+              <span>{isVi ? "1 × Cơm gà nướng bơ" : "1 × Green bowl"}</span>
+              <span>{isVi ? "1 × Trà hoa bụp giấm" : "1 × Agua fresca"}</span>
             </div>
             <div className="mt-2.5 flex items-center justify-between border-t border-[#D91842]/15 pt-2">
-              <span className="text-[10.5px] text-[#3A393F]">Accept within the prep window</span>
+              <span className="text-[10.5px] text-[#3A393F]">
+                {isVi ? "Xác nhận trong khung giờ chuẩn bị" : "Accept within the prep window"}
+              </span>
               <span className="rounded-full bg-[#D91842] px-3 py-1 text-[11px] font-semibold text-white">
-                Accept
+                {isVi ? "Nhận đơn" : "Accept"}
               </span>
             </div>
           </li>
 
           <li className="rounded-[9px] border border-[#D9D9DD] bg-white p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[12.5px] font-bold">Order #1839</span>
+              <span className="text-[12.5px] font-bold">{isVi ? "Đơn #1839" : "Order #1839"}</span>
               <span className="rounded-full bg-[#fef3c7] px-2 py-0.5 text-[10px] font-semibold text-[#b45309]">
-                Preparing
+                {isVi ? "Đang làm" : "Preparing"}
               </span>
             </div>
-            <p className="mt-0.5 text-[10.5px] text-[#6E6D75]">App · Pickup</p>
-            <p className="mt-1 text-[11px] text-[#3A393F]">2 × Chipotle bowl</p>
-            <p className="mt-1.5 text-[10.5px] text-[#6E6D75]">Ticket printed</p>
+            <p className="mt-0.5 text-[10.5px] text-[#6E6D75]">{isVi ? "App · Mang về" : "App · Pickup"}</p>
+            <p className="mt-1 text-[11px] text-[#3A393F]">
+              {isVi ? "2 × Bowl gà sốt Chipotle" : "2 × Chipotle bowl"}
+            </p>
+            <p className="mt-1.5 text-[10.5px] text-[#6E6D75]">{isVi ? "Đã in phiếu bếp" : "Ticket printed"}</p>
           </li>
 
           <li className="rounded-[9px] border border-[#D9D9DD] bg-white p-3">
             <div className="flex items-center justify-between">
-              <span className="text-[12.5px] font-bold">Order #1836</span>
+              <span className="text-[12.5px] font-bold">{isVi ? "Đơn #1836" : "Order #1836"}</span>
               <span className="rounded-full bg-[#EEF6E8] px-2 py-0.5 text-[10px] font-semibold text-[#3F7A1C]">
-                Ready
+                {isVi ? "Sẵn sàng" : "Ready"}
               </span>
             </div>
-            <p className="mt-0.5 text-[10.5px] text-[#6E6D75]">Kiosk · Pickup</p>
-            <p className="mt-1 text-[11px] text-[#3A393F]">1 × Street tacos</p>
-            <p className="mt-1.5 text-[10.5px] text-[#6E6D75]">Customer notified</p>
+            <p className="mt-0.5 text-[10.5px] text-[#6E6D75]">{isVi ? "Kiosk · Mang về" : "Kiosk · Pickup"}</p>
+            <p className="mt-1 text-[11px] text-[#3A393F]">{isVi ? "1 × Tacos bò nướng" : "1 × Street tacos"}</p>
+            <p className="mt-1.5 text-[10.5px] text-[#6E6D75]">
+              {isVi ? "Đã thông báo khách" : "Customer notified"}
+            </p>
           </li>
         </ul>
 
@@ -729,11 +847,11 @@ function OrderingMerchantMockup() {
         <div className="mt-3.5 flex items-center gap-2 border-t border-[#D9D9DD] pt-3">
           <span className="inline-flex items-center gap-1.5 rounded-[6px] border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-1.5 text-[11px] font-medium text-[#3A393F]">
             <Printer className="h-3.5 w-3.5 text-[#6E6D75]" />
-            Print ticket
+            {isVi ? "In phiếu" : "Print ticket"}
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-[6px] border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-1.5 text-[11px] font-medium text-[#3A393F]">
             <Monitor className="h-3.5 w-3.5 text-[#6E6D75]" />
-            Send to KDS
+            {isVi ? "Đẩy lên KDS" : "Send to KDS"}
           </span>
         </div>
       </div>
@@ -741,23 +859,23 @@ function OrderingMerchantMockup() {
   );
 }
 
-function DashboardMockup() {
+function DashboardMockup({ isVi }: { isVi: boolean }) {
   const navItems = [
-    { icon: Home, label: "Home", active: false },
-    { icon: ClipboardList, label: "Orders", active: true },
-    { icon: Truck, label: "Delivery", active: false },
-    { icon: Store, label: "Stores", active: false },
-    { icon: Link2, label: "Connect", active: false },
-    { icon: Users, label: "Users", active: false },
+    { icon: Home, label: isVi ? "Trang chủ" : "Home", active: false },
+    { icon: ClipboardList, label: isVi ? "Đơn hàng" : "Orders", active: true },
+    { icon: Truck, label: isVi ? "Giao hàng" : "Delivery", active: false },
+    { icon: Store, label: isVi ? "Cửa hàng" : "Stores", active: false },
+    { icon: Link2, label: isVi ? "Kết nối" : "Connect", active: false },
+    { icon: Users, label: isVi ? "Người dùng" : "Users", active: false },
     { icon: Megaphone, label: "Marketing", active: false },
-    { icon: BarChart3, label: "Reports", active: false },
+    { icon: BarChart3, label: isVi ? "Báo cáo" : "Reports", active: false },
   ];
 
   const rows = [
-    { id: "#1841", type: "Delivery", status: "Preparing", cls: "bg-[#fef3c7] text-[#b45309]" },
-    { id: "#1840", type: "Pickup", status: "Ready", cls: "bg-[#EEF6E8] text-[#3F7A1C]" },
-    { id: "#1839", type: "Delivery", status: "On the way", cls: "bg-[#FDECEF] text-[#B8123A]" },
-    { id: "#1838", type: "Dine in", status: "Completed", cls: "bg-[#f3f4f6] text-[#4b5563]" },
+    { id: "#1841", type: isVi ? "Giao hàng" : "Delivery", status: isVi ? "Đang làm" : "Preparing", cls: "bg-[#fef3c7] text-[#b45309]" },
+    { id: "#1840", type: isVi ? "Mang về" : "Pickup", status: isVi ? "Sẵn sàng" : "Ready", cls: "bg-[#EEF6E8] text-[#3F7A1C]" },
+    { id: "#1839", type: isVi ? "Giao hàng" : "Delivery", status: isVi ? "Đang giao" : "On the way", cls: "bg-[#FDECEF] text-[#B8123A]" },
+    { id: "#1838", type: isVi ? "Tại bàn" : "Dine in", status: isVi ? "Hoàn tất" : "Completed", cls: "bg-[#f3f4f6] text-[#4b5563]" },
   ];
 
   return (
@@ -807,34 +925,34 @@ function DashboardMockup() {
         <div className="col-span-8 p-4 space-y-3.5">
           <div className="grid grid-cols-2 gap-2.5">
             <div className="rounded-[8px] border border-[#D9D9DD] p-3">
-              <p className="text-[10px] text-[#6E6D75]">Today’s orders</p>
+              <p className="text-[10px] text-[#6E6D75]">{isVi ? "Đơn hôm nay" : "Today’s orders"}</p>
               <p className="mt-1 text-[20px] font-bold leading-none">24</p>
             </div>
             <div className="rounded-[8px] border border-[#D9D9DD] p-3">
-              <p className="text-[10px] text-[#6E6D75]">Today’s sales</p>
-              <p className="mt-1 text-[20px] font-bold leading-none">$612.40</p>
+              <p className="text-[10px] text-[#6E6D75]">{isVi ? "Doanh thu hôm nay" : "Today’s sales"}</p>
+              <p className="mt-1 text-[20px] font-bold leading-none">{isVi ? "15,4tr" : "$612.40"}</p>
             </div>
           </div>
 
           <div className="rounded-[8px] border border-[#D9D9DD] p-3">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D9D9DD] pb-2">
-              <span className="text-[12px] font-bold">Orders List</span>
+              <span className="text-[12px] font-bold">{isVi ? "Danh sách đơn" : "Orders List"}</span>
               <div className="flex items-center gap-2 text-[10px]">
                 <span className="inline-flex items-center gap-1 text-[#3F7A1C] font-medium">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#5E9B2E]" />
-                  Connection
+                  {isVi ? "Kết nối" : "Connection"}
                 </span>
                 <span className="rounded border border-[#D9D9DD] px-1.5 py-0.5 text-[#3A393F] font-medium">
-                  SLA’s
+                  SLA
                 </span>
               </div>
             </div>
 
             <div className="mt-2 space-y-1.5 text-[11px]">
               <div className="grid grid-cols-3 text-[9.5px] font-mono uppercase text-[#6E6D75] pb-1">
-                <span>Order</span>
-                <span>Type</span>
-                <span className="text-right">Status</span>
+                <span>{isVi ? "Đơn" : "Order"}</span>
+                <span>{isVi ? "Loại" : "Type"}</span>
+                <span className="text-right">{isVi ? "Trạng thái" : "Status"}</span>
               </div>
               {rows.map((r) => (
                 <div
@@ -858,30 +976,54 @@ function DashboardMockup() {
   );
 }
 
-function MultiLocationMockup() {
-  const groups = [
-    {
-      region: "North",
-      stores: [
-        { name: "Riverside", status: "Open", open: true, pct: 84 },
-        { name: "Old Town", status: "Open", open: true, pct: 56 },
-      ],
-    },
-    {
-      region: "Central",
-      stores: [
-        { name: "Harbor Point", status: "Open", open: true, pct: 90 },
-        { name: "Grand Avenue", status: "Closed", open: false, pct: 0 },
-      ],
-    },
-    {
-      region: "South",
-      stores: [
-        { name: "Lakeside", status: "Open", open: true, pct: 62 },
-        { name: "Airport Road", status: "Open", open: true, pct: 48 },
-      ],
-    },
-  ];
+function MultiLocationMockup({ isVi }: { isVi: boolean }) {
+  const groups = isVi
+    ? [
+        {
+          region: "Miền Bắc",
+          stores: [
+            { name: "Hoàn Kiếm", status: "Đang mở", open: true, pct: 84 },
+            { name: "Cầu Giấy", status: "Đang mở", open: true, pct: 56 },
+          ],
+        },
+        {
+          region: "Miền Trung",
+          stores: [
+            { name: "Hải Châu", status: "Đang mở", open: true, pct: 90 },
+            { name: "Sơn Trà", status: "Đóng cửa", open: false, pct: 0 },
+          ],
+        },
+        {
+          region: "Miền Nam",
+          stores: [
+            { name: "Quận 1", status: "Đang mở", open: true, pct: 62 },
+            { name: "Thảo Điền", status: "Đang mở", open: true, pct: 48 },
+          ],
+        },
+      ]
+    : [
+        {
+          region: "North",
+          stores: [
+            { name: "Riverside", status: "Open", open: true, pct: 84 },
+            { name: "Old Town", status: "Open", open: true, pct: 56 },
+          ],
+        },
+        {
+          region: "Central",
+          stores: [
+            { name: "Harbor Point", status: "Open", open: true, pct: 90 },
+            { name: "Grand Avenue", status: "Closed", open: false, pct: 0 },
+          ],
+        },
+        {
+          region: "South",
+          stores: [
+            { name: "Lakeside", status: "Open", open: true, pct: 62 },
+            { name: "Airport Road", status: "Open", open: true, pct: 48 },
+          ],
+        },
+      ];
 
   return (
     <div className="overflow-hidden rounded-[12px] border border-[#2A2A2E] bg-[#1e2024] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
@@ -907,22 +1049,24 @@ function MultiLocationMockup() {
       {/* White Network View */}
       <div className="bg-white p-4 sm:p-5 text-[#151417]">
         <div className="flex items-center justify-between">
-          <span className="text-[14px] font-bold">Network view</span>
+          <span className="text-[14px] font-bold">{isVi ? "Toàn mạng lưới" : "Network view"}</span>
           <span className="rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-0.5 text-[10.5px] font-medium text-[#3A393F]">
-            All regions
+            {isVi ? "Tất cả khu vực" : "All regions"}
           </span>
         </div>
         <p className="mt-1.5 inline-flex items-center gap-1.5 text-[11px] text-[#B8123A] font-medium">
           <Layers className="h-3.5 w-3.5" />
-          <span>Master catalog · local overrides on</span>
+          <span>
+            {isVi ? "Thực đơn chuẩn · cho phép tùy biến chi nhánh" : "Master catalog · local overrides on"}
+          </span>
         </p>
 
         <div className="mt-3.5 text-[11px]">
           <div className="grid grid-cols-12 border-b border-[#D9D9DD] pb-1.5 font-mono text-[9.5px] uppercase text-[#6E6D75]">
-            <span className="col-span-4">Store</span>
-            <span className="col-span-2">Region</span>
-            <span className="col-span-3">Status</span>
-            <span className="col-span-3 text-right">Orders today</span>
+            <span className="col-span-4">{isVi ? "Chi nhánh" : "Store"}</span>
+            <span className="col-span-2">{isVi ? "Vùng" : "Region"}</span>
+            <span className="col-span-3">{isVi ? "Trạng thái" : "Status"}</span>
+            <span className="col-span-3 text-right">{isVi ? "Đơn hôm nay" : "Orders today"}</span>
           </div>
 
           <div className="divide-y divide-[#F5F5F6]">
@@ -934,7 +1078,7 @@ function MultiLocationMockup() {
                 {grp.stores.map((st) => (
                   <div key={st.name} className="grid grid-cols-12 items-center">
                     <span className="col-span-4 font-semibold text-[#151417]">{st.name}</span>
-                    <span className="col-span-2 text-[#6E6D75]">{grp.region}</span>
+                    <span className="col-span-2 text-[#6E6D75] truncate">{grp.region}</span>
                     <span className="col-span-3 inline-flex items-center gap-1.5">
                       <span
                         className={`h-1.5 w-1.5 rounded-full ${
@@ -965,14 +1109,16 @@ function MultiLocationMockup() {
   );
 }
 
-function OrderingDeliveryMockup() {
+function OrderingDeliveryMockup({ isVi }: { isVi: boolean }) {
   return (
     <div className="overflow-hidden rounded-[20px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="rounded-[10px] bg-[#f4f5f7] p-3.5 text-[#151417] space-y-2.5">
         <div className="flex items-center justify-between px-1">
-          <span className="text-[12.5px] font-bold">Store 014 · Riverside</span>
+          <span className="text-[12.5px] font-bold">
+            {isVi ? "Chi nhánh 014 · Quận 1" : "Store 014 · Riverside"}
+          </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-[#6E6D75]">
-            Delivery settings
+            {isVi ? "Cấu hình giao hàng" : "Delivery settings"}
           </span>
         </div>
 
@@ -982,9 +1128,11 @@ function OrderingDeliveryMockup() {
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
                 <MapPin className="h-3.5 w-3.5 text-[#D91842]" />
-                Zone
+                {isVi ? "Vùng giao" : "Zone"}
               </span>
-              <span className="text-[10px] font-medium text-[#6E6D75]">Zone A · radius</span>
+              <span className="text-[10px] font-medium text-[#6E6D75]">
+                {isVi ? "Vùng A · bán kính" : "Zone A · radius"}
+              </span>
             </div>
 
             {/* Concentric zone graphic */}
@@ -999,20 +1147,20 @@ function OrderingDeliveryMockup() {
 
             <dl className="mt-2.5 space-y-1 text-[10.5px]">
               <div className="flex justify-between">
-                <dt className="text-[#6E6D75]">Fee rule</dt>
-                <dd className="font-semibold">By distance</dd>
+                <dt className="text-[#6E6D75]">{isVi ? "Biểu phí" : "Fee rule"}</dt>
+                <dd className="font-semibold">{isVi ? "Theo khoảng cách" : "By distance"}</dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-[#6E6D75]">Free over</dt>
-                <dd className="font-semibold">Basket threshold</dd>
+                <dt className="text-[#6E6D75]">{isVi ? "Miễn phí từ" : "Free over"}</dt>
+                <dd className="font-semibold">{isVi ? "Ngưỡng giỏ hàng" : "Basket threshold"}</dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-[#6E6D75]">Hours</dt>
-                <dd className="font-semibold">Store hours</dd>
+                <dt className="text-[#6E6D75]">{isVi ? "Khung giờ" : "Hours"}</dt>
+                <dd className="font-semibold">{isVi ? "Theo giờ quán" : "Store hours"}</dd>
               </div>
             </dl>
             <p className="mt-2 border-t border-[#F5F5F6] pt-1.5 text-[9.5px] text-[#6E6D75]">
-              Minimum, fee and hours set per zone
+              {isVi ? "Đơn tối thiểu, phí và giờ cài theo từng vùng" : "Minimum, fee and hours set per zone"}
             </p>
           </div>
 
@@ -1022,24 +1170,28 @@ function OrderingDeliveryMockup() {
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
                   <Route className="h-3.5 w-3.5 text-[#D91842]" />
-                  Dispatch
+                  {isVi ? "Điều phối" : "Dispatch"}
                 </span>
                 <span className="rounded-full bg-[#FDECEF] px-2 py-0.5 text-[10px] font-semibold text-[#B8123A]">
-                  Auto
+                  {isVi ? "Tự động" : "Auto"}
                 </span>
               </div>
               <dl className="mt-2 space-y-1 text-[10.5px]">
                 <div className="flex justify-between gap-2">
-                  <dt className="text-[#6E6D75]">Assign by</dt>
-                  <dd className="font-semibold text-right">Distance, load and shift</dd>
+                  <dt className="text-[#6E6D75]">{isVi ? "Gán theo" : "Assign by"}</dt>
+                  <dd className="font-semibold text-right">
+                    {isVi ? "Khoảng cách, tải & ca" : "Distance, load and shift"}
+                  </dd>
                 </div>
                 <div className="flex justify-between gap-2">
-                  <dt className="text-[#6E6D75]">Batching</dt>
-                  <dd className="font-semibold text-right">Nearby orders</dd>
+                  <dt className="text-[#6E6D75]">{isVi ? "Gom đơn" : "Batching"}</dt>
+                  <dd className="font-semibold text-right">{isVi ? "Đơn cùng tuyến" : "Nearby orders"}</dd>
                 </div>
                 <div className="flex justify-between gap-2">
-                  <dt className="text-[#6E6D75]">Fallback</dt>
-                  <dd className="font-semibold text-[#B8123A] text-right">Partner network</dd>
+                  <dt className="text-[#6E6D75]">{isVi ? "Dự phòng" : "Fallback"}</dt>
+                  <dd className="font-semibold text-[#B8123A] text-right">
+                    {isVi ? "Mạng lưới 3PL" : "Partner network"}
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -1048,36 +1200,42 @@ function OrderingDeliveryMockup() {
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
                   <Bike className="h-3.5 w-3.5 text-[#D91842]" />
-                  On shift
+                  {isVi ? "Đang trực" : "On shift"}
                 </span>
-                <span className="text-[9.5px] text-[#6E6D75]">Drivers go online per store</span>
+                <span className="text-[9.5px] text-[#6E6D75]">
+                  {isVi ? "Tài xế bật online theo quán" : "Drivers go online per store"}
+                </span>
               </div>
               <ul className="mt-2 space-y-1.5 text-[10.5px]">
                 <li className="flex items-center justify-between gap-1">
                   <div>
-                    <p className="font-semibold leading-tight">Marco R.</p>
-                    <p className="text-[9.5px] text-[#6E6D75]">Zone A · motorbike</p>
+                    <p className="font-semibold leading-tight">{isVi ? "Minh K." : "Marco R."}</p>
+                    <p className="text-[9.5px] text-[#6E6D75]">
+                      {isVi ? "Vùng A · xe máy" : "Zone A · motorbike"}
+                    </p>
                   </div>
                   <span className="rounded-full bg-[#EEF6E8] px-2 py-0.5 text-[9.5px] font-semibold text-[#3F7A1C]">
-                    Online
+                    {isVi ? "Sẵn sàng" : "Online"}
                   </span>
                 </li>
                 <li className="flex items-center justify-between gap-1">
                   <div>
-                    <p className="font-semibold leading-tight">Ana L.</p>
-                    <p className="text-[9.5px] text-[#6E6D75]">Zone A · car</p>
+                    <p className="font-semibold leading-tight">{isVi ? "Lan T." : "Ana L."}</p>
+                    <p className="text-[9.5px] text-[#6E6D75]">{isVi ? "Vùng A · ô tô" : "Zone A · car"}</p>
                   </div>
                   <span className="rounded-full bg-[#FDECEF] px-2 py-0.5 text-[9.5px] font-semibold text-[#B8123A]">
-                    On a delivery
+                    {isVi ? "Đang giao" : "On a delivery"}
                   </span>
                 </li>
                 <li className="flex items-center justify-between gap-1">
                   <div>
-                    <p className="font-semibold leading-tight">Luis P.</p>
-                    <p className="text-[9.5px] text-[#6E6D75]">All zones · bike</p>
+                    <p className="font-semibold leading-tight">{isVi ? "Hùng P." : "Luis P."}</p>
+                    <p className="text-[9.5px] text-[#6E6D75]">
+                      {isVi ? "Mọi vùng · xe máy" : "All zones · bike"}
+                    </p>
                   </div>
                   <span className="rounded-full bg-[#f3f4f6] px-2 py-0.5 text-[9.5px] font-semibold text-[#6b7280]">
-                    Off shift
+                    {isVi ? "Hết ca" : "Off shift"}
                   </span>
                 </li>
               </ul>
@@ -1089,7 +1247,7 @@ function OrderingDeliveryMockup() {
   );
 }
 
-function DriverAppMockup() {
+function DriverAppMockup({ isVi }: { isVi: boolean }) {
   return (
     <div className="flex justify-center">
       <div className="w-[310px] sm:w-[336px] rounded-[36px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
@@ -1108,14 +1266,16 @@ function DriverAppMockup() {
           {/* Assigned Delivery Header */}
           <div className="mt-3.5 flex items-center justify-between">
             <div>
-              <p className="text-[10.5px] text-[#6E6D75] font-medium">Assigned delivery</p>
-              <p className="text-[15px] font-bold">Delivery #4823</p>
+              <p className="text-[10.5px] text-[#6E6D75] font-medium">
+                {isVi ? "Chuyến được gán" : "Assigned delivery"}
+              </p>
+              <p className="text-[15px] font-bold">{isVi ? "Đơn giao #4823" : "Delivery #4823"}</p>
             </div>
             <div className="flex items-center gap-1.5 rounded-full border border-[#D9D9DD] bg-[#F5F5F6] px-2.5 py-1">
               <span className="h-2 w-2 rounded-full bg-[#5E9B2E]" />
               <div className="text-left leading-tight">
-                <p className="text-[10px] font-bold text-[#3F7A1C]">Online</p>
-                <p className="text-[9px] text-[#6E6D75]">Riverside</p>
+                <p className="text-[10px] font-bold text-[#3F7A1C]">{isVi ? "Trực tuyến" : "Online"}</p>
+                <p className="text-[9px] text-[#6E6D75]">{isVi ? "Quận 1" : "Riverside"}</p>
               </div>
             </div>
           </div>
@@ -1138,9 +1298,15 @@ function DriverAppMockup() {
                 <Check className="h-3 w-3" strokeWidth={3} />
               </span>
               <div>
-                <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">Pickup</p>
-                <p className="font-bold text-[#151417]">Riverside store</p>
-                <p className="text-[10px] text-[#6E6D75]">Order ready for collection</p>
+                <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">
+                  {isVi ? "Lấy hàng" : "Pickup"}
+                </p>
+                <p className="font-bold text-[#151417]">
+                  {isVi ? "Chi nhánh Quận 1" : "Riverside store"}
+                </p>
+                <p className="text-[10px] text-[#6E6D75]">
+                  {isVi ? "Món đã sẵn sàng để lấy" : "Order ready for collection"}
+                </p>
               </div>
             </li>
             <li className="flex items-start gap-2.5">
@@ -1148,9 +1314,15 @@ function DriverAppMockup() {
                 <span className="h-1.5 w-1.5 rounded-full bg-[#D91842]" />
               </span>
               <div>
-                <p className="font-mono text-[9.5px] uppercase text-[#B8123A]">Drop-off</p>
-                <p className="font-bold text-[#151417]">Customer address</p>
-                <p className="text-[10px] text-[#6E6D75]">Hand to the customer</p>
+                <p className="font-mono text-[9.5px] uppercase text-[#B8123A]">
+                  {isVi ? "Giao hàng" : "Drop-off"}
+                </p>
+                <p className="font-bold text-[#151417]">
+                  {isVi ? "Địa chỉ khách hàng" : "Customer address"}
+                </p>
+                <p className="text-[10px] text-[#6E6D75]">
+                  {isVi ? "Giao tận tay khách" : "Hand to the customer"}
+                </p>
               </div>
             </li>
           </ol>
@@ -1159,23 +1331,23 @@ function DriverAppMockup() {
           <div className="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold">
             <span className="inline-flex items-center justify-center gap-1.5 rounded-[7px] bg-[#D91842] py-2 text-white">
               <Navigation className="h-3 w-3" />
-              Navigate
+              {isVi ? "Chỉ đường" : "Navigate"}
             </span>
             <span className="inline-flex items-center justify-center gap-1.5 rounded-[7px] border border-[#D9D9DD] bg-white py-2 text-[#151417]">
               <MessageSquare className="h-3 w-3 text-[#6E6D75]" />
-              Message the store
+              {isVi ? "Nhắn cho quán" : "Message the store"}
             </span>
           </div>
 
           {/* Proof of delivery */}
           <div className="mt-3.5">
             <p className="font-mono text-[9.5px] uppercase tracking-[0.06em] text-[#6E6D75]">
-              Proof of delivery
+              {isVi ? "Bằng chứng giao hàng" : "Proof of delivery"}
             </p>
             <div className="mt-1.5 grid grid-cols-3 gap-1.5 text-[10px] font-medium text-[#3A393F]">
               {[
-                { icon: Camera, label: "Photo" },
-                { icon: PenTool, label: "Signature" },
+                { icon: Camera, label: isVi ? "Chụp ảnh" : "Photo" },
+                { icon: PenTool, label: isVi ? "Chữ ký" : "Signature" },
                 { icon: KeyRound, label: "PIN" },
               ].map((p) => {
                 const Icon = p.icon;
@@ -1194,9 +1366,9 @@ function DriverAppMockup() {
 
           {/* Bottom Tab Bar */}
           <div className="mt-3.5 grid grid-cols-3 border-t border-[#D9D9DD] pt-2.5 text-center text-[10px] font-semibold">
-            <span className="text-[#D91842]">Deliveries</span>
-            <span className="text-[#6E6D75]">Activity</span>
-            <span className="text-[#6E6D75]">Shift</span>
+            <span className="text-[#D91842]">{isVi ? "Chuyến giao" : "Deliveries"}</span>
+            <span className="text-[#6E6D75]">{isVi ? "Hoạt động" : "Activity"}</span>
+            <span className="text-[#6E6D75]">{isVi ? "Ca trực" : "Shift"}</span>
           </div>
         </div>
       </div>
@@ -1204,20 +1376,40 @@ function DriverAppMockup() {
   );
 }
 
-function ThirdPartyDeliveryMockup() {
+function ThirdPartyDeliveryMockup({ isVi }: { isVi: boolean }) {
   const quotes = [
-    { name: "Uber Direct", note: "On-demand courier", state: "Quote received", cls: "bg-[#FDECEF] text-[#B8123A]", rowCls: "" },
-    { name: "DoorDash Drive", note: "On-demand courier", state: "Selected", cls: "bg-[#EEF6E8] text-[#3F7A1C]", rowCls: "bg-[#EEF6E8]/40 border-[#10b981]/30" },
-    { name: "Lalamove", note: "On-demand courier", state: "Declined", cls: "bg-[#fee2e2] text-[#b91c1c]", rowCls: "" },
+    {
+      name: "Uber Direct",
+      note: isVi ? "Giao hỏa tốc theo yêu cầu" : "On-demand courier",
+      state: isVi ? "Đã nhận báo giá" : "Quote received",
+      cls: "bg-[#FDECEF] text-[#B8123A]",
+      rowCls: "",
+    },
+    {
+      name: "DoorDash Drive",
+      note: isVi ? "Giao hỏa tốc theo yêu cầu" : "On-demand courier",
+      state: isVi ? "Đã chọn" : "Selected",
+      cls: "bg-[#EEF6E8] text-[#3F7A1C]",
+      rowCls: "bg-[#EEF6E8]/40 border-[#10b981]/30",
+    },
+    {
+      name: "Lalamove",
+      note: isVi ? "Giao hỏa tốc theo yêu cầu" : "On-demand courier",
+      state: isVi ? "Từ chối" : "Declined",
+      cls: "bg-[#fee2e2] text-[#b91c1c]",
+      rowCls: "",
+    },
   ];
 
   return (
     <div className="overflow-hidden rounded-[20px] border border-[#2A2A2E] bg-[#1B1A1F] p-3 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
       <div className="rounded-[10px] bg-[#f4f5f7] p-4 text-[#151417] space-y-2.5">
         <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
-          <span className="text-[12px] font-bold">Order 48291 · Illustrative example</span>
+          <span className="text-[12px] font-bold">
+            {isVi ? "Đơn 48291 · Ví dụ minh họa" : "Order 48291 · Illustrative example"}
+          </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-[#6E6D75]">
-            Courier quotes
+            {isVi ? "Báo giá đối tác" : "Courier quotes"}
           </span>
         </div>
 
@@ -1226,20 +1418,22 @@ function ThirdPartyDeliveryMockup() {
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
               <PackageCheck className="h-3.5 w-3.5 text-[#D91842]" />
-              Order
+              {isVi ? "Đơn hàng" : "Order"}
             </span>
             <span className="rounded-full bg-[#EEF6E8] px-2 py-0.5 text-[10px] font-semibold text-[#3F7A1C]">
-              Ready for pickup
+              {isVi ? "Sẵn sàng lấy hàng" : "Ready for pickup"}
             </span>
           </div>
-          <p className="mt-1 text-[11px] text-[#6E6D75]">Store 014 · Riverside</p>
+          <p className="mt-1 text-[11px] text-[#6E6D75]">
+            {isVi ? "Chi nhánh 014 · Quận 1" : "Store 014 · Riverside"}
+          </p>
         </div>
 
         {/* Quotes Card */}
         <div className="rounded-[8px] border border-[#D9D9DD] bg-white p-3">
           <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
             <Truck className="h-3.5 w-3.5 text-[#D91842]" />
-            Courier quotes
+            {isVi ? "Báo giá hãng giao" : "Courier quotes"}
           </span>
           <ul className="mt-2.5 space-y-1.5">
             {quotes.map((q) => (
@@ -1263,19 +1457,23 @@ function ThirdPartyDeliveryMockup() {
         <div className="rounded-[8px] border border-[#D9D9DD] bg-white p-3">
           <span className="inline-flex items-center gap-1.5 text-[11px] font-bold">
             <Route className="h-3.5 w-3.5 text-[#D91842]" />
-            Rule
+            {isVi ? "Quy tắc chọn" : "Rule"}
           </span>
           <p className="mt-1 text-[11.5px] font-semibold text-[#151417]">
-            Best quote, next network when one declines
+            {isVi
+              ? "Chọn báo giá tốt nhất, tự chuyển hãng kế tiếp nếu bị từ chối"
+              : "Best quote, next network when one declines"}
           </p>
           <dl className="mt-2 space-y-1 border-t border-[#F5F5F6] pt-2 text-[11px]">
             <div className="flex justify-between">
-              <dt className="text-[#6E6D75]">Courier</dt>
-              <dd className="font-semibold text-[#B8123A]">Assigned</dd>
+              <dt className="text-[#6E6D75]">{isVi ? "Tài xế đối tác" : "Courier"}</dt>
+              <dd className="font-semibold text-[#B8123A]">{isVi ? "Đã gán" : "Assigned"}</dd>
             </div>
             <div className="flex justify-between">
-              <dt className="text-[#6E6D75]">Customer</dt>
-              <dd className="font-semibold text-[#151417]">Tracking on your site</dd>
+              <dt className="text-[#6E6D75]">{isVi ? "Khách hàng" : "Customer"}</dt>
+              <dd className="font-semibold text-[#151417]">
+                {isVi ? "Theo dõi ngay trên trang của bạn" : "Tracking on your site"}
+              </dd>
             </div>
           </dl>
         </div>

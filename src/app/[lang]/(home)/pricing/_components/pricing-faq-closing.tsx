@@ -9,11 +9,135 @@ import { useUiStore } from "@/stores/ui-store";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
-function getFaqGroups(brand: string) {
+function getFaqGroups(brand: string, isVi: boolean) {
+  if (isVi) {
+    return [
+      {
+        category: "Bảng giá và thanh toán",
+        items: [
+          {
+            id: "pb-1",
+            q: "Hệ thống có thu phí hoa hồng trên mỗi đơn hàng không?",
+            a: `Không. ${brand} không thu bất kỳ khoản hoa hồng nào trên đơn hàng của bạn. Bạn chỉ trả theo gói dịch vụ: tính theo chi nhánh với gói Nhà hàng, và mức phí hàng tháng với gói Sàn giao dịch và Doanh nghiệp lớn. Tính năng đặt món bằng AI (tùy chọn) có biểu phí công nghệ AI riêng, và các đơn vượt định mức tháng ở gói Sàn giao dịch được tính theo đơn phát sinh.`,
+          },
+          {
+            id: "pb-2",
+            q: "Phí công nghệ AI bao gồm những gì?",
+            a: "Phí công nghệ AI chỉ áp dụng trên doanh thu từ các đơn hàng đủ điều kiện được xử lý qua hội thoại AI, không áp dụng cho các đơn đặt thông thường. Hãy trao đổi với đội ngũ của chúng tôi để nhận mức phí phù hợp với quy mô vận hành của bạn.",
+          },
+          {
+            id: "pb-3",
+            q: "Tôi cần dự trù thêm những chi phí nào khác?",
+            a: "Phí xử lý thanh toán của cổng thanh toán, đối tác giao hàng, tin nhắn SMS/WhatsApp, phần cứng, tài khoản lập trình viên, phí kho ứng dụng (App Store / Google Play), thuế, tùy biến riêng và các chi phí bên thứ ba khác được tính riêng trừ khi đã ghi rõ trong đề xuất báo giá.",
+          },
+        ],
+      },
+      {
+        category: "Các gói dịch vụ và đơn hàng",
+        items: [
+          {
+            id: "po-1",
+            q: "Mỗi gói dịch vụ bao gồm những gì?",
+            a: `Mọi gói đều đi kèm đầy đủ sản phẩm và tính năng của ${brand}: quyền truy cập API & MCP, thương hiệu riêng (white-label), toàn bộ ứng dụng di động gốc và quản lý đa thương hiệu, đa chi nhánh. Gói Nhà hàng tính phí theo chi nhánh; gói Sàn giao dịch không giới hạn số cửa hàng kèm định mức đơn hàng mỗi tháng. Mức sử dụng vượt ngưỡng, dịch vụ triển khai và tùy chọn Enterprise có điều khoản riêng.`,
+          },
+          {
+            id: "po-2",
+            q: "Mỗi gói bao gồm bao nhiêu đơn hàng?",
+            a: "Gói Nhà hàng không giới hạn số lượng đơn hàng. Gói Sàn giao dịch tiêu chuẩn bao gồm 2.000 đơn/tháng; khi đăng ký trong chương trình ưu đãi hiện tại, bạn được giữ mức 5.000 đơn/tháng trong suốt thời gian duy trì gói. Gói Enterprise áp dụng định mức và báo giá theo sản lượng đơn dự kiến trong hợp đồng.",
+          },
+          {
+            id: "po-3",
+            q: "Chuyện gì xảy ra nếu vượt quá định mức đơn hàng của gói?",
+            a: "Các đơn vượt định mức ở gói Sàn giao dịch sẽ được tính riêng theo điều khoản trong báo giá. Gói Nhà hàng không giới hạn đơn hàng, còn gói Enterprise tuân theo năng lực đã thỏa thuận. Hãy đặt lịch trao đổi để rà soát sản lượng và đơn giá áp dụng.",
+          },
+          {
+            id: "po-4",
+            q: "Tất cả các gói có bao gồm quyền truy cập API và MCP không?",
+            a: `Có. Mọi gói đều cấp quyền truy cập lập trình viên cho ${brand} API và MCP với các công cụ tương thích, giúp bạn dễ dàng kết nối, mở rộng và tự động hóa ở bất kỳ gói nào.`,
+          },
+          {
+            id: "po-5",
+            q: "Tôi có nhận được mã nguồn không?",
+            a: `Có. Mã nguồn frontend được mở và đi kèm với mọi sản phẩm (Website đặt hàng, Ứng dụng Khách hàng, Ứng dụng Cửa hàng, Ứng dụng Tài xế và Bảng điều khiển) để đội ngũ của bạn tự do tùy biến trên chính nền tảng đang vận hành. Mã nguồn backend chỉ cung cấp cho khách hàng doanh nghiệp lớn theo hợp đồng bản quyền riêng sau khi ${brand} phê duyệt.`,
+          },
+          {
+            id: "po-6",
+            q: `Tôi có thể chạy ${brand} trên hạ tầng đám mây riêng của mình không?`,
+            a: `Có, với gói Enterprise. Hệ thống cài đặt chính backend ${brand} lên tài khoản AWS, Google Cloud, Microsoft Azure hoặc Railway của bạn. Mô hình Bring Your Own Cloud có điều khoản riêng: một hợp đồng trọn gói theo kỳ hạn với mức phí cố định, không tính phí theo cửa hàng hay sản lượng giao dịch. Các gói khác vận hành trên hạ tầng do ${brand} quản lý.`,
+          },
+        ],
+      },
+      {
+        category: "Dùng thử, hủy gói và hoàn tiền",
+        items: [
+          {
+            id: "ec-1",
+            q: `Tôi có thể dùng thử ${brand} trước khi cam kết không?`,
+            a: "Hãy đặt lịch demo trực tiếp để xem toàn bộ sản phẩm, tích hợp và cấu hình phù hợp với mô hình vận hành của bạn. Phạm vi triển khai và giai đoạn đánh giá (nếu có) sẽ được thống nhất cùng đội ngũ tư vấn.",
+          },
+          {
+            id: "ec-2",
+            q: "Tôi có thể hủy gói bất cứ lúc nào không?",
+            a: `Có. ${brand} cung cấp các gói thanh toán theo tháng và theo năm, còn gói Enterprise tuân theo hợp đồng riêng. Bạn có thể hủy bất cứ lúc nào và gói dịch vụ vẫn duy trì hoạt động đến hết chu kỳ thanh toán hiện tại.`,
+          },
+          {
+            id: "ec-3",
+            q: "Chính sách hoàn tiền như thế nào?",
+            a: `Điều kiện hoàn tiền và các cam kết theo chương trình ưu đãi áp dụng theo điều khoản tại thời điểm đăng ký. Hãy liên hệ ${brand} để kiểm tra chi tiết điều khoản áp dụng cho gói của bạn.`,
+          },
+        ],
+      },
+      {
+        category: "Bắt đầu triển khai",
+        items: [
+          {
+            id: "gs-1",
+            q: "Tôi có thể chuyển dữ liệu từ nhà cung cấp khác sang không?",
+            a: "Có. Nếu bạn có sẵn dữ liệu, chúng tôi có thể hỗ trợ chuyển đổi đơn hàng, khách hàng, cửa hàng và danh mục món (chi phí tùy gói và phạm vi). Bạn cũng có thể tự chuyển đổi miễn phí bằng các công cụ đi kèm sẵn như API và MCP.",
+          },
+          {
+            id: "gs-2",
+            q: `Tôi có thể sử dụng ${brand} ở những quốc gia nào?`,
+            a: "Tại bất kỳ đâu trên thế giới. Các đối tác thanh toán, giao hàng và tích hợp sẽ khác nhau tùy khu vực, vì vậy hãy xác nhận trước những kết nối thị trường của bạn cần.",
+          },
+          {
+            id: "gs-3",
+            q: "Tôi có thể nhận thanh toán trực tuyến không?",
+            a: `Có. ${brand} hiện tích hợp sẵn hơn 50 cổng thanh toán và tiếp tục bổ sung thêm. Hãy liên hệ nếu doanh nghiệp của bạn cần tích hợp một cổng thanh toán cụ thể.`,
+          },
+          {
+            id: "gs-4",
+            q: "Hệ thống POS, đối tác giao hàng và cổng thanh toán của tôi có kết nối được không?",
+            a: `${brand} kết nối với nhiều hệ thống POS, sàn giao đồ ăn, đơn vị giao hàng và cổng thanh toán được hỗ trợ. Khả năng tương thích phụ thuộc khu vực, loại tài khoản và điều khoản của nhà cung cấp, nên hãy rà soát danh sách kết nối cần thiết trước khi ra mắt.`,
+          },
+        ],
+      },
+      {
+        category: "Dữ liệu và hỗ trợ",
+        items: [
+          {
+            id: "ds-1",
+            q: "Ai là người sở hữu dữ liệu của tôi?",
+            a: `Chính bạn. Bạn luôn toàn quyền sở hữu mọi dữ liệu đưa lên ${brand} và có thể xuất dữ liệu bất cứ lúc nào qua các công cụ chúng tôi cung cấp. ${brand} không bao giờ sở hữu dữ liệu của bạn.`,
+          },
+          {
+            id: "ds-2",
+            q: "Gói dịch vụ bao gồm mức hỗ trợ nào?",
+            a: "Mọi gói dịch vụ đều bao gồm hỗ trợ kỹ thuật. Chúng tôi đặt mục tiêu phản hồi các yêu cầu tiêu chuẩn trong vòng 24 đến 48 giờ.",
+          },
+          {
+            id: "ds-3",
+            q: "Gói Enterprise có mặc định bao gồm hỗ trợ 24/7 hoặc SLA không?",
+            a: "Không. Hỗ trợ khẩn cấp 24/7 và cam kết SLA theo hợp đồng chỉ áp dụng khi được đưa rõ vào thỏa thuận Enterprise, quy định cụ thể phạm vi, kênh tiếp nhận, ngoại lệ và mức độ dịch vụ.",
+          },
+        ],
+      },
+    ];
+  }
+
   return [
     {
-      categoryEn: "Pricing and billing",
-      categoryVi: "Bảng giá và thanh toán",
+      category: "Pricing and billing",
       items: [
         {
           id: "pb-1",
@@ -33,8 +157,7 @@ function getFaqGroups(brand: string) {
       ],
     },
     {
-      categoryEn: "Plans and orders",
-      categoryVi: "Các gói và đơn hàng",
+      category: "Plans and orders",
       items: [
         {
           id: "po-1",
@@ -69,8 +192,7 @@ function getFaqGroups(brand: string) {
       ],
     },
     {
-      categoryEn: "Evaluation, cancellation, and refunds",
-      categoryVi: "Dùng thử, hủy gói và hoàn tiền",
+      category: "Evaluation, cancellation, and refunds",
       items: [
         {
           id: "ec-1",
@@ -90,8 +212,7 @@ function getFaqGroups(brand: string) {
       ],
     },
     {
-      categoryEn: "Getting started",
-      categoryVi: "Bắt đầu triển khai",
+      category: "Getting started",
       items: [
         {
           id: "gs-1",
@@ -116,8 +237,7 @@ function getFaqGroups(brand: string) {
       ],
     },
     {
-      categoryEn: "Data and support",
-      categoryVi: "Dữ liệu và hỗ trợ",
+      category: "Data and support",
       items: [
         {
           id: "ds-1",
@@ -145,7 +265,7 @@ export function PricingFaqAndClosing() {
   const { openDemoModal, setChatOpen } = useUiStore();
   const [openIds, setOpenIds] = useState<Record<string, boolean>>({});
 
-  const groups = getFaqGroups(siteConfig.name);
+  const groups = getFaqGroups(siteConfig.name, isVi);
 
   const toggle = (id: string) => {
     setOpenIds((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -160,7 +280,7 @@ export function PricingFaqAndClosing() {
             {/* Left Sticky Column */}
             <div className="lg:sticky lg:top-[105px] lg:self-start">
               <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--od-action-content)]">
-                QUESTIONS
+                {isVi ? "CÂU HỎI THƯỜNG GẶP" : "QUESTIONS"}
               </p>
               <h2 className="mt-3 text-[34px] sm:text-[44px] lg:text-[48px] font-bold tracking-[-0.025em] leading-[1.04] text-[var(--od-text)]">
                 {isVi ? "Câu hỏi trước khi lựa chọn." : "Questions before you choose."}
@@ -181,9 +301,9 @@ export function PricingFaqAndClosing() {
             {/* Right Categorized FAQ Groups */}
             <div className="space-y-12">
               {groups.map((group) => (
-                <div key={group.categoryEn}>
+                <div key={group.category}>
                   <h3 className="pb-3 text-[13.5px] font-semibold text-[var(--od-text-muted)]">
-                    {isVi ? group.categoryVi : group.categoryEn}
+                    {group.category}
                   </h3>
                   <div className="border-t border-[var(--od-border-strong)]">
                     {group.items.map((item) => {
@@ -228,7 +348,7 @@ export function PricingFaqAndClosing() {
           <div className="rounded-[10px] bg-[#111013] px-7 py-14 sm:p-16 text-white grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,23rem)] lg:gap-20">
             <div>
               <p className="font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-[#F9D0D8]">
-                FIND THE RIGHT PATH
+                {isVi ? "CHỌN LỘ TRÌNH PHÙ HỢP" : "FIND THE RIGHT PATH"}
               </p>
               <h2 className="mt-4 max-w-[20ch] text-[36px] sm:text-[48px] lg:text-[56px] font-bold tracking-[-0.025em] leading-[1.04] text-white">
                 {isVi

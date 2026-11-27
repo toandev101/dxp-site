@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/container";
 import { Link } from "@/components/ui/link";
 import { BrandLogo } from "@/components/layout/header";
 import { useUiStore } from "@/stores/ui-store";
+import useDictionaries from "@/hooks/useDictionaries";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import {
@@ -16,6 +17,10 @@ import {
   type IntegrationCategory,
   type IntegrationItem,
 } from "../_data/integrations-catalog";
+import {
+  getCategoryLabel,
+  localizeIntegrationItem,
+} from "../_data/integrations-catalog-vi";
 
 const BRAND = siteConfig.name;
 
@@ -189,36 +194,40 @@ export function IntegrationProviderCard({
   compact?: boolean;
 }) {
   const { openDemoModal } = useUiStore();
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
+  const isComingSoon = item.badge === "Coming soon";
+  const displayItem = localizeIntegrationItem(item, isVi);
 
   const cardInner = (
     <div className="flex h-full flex-col justify-between">
       <div>
         <div className="flex items-start justify-between gap-2">
-          <ProviderLogoMark item={item} />
-          {item.badge && (
+          <ProviderLogoMark item={displayItem} />
+          {displayItem.badge && (
             <span
               className={cn(
                 "shrink-0 rounded-full px-2.5 py-0.5 text-[10.5px] font-semibold",
-                item.badge === "Coming soon"
+                isComingSoon
                   ? "bg-[#fef3c7] text-[#b45309]"
                   : "border border-[var(--od-border)] bg-[var(--od-surface-subtle)] text-[var(--od-text-muted)]"
               )}
             >
-              {item.badge}
+              {displayItem.badge}
             </span>
           )}
         </div>
 
         <h3 className="mt-4 text-[17px] font-bold text-[var(--od-text)] group-hover:text-[var(--od-action-content)] transition-colors">
-          {item.name}
+          {displayItem.name}
         </h3>
-        <p className="mt-1.5 text-[14px] leading-[1.58] text-[var(--od-text-muted)]">{item.description}</p>
+        <p className="mt-1.5 text-[14px] leading-[1.58] text-[var(--od-text-muted)]">{displayItem.description}</p>
       </div>
 
       <div className="mt-5 pt-3.5 border-t border-[var(--od-border)] flex flex-wrap items-center justify-between gap-2 font-mono text-[11.5px]">
-        <span className="text-[var(--od-text-muted)]">{item.category}</span>
+        <span className="text-[var(--od-text-muted)]">{getCategoryLabel(displayItem.category, isVi)}</span>
         <span className="font-medium text-[var(--od-action-content)] group-hover:underline">
-          {item.ctaLabel}
+          {displayItem.ctaLabel}
         </span>
       </div>
     </div>
@@ -226,33 +235,33 @@ export function IntegrationProviderCard({
 
   return (
     <div className="flex flex-col rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] transition-colors hover:border-[var(--od-border-strong)]">
-      {item.href ? (
-        <Link href={item.href} className={cn("group flex-1 block", compact ? "p-5" : "p-6")}>
+      {displayItem.href ? (
+        <Link href={displayItem.href} className={cn("group flex-1 block", compact ? "p-5" : "p-6")}>
           {cardInner}
         </Link>
       ) : (
         <button
           type="button"
-          onClick={() => openDemoModal(`${item.name} integration`)}
+          onClick={() => openDemoModal(`${displayItem.name} integration`)}
           className={cn("group flex-1 block w-full text-left cursor-pointer", compact ? "p-5" : "p-6")}
         >
           {cardInner}
         </button>
       )}
 
-      {item.countrySummary && (
+      {displayItem.countrySummary && (
         <details className="border-t border-[var(--od-border)] px-6 py-3 text-[12px] text-[var(--od-text-muted)]">
           <summary className="flex cursor-pointer list-none items-center justify-between font-medium hover:text-[var(--od-text)]">
-            <span>{item.countrySummary}</span>
+            <span>{displayItem.countrySummary}</span>
             <ChevronDown className="h-3.5 w-3.5 shrink-0" />
           </summary>
           <div className="mt-2.5 space-y-2 border-t border-[var(--od-border)] pt-2.5 leading-[1.55]">
-            {item.countries.length > 0 && (
+            {displayItem.countries.length > 0 && (
               <p className="text-[var(--od-text)]">
-                {item.countries.map((code) => COUNTRY_NAMES[code] || code).join(", ")}
+                {displayItem.countries.map((code) => COUNTRY_NAMES[code] || code).join(", ")}
               </p>
             )}
-            {item.countryNote && <p>{item.countryNote}</p>}
+            {displayItem.countryNote && <p>{displayItem.countryNote}</p>}
           </div>
         </details>
       )}
@@ -278,6 +287,8 @@ export function FilterableIntegrationsGrid({
   defaultVisibleCount?: number;
 }) {
   const { openDemoModal } = useUiStore();
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
   const [query, setQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("ALL");
   const [selectedCategory, setSelectedCategory] = useState<"All" | IntegrationCategory>(initialCategory);
@@ -306,14 +317,15 @@ export function FilterableIntegrationsGrid({
         return false;
       }
       if (q) {
-        const hay = `${item.name} ${item.description} ${item.category} ${item.countries
+        const localized = isVi ? localizeIntegrationItem(item, true) : item;
+        const hay = `${item.name} ${localized.name} ${item.description} ${localized.description} ${item.category} ${getCategoryLabel(item.category, isVi)} ${item.countries
           .map((c) => COUNTRY_NAMES[c] || c)
           .join(" ")}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
     });
-  }, [items, query, selectedCountry, selectedCategory]);
+  }, [items, query, selectedCountry, selectedCategory, isVi]);
 
   const visibleItems = showAll ? filtered : filtered.slice(0, defaultVisibleCount);
 
@@ -347,7 +359,7 @@ export function FilterableIntegrationsGrid({
             htmlFor="business-country-filter"
             className="block text-[12px] font-medium text-[var(--od-text-muted)] mb-1.5"
           >
-            Business country
+            {isVi ? "Quốc gia kinh doanh" : "Business country"}
           </label>
           <select
             id="business-country-filter"
@@ -358,13 +370,15 @@ export function FilterableIntegrationsGrid({
             }}
             className="h-[44px] w-full rounded-[6px] border border-[var(--od-border)] bg-[var(--od-bg)] px-3 text-[14px] font-medium text-[var(--od-text)] focus:border-[#D91842] focus:outline-none"
           >
-            <option value="ALL">All countries</option>
+            <option value="ALL">{isVi ? "Tất cả quốc gia" : "All countries"}</option>
             {availableCountries.map((code) => (
               <option key={code} value={code}>
                 {COUNTRY_NAMES[code] || code}
               </option>
             ))}
-            <option value="NOT_LISTED">My country isn’t listed</option>
+            <option value="NOT_LISTED">
+              {isVi ? "Quốc gia của tôi chưa có" : "My country isn’t listed"}
+            </option>
           </select>
         </div>
       </div>
@@ -386,7 +400,7 @@ export function FilterableIntegrationsGrid({
                     : "border-[var(--od-border)] bg-[var(--od-bg)] text-[var(--od-text)] hover:border-[var(--od-border-strong)]"
                 )}
               >
-                {cat}
+                {getCategoryLabel(cat, isVi)}
               </button>
             );
           })}
@@ -395,8 +409,9 @@ export function FilterableIntegrationsGrid({
 
       {/* Exact Country Helper Disclaimer */}
       <p className="mt-5 border-t border-[var(--od-border)] pt-5 max-w-2xl text-[13px] leading-[1.55] text-[var(--od-text-muted)]">
-        Country filtering uses each provider’s documented business markets, not the countries your customers can order
-        from. Providers without a published country list appear when no country is selected.
+        {isVi
+          ? "Bộ lọc quốc gia dựa trên thị trường kinh doanh được từng nhà cung cấp công bố, không phải danh sách quốc gia nơi khách hàng của bạn có thể đặt hàng. Các nhà cung cấp chưa công bố danh sách quốc gia sẽ hiển thị khi không chọn quốc gia."
+          : "Country filtering uses each provider’s documented business markets, not the countries your customers can order from. Providers without a published country list appear when no country is selected."}
       </p>
 
       {/* Dynamic Count */}
@@ -407,22 +422,27 @@ export function FilterableIntegrationsGrid({
       {/* Results or Empty / Country Not Listed Prompt */}
       {selectedCountry === "NOT_LISTED" ? (
         <div className="mt-6 rounded-[10px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-8 max-w-2xl">
-          <h3 className="text-[18px] font-bold text-[var(--od-text)]">Don’t see your country listed?</h3>
+          <h3 className="text-[18px] font-bold text-[var(--od-text)]">
+            {isVi ? "Không thấy quốc gia của bạn trong danh sách?" : "Don’t see your country listed?"}
+          </h3>
           <p className="mt-2 text-[14.5px] leading-[1.6] text-[var(--od-text-muted)]">
-            Tell us your business country, currencies, and local providers — our team will confirm coverage or scope a
-            connection for your project.
+            {isVi
+              ? "Hãy cho chúng tôi biết quốc gia kinh doanh, đơn vị tiền tệ và nhà cung cấp nội địa bạn dùng — đội ngũ chúng tôi sẽ xác nhận phạm vi hỗ trợ hoặc thiết kế tích hợp cho dự án của bạn."
+              : "Tell us your business country, currencies, and local providers — our team will confirm coverage or scope a connection for your project."}
           </p>
           <button
             type="button"
             onClick={() => openDemoModal("Integration country inquiry")}
             className="mt-4 inline-flex min-h-[42px] items-center justify-center rounded-full bg-[#D91842] px-4 py-2 text-[13.5px] font-semibold text-white hover:bg-[#B8123A] cursor-pointer"
           >
-            Talk to {BRAND}
+            {isVi ? `Liên hệ ${BRAND}` : `Talk to ${BRAND}`}
           </button>
         </div>
       ) : visibleItems.length === 0 ? (
         <div className="mt-6 rounded-[10px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-8 text-center">
-          <p className="text-[15px] font-semibold text-[var(--od-text)]">No integrations match that filter.</p>
+          <p className="text-[15px] font-semibold text-[var(--od-text)]">
+            {isVi ? "Không tìm thấy tích hợp phù hợp với bộ lọc." : "No integrations match that filter."}
+          </p>
           <button
             type="button"
             onClick={() => {
@@ -432,7 +452,7 @@ export function FilterableIntegrationsGrid({
             }}
             className="mt-3 text-[13.5px] font-semibold text-[var(--od-action-content)] hover:underline cursor-pointer"
           >
-            Reset filters
+            {isVi ? "Đặt lại bộ lọc" : "Reset filters"}
           </button>
         </div>
       ) : (
@@ -450,7 +470,9 @@ export function FilterableIntegrationsGrid({
                 onClick={() => setShowAll(true)}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-[var(--od-border)] bg-[var(--od-bg)] px-5 py-2.5 text-[14px] font-semibold text-[var(--od-text)] hover:border-[var(--od-border-strong)] hover:bg-[var(--od-surface-subtle)] cursor-pointer"
               >
-                Show all {filtered.length} {countNoun}
+                {isVi
+                  ? `Hiển thị tất cả ${filtered.length} ${countNoun}`
+                  : `Show all ${filtered.length} ${countNoun}`}
               </button>
             </div>
           )}
@@ -462,30 +484,41 @@ export function FilterableIntegrationsGrid({
 
 /** Exact 5-step bidirectional PosFlowDiagram from /integrations/pos/ */
 export function PosFlowDiagram() {
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
+
   return (
     <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-5 sm:p-8">
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-stretch">
         {/* Left: Your POS */}
         <div className="lg:col-span-2 flex flex-col justify-center rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-5">
           <Store className="h-5 w-5 text-[var(--od-text-muted)]" />
-          <p className="mt-2.5 text-[15px] font-bold text-[var(--od-text)]">Your POS</p>
+          <p className="mt-2.5 text-[15px] font-bold text-[var(--od-text)]">
+            {isVi ? "POS của bạn" : "Your POS"}
+          </p>
         </div>
 
         {/* Middle-Left: Menu Route (1 & 2) + Order Route (4) */}
         <div className="lg:col-span-4 flex flex-col justify-between gap-4">
           {/* Menu Route */}
           <div className="space-y-2.5">
-            <p className="font-mono text-[11px] text-[var(--od-text-muted)]">Menu route</p>
+            <p className="font-mono text-[11px] text-[var(--od-text-muted)]">
+              {isVi ? "Luồng thực đơn" : "Menu route"}
+            </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <div className="space-y-1">
                 <div className="flex items-start gap-2">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                     1
                   </span>
-                  <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">Import menu and prices</p>
+                  <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">
+                    {isVi ? "Nhập thực đơn và giá" : "Import menu and prices"}
+                  </p>
                 </div>
                 <p className="pl-7 text-[12.5px] leading-[1.5] text-[var(--od-text-muted)]">
-                  Items, prices, and modifiers are pulled from your POS.
+                  {isVi
+                    ? "Món ăn, giá bán và tùy chọn bổ sung được đồng bộ trực tiếp từ POS."
+                    : "Items, prices, and modifiers are pulled from your POS."}
                 </p>
               </div>
               <div className="space-y-1">
@@ -493,11 +526,14 @@ export function PosFlowDiagram() {
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                     2
                   </span>
-                  <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">Keep it in sync</p>
+                  <p className="text-[13.5px] font-bold leading-snug text-[var(--od-text)]">
+                    {isVi ? "Giữ luôn đồng bộ" : "Keep it in sync"}
+                  </p>
                 </div>
                 <p className="pl-7 text-[12.5px] leading-[1.5] text-[var(--od-text-muted)]">
-                  Webhooks switch items on or off as soon as they change in your POS, or a scheduled sync runs at the
-                  interval you choose.
+                  {isVi
+                    ? "Webhook tự động bật/tắt món ngay khi POS thay đổi, hoặc chạy đồng bộ theo lịch bạn chọn."
+                    : "Webhooks switch items on or off as soon as they change in your POS, or a scheduled sync runs at the interval you choose."}
                 </p>
               </div>
             </div>
@@ -509,15 +545,21 @@ export function PosFlowDiagram() {
 
           {/* Order Route */}
           <div className="space-y-2">
-            <p className="font-mono text-[11px] text-[var(--od-text-muted)]">Order route</p>
+            <p className="font-mono text-[11px] text-[var(--od-text-muted)]">
+              {isVi ? "Luồng đơn hàng" : "Order route"}
+            </p>
             <div className="flex items-start gap-2">
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-[11px] font-bold text-white">
                 4
               </span>
               <div>
-                <p className="text-[13.5px] font-bold text-[var(--od-text)]">Injected into your POS</p>
+                <p className="text-[13.5px] font-bold text-[var(--od-text)]">
+                  {isVi ? "Đẩy thẳng vào POS" : "Injected into your POS"}
+                </p>
                 <p className="mt-0.5 text-[12.5px] leading-[1.5] text-[var(--od-text-muted)]">
-                  Each online order goes straight into your POS and follows the workflow your staff already use.
+                  {isVi
+                    ? "Mỗi đơn trực tuyến đi thẳng vào POS và tuân theo đúng quy trình nhân viên đang sử dụng."
+                    : "Each online order goes straight into your POS and follows the workflow your staff already use."}
                 </p>
               </div>
             </div>
@@ -539,10 +581,13 @@ export function PosFlowDiagram() {
                 3
               </span>
               <div>
-                <p className="text-[14px] font-bold text-[var(--od-text)]">Enrich it online</p>
+                <p className="text-[14px] font-bold text-[var(--od-text)]">
+                  {isVi ? "Làm giàu thực đơn trực tuyến" : "Enrich it online"}
+                </p>
                 <p className="mt-1.5 text-[13px] leading-[1.55] text-[var(--od-text-muted)]">
-                  Add what your POS does not have, such as images, categories, and subcategories, from the {BRAND}{" "}
-                  Dashboard.
+                  {isVi
+                    ? `Bổ sung những gì POS chưa có như hình ảnh, danh mục và nhóm món ngay trên Bảng điều khiển ${BRAND}.`
+                    : `Add what your POS does not have, such as images, categories, and subcategories, from the ${BRAND} Dashboard.`}
                 </p>
               </div>
             </div>
@@ -557,9 +602,13 @@ export function PosFlowDiagram() {
                 5
               </span>
               <div>
-                <p className="text-[13.5px] font-bold text-[var(--od-text)]">Delivery assigned</p>
+                <p className="text-[13.5px] font-bold text-[var(--od-text)]">
+                  {isVi ? "Điều phối giao hàng" : "Delivery assigned"}
+                </p>
                 <p className="mt-0.5 text-[12.5px] leading-[1.5] text-[var(--od-text-muted)]">
-                  Combine it with {BRAND} delivery to auto-assign delivery companies or your in-house drivers.
+                  {isVi
+                    ? `Kết hợp với hệ thống giao hàng ${BRAND} để tự động điều phối đối tác vận chuyển hoặc tài xế nội bộ.`
+                    : `Combine it with ${BRAND} delivery to auto-assign delivery companies or your in-house drivers.`}
                 </p>
               </div>
             </div>
@@ -572,7 +621,7 @@ export function PosFlowDiagram() {
           <div className="rounded-[10px] border border-[var(--od-border)] bg-[var(--od-bg)] p-4">
             <Route className="h-4 w-4 text-[var(--od-text-muted)]" />
             <p className="mt-2 text-[14px] font-bold leading-snug text-[var(--od-text)]">
-              Delivery companies or in-house drivers
+              {isVi ? "Đối tác giao hàng hoặc tài xế nội bộ" : "Delivery companies or in-house drivers"}
             </p>
           </div>
         </div>
@@ -583,28 +632,54 @@ export function PosFlowDiagram() {
 
 /** Flow Diagram for /integrations/delivery/ */
 export function DeliveryFlowDiagram() {
-  const steps = [
-    {
-      num: "1",
-      title: "Order placed",
-      body: `Customer checks out on your website, app, kiosk, or phone channel with delivery zone and fee resolved.`,
-    },
-    {
-      num: "2",
-      title: "Store prepares",
-      body: "The location confirms prep time in Ordering Merchant and marks the order ready for pickup.",
-    },
-    {
-      num: "3",
-      title: "Automatic dispatch",
-      body: `${BRAND} assigns your in-house driver group or requests a courier from your connected delivery company.`,
-    },
-    {
-      num: "4",
-      title: "Live tracking",
-      body: "Pickup, route progress, courier details, and proof of delivery stay connected to the order record.",
-    },
-  ];
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
+
+  const steps = isVi
+    ? [
+        {
+          num: "1",
+          title: "Khách đặt đơn",
+          body: "Khách thanh toán trên website, ứng dụng, ki-ốt hoặc tổng đài với khu vực và phí giao hàng được tính sẵn.",
+        },
+        {
+          num: "2",
+          title: "Cửa hàng chuẩn bị",
+          body: "Chi nhánh xác nhận thời gian chuẩn bị trong Ordering Merchant và đánh dấu đơn sẵn sàng bàn giao.",
+        },
+        {
+          num: "3",
+          title: "Điều phối tự động",
+          body: `${BRAND} tự động gán nhóm tài xế nội bộ hoặc gọi tài xế từ đối tác giao hàng đã kết nối.`,
+        },
+        {
+          num: "4",
+          title: "Theo dõi trực tiếp",
+          body: "Trạng thái nhận hàng, lộ trình di chuyển, thông tin tài xế và bằng chứng giao hàng luôn gắn liền với hồ sơ đơn.",
+        },
+      ]
+    : [
+        {
+          num: "1",
+          title: "Order placed",
+          body: `Customer checks out on your website, app, kiosk, or phone channel with delivery zone and fee resolved.`,
+        },
+        {
+          num: "2",
+          title: "Store prepares",
+          body: "The location confirms prep time in Ordering Merchant and marks the order ready for pickup.",
+        },
+        {
+          num: "3",
+          title: "Automatic dispatch",
+          body: `${BRAND} assigns your in-house driver group or requests a courier from your connected delivery company.`,
+        },
+        {
+          num: "4",
+          title: "Live tracking",
+          body: "Pickup, route progress, courier details, and proof of delivery stay connected to the order record.",
+        },
+      ];
 
   return (
     <div className="rounded-[12px] border border-[var(--od-border)] bg-[var(--od-surface-subtle)] p-6 sm:p-8">
@@ -627,10 +702,12 @@ export function DeliveryFlowDiagram() {
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--od-border)] pt-4 text-[12.5px] text-[var(--od-text-muted)]">
         <span className="inline-flex items-center gap-2 font-medium text-[var(--od-text)]">
           <Truck className="h-4 w-4 text-[#D91842]" />
-          Works with your own fleet, third-party delivery companies, or a hybrid setup per store.
+          {isVi
+            ? "Hoạt động linh hoạt với đội tài xế riêng, đối tác giao hàng bên thứ ba hoặc mô hình kết hợp theo từng cửa hàng."
+            : "Works with your own fleet, third-party delivery companies, or a hybrid setup per store."}
         </span>
         <Link href="/platform/ordering-delivery" className="font-semibold text-[var(--od-action-content)] hover:underline">
-          Explore Ordering Delivery →
+          {isVi ? "Khám phá Ordering Delivery →" : "Explore Ordering Delivery →"}
         </Link>
       </div>
     </div>
@@ -651,6 +728,8 @@ export function IntegrationClosingCta({
   secondaryCta: { label: string; href?: string; openChat?: boolean };
 }) {
   const { openDemoModal, setChatOpen } = useUiStore();
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
 
   return (
     <section className="py-16 lg:py-24">
@@ -671,7 +750,7 @@ export function IntegrationClosingCta({
             <p className="mt-4 text-[16px] leading-[1.6] text-[#A9A8AF]">{body}</p>
             {docGuide && (
               <p className="mt-4 text-[13.5px] text-[#9A99A1]">
-                Product guide:{" "}
+                {isVi ? "Hướng dẫn sản phẩm: " : "Product guide: "}
                 <Link
                   href={docGuide.href}
                   className="font-semibold text-[#F9D0D8] underline underline-offset-4 hover:text-white"

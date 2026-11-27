@@ -162,7 +162,7 @@ export function Footer() {
           {[
             { label: isVi ? "App Cửa hàng" : "Merchant App", href: "/platform/ordering-merchant" },
             { label: isVi ? "App Tài xế" : "Driver App", href: "/platform/driver-app" },
-            // { label: "Kiosk", href: "/platform/ordering-kiosk" },
+            { label: "Kiosk", href: "/platform/ordering-kiosk" },
             { label: isVi ? "Tổng đài" : "Call Center", href: "/platform/ordering-call-center" },
           ].map((app) => (
             <Link

@@ -2,19 +2,23 @@
 
 import { Check, Plus, Search } from "lucide-react";
 import { OperoSymbol } from "@/components/brand/opero-logo";
+import useDictionaries from "@/hooks/useDictionaries";
 import { siteConfig } from "@/lib/site-config";
 import type { SolutionSlug } from "../_data/solution-types";
 
 const BRAND = siteConfig.name;
 
 export function SolutionHeroMockup({ slug }: { slug: Exclude<SolutionSlug, "marketplaces"> }) {
+  const { lang } = useDictionaries();
+  const isVi = lang === "vi";
+
   switch (slug) {
     case "restaurants":
-      return <RestaurantsHeroMockup />;
+      return <RestaurantsHeroMockup isVi={isVi} />;
     case "franchises":
-      return <FranchisesHeroMockup />;
+      return <FranchisesHeroMockup isVi={isVi} />;
     case "enterprise":
-      return <EnterpriseHeroMockup />;
+      return <EnterpriseHeroMockup isVi={isVi} />;
     case "groceries":
       return <GroceriesHeroMockup />;
     case "agencies-resellers":
@@ -36,40 +40,58 @@ function OrderingRingIcon({ className = "h-4 w-4" }: { className?: string }) {
   return <OperoSymbol className={className} />;
 }
 
-function RestaurantsHeroMockup() {
-  const items = [
-    { name: "Seasonal pasta", tone: "from-[#fef3c7] to-[#fde68a]/60" },
-    { name: "House pizza", tone: "from-[#dcfce7] to-[#bbf7d0]/60" },
-    { name: "Garden salad", tone: "from-[#e0f2fe] to-[#bae6fd]/60" },
-  ];
+function RestaurantsHeroMockup({ isVi }: { isVi: boolean }) {
+  const items = isVi
+    ? [
+        { name: "Mì Ý sốt kem nấm", tone: "from-[#fef3c7] to-[#fde68a]/60" },
+        { name: "Pizza đặc trưng quán", tone: "from-[#dcfce7] to-[#bbf7d0]/60" },
+        { name: "Salad rau tươi", tone: "from-[#e0f2fe] to-[#bae6fd]/60" },
+      ]
+    : [
+        { name: "Seasonal pasta", tone: "from-[#fef3c7] to-[#fde68a]/60" },
+        { name: "House pizza", tone: "from-[#dcfce7] to-[#bbf7d0]/60" },
+        { name: "Garden salad", tone: "from-[#e0f2fe] to-[#bae6fd]/60" },
+      ];
 
   return (
     <div className="flex flex-col items-center lg:items-end">
-      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">Illustrative storefront</p>
+      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">
+        {isVi ? "Giao diện minh họa" : "Illustrative storefront"}
+      </p>
       <div className="w-full max-w-[325px] rounded-[34px] bg-white p-5 text-[#151417] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
         <div className="mx-auto mb-4 h-1.5 w-14 rounded-full bg-[#d4d6da]" />
-        <p className="text-[15.5px] font-bold">Example restaurant</p>
+        <p className="text-[15.5px] font-bold">{isVi ? "Nhà hàng mẫu" : "Example restaurant"}</p>
         <p className="font-mono text-[10.5px] text-[#6E6D75]">yourrestaurant.com</p>
 
         <div className="mt-3.5 flex items-center justify-between gap-2 text-[10.5px]">
           <div className="inline-flex items-center gap-1.5">
-            <span className="rounded-full bg-[#111013] px-3 py-1 font-semibold text-white">Delivery</span>
-            <span className="rounded-full border border-[#D9D9DD] px-3 py-1 font-medium text-[#3A393F]">Pickup</span>
+            <span className="rounded-full bg-[#111013] px-3 py-1 font-semibold text-white">
+              {isVi ? "Giao hàng" : "Delivery"}
+            </span>
+            <span className="rounded-full border border-[#D9D9DD] px-3 py-1 font-medium text-[#3A393F]">
+              {isVi ? "Mang về" : "Pickup"}
+            </span>
           </div>
-          <span className="text-[10px] text-[#6E6D75]">Choose an order type</span>
+          <span className="text-[10px] text-[#6E6D75]">
+            {isVi ? "Chọn hình thức" : "Choose an order type"}
+          </span>
         </div>
 
         <div className="mt-3 flex items-center gap-2 rounded-full border border-[#D9D9DD] bg-[#fafafa] px-3.5 py-2 text-[11px] text-[#6E6D75]">
           <Search className="h-3.5 w-3.5" />
-          <span>Search the menu</span>
+          <span>{isVi ? "Tìm trong thực đơn" : "Search the menu"}</span>
         </div>
 
         <div className="mt-3 flex gap-1.5 text-[10.5px]">
           <span className="rounded-full border border-[#D91842] bg-[#FDECEF] px-3 py-1 font-semibold text-[#B8123A]">
-            Mains
+            {isVi ? "Món chính" : "Mains"}
           </span>
-          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">Sides</span>
-          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">Drinks</span>
+          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">
+            {isVi ? "Món phụ" : "Sides"}
+          </span>
+          <span className="rounded-full border border-[#D9D9DD] px-3 py-1 text-[#3A393F]">
+            {isVi ? "Đồ uống" : "Drinks"}
+          </span>
         </div>
 
         <div className="mt-3.5 space-y-2.5">
@@ -79,7 +101,7 @@ function RestaurantsHeroMockup() {
                 <span className={`h-11 w-11 shrink-0 rounded-[9px] bg-gradient-to-br ${item.tone}`} />
                 <div>
                   <p className="text-[12.5px] font-bold text-[#151417]">{item.name}</p>
-                  <p className="text-[10.5px] text-[#6E6D75]">Menu example</p>
+                  <p className="text-[10.5px] text-[#6E6D75]">{isVi ? "Món mẫu" : "Menu example"}</p>
                 </div>
               </div>
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#D91842] text-white">
@@ -90,58 +112,72 @@ function RestaurantsHeroMockup() {
         </div>
 
         <div className="mt-5 rounded-full bg-[#111013] py-2.5 text-center text-[11.5px] font-semibold text-white">
-          View cart
+          {isVi ? "Xem giỏ hàng" : "View cart"}
         </div>
       </div>
     </div>
   );
 }
 
-function FranchisesHeroMockup() {
-  const stores = [
-    { name: "Example store 01", status: "Open", dot: "bg-[#5E9B2E]", text: "text-[#3F7A1C]", channels: "Web · App" },
-    { name: "Example store 02", status: "Busy", dot: "bg-[#f59e0b]", text: "text-[#b45309]", channels: "Web · Kiosk" },
-    { name: "Example store 03", status: "Closed", dot: "bg-[#9ca3af]", text: "text-[#6E6D75]", channels: "Set by store" },
-  ];
+function FranchisesHeroMockup({ isVi }: { isVi: boolean }) {
+  const stores = isVi
+    ? [
+        { name: "Chi nhánh mẫu 01", status: "Đang mở", dot: "bg-[#5E9B2E]", text: "text-[#3F7A1C]", channels: "Web · App" },
+        { name: "Chi nhánh mẫu 02", status: "Đông khách", dot: "bg-[#f59e0b]", text: "text-[#b45309]", channels: "Web · Kiosk" },
+        { name: "Chi nhánh mẫu 03", status: "Đóng cửa", dot: "bg-[#9ca3af]", text: "text-[#6E6D75]", channels: "Theo chi nhánh" },
+      ]
+    : [
+        { name: "Example store 01", status: "Open", dot: "bg-[#5E9B2E]", text: "text-[#3F7A1C]", channels: "Web · App" },
+        { name: "Example store 02", status: "Busy", dot: "bg-[#f59e0b]", text: "text-[#b45309]", channels: "Web · Kiosk" },
+        { name: "Example store 03", status: "Closed", dot: "bg-[#9ca3af]", text: "text-[#6E6D75]", channels: "Set by store" },
+      ];
+
+  const metricLabels = isVi ? ["Đơn hàng", "Chi nhánh", "Khu vực", "Kênh bán"] : ["Orders", "Stores", "Regions", "Channels"];
 
   return (
     <div>
-      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">Illustrative network view</p>
+      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">
+        {isVi ? "Góc nhìn mạng lưới minh họa" : "Illustrative network view"}
+      </p>
       <div className="overflow-hidden rounded-[12px] border border-[#2A2A2E] bg-white text-[#151417] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)] grid grid-cols-12">
         {/* Sidebar */}
         <aside className="col-span-4 border-r border-[#D9D9DD] bg-[#F5F5F6] p-3.5 space-y-3 text-[11px]">
           <div className="flex items-center gap-2 font-bold text-[12px]">
             <OrderingRingIcon className="h-4 w-4 shrink-0" />
-            <span className="truncate">Example network</span>
+            <span className="truncate">{isVi ? "Chuỗi mẫu" : "Example network"}</span>
           </div>
 
           <div className="space-y-1">
-            <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">Scope</p>
-            <p className="rounded-[5px] bg-[#FDECEF] px-2 py-1 font-semibold text-[#B8123A]">All locations · —</p>
-            <p className="px-2 py-1 text-[#3A393F]">Region A · —</p>
-            <p className="px-2 py-1 text-[#3A393F]">Region B · —</p>
+            <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">{isVi ? "Phạm vi" : "Scope"}</p>
+            <p className="rounded-[5px] bg-[#FDECEF] px-2 py-1 font-semibold text-[#B8123A]">
+              {isVi ? "Tất cả điểm bán · —" : "All locations · —"}
+            </p>
+            <p className="px-2 py-1 text-[#3A393F]">{isVi ? "Khu vực A · —" : "Region A · —"}</p>
+            <p className="px-2 py-1 text-[#3A393F]">{isVi ? "Khu vực B · —" : "Region B · —"}</p>
           </div>
 
           <div className="space-y-1 pt-1">
-            <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">Manage</p>
-            <p className="px-2 py-0.5 text-[#3A393F]">Catalog</p>
-            <p className="px-2 py-0.5 text-[#3A393F]">Roles</p>
-            <p className="px-2 py-0.5 text-[#3A393F]">Settings</p>
+            <p className="font-mono text-[9.5px] uppercase text-[#6E6D75]">{isVi ? "Quản trị" : "Manage"}</p>
+            <p className="px-2 py-0.5 text-[#3A393F]">{isVi ? "Thực đơn" : "Catalog"}</p>
+            <p className="px-2 py-0.5 text-[#3A393F]">{isVi ? "Phân quyền" : "Roles"}</p>
+            <p className="px-2 py-0.5 text-[#3A393F]">{isVi ? "Cấu hình" : "Settings"}</p>
           </div>
         </aside>
 
         {/* Main */}
         <div className="col-span-8 p-4 space-y-3.5">
           <div className="flex items-center justify-between">
-            <span className="text-[13px] font-bold">Network view</span>
+            <span className="text-[13px] font-bold">{isVi ? "Toàn mạng lưới" : "Network view"}</span>
             <div className="inline-flex rounded-[5px] border border-[#D9D9DD] p-0.5 text-[10px]">
-              <span className="rounded-[4px] bg-[#111013] px-2 py-0.5 font-semibold text-white">Current view</span>
-              <span className="px-2 py-0.5 text-[#6E6D75]">History</span>
+              <span className="rounded-[4px] bg-[#111013] px-2 py-0.5 font-semibold text-white">
+                {isVi ? "Hiện tại" : "Current view"}
+              </span>
+              <span className="px-2 py-0.5 text-[#6E6D75]">{isVi ? "Lịch sử" : "History"}</span>
             </div>
           </div>
 
           <div className="grid grid-cols-4 gap-2">
-            {["Orders", "Stores", "Regions", "Channels"].map((lbl) => (
+            {metricLabels.map((lbl) => (
               <div key={lbl} className="rounded-[6px] border border-[#D9D9DD] bg-[#fafafa] px-2.5 py-2">
                 <p className="text-[9.5px] text-[#6E6D75]">{lbl}</p>
                 <p className="mt-0.5 text-[13px] font-bold">—</p>
@@ -151,9 +187,9 @@ function FranchisesHeroMockup() {
 
           <div className="text-[10.5px]">
             <div className="grid grid-cols-12 border-b border-[#D9D9DD] pb-1.5 font-mono text-[9px] uppercase text-[#6E6D75]">
-              <span className="col-span-5">Store</span>
-              <span className="col-span-3">Status</span>
-              <span className="col-span-4 text-right">Channels</span>
+              <span className="col-span-5">{isVi ? "Chi nhánh" : "Store"}</span>
+              <span className="col-span-3">{isVi ? "Trạng thái" : "Status"}</span>
+              <span className="col-span-4 text-right">{isVi ? "Kênh bán" : "Channels"}</span>
             </div>
             <div className="divide-y divide-[#F5F5F6]">
               {stores.map((st) => (
@@ -174,19 +210,49 @@ function FranchisesHeroMockup() {
   );
 }
 
-function EnterpriseHeroMockup() {
-  const waves = [
-    { step: "Step 1", status: "Define", name: "Map the network", note: "Locations, channels, roles, and dependencies.", active: false },
-    { step: "Step 2", status: "Review", name: "Validate the model", note: "Walk through the store and guest journeys with the teams that own them.", active: true },
-    { step: "Step 3", status: "Plan", name: "Expand deliberately", note: "Apply the confirmed model to the next locations when their requirements are known.", active: false },
-  ];
+function EnterpriseHeroMockup({ isVi }: { isVi: boolean }) {
+  const waves = isVi
+    ? [
+        {
+          step: "Bước 1",
+          status: "Định hình",
+          name: "Lập bản đồ mạng lưới",
+          note: "Chi nhánh, kênh bán, phân quyền và các hệ thống phụ thuộc.",
+          active: false,
+        },
+        {
+          step: "Bước 2",
+          status: "Kiểm thử",
+          name: "Xác nhận mô hình",
+          note: "Chạy thử hành trình khách đặt và vận hành cửa hàng cùng đội ngũ phụ trách.",
+          active: true,
+        },
+        {
+          step: "Bước 3",
+          status: "Mở rộng",
+          name: "Nhân rộng có kiểm soát",
+          note: "Áp dụng mô hình đã chuẩn hóa cho nhóm chi nhánh tiếp theo khi yêu cầu đã rõ.",
+          active: false,
+        },
+      ]
+    : [
+        { step: "Step 1", status: "Define", name: "Map the network", note: "Locations, channels, roles, and dependencies.", active: false },
+        { step: "Step 2", status: "Review", name: "Validate the model", note: "Walk through the store and guest journeys with the teams that own them.", active: true },
+        { step: "Step 3", status: "Plan", name: "Expand deliberately", note: "Apply the confirmed model to the next locations when their requirements are known.", active: false },
+      ];
 
   return (
     <div>
-      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">Illustrative rollout sequence</p>
+      <p className="mb-2.5 font-mono text-[11px] text-[#9A99A1]">
+        {isVi ? "Lộ trình triển khai minh họa" : "Illustrative rollout sequence"}
+      </p>
       <div className="rounded-[12px] bg-white p-5 sm:p-6 text-[#151417] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]">
-        <p className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#B8123A]">Planning sequence</p>
-        <p className="mt-1 text-[18px] font-bold">A staged network plan</p>
+        <p className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#B8123A]">
+          {isVi ? "Lộ trình hoạch định" : "Planning sequence"}
+        </p>
+        <p className="mt-1 text-[18px] font-bold">
+          {isVi ? "Kế hoạch mở rộng theo giai đoạn" : "A staged network plan"}
+        </p>
 
         <ol className="mt-4 space-y-3">
           {waves.map((w) => (
@@ -213,7 +279,9 @@ function EnterpriseHeroMockup() {
         </ol>
 
         <p className="mt-4 border-t border-[#D9D9DD] pt-3 text-[11.5px] text-[#6E6D75]">
-          Use the sequence to make responsibilities and dependencies visible.
+          {isVi
+            ? "Dùng lộ trình này để minh bạch hóa trách nhiệm và các điểm phụ thuộc."
+            : "Use the sequence to make responsibilities and dependencies visible."}
         </p>
       </div>
     </div>

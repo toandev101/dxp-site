@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/utils/metadata";
 import { PlatformPageRenderer } from "../_components/platform-page-renderer";
 import { DASHBOARD_SPEC } from "../_data/platform-pages-operate";
+import { DASHBOARD_SPEC_VI } from "../_data/platform-pages-operate-vi";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: DASHBOARD_SPEC.metaTitle,
-  description: DASHBOARD_SPEC.metaDescription,
-  path: "/platform/dashboard",
-});
+type Props = { params: Promise<{ lang: string }> };
 
-export default function DashboardPage() {
-  return <PlatformPageRenderer spec={DASHBOARD_SPEC} />;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const spec = lang === "vi" ? DASHBOARD_SPEC_VI : DASHBOARD_SPEC;
+  return buildPageMetadata({
+    title: spec.metaTitle,
+    description: spec.metaDescription,
+    path: "/platform/dashboard",
+  });
+}
+
+export default async function DashboardPage({ params }: Props) {
+  const { lang } = await params;
+  const spec = lang === "vi" ? DASHBOARD_SPEC_VI : DASHBOARD_SPEC;
+  return <PlatformPageRenderer spec={spec} />;
 }
